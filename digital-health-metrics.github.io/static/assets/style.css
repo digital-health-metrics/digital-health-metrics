@@ -224,18 +224,31 @@ pre {
 	 * the browser silently keeps `inset-inline-start` and drops this
 	 * rule's end offset. `inset-inline-start: auto` cancels the theme's
 	 * value explicitly, so only the end offset below takes effect and
-	 * every list opens leftward, anchored to its own button's end edge —
-	 * never past the viewport, whichever of the four pickers it is.
+	 * every list opens leftward, anchored to its own button's end edge.
+	 *
+	 * That still isn't enough on a narrow viewport: the theme-picker button
+	 * sits close to the header's own end edge, and the theme list's widest
+	 * option ("United Kingdom National Health Service England For
+	 * Practitioners") is wider than most phone screens. Anchored-but-
+	 * unconstrained, the box grew to fit that text and opened mostly off
+	 * the left edge of the viewport -- every option's text rendered at a
+	 * negative x-coordinate, so the open picker looked blank except for the
+	 * selected option's full-width highlight bar scrolled into view. The
+	 * max-width below caps the box so it can never extend further left than
+	 * the viewport itself, and letting option text wrap (below) means a
+	 * capped width doesn't just re-clip the same long labels.
 	 */
 	inset-inline-start: auto;
 	inset-inline-end: 0;
 	top: calc(100% + 0.35rem);
 	z-index: 200;
 	min-width: 14rem;
+	max-width: calc(100vw - 2 * var(--lily-space-md));
 	max-height: 60vh;
 	margin: 0;
 	padding: 0.25rem;
 	overflow-y: auto;
+	overflow-x: hidden;
 	list-style: none;
 	background-color: var(--lily-surface);
 	border: 1px solid var(--lily-border);
@@ -257,7 +270,8 @@ pre {
 	border-radius: var(--lily-radius-sm);
 	cursor: pointer;
 	font-size: 0.95em;
-	white-space: nowrap;
+	white-space: normal;
+	overflow-wrap: break-word;
 }
 
 .theme-picker-option:hover,
@@ -872,6 +886,25 @@ pre {
 
 	.topic-pagination .pagination-list {
 		grid-template-columns: minmax(0, 1fr);
+	}
+}
+
+/* Below ~30rem, the picker buttons sit close enough to the header's own end
+ * edge that anchoring the list to the button (`.theme-picker-list` etc.
+ * above) can still overflow past the viewport's start edge, because the
+ * list's `min-width: 14rem` is a hard floor that can end up wider than the
+ * gap between the button and that edge. Anchoring to the viewport instead of
+ * the button removes the dependency on where the button happens to sit. */
+@media (max-width: 30rem) {
+	.theme-picker-list,
+	.locale-picker-list,
+	.text-size-picker-list,
+	.share-picker-list {
+		position: fixed;
+		inset-inline: var(--lily-space-md);
+		top: var(--site-header-height);
+		min-width: 0;
+		max-width: none;
 	}
 }
 
