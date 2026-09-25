@@ -1,0 +1,913 @@
+/* ============================================================================
+ * Digital Health Metrics — site stylesheet
+ *
+ * Lily's components are headless: they ship markup, ARIA, and keyboard
+ * behaviour, and no styling at all. The look comes from two places:
+ *
+ *   1. the active Lily theme in assets/themes/, which defines the design
+ *      tokens (--lily-surface, --lily-text, --lily-space-*, ...) and gives
+ *      base treatment to inputs, buttons, tables, and links
+ *   2. this file, which lays out the book and styles its prose
+ *
+ * Everything below is written against the theme's semantic tokens rather than
+ * literal colours, so all Lily default themes — including the NHS, GDS, and
+ * USWDS palettes — work without a per-theme branch. The theme's own rules sit
+ * in `@layer lily` behind `:where()`, so any plain selector here wins outright.
+ * ========================================================================= */
+
+/* --- Reading size ---------------------------------------------------------
+ * The text size picker sets data-text-size on <html>. Everything scales from
+ * this one custom property, so the whole page grows together.
+ * ------------------------------------------------------------------------ */
+
+:root {
+	--site-scale: 1;
+	--site-header-height: 3.75rem;
+	--site-measure: 46rem;
+}
+
+:root[data-text-size='smallest'] {
+	--site-scale: 0.647;
+}
+:root[data-text-size='smaller'] {
+	--site-scale: 0.765;
+}
+:root[data-text-size='small'] {
+	--site-scale: 0.882;
+}
+:root[data-text-size='normal'] {
+	--site-scale: 1;
+}
+:root[data-text-size='large'] {
+	--site-scale: 1.118;
+}
+:root[data-text-size='larger'] {
+	--site-scale: 1.235;
+}
+:root[data-text-size='largest'] {
+	--site-scale: 1.353;
+}
+
+/* --- Base ---------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	background-color: var(--lily-surface);
+}
+
+body {
+	margin: 0;
+	background-color: var(--lily-surface);
+	color: var(--lily-text);
+	font-family: var(--lily-font-body);
+	font-size: calc(1rem * var(--site-scale));
+	line-height: 1.65;
+	-webkit-text-size-adjust: 100%;
+}
+
+a {
+	color: var(--color-primary);
+}
+
+a:hover {
+	color: var(--color-secondary);
+}
+
+:focus-visible {
+	outline: var(--lily-focus-ring, 2px solid var(--color-primary));
+	outline-offset: 2px;
+}
+
+code,
+kbd,
+samp,
+pre {
+	font-family: var(--lily-font-mono);
+}
+
+/* --- Header -------------------------------------------------------------- */
+
+.site-header {
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	background-color: var(--lily-surface);
+	border-bottom: 1px solid var(--lily-border);
+}
+
+.site-header-inner {
+	display: flex;
+	align-items: center;
+	gap: var(--lily-space-md);
+	flex-wrap: wrap;
+	max-width: 90rem;
+	min-height: var(--site-header-height);
+	margin: 0 auto;
+	padding: var(--lily-space-sm) var(--lily-space-lg);
+}
+
+.site-brand {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.55rem;
+	color: var(--lily-text);
+	font-weight: 700;
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+.site-brand:hover {
+	color: var(--lily-text);
+}
+
+.site-brand-mark {
+	padding: 0.15rem 0.45rem;
+	border-radius: var(--lily-radius-sm);
+	background-color: var(--color-primary);
+	color: var(--color-primary-content);
+	font-family: var(--lily-font-mono);
+	font-size: 0.8em;
+	letter-spacing: 0.01em;
+}
+
+.site-nav {
+	display: flex;
+	align-items: center;
+	gap: var(--lily-space-md);
+	flex-wrap: wrap;
+	margin-inline-start: auto;
+	font-size: 0.95em;
+}
+
+.site-nav a {
+	color: var(--lily-text-muted);
+	text-decoration: none;
+	padding: 0.25rem 0;
+	border-bottom: 2px solid transparent;
+}
+
+.site-nav a:hover {
+	color: var(--lily-text);
+	border-bottom-color: var(--lily-border-strong);
+}
+
+.site-nav a[aria-current='page'] {
+	color: var(--lily-text);
+	font-weight: 600;
+	border-bottom-color: var(--color-primary);
+}
+
+.site-controls {
+	display: flex;
+	align-items: center;
+	gap: var(--lily-space-xs);
+}
+
+/* --- Pickers (theme, locale, text size, share) -----------------------------
+ * All four Lily helpers composed by PickerBar render the same shape: a
+ * button, and a list that the component shows and hides with the `hidden`
+ * attribute. The hidden rule has to be restated because setting `display` on
+ * the list would defeat it. The theme stylesheet already styles every one of
+ * these classes (see its `@layer lily` rules); this block only overrides the
+ * button/list chrome for a smaller, square icon-button treatment, and leaves
+ * the share picker's link/button rows and status message to the theme.
+ * ------------------------------------------------------------------------ */
+
+.theme-picker,
+.locale-picker,
+.text-size-picker,
+.share-picker {
+	position: relative;
+}
+
+.theme-picker-button,
+.locale-picker-button,
+.text-size-picker-button,
+.share-picker-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.25rem;
+	height: 2.25rem;
+	padding: 0;
+	border: 1px solid var(--lily-border);
+	border-radius: var(--lily-radius-md);
+	background-color: var(--lily-surface);
+	color: var(--lily-text);
+	font-size: 1.1em;
+	line-height: 1;
+	cursor: pointer;
+}
+
+.theme-picker-button:hover,
+.locale-picker-button:hover,
+.text-size-picker-button:hover,
+.share-picker-button:hover {
+	background-color: var(--lily-surface-alt);
+	border-color: var(--lily-border-strong);
+}
+
+.theme-picker-list,
+.locale-picker-list,
+.text-size-picker-list,
+.share-picker-list {
+	position: absolute;
+	/* The theme stylesheet sets `inset-inline-start: 0` on these same
+	 * classes (opening the list rightward from the button). That's a
+	 * different logical property from `inset-inline-end`, so neither
+	 * layer wins outright — both apply, the box is over-constrained, and
+	 * the browser silently keeps `inset-inline-start` and drops this
+	 * rule's end offset. `inset-inline-start: auto` cancels the theme's
+	 * value explicitly, so only the end offset below takes effect and
+	 * every list opens leftward, anchored to its own button's end edge —
+	 * never past the viewport, whichever of the four pickers it is.
+	 */
+	inset-inline-start: auto;
+	inset-inline-end: 0;
+	top: calc(100% + 0.35rem);
+	z-index: 200;
+	min-width: 14rem;
+	max-height: 60vh;
+	margin: 0;
+	padding: 0.25rem;
+	overflow-y: auto;
+	list-style: none;
+	background-color: var(--lily-surface);
+	border: 1px solid var(--lily-border);
+	border-radius: var(--lily-radius-md);
+	box-shadow: var(--lily-shadow-lg);
+}
+
+.theme-picker-list[hidden],
+.locale-picker-list[hidden],
+.text-size-picker-list[hidden],
+.share-picker-list[hidden] {
+	display: none;
+}
+
+.theme-picker-option,
+.locale-picker-option,
+.text-size-picker-option {
+	padding: 0.4rem 0.6rem;
+	border-radius: var(--lily-radius-sm);
+	cursor: pointer;
+	font-size: 0.95em;
+	white-space: nowrap;
+}
+
+.theme-picker-option:hover,
+.locale-picker-option:hover,
+.text-size-picker-option:hover,
+.theme-picker-option[data-active],
+.locale-picker-option[data-active],
+.text-size-picker-option[data-active] {
+	background-color: var(--lily-surface-alt);
+}
+
+.theme-picker-option[aria-selected='true'],
+.locale-picker-option[aria-selected='true'],
+.text-size-picker-option[aria-selected='true'] {
+	background-color: var(--color-primary);
+	color: var(--color-primary-content);
+	font-weight: 600;
+}
+
+/* share-picker's destinations are real <a> links, so the global `a { color:
+ * var(--color-primary) }` rule above (an unlayered rule, which always beats
+ * the theme's `@layer lily` styling regardless of specificity) would
+ * otherwise paint them as ordinary prose links instead of matching the
+ * "Copy link" button beside them. */
+.share-picker-target {
+	color: var(--lily-text);
+	text-decoration: none;
+}
+
+.share-picker-target:hover {
+	color: var(--lily-text);
+}
+
+/* The theme renders this as a normal in-flow paragraph (`margin-block-start`
+ * only), which is empty until a copy succeeds or fails. An empty <p> still
+ * takes up a line box, so `.share-picker` was taller than its sibling
+ * pickers (a bare button each) and `.site-controls`' `align-items: center`
+ * centred the *box*, leaving the share button sitting higher than the
+ * theme/locale/text-size buttons beside it. Taking the status out of flow
+ * — like the picker lists already are — makes `.share-picker` exactly
+ * button-height again, without display:none-ing the live region. */
+.share-picker-status {
+	position: absolute;
+	top: 100%;
+	inset-inline-end: 0;
+	margin: 0.35rem 0 0;
+	white-space: nowrap;
+}
+
+/* --- Page frame ---------------------------------------------------------- */
+
+/* One column. Navigation lives in the header, the contents page, and the
+   previous/next links at the foot of each topic. */
+.site-body {
+	max-width: 90rem;
+	margin: 0 auto;
+	padding: var(--lily-space-lg);
+}
+
+.site-main {
+	min-width: 0;
+	padding-bottom: var(--lily-space-xl);
+}
+
+/* --- Shared page furniture ------------------------------------------------ */
+
+.page-header {
+	max-width: var(--site-measure);
+	margin-bottom: var(--lily-space-lg);
+}
+
+.page-header h1 {
+	margin: 0 0 0.4rem;
+	font-size: 2em;
+	line-height: 1.2;
+}
+
+.page-header p {
+	color: var(--lily-text-muted);
+	margin: 0 0 0.5rem;
+}
+
+/* --- Home ---------------------------------------------------------------- */
+
+.book-hero {
+	max-width: 52rem;
+	margin-bottom: var(--lily-space-xl);
+	padding-bottom: var(--lily-space-lg);
+	border-bottom: 1px solid var(--lily-border);
+}
+
+.book-hero h1 {
+	margin: 0 0 0.5rem;
+	font-size: clamp(2em, 5vw, 2.75em);
+	line-height: 1.1;
+}
+
+.book-hero-summary {
+	margin: 0 0 1rem;
+	font-size: 1.15em;
+	color: var(--lily-text-muted);
+}
+
+.start-here {
+	margin-bottom: var(--lily-space-xl);
+}
+
+.start-here h2 {
+	margin: 0 0 0.25rem;
+}
+
+.start-here > p {
+	margin: 0 0 var(--lily-space-md);
+	color: var(--lily-text-muted);
+}
+
+.start-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.start-item {
+	padding: 0.5rem 0;
+	border-bottom: 1px solid var(--lily-border);
+}
+
+.start-link {
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.start-link:hover {
+	text-decoration: underline;
+}
+
+.start-blurb {
+	display: block;
+	color: var(--lily-text-muted);
+	font-size: 0.95em;
+}
+
+/* --- Contents ------------------------------------------------------------ */
+
+.contents-part {
+	max-width: 60rem;
+	margin-bottom: var(--lily-space-xl);
+}
+
+.contents-part-heading {
+	margin-bottom: var(--lily-space-sm);
+	padding-bottom: 0.35rem;
+	border-bottom: 1px solid var(--lily-border);
+}
+
+.contents-part-heading .section-heading-heading {
+	margin: 0;
+	font-size: 1.35em;
+}
+
+.contents-part-heading .section-heading-subtitle {
+	margin: 0.15rem 0 0;
+	color: var(--lily-text-muted);
+	font-size: 0.9em;
+}
+
+.contents-part-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	counter-reset: none;
+}
+
+.contents-entry {
+	padding: 0.45rem 0;
+	border-bottom: 1px solid var(--lily-border);
+}
+
+.contents-entry-link {
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.contents-entry-link:hover {
+	text-decoration: underline;
+}
+
+.contents-entry-blurb {
+	display: block;
+	color: var(--lily-text-muted);
+	font-size: 0.95em;
+}
+
+/* --- Topics A-Z ---------------------------------------------------------- */
+
+.alphabet {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.35rem;
+	margin-top: var(--lily-space-sm);
+}
+
+.alphabet a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 2rem;
+	padding: 0.2rem 0.4rem;
+	border: 1px solid var(--lily-border);
+	border-radius: var(--lily-radius-sm);
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.alphabet a:hover {
+	background-color: var(--lily-surface-alt);
+}
+
+.letter-group {
+	max-width: 60rem;
+	margin-bottom: var(--lily-space-lg);
+}
+
+.letter-heading {
+	margin: 0 0 0.25rem;
+	padding-bottom: 0.25rem;
+	border-bottom: 2px solid var(--lily-border);
+	font-size: 1.25em;
+	scroll-margin-top: calc(var(--site-header-height) + 1rem);
+}
+
+.letter-list,
+.search-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.letter-item,
+.search-item {
+	padding: 0.5rem 0;
+	border-bottom: 1px solid var(--lily-border);
+}
+
+.letter-link,
+.search-link {
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.letter-link:hover,
+.search-link:hover {
+	text-decoration: underline;
+}
+
+.letter-part,
+.search-part {
+	display: inline-block;
+	margin-inline-start: 0.5rem;
+	padding: 0.05rem 0.4rem;
+	border-radius: var(--lily-radius-sm);
+	background-color: var(--lily-surface-sunken);
+	color: var(--lily-text-muted);
+	font-size: 0.78em;
+	vertical-align: middle;
+}
+
+.letter-blurb,
+.search-summary {
+	display: block;
+	color: var(--lily-text-muted);
+	font-size: 0.95em;
+}
+
+/* --- Search -------------------------------------------------------------- */
+
+.search-form {
+	max-width: var(--site-measure);
+	margin-bottom: var(--lily-space-md);
+}
+
+.search-input {
+	width: 100%;
+	padding: 0.6rem 0.8rem;
+	border: 1px solid var(--lily-border-strong);
+	border-radius: var(--lily-radius-md);
+	background-color: var(--lily-surface);
+	color: var(--lily-text);
+	font-family: inherit;
+	font-size: 1.05em;
+}
+
+.search-count {
+	margin: 0 0 0.5rem;
+	color: var(--lily-text-muted);
+	font-size: 0.9em;
+}
+
+.search-hint {
+	color: var(--lily-text-muted);
+}
+
+.search-results {
+	max-width: 60rem;
+}
+
+/* --- Topic page ---------------------------------------------------------- */
+
+.page-topic {
+	max-width: 62rem;
+}
+
+.breadcrumb {
+	margin-bottom: var(--lily-space-md);
+	font-size: 0.9em;
+}
+
+.breadcrumb .breadcrumb-list {
+	color: var(--lily-text-muted);
+}
+
+.topic-header {
+	margin-bottom: var(--lily-space-lg);
+}
+
+.topic-position {
+	margin: 0 0 0.25rem;
+	color: var(--lily-text-muted);
+	font-size: 0.85em;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+}
+
+.topic-header h1 {
+	margin: 0;
+	font-size: clamp(1.8em, 4vw, 2.4em);
+	line-height: 1.15;
+}
+
+.topic-contents {
+	margin-bottom: var(--lily-space-lg);
+	padding: var(--lily-space-md);
+	border: 1px solid var(--lily-border);
+	border-radius: var(--lily-radius-lg);
+	background-color: var(--lily-surface-alt);
+}
+
+.topic-contents-title {
+	margin: 0 0 0.35rem;
+	font-weight: 700;
+	font-size: 0.85em;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: var(--lily-text-muted);
+}
+
+.topic-contents .contents-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.25rem 1.25rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	counter-reset: none;
+}
+
+.topic-contents .contents-list-item {
+	margin: 0;
+}
+
+.topic-contents .contents-list-item::before {
+	content: none;
+}
+
+/* --- Previous / next ----------------------------------------------------- */
+
+.topic-pagination {
+	margin-top: var(--lily-space-xl);
+	padding-top: var(--lily-space-md);
+	border-top: 1px solid var(--lily-border);
+}
+
+.topic-pagination .pagination-list {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: var(--lily-space-md);
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.topic-pagination .pagination-list-item {
+	margin: 0;
+}
+
+.topic-pagination .pagination-list-item a {
+	display: block;
+	height: 100%;
+	padding: var(--lily-space-md);
+	border: 1px solid var(--lily-border);
+	border-radius: var(--lily-radius-lg);
+	text-decoration: none;
+	color: var(--lily-text);
+}
+
+.topic-pagination .pagination-list-item a:hover {
+	border-color: var(--color-primary);
+	background-color: var(--lily-surface-alt);
+}
+
+.topic-pagination .pagination-next {
+	text-align: end;
+}
+
+.pagination-direction {
+	display: block;
+	color: var(--lily-text-muted);
+	font-size: 0.8em;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+.pagination-title {
+	display: block;
+	font-weight: 600;
+	color: var(--color-primary);
+}
+
+/* --- Prose: the book's own words ------------------------------------------ */
+
+.prose {
+	max-width: var(--site-measure);
+	overflow-wrap: break-word;
+}
+
+/* Every topic ends in a Sources list of bare URLs. They have no spaces to
+   break at, so on a narrow screen — or at a large text size — they would push
+   the page sideways unless allowed to break mid-word. */
+.prose a {
+	overflow-wrap: anywhere;
+}
+
+.page-home .prose {
+	max-width: 60rem;
+}
+
+.prose > * {
+	margin-block: 0 1rem;
+}
+
+.prose h2 {
+	margin-block: 2.25rem 0.75rem;
+	padding-bottom: 0.3rem;
+	border-bottom: 1px solid var(--lily-border);
+	font-size: 1.45em;
+	line-height: 1.25;
+	scroll-margin-top: calc(var(--site-header-height) + 1rem);
+}
+
+.prose h3 {
+	margin-block: 1.75rem 0.5rem;
+	font-size: 1.15em;
+	scroll-margin-top: calc(var(--site-header-height) + 1rem);
+}
+
+.prose h4 {
+	margin-block: 1.5rem 0.5rem;
+	font-size: 1em;
+	scroll-margin-top: calc(var(--site-header-height) + 1rem);
+}
+
+.prose ul,
+.prose ol {
+	padding-inline-start: 1.4rem;
+}
+
+.prose li {
+	margin-block: 0.35rem;
+}
+
+.prose li > p {
+	margin-block: 0.35rem;
+}
+
+.prose strong {
+	color: var(--lily-text);
+}
+
+.prose a.external::after {
+	content: '\2197'; /* North East Arrow: this link leaves the site. */
+	display: inline-block;
+	margin-inline-start: 0.15em;
+	font-size: 0.8em;
+	vertical-align: super;
+	text-decoration: none;
+}
+
+.prose code {
+	padding: 0.1em 0.35em;
+	border-radius: var(--lily-radius-sm);
+	background-color: var(--lily-surface-sunken);
+	font-size: 0.9em;
+}
+
+/* The book states its formulas in fenced blocks; they must not wrap. */
+.prose pre {
+	margin-block: 1rem;
+	padding: var(--lily-space-md);
+	overflow-x: auto;
+	border: 1px solid var(--lily-border);
+	border-radius: var(--lily-radius-md);
+	background-color: var(--lily-surface-alt);
+	line-height: 1.5;
+}
+
+.prose pre code {
+	padding: 0;
+	background: none;
+	font-size: 0.9em;
+	white-space: pre;
+}
+
+.prose blockquote {
+	margin-inline: 0;
+	padding: 0.5rem 0 0.5rem 1rem;
+	border-inline-start: 3px solid var(--color-primary);
+	color: var(--lily-text-muted);
+}
+
+.prose hr {
+	margin-block: 2rem;
+	border: 0;
+	border-top: 1px solid var(--lily-border);
+}
+
+/* Tables carry unit costs and worked figures; let them scroll rather than
+   squeeze the numbers. */
+.prose table {
+	display: block;
+	width: max-content;
+	max-width: 100%;
+	overflow-x: auto;
+	border-collapse: collapse;
+	font-size: 0.95em;
+}
+
+.prose th,
+.prose td {
+	padding: 0.45rem 0.7rem;
+	border: 1px solid var(--lily-border);
+	text-align: start;
+	vertical-align: top;
+}
+
+.prose thead th {
+	background-color: var(--lily-surface-alt);
+}
+
+.prose img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* --- Footer -------------------------------------------------------------- */
+
+.site-footer {
+	margin-top: var(--lily-space-xl);
+	border-top: 1px solid var(--lily-border);
+	background-color: var(--lily-surface-alt);
+}
+
+.site-footer-inner {
+	max-width: 90rem;
+	margin: 0 auto;
+	padding: var(--lily-space-lg);
+	font-size: 0.9em;
+}
+
+.site-footer-inner p {
+	margin: 0 0 0.5rem;
+	max-width: 60rem;
+}
+
+.site-footer-note {
+	color: var(--lily-text-muted);
+}
+
+.site-footer-links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--lily-space-md);
+	margin-top: var(--lily-space-sm);
+}
+
+/* --- Narrow screens ------------------------------------------------------- */
+
+@media (max-width: 64rem) {
+	.site-header-inner {
+		padding-inline: var(--lily-space-md);
+	}
+
+	.site-nav {
+		order: 3;
+		width: 100%;
+		margin-inline-start: 0;
+		gap: var(--lily-space-sm);
+	}
+
+	.site-controls {
+		margin-inline-start: auto;
+	}
+
+	.topic-pagination .pagination-list {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}
+
+@media (max-width: 40rem) {
+	.site-body {
+		padding: var(--lily-space-md);
+	}
+
+	.topic-contents .contents-list {
+		flex-direction: column;
+		gap: 0.15rem;
+	}
+}
+
+/* --- Print ---------------------------------------------------------------- */
+
+@media print {
+	.site-header,
+	.site-footer,
+	.topic-pagination,
+	.topic-contents,
+	.breadcrumb {
+		display: none;
+	}
+
+	.site-body {
+		padding: 0;
+	}
+
+	.prose {
+		max-width: none;
+	}
+
+	.prose a.external::after {
+		content: ' (' attr(href) ')';
+		font-size: 0.75em;
+		vertical-align: baseline;
+	}
+}

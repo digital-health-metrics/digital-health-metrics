@@ -1,0 +1,33 @@
+{
+  "name": "digital-health-metrics.github.io",
+  "version": "0.1.0",
+  "description": "Digital Health Metrics website",
+  "type": "module",
+  "private": true,
+  "license": "ISC",
+  "packageManager": "pnpm@11.21.0",
+  "scripts": {
+    "sync": "node scripts/sync-content.mjs && node scripts/vendor-lily.mjs",
+    "sync:content": "node scripts/sync-content.mjs",
+    "sync:lily": "node scripts/vendor-lily.mjs",
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-static": "^3.0.10",
+    "@sveltejs/kit": "^2.70.2",
+    "@sveltejs/vite-plugin-svelte": "^5.1.1",
+    "svelte": "^5.56.9",
+    "svelte-check": "^4.7.6",
+    "typescript": "^5.9.3",
+    "vite": "^6.4.3"
+  },
+  "dependencies": {
+    "@lilydesignsystem/svelte-headless": "^0.1.0",
+    "@lilydesignsystem/svelte-picker-bar": "^0.1.0",
+    "github-slugger": "^2.0.0",
+    "marked": "^18.0.10"
+  }
+}

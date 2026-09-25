@@ -1,0 +1,55 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# One deploy at a time; let a running one finish rather than cancelling it.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: pnpm
+
+      # The book's Markdown is vendored into content/, so the build needs
+      # nothing from the book repository.
+      - run: pnpm install --frozen-lockfile
+
+      # https://svelte.dev/docs/kit/adapter-static#GitHub-Pages
+      # BASE_PATH is deliberately left unset. The docs set it to the repository
+      # name, which is right for a project site served from
+      # /<repo>/ — but this repository is named <org>.github.io and is served
+      # from the domain root, so the base path must stay empty.
+      - run: pnpm run build
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

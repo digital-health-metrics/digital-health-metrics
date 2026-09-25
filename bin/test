@@ -1,0 +1,101 @@
+#!/bin/sh
+set -euf
+
+## https://github.com/sixarm/unix-shell-script-kit
+
+failures=0
+err() { failures=$((failures + 1)); >&2 printf %s\\n "Error: ${*}"; }
+
+directory_exists_or_err() { test -d "$1" || err "Directory should exist: $1"; }
+file_exists_or_err() { test -f "$1" || err "File should exist: $1"; }
+file_size_or_err() { file_exists_or_err "$1" && test -s "$1" || err "File should have content: $1"; }
+symlink_exists_or_err() { test -h "$1" || err "Symlink should exist: $1"; }
+symlink_target_or_err() {
+    actual="$(readlink "$1" 2>/dev/null || true)"
+    test "$actual" = "$2" || err "Symlink $1 should point to $2, found: ${actual:-<none>}"
+}
+
+## main
+
+top="$(git rev-parse --show-toplevel)"
+locales="en-gb-oxendict en-001 en-gb en-us cy-001 zh-cn"
+topics="patient-portal-adoption-rate telehealth-visit-rate appointment-no-show-rate clinical-alert-override-rate digital-referral-turnaround-time"
+
+test_locales_exist() {
+    for locale in $locales; do
+        directory_exists_or_err "$top/locales/$locale"
+    done
+}
+
+test_locale_root_files() {
+    for locale in $locales; do
+        dir="$top/locales/$locale"
+        file_size_or_err "$dir/.locale-peer-id"
+        file_size_or_err "$dir/index.md"
+        symlink_exists_or_err "$dir/README.md"
+        symlink_target_or_err "$dir/README.md" "index.md"
+    done
+}
+
+test_topic_files() {
+    for locale in $locales; do
+        for topic in $topics; do
+            dir="$top/locales/$locale/topics/$topic"
+            directory_exists_or_err "$dir"
+            file_size_or_err "$dir/.locale-peer-id"
+            file_size_or_err "$dir/index.md"
+            symlink_exists_or_err "$dir/README.md"
+            symlink_target_or_err "$dir/README.md" "index.md"
+        done
+    done
+}
+
+## Every locale's version of "the same" topic must carry a byte-identical
+## .locale-peer-id, regardless of slug — that identity, not the slug, is how
+## the site resolves "this page, in locale X" (see
+## spec/locales-for-global-sharing-with-svelte/index.md).
+test_peer_id_parity() {
+    for topic in $topics; do
+        reference=""
+        for locale in $locales; do
+            f="$top/locales/$locale/topics/$topic/.locale-peer-id"
+            test -f "$f" || continue
+            value="$(cat "$f")"
+            if [ -z "$reference" ]; then
+                reference="$value"
+            elif [ "$value" != "$reference" ]; then
+                err "Peer id mismatch for topic $topic, locale $locale: $value != $reference"
+            fi
+        done
+    done
+}
+
+## en-001, en-gb, and en-us are derived from en-gb-oxendict by
+## tools/localize.py and must never be hand-edited out of sync with it.
+test_localize_up_to_date() {
+    snapshot="$(mktemp -d)"
+    trap 'rm -rf "$snapshot"' EXIT
+    cp -R "$top/locales/en-001" "$top/locales/en-gb" "$top/locales/en-us" "$snapshot/"
+    (cd "$top" && python3 tools/localize.py >/dev/null)
+    for locale in en-001 en-gb en-us; do
+        diff -r "$snapshot/$locale" "$top/locales/$locale" >/dev/null \
+            || err "locales/$locale is out of date: rerun tools/localize.py and commit the result"
+    done
+    rm -rf "$snapshot"
+    trap - EXIT
+}
+
+main() {
+    test_locales_exist
+    test_locale_root_files
+    test_topic_files
+    test_peer_id_parity
+    test_localize_up_to_date
+    if [ "$failures" -ne 0 ]; then
+        err "$failures check(s) failed"
+        exit 1
+    fi
+    echo "All checks passed."
+}
+
+main
