@@ -17,7 +17,7 @@ New here? Start with [patient portal adoption rate](locales/en-gb-oxendict/topic
 
 ## Locales
 
-`en-gb-oxendict` is this book's hand-authored canonical source. Three English spelling variants — `en-001`, `en-gb`, `en-us` — are derived mechanically from it by [`tools/localize.py`](tools/localize.py); never edit those three directly, edit `en-gb-oxendict` and rerun the script. `cy-001` (Welsh) and `zh-cn` (Simplified Chinese) are hand-translated and are AI-assisted, pending review by a fluent speaker of each language. See [spec/locales-for-global-sharing-with-svelte](spec/locales-for-global-sharing-with-svelte/) for the full locale architecture, including the spelling-derivation rules and a regression watch-list of bugs to avoid reintroducing.
+`en-gb-oxendict` is this book's hand-authored canonical source. Three English spelling variants — `en-001`, `en-gb`, `en-us` — are derived mechanically from it by [`tools/localize.py`](tools/localize.py); never edit those three directly, edit `en-gb-oxendict` and rerun the script. `cy-001` (Welsh), `zh-cn` (Simplified Chinese), and `es` (Spanish) are hand-translated and are AI-assisted, pending review by a fluent speaker of each language. See [spec/locales-for-global-sharing-with-svelte](spec/locales-for-global-sharing-with-svelte/) for the full locale architecture, including the spelling-derivation rules and a regression watch-list of bugs to avoid reintroducing.
 
 ## Benchmark freshness
 
