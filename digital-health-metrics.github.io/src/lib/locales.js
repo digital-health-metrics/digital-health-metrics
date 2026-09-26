@@ -16,7 +16,7 @@ export const LOCALE_LABELS = {
 	'en-001': 'English',
 	'cy-001': 'Cymraeg',
 	'zh-cn': '中文 - 中国大陆',
-	es: 'Español'
+	'es-001': 'Español'
 };
 
 export const DEFAULT_LOCALE = 'en-gb';

@@ -19,7 +19,7 @@
 // (not auto-discovered from the book's locales/ directory) precisely so that
 // adding a new authoring-only locale upstream can never silently publish it
 // here.
-const PUBLIC_LOCALES = ['en-us', 'en-gb', 'en-001', 'cy-001', 'zh-cn', 'es'];
+const PUBLIC_LOCALES = ['en-us', 'en-gb', 'en-001', 'cy-001', 'zh-cn', 'es-001'];
 
 import { cp, mkdir, rm, readdir } from 'node:fs/promises';
 import { existsSync } from 'node:fs';

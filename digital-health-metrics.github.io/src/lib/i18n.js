@@ -12,7 +12,7 @@
 // the 3 English variants (en-us, en-gb, en-001) all share this same base EN
 // table with no per-variant overrides, same as they would for any other
 // English-only difference (spelling, not vocabulary) — only cy-001 (Welsh),
-// zh-cn (Simplified Chinese), and es (Spanish) need their own chrome
+// zh-cn (Simplified Chinese), and es-001 (Spanish) need their own chrome
 // translations.
 
 /**
@@ -278,7 +278,7 @@ const es = {
 const TRANSLATIONS = {
 	'cy-001': cy,
 	'zh-cn': zh,
-	es
+	'es-001': es
 };
 
 /**

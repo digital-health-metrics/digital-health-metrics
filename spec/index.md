@@ -61,7 +61,7 @@ Seven locale directories under `locales/`:
 
 - `en-gb-oxendict` — the hand-authored canonical source. All new topics are drafted here first.
 - `en-001`, `en-gb`, `en-us` — mechanically derived from `en-gb-oxendict` by `tools/localize.py`. Never hand-edited.
-- `cy-001` (Welsh), `zh-cn` (Simplified Chinese), and `es` (Spanish) — hand-translated, AI-assisted, pending review by a fluent speaker of each language.
+- `cy-001` (Welsh), `zh-cn` (Simplified Chinese), and `es-001` (Spanish) — hand-translated, AI-assisted, pending review by a fluent speaker of each language.
 
 `en-gb-oxendict` is an internal authoring locale: it is never published by the website (see `digital-health-metrics.github.io/src/lib/locales.js` and `scripts/sync-content.mjs`, both of which enumerate the six public locales explicitly rather than discovering them from `locales/`). Full detail, including the slug and locale-picker rules, lives in `spec/locales-for-global-sharing-with-svelte/`.
 
@@ -82,7 +82,7 @@ Seven locale directories under `locales/`:
 2. Generate a fresh 32-character lowercase hex peer id (e.g. `python3 -c "import uuid; print(uuid.uuid4().hex)"`).
 3. Write `locales/en-gb-oxendict/topics/<slug>/index.md` to the template in §3, symlink `README.md` to `index.md`, and write `.locale-peer-id` with the id from step 2.
 4. Run `python3 tools/localize.py` to derive `en-001`, `en-gb`, and `en-us`.
-5. Hand-translate `cy-001`, `zh-cn`, and `es` (or leave the topic absent from those locales until translated — the site falls back gracefully, but prefer translating seed content promptly).
+5. Hand-translate `cy-001`, `zh-cn`, and `es-001` (or leave the topic absent from those locales until translated — the site falls back gracefully, but prefer translating seed content promptly).
 6. Add the topic to the root `README.md` table of contents, under the right category, and to each locale's own `locales/<code>/index.md`.
 7. Run `bin/test` and fix anything it reports before committing.
 8. If the website's content hasn't been re-synced, run `pnpm run sync` inside `digital-health-metrics.github.io/`.
