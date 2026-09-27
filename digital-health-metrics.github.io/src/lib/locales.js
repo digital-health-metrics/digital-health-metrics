@@ -3,7 +3,7 @@
 // the vendored content (`$lib/server/content.js` locales()) — this module
 // only supplies how to label/order codes that content already declared.
 //
-// Exactly 6 locales are published by this site. The content monorepo also
+// Exactly 7 locales are published by this site. The content monorepo also
 // authors in `en-gb-oxendict`, an internal, unpublished locale used to draft
 // content before it is translated out to the locales below — it is
 // deliberately absent here, from i18n.js, and from scripts/sync-content.mjs,
@@ -16,7 +16,8 @@ export const LOCALE_LABELS = {
 	'en-001': 'English',
 	'cy-001': 'Cymraeg',
 	'zh-cn': '中文 - 中国大陆',
-	'es-001': 'Español'
+	'es-001': 'Español',
+	'hi-001': 'हिन्दी'
 };
 
 export const DEFAULT_LOCALE = 'en-gb';

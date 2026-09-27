@@ -8,12 +8,12 @@
 // localizedIndex: an untranslated locale still renders correctly in English
 // rather than crashing or showing blanks.
 //
-// Only 3 of the site's 6 public locales need an entry in TRANSLATIONS below:
+// Only 4 of the site's 7 public locales need an entry in TRANSLATIONS below:
 // the 3 English variants (en-us, en-gb, en-001) all share this same base EN
 // table with no per-variant overrides, same as they would for any other
 // English-only difference (spelling, not vocabulary) — only cy-001 (Welsh),
-// zh-cn (Simplified Chinese), and es-001 (Spanish) need their own chrome
-// translations.
+// zh-cn (Simplified Chinese), es-001 (Spanish), and hi-001 (Hindi) need their
+// own chrome translations.
 
 /**
  * @typedef {object} Messages
@@ -274,11 +274,64 @@ const es = {
 	paginationNext: 'Siguiente'
 };
 
+/** @type {Messages} */
+const hi = {
+	skipToContent: 'मुख्य सामग्री पर जाएं',
+	navHome: 'होम',
+	navContents: 'सामग्री',
+	navTopicsAZ: 'विषय A–Z',
+	navSearch: 'खोजें',
+	navAbout: 'के बारे में',
+	footerSourceLink: 'स्रोत कोड',
+	footerTaglineSuffix:
+		' — डिजिटल स्वास्थ्य उत्पादों का निर्माण, मूल्यांकन, और प्रबंधन करने वाली टीमों के लिए डिजिटल स्वास्थ्य मेट्रिक परिभाषाएँ, उदाहरण, और तर्क।',
+	footerNote:
+		'इस पुस्तक में दिए गए आंकड़े जल्दी पुराने हो जाते हैं। प्रत्येक विषय अपने बेंचमार्क को इन-लाइन दिनांकित करता है; किसी भी संख्या का उपयोग वास्तविक बिज़नेस केस में करने से पहले उसे फिर से सत्यापित करें।',
+	pickerTheme: 'थीम',
+	pickerLanguage: 'भाषा',
+	pickerTextSize: 'टेक्स्ट आकार',
+	pickerShare: 'साझा करें',
+	shareCopyLink: 'लिंक कॉपी करें',
+	shareCopied: 'कॉपी किया गया',
+	shareCopyFailed: 'कॉपी विफल',
+	shareEmailLabel: 'ईमेल लिंक भेजें',
+	shareLinkedinLabel: 'LinkedIn पर साझा करें',
+	shareRedditLabel: 'Reddit पर साझा करें',
+	shareBlueskyLabel: 'Bluesky पर साझा करें',
+	shareMastodonLabel: 'Mastodon पर साझा करें',
+	startHere: 'यहाँ से शुरू करें',
+	startHereSubtitle: 'तीन विचार जिन पर बाकी सब कुछ आधारित है।',
+	contentsMetaDescription: (bookTitle) => `${bookTitle} के सभी विषय, पढ़ने के क्रम में।`,
+	contentsIntro: (count, parts) =>
+		`पढ़ने के क्रम में सभी ${count} विषय, ${parts} भागों में विभाजित। प्रत्येक विषय एक मेट्रिक या अवधारणा को कवर करता है: परिभाषा, यह क्यों महत्वपूर्ण है, इसकी गणना कैसे की जाती है, एक हल किया गया उदाहरण, डेटा स्रोत और सावधानियाँ, सामान्य गलतियाँ, और स्रोत।`,
+	topicsCountSubtitle: (n) => `${n} विषय`,
+	topicsMetaDescription: (bookTitle) => `${bookTitle} के सभी विषय, A से Z तक सूचीबद्ध।`,
+	topicsIntroPrefix: (count) => `वर्णानुक्रम में सभी ${count} विषय। पढ़ने के क्रम के लिए, देखें`,
+	contentsLinkText: 'सामग्री',
+	jumpToLetter: 'अक्षर पर जाएं',
+	searchMetaDescription: (bookTitle) => `${bookTitle} के सभी विषयों में खोजें।`,
+	searchIntro: (count) =>
+		`शीर्षक, भाग, सारांश, और अनुभाग शीर्षक द्वारा सभी ${count} विषयों में खोजें। सब कुछ आपके ब्राउज़र में चलता है — आप जो टाइप करते हैं वह इस पृष्ठ से बाहर नहीं जाता।`,
+	searchInputLabel: 'विषय खोजें',
+	searchPlaceholder: 'DAU, प्रतिधारण, PROM पूर्णता दर…',
+	searchHintEmptyHtml: 'खोजने के लिए टाइप करें। <em>DAU</em>, <em>प्रतिधारण</em>, या <em>PROM</em> आज़माएं।',
+	noResultsPrefix: 'कोई विषय मेल नहीं खाता ',
+	noResultsMiddle: '। एक व्यापक शब्द आज़माएं, या ब्राउज़ करें ',
+	resultsCountSingular: 'विषय',
+	resultsCountPlural: 'विषय',
+	topicPosition: (index, total) => `विषय ${index}, कुल ${total} में से`,
+	onThisPage: 'इस पृष्ठ पर',
+	paginationLabel: 'पुस्तक',
+	paginationPrevious: 'पिछला',
+	paginationNext: 'अगला'
+};
+
 /** @type {Record<string, Messages>} */
 const TRANSLATIONS = {
 	'cy-001': cy,
 	'zh-cn': zh,
-	'es-001': es
+	'es-001': es,
+	'hi-001': hi
 };
 
 /**
