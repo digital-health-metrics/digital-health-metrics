@@ -21,9 +21,9 @@
 			metric definitions, examples, and reasoning, written for teams building, evaluating, and
 			commissioning digital health products. It runs to {data.topicCount} topics across
 			{data.partCount} parts, available in {data.localeCount} locales — English (United States,
-			United Kingdom, and International), Welsh, Simplified Chinese, Spanish, Hindi, and Arabic.
-			English is the canonical source; the other locales are AI-translated and have not been
-			reviewed by a fluent speaker.
+			United Kingdom, and International), Welsh, Simplified Chinese, Spanish, Hindi, Arabic, and
+			French. English is the canonical source; the other locales are AI-translated and have not
+			been reviewed by a fluent speaker.
 			Each topic covers one metric or concept: definition, why it matters, how it's calculated, a
 			worked example, data sources and caveats, pitfalls, and sources.
 		</p>
