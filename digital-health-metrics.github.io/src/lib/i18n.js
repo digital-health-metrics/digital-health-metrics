@@ -8,12 +8,13 @@
 // localizedIndex: an untranslated locale still renders correctly in English
 // rather than crashing or showing blanks.
 //
-// Only 6 of the site's 9 public locales need an entry in TRANSLATIONS below:
+// Only 7 of the site's 10 public locales need an entry in TRANSLATIONS below:
 // the 3 English variants (en-us, en-gb, en-001) all share this same base EN
 // table with no per-variant overrides, same as they would for any other
 // English-only difference (spelling, not vocabulary) — only cy-001 (Welsh),
 // zh-cn (Simplified Chinese), es-001 (Spanish), hi-001 (Hindi), ar-001
-// (Arabic), and fr-001 (French) need their own chrome translations.
+// (Arabic), fr-001 (French), and pt-001 (Portuguese) need their own chrome
+// translations.
 
 /**
  * @typedef {object} Messages
@@ -430,6 +431,58 @@ const fr = {
 	paginationNext: 'Suivant'
 };
 
+/** @type {Messages} */
+const pt = {
+	skipToContent: 'Saltar para o conteúdo',
+	navHome: 'Início',
+	navContents: 'Índice',
+	navTopicsAZ: 'Tópicos A–Z',
+	navSearch: 'Pesquisar',
+	navAbout: 'Sobre',
+	footerSourceLink: 'Código-fonte',
+	footerTaglineSuffix:
+		' — definições de métricas de saúde digital, exemplos e raciocínio para equipas que constroem, avaliam e encomendam produtos de saúde digital.',
+	footerNote:
+		'Os números deste livro mudam rapidamente. Cada tópico data as suas referências diretamente no texto; reverifique antes de utilizar qualquer número num caso de negócio real.',
+	pickerTheme: 'Tema',
+	pickerLanguage: 'Idioma',
+	pickerTextSize: 'Tamanho do texto',
+	pickerShare: 'Partilhar',
+	shareCopyLink: 'Copiar ligação',
+	shareCopied: 'Copiado',
+	shareCopyFailed: 'Falha ao copiar',
+	shareEmailLabel: 'Enviar ligação por e-mail',
+	shareLinkedinLabel: 'Partilhar no LinkedIn',
+	shareRedditLabel: 'Partilhar no Reddit',
+	shareBlueskyLabel: 'Partilhar no Bluesky',
+	shareMastodonLabel: 'Partilhar no Mastodon',
+	startHere: 'Comece aqui',
+	startHereSubtitle: 'As três ideias sobre as quais tudo o resto se constrói.',
+	contentsMetaDescription: (bookTitle) => `Todos os tópicos de ${bookTitle}, por ordem de leitura.`,
+	contentsIntro: (count, parts) =>
+		`Todos os ${count} tópicos por ordem de leitura, distribuídos por ${parts} partes. Cada tópico aborda uma métrica ou conceito: definição, porque importa, como se calcula, um exemplo resolvido, fontes de dados e ressalvas, erros comuns, e fontes.`,
+	topicsCountSubtitle: (n) => `${n} tópicos`,
+	topicsMetaDescription: (bookTitle) => `Todos os tópicos de ${bookTitle}, listados de A a Z.`,
+	topicsIntroPrefix: (count) => `Todos os ${count} tópicos por ordem alfabética. Para a ordem de leitura, veja o`,
+	contentsLinkText: 'índice',
+	jumpToLetter: 'Ir para a letra',
+	searchMetaDescription: (bookTitle) => `Pesquise em todos os tópicos de ${bookTitle}.`,
+	searchIntro: (count) =>
+		`Pesquise nos ${count} tópicos por título, parte, resumo e título de secção. Tudo funciona no seu navegador — nada do que escreve sai desta página.`,
+	searchInputLabel: 'Pesquisar tópicos',
+	searchPlaceholder: 'DAU, retenção, taxa de conclusão PROM…',
+	searchHintEmptyHtml: 'Escreva para pesquisar. Experimente <em>DAU</em>, <em>retenção</em>, ou <em>PROM</em>.',
+	noResultsPrefix: 'Nenhum tópico corresponde a ',
+	noResultsMiddle: '. Experimente um termo mais abrangente, ou percorra o ',
+	resultsCountSingular: 'tópico',
+	resultsCountPlural: 'tópicos',
+	topicPosition: (index, total) => `Tópico ${index} de ${total}`,
+	onThisPage: 'Nesta página',
+	paginationLabel: 'Livro',
+	paginationPrevious: 'Anterior',
+	paginationNext: 'Seguinte'
+};
+
 /** @type {Record<string, Messages>} */
 const TRANSLATIONS = {
 	'cy-001': cy,
@@ -437,7 +490,8 @@ const TRANSLATIONS = {
 	'es-001': es,
 	'hi-001': hi,
 	'ar-001': ar,
-	'fr-001': fr
+	'fr-001': fr,
+	'pt-001': pt
 };
 
 /**
