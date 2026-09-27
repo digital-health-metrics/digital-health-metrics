@@ -21,17 +21,30 @@ import { firstParagraph, render, splitTitle } from '../markdown.js';
 
 const PART = /^##\s+(.+?)\s*$/;
 const ENTRY = /^-\s+\[([^\]]+)\]\(locales\/([\w-]+)\/topics\/([^/]+)\/\)\s*(?:[—–-]\s*(.*))?$/;
+// A locale's own translated index.md links relatively (`topics/<slug>/`),
+// correct for a file that already lives inside `locales/<that-locale>/` —
+// unlike the canonical README.md, which needs the full `locales/<locale>/`
+// prefix since it lives at the repo root. Same shape otherwise.
+const RELATIVE_ENTRY = /^-\s+\[([^\]]+)\]\(topics\/([^/]+)\/\)\s*(?:[—–-]\s*(.*))?$/;
 const SECTION_HEADING = /^##\s+(.+?)\s*$/;
 
 /**
- * Parse one README-shaped source (the canonical `/README.md`, or a locale's
- * own translated `locales/<locale>/index.md`) into `{ title, parts }`. Every
- * translated index.md mirrors the canonical one line-for-line — same `##`
- * headings in the same order, same entries linking to the same canonical
- * (locale, slug) pairs — only the title text, heading text, entry titles and
- * blurbs differ, so this one parser reads either.
+ * Parse one README-shaped source into `{ title, parts }`. Two shapes:
+ *
+ * - The canonical `/README.md` (`locale` omitted): entries link with the full
+ *   `locales/<canonicalLocale>/topics/<slug>/` path, which *is* the
+ *   canonical (locale, slug) pair — matched by `ENTRY`.
+ * - A locale's own translated `locales/<locale>/index.md` (`locale` given):
+ *   entries link relatively, `topics/<localSlug>/` — matched by
+ *   `RELATIVE_ENTRY`. `localSlug` can differ from the canonical slug (a
+ *   translated locale may use a native-script slug), so it's bridged back to
+ *   the canonical one via this topic's peer-id, read off `en-us` — one of
+ *   the three locales `tools/localize.py` mechanically derives from
+ *   `en-gb-oxendict`, so it always mirrors `en-gb-oxendict`'s directory
+ *   names exactly and is always published (unlike `en-gb-oxendict` itself,
+ *   which is never vendored into `content/`, so it can't be read directly).
  */
-function parseIndex(source) {
+function parseIndex(source, locale) {
 	const { title, body } = splitTitle(source);
 	const parts = [];
 	let current = null;
@@ -55,6 +68,19 @@ function parseIndex(source) {
 				canonicalLocale: entry[2],
 				canonicalSlug: entry[3],
 				blurb: entry[4] ?? ''
+			});
+			continue;
+		}
+
+		const relative = locale && RELATIVE_ENTRY.exec(line);
+		if (relative && current) {
+			const localSlug = relative[2];
+			const canonicalSlug = peers(locale, localSlug)['en-us'] ?? localSlug;
+			current.entries.push({
+				title: relative[1],
+				canonicalLocale: 'en-us',
+				canonicalSlug,
+				blurb: relative[3] ?? ''
 			});
 		}
 	}
@@ -88,7 +114,7 @@ const localizedIndexCache = new Map();
 function localizedIndex(locale) {
 	if (localizedIndexCache.has(locale)) return localizedIndexCache.get(locale);
 	const source = read(`locales/${locale}/index.md`);
-	const result = source && source.trim() ? parseIndex(source) : null;
+	const result = source && source.trim() ? parseIndex(source, locale) : null;
 	localizedIndexCache.set(locale, result);
 	return result;
 }
