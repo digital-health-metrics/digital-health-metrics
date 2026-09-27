@@ -8,12 +8,12 @@
 // localizedIndex: an untranslated locale still renders correctly in English
 // rather than crashing or showing blanks.
 //
-// Only 4 of the site's 7 public locales need an entry in TRANSLATIONS below:
+// Only 5 of the site's 8 public locales need an entry in TRANSLATIONS below:
 // the 3 English variants (en-us, en-gb, en-001) all share this same base EN
 // table with no per-variant overrides, same as they would for any other
 // English-only difference (spelling, not vocabulary) — only cy-001 (Welsh),
-// zh-cn (Simplified Chinese), es-001 (Spanish), and hi-001 (Hindi) need their
-// own chrome translations.
+// zh-cn (Simplified Chinese), es-001 (Spanish), hi-001 (Hindi), and ar-001
+// (Arabic) need their own chrome translations.
 
 /**
  * @typedef {object} Messages
@@ -326,12 +326,65 @@ const hi = {
 	paginationNext: 'अगला'
 };
 
+/** @type {Messages} */
+const ar = {
+	skipToContent: 'تخطَّ إلى المحتوى',
+	navHome: 'الرئيسية',
+	navContents: 'المحتويات',
+	navTopicsAZ: 'المواضيع أبجديًا',
+	navSearch: 'البحث',
+	navAbout: 'حول',
+	footerSourceLink: 'المصدر',
+	footerTaglineSuffix:
+		' — تعريفات مقاييس الصحة الرقمية، وأمثلة، وتحليل منطقي لفرق بناء منتجات الصحة الرقمية وتقييمها وتكليفها.',
+	footerNote:
+		'تتغير الأرقام في هذا الكتاب بسرعة. يُؤرِّخ كل موضوع معاييره المرجعية ضمن النص؛ تحقق منها مجددًا قبل استخدام أي رقم في حالة عمل فعلية.',
+	pickerTheme: 'المظهر',
+	pickerLanguage: 'اللغة',
+	pickerTextSize: 'حجم النص',
+	pickerShare: 'مشاركة',
+	shareCopyLink: 'نسخ الرابط',
+	shareCopied: 'تم النسخ',
+	shareCopyFailed: 'فشل النسخ',
+	shareEmailLabel: 'إرسال الرابط عبر البريد الإلكتروني',
+	shareLinkedinLabel: 'مشاركة على LinkedIn',
+	shareRedditLabel: 'مشاركة على Reddit',
+	shareBlueskyLabel: 'مشاركة على Bluesky',
+	shareMastodonLabel: 'مشاركة على Mastodon',
+	startHere: 'ابدأ هنا',
+	startHereSubtitle: 'الأفكار الثلاث التي يُبنى عليها كل شيء آخر.',
+	contentsMetaDescription: (bookTitle) => `كل المواضيع في ${bookTitle}، بترتيب القراءة.`,
+	contentsIntro: (count, parts) =>
+		`كل المواضيع البالغ عددها ${count} بترتيب القراءة، عبر ${parts} أجزاء. يتناول كل موضوع مقياسًا أو مفهومًا واحدًا: التعريف، ولماذا يهم، وكيف يُحسب، ومثال محلول، ومصادر البيانات والتحذيرات، والأخطاء الشائعة، والمصادر.`,
+	topicsCountSubtitle: (n) => `${n} موضوعًا`,
+	topicsMetaDescription: (bookTitle) => `كل المواضيع في ${bookTitle}، مُرتَّبة أبجديًا.`,
+	topicsIntroPrefix: (count) => `كل المواضيع البالغ عددها ${count} بالترتيب الأبجدي. لترتيب القراءة، راجع`,
+	contentsLinkText: 'المحتويات',
+	jumpToLetter: 'انتقل إلى الحرف',
+	searchMetaDescription: (bookTitle) => `ابحث في كل مواضيع ${bookTitle}.`,
+	searchIntro: (count) =>
+		`ابحث في كل المواضيع البالغ عددها ${count} حسب العنوان والجزء والملخص وعنوان القسم. كل شيء يعمل داخل متصفحك — لا يغادر ما تكتبه هذه الصفحة أبدًا.`,
+	searchInputLabel: 'ابحث في المواضيع',
+	searchPlaceholder: 'DAU، الاحتفاظ، معدل إكمال PROM…',
+	searchHintEmptyHtml: 'اكتب للبحث. جرّب <em>DAU</em>، أو <em>الاحتفاظ</em>، أو <em>PROM</em>.',
+	noResultsPrefix: 'لا يوجد موضوع مطابق لـ ',
+	noResultsMiddle: '. جرّب مصطلحًا أوسع، أو تصفَّح ',
+	resultsCountSingular: 'موضوع',
+	resultsCountPlural: 'مواضيع',
+	topicPosition: (index, total) => `الموضوع ${index} من ${total}`,
+	onThisPage: 'في هذه الصفحة',
+	paginationLabel: 'الكتاب',
+	paginationPrevious: 'السابق',
+	paginationNext: 'التالي'
+};
+
 /** @type {Record<string, Messages>} */
 const TRANSLATIONS = {
 	'cy-001': cy,
 	'zh-cn': zh,
 	'es-001': es,
-	'hi-001': hi
+	'hi-001': hi,
+	'ar-001': ar
 };
 
 /**
