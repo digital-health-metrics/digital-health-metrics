@@ -1,0 +1,15 @@
+Digital Health Metrics
+
+• Link: https://digital-health-metrics.github.io
+• Tags: #DigitalHealth #HealthTech #PatientEngagement #HealthIT #OpenSource
+• Keywords: digital health metrics, KPI definitions, patient engagement
+
+Summary: Digital Health Metrics is a free, open reference book. It defines the numbers digital health teams argue about most: patient portal adoption, telehealth visit rates, appointment no-shows, clinical alert overrides, and referral turnaround time. Each entry gives the formula, a worked example, real data sources, and the mistakes people commonly make when calculating it. It exists for anyone building, evaluating, or commissioning a digital health product.
+
+Benefits: Two people can cite the same metric name and mean different things, and that mismatch quietly wastes hours in every meeting where it happens. A shared, precise definition changes that. A business case built on it survives scrutiny. A dashboard means the same thing to every person reading it. A comparison across services or time periods becomes valid instead of an accident of inconsistent counting rules.
+
+Why this matters: Metrics are better when they have clear consistent definitions and shared reference descriptions. This project exists so that decision gets made once, correctly, instead of being reinvented or rediscovered each time a new team gest to work.
+
+Please share: You can use this with anyone drafting a business case, building a measurement dashboard, or onboarding into a digital health product role. A link dropped into a team channel or an onboarding document does more good than a bookmark ever will, and it saves the next person the argument entirely.
+
+Advice welcome: This is a growing collection, and I welcome your help. Are any metrics missing? Does any definition here does not match how your organization actually measures the same thing? Your help here will in turn help many more people.
