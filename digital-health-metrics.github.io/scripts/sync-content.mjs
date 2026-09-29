@@ -11,7 +11,7 @@
 // That peer-id is how the site resolves "the same page in another locale" for
 // the locale switcher, without needing a central manifest.
 //
-// Only the site's 11 PUBLIC locales are synced (see $lib/locales.js). The
+// Only the site's 12 PUBLIC locales are synced (see $lib/locales.js). The
 // content monorepo also carries `en-gb-oxendict`, an internal, unpublished
 // authoring locale used to draft content before it is translated out to the
 // public locales below — it is deliberately never copied into content/, so it
@@ -30,7 +30,8 @@ const PUBLIC_LOCALES = [
 	'ar-001',
 	'fr-001',
 	'pt-001',
-	'de-de'
+	'de-de',
+	'ru-001'
 ];
 
 import { cp, mkdir, rm, readdir } from 'node:fs/promises';

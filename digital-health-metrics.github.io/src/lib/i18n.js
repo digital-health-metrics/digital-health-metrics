@@ -8,13 +8,13 @@
 // localizedIndex: an untranslated locale still renders correctly in English
 // rather than crashing or showing blanks.
 //
-// Only 8 of the site's 11 public locales need an entry in TRANSLATIONS below:
+// Only 9 of the site's 12 public locales need an entry in TRANSLATIONS below:
 // the 3 English variants (en-us, en-gb, en-001) all share this same base EN
 // table with no per-variant overrides, same as they would for any other
 // English-only difference (spelling, not vocabulary) — only cy-001 (Welsh),
 // zh-cn (Simplified Chinese), es-001 (Spanish), hi-001 (Hindi), ar-001
-// (Arabic), fr-001 (French), pt-001 (Portuguese), and de-de (German) need
-// their own chrome translations.
+// (Arabic), fr-001 (French), pt-001 (Portuguese), de-de (German), and
+// ru-001 (Russian) need their own chrome translations.
 
 /**
  * @typedef {object} Messages
@@ -535,6 +535,58 @@ const de = {
 	paginationNext: 'Weiter'
 };
 
+/** @type {Messages} */
+const ru = {
+	skipToContent: 'Перейти к содержимому',
+	navHome: 'Главная',
+	navContents: 'Содержание',
+	navTopicsAZ: 'Темы А–Я',
+	navSearch: 'Поиск',
+	navAbout: 'О книге',
+	footerSourceLink: 'Исходный код',
+	footerTaglineSuffix:
+		' — определения метрик цифрового здравоохранения, примеры и обоснования для команд, создающих, оценивающих и заказывающих продукты цифрового здравоохранения.',
+	footerNote:
+		'Цифры в этой книге быстро устаревают. Каждая тема датирует свои эталонные значения прямо в тексте; перепроверяйте их перед использованием любого числа в реальном бизнес-кейсе.',
+	pickerTheme: 'Тема оформления',
+	pickerLanguage: 'Язык',
+	pickerTextSize: 'Размер текста',
+	pickerShare: 'Поделиться',
+	shareCopyLink: 'Скопировать ссылку',
+	shareCopied: 'Скопировано',
+	shareCopyFailed: 'Не удалось скопировать',
+	shareEmailLabel: 'Отправить ссылку по эл. почте',
+	shareLinkedinLabel: 'Поделиться в LinkedIn',
+	shareRedditLabel: 'Поделиться в Reddit',
+	shareBlueskyLabel: 'Поделиться в Bluesky',
+	shareMastodonLabel: 'Поделиться в Mastodon',
+	startHere: 'Начните здесь',
+	startHereSubtitle: 'Три идеи, на которых строится всё остальное.',
+	contentsMetaDescription: (bookTitle) => `Все темы в «${bookTitle}» в порядке чтения.`,
+	contentsIntro: (count, parts) =>
+		`Все ${count} тем в порядке чтения, разделённые на ${parts} частей. Каждая тема охватывает одну метрику или понятие: определение, почему это важно, как рассчитывается, разобранный пример, источники данных и предостережения, распространённые ошибки и источники.`,
+	topicsCountSubtitle: (n) => `${n} тем`,
+	topicsMetaDescription: (bookTitle) => `Все темы в «${bookTitle}», перечисленные от А до Я.`,
+	topicsIntroPrefix: (count) => `Все ${count} тем в алфавитном порядке. Порядок чтения см. в разделе`,
+	contentsLinkText: 'содержание',
+	jumpToLetter: 'Перейти к букве',
+	searchMetaDescription: (bookTitle) => `Поиск по всем темам в «${bookTitle}».`,
+	searchIntro: (count) =>
+		`Ищите среди всех ${count} тем по заголовку, части, краткому описанию и заголовку раздела. Всё выполняется в вашем браузере — то, что вы вводите, никогда не покидает эту страницу.`,
+	searchInputLabel: 'Поиск по темам',
+	searchPlaceholder: 'DAU, удержание, показатель завершения PROM…',
+	searchHintEmptyHtml: 'Введите текст для поиска. Попробуйте <em>DAU</em>, <em>удержание</em> или <em>PROM</em>.',
+	noResultsPrefix: 'Ни одна тема не соответствует запросу ',
+	noResultsMiddle: '. Попробуйте более общий термин или просмотрите ',
+	resultsCountSingular: 'тема',
+	resultsCountPlural: 'тем',
+	topicPosition: (index, total) => `Тема ${index} из ${total}`,
+	onThisPage: 'На этой странице',
+	paginationLabel: 'Книга',
+	paginationPrevious: 'Назад',
+	paginationNext: 'Далее'
+};
+
 /** @type {Record<string, Messages>} */
 const TRANSLATIONS = {
 	'cy-001': cy,
@@ -544,7 +596,8 @@ const TRANSLATIONS = {
 	'ar-001': ar,
 	'fr-001': fr,
 	'pt-001': pt,
-	'de-de': de
+	'de-de': de,
+	'ru-001': ru
 };
 
 /**

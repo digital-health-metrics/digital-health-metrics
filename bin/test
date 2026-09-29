@@ -18,7 +18,7 @@ symlink_target_or_err() {
 ## main
 
 top="$(git rev-parse --show-toplevel)"
-locales="en-gb-oxendict en-001 en-gb en-us cy-001 zh-cn es-001 hi-001 ar-001 fr-001 pt-001 de-de"
+locales="en-gb-oxendict en-001 en-gb en-us cy-001 zh-cn es-001 hi-001 ar-001 fr-001 pt-001 de-de ru-001"
 topics="patient-portal-adoption-rate telehealth-visit-rate appointment-no-show-rate clinical-alert-override-rate digital-referral-turnaround-time"
 
 test_locales_exist() {
