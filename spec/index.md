@@ -53,6 +53,8 @@ Every topic uses these headings, in this order:
 
 A topic may end with an optional "See also" line cross-linking related topics via `../<slug>/` (never `.md`, never absolute).
 
+A small number of topics document a multi-dimensional evaluation framework (e.g. RE-AIM, the WHO Digital Health Assessment Framework, ISO/TS 82304-2) rather than a single metric with one formula. These keep every other heading and constraint above, but retitle §4 `## How it's applied` and describe the framework's dimensions or assessment domains (still in a fenced block) in place of a formula, and §5's worked example walks through applying the framework to a scenario rather than exercising a calculation.
+
 ---
 
 ## 4. Locales

@@ -52,3 +52,9 @@ New here? Start with [patient portal adoption rate](topics/patient-portal-adopti
 - [Cost per episode of care](topics/cost-per-episode-of-care/) — the standard unit of financial comparison in value-based care contracts
 - [Emergency department diversion rate](topics/ed-diversion-rate/) — patient contacts safely redirected away from the ED, always reported alongside a missed-emergency safety metric
 - [Return on investment (ROI) and value on investment (VOI)](topics/roi-and-voi/) — whether a digital investment paid for itself financially, and whether it was worth doing accounting for everything that matters
+
+## Evaluation frameworks
+
+- [RE-AIM framework](topics/re-aim-framework/) — Reach, Effectiveness, Adoption, Implementation, and Maintenance; five dimensions rather than one metric
+- [WHO Digital Health Assessment Framework](topics/who-digital-health-assessment-framework/) — WHO's guidance for assessing feasibility, safety, and equity across national-scale deployments
+- [ISO/TS 82304-2](topics/iso-ts-82304-2/) — the international technical specification behind most health and wellness app quality labels
