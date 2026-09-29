@@ -9,11 +9,49 @@ New here? Start with [patient portal adoption rate](locales/en-gb-oxendict/topic
 - [Patient portal adoption rate](locales/en-gb-oxendict/topics/patient-portal-adoption-rate/) — registration, activation, and active use; three different rates too often conflated as one
 - [Telehealth visit rate](locales/en-gb-oxendict/topics/telehealth-visit-rate/) — the share of care delivered remotely, and why video and telephone should never be reported as one number
 - [Appointment no-show rate](locales/en-gb-oxendict/topics/appointment-no-show-rate/) — the oldest operational metric in healthcare, and one of the best-evidenced targets for digital reminders
+- [Patient engagement consistency rate](locales/en-gb-oxendict/topics/patient-engagement-consistency-rate/) — how regularly a patient interacts with a digital tool over time, as distinct from whether they have used it at all
+- [User retention rate](locales/en-gb-oxendict/topics/user-retention-rate/) — the cohort retention curve that separates a product with a sustainable use pattern from one riding a wave of novelty
+- [DAU/MAU stickiness ratio](locales/en-gb-oxendict/topics/dau-mau-stickiness-ratio/) — the standard product-analytics measure of engagement intensity across a whole user base
+- [Patient Net Promoter Score](locales/en-gb-oxendict/topics/patient-net-promoter-score/) — the widely used, and widely criticized, single-question satisfaction metric
+- [System Usability Scale score](locales/en-gb-oxendict/topics/system-usability-scale-score/) — a standardized 10-item questionnaire quantifying how usable a piece of software actually is
 
 ## Digital care operations and safety
 
 - [Clinical alert override rate](locales/en-gb-oxendict/topics/clinical-alert-override-rate/) — the standard signal for alert fatigue in clinical decision support
 - [Digital referral turnaround time](locales/en-gb-oxendict/topics/digital-referral-turnaround-time/) — the process metric that shows whether an e-referral system is actually saving time
+- [Time to intervention](locales/en-gb-oxendict/topics/time-to-intervention-rate/) — how quickly a clinical team responds to an automated health alert
+- [Bed-day reduction](locales/en-gb-oxendict/topics/bed-day-reduction/) — inpatient bed days saved by shifting recovery to a virtual ward, always reported alongside a safety metric
+
+## Clinical outcomes and quality
+
+- [Biometric improvement rate](locales/en-gb-oxendict/topics/biometric-improvement-rate/) — the share of patients achieving a clinically meaningful change in a tracked biometric such as HbA1c or BMI
+- [Biometric stabilization rate](locales/en-gb-oxendict/topics/biometric-stabilization-rate/) — sustained control within a target range, as distinct from a one-off improvement
+- [Triage routing accuracy](locales/en-gb-oxendict/topics/triage-routing-accuracy/) — whether an AI or digital triage tool correctly routes a patient to the right level of care
+- [Medication adherence rate](locales/en-gb-oxendict/topics/medication-adherence-rate/) — the proportion of days a patient had access to their medication as prescribed
+- [Hospital readmission rate](locales/en-gb-oxendict/topics/hospital-readmission-rate/) — the metric most directly tied to payer economics and value-based care contracts
+- [ePROM completion rate](locales/en-gb-oxendict/topics/epro-completion-rate/) — the completion rate for electronic patient-reported outcome measures, and why a declining rate can itself be a clinical signal
+
+## Marketing and growth economics
+
+- [True customer acquisition cost](locales/en-gb-oxendict/topics/true-customer-acquisition-cost/) — the fully loaded cost of acquiring one new patient, commonly undercounted by 30-50%
+- [LTV to CAC ratio](locales/en-gb-oxendict/topics/ltv-to-cac-ratio/) — lifetime value against true acquisition cost; 3:1 is the widely cited sustainable baseline
+- [Marketing efficiency ratio](locales/en-gb-oxendict/topics/marketing-efficiency-ratio/) — total revenue over total marketing spend, an independent check against platform-reported ROAS
+
+## Digital health equity
+
+- [Digital access rate](locales/en-gb-oxendict/topics/digital-access-rate/) — the precondition metric for every other digital health measure in this book
+- [Digital literacy rate](locales/en-gb-oxendict/topics/digital-literacy-rate/) — whether patients who do have access can actually use it unaided
+
+## Technical and operational infrastructure
+
+- [Physician burnout rate](locales/en-gb-oxendict/topics/physician-burnout-rate/) — tracked alongside clinician-facing digital tool burden, since badly designed software is a documented contributor
+- [Device uptime rate](locales/en-gb-oxendict/topics/device-uptime-rate/) — the foundational infrastructure metric underneath every remote monitoring programme
+
+## Financial and economic value
+
+- [Cost per episode of care](locales/en-gb-oxendict/topics/cost-per-episode-of-care/) — the standard unit of financial comparison in value-based care contracts
+- [Emergency department diversion rate](locales/en-gb-oxendict/topics/ed-diversion-rate/) — patient contacts safely redirected away from the ED, always reported alongside a missed-emergency safety metric
+- [Return on investment (ROI) and value on investment (VOI)](locales/en-gb-oxendict/topics/roi-and-voi/) — whether a digital investment paid for itself financially, and whether it was worth doing accounting for everything that matters
 
 ## Locales
 

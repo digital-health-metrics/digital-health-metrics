@@ -150,17 +150,22 @@ function localizedPartTitles(locale) {
 /** Resolve one README entry (canonical locale + slug) into a locale's own page. */
 function resolveEntry(entry, locale, translated) {
 	const localePeers = peers(entry.canonicalLocale, entry.canonicalSlug);
-	// Falls back to the canonical slug if this locale is somehow missing the
-	// topic, so a page still renders (as a 404-prone but non-crashing link)
-	// rather than the whole nav silently dropping an entry.
 	const slug = localePeers[locale] ?? entry.canonicalSlug;
 	const source = readTopic(locale, slug);
+	// A topic newly added to the canonical README is deliberately allowed to
+	// have no translation yet in a given locale (see spec/index.md §6) — the
+	// site is strictly prerendered (svelte.config.js handleHttpError: 'fail'),
+	// so a link to a page that doesn't exist for this locale would hard-fail
+	// the build, not just look bad. Returning null here (rather than falling
+	// back to a canonical-slug href nothing actually serves) lets book() drop
+	// the entry from this locale's nav entirely until it's translated.
+	if (!source) return null;
 	// The topic's own (already-translated) H1 is the primary title source —
 	// every topic is translated, so this is reliable even for a locale whose
 	// index.md isn't translated yet. `translated` (this locale's own README
 	// entry, when it has one) is consulted for blurb, which has no other
 	// source, and as a title fallback.
-	const localTitle = source ? splitTitle(source).title : '';
+	const localTitle = splitTitle(source).title;
 	return {
 		slug,
 		href: `/locales/${locale}/topics/${slug}/`,
@@ -193,12 +198,22 @@ export function book(locale) {
 	const localized = localizedIndex(locale);
 	const title = localized?.title || canonicalTitle;
 
-	const parts = navParts.map((part, i) => ({
-		title: partTitles?.[i] ?? part.title,
-		entries: part.entries.map((entry) =>
-			resolveEntry(entry, locale, byCanonicalSlug.get(entry.canonicalSlug))
-		)
-	}));
+	const parts = navParts
+		.map((part, i) => ({
+			title: partTitles?.[i] ?? part.title,
+			// A newly added canonical topic not yet translated into this locale
+			// resolves to null (see resolveEntry) and is filtered out here, rather
+			// than appearing as a nav entry linking to a page this locale doesn't
+			// have — the site falls back to fewer entries per part for this
+			// locale until translation catches up, not a broken link.
+			entries: part.entries
+				.map((entry) => resolveEntry(entry, locale, byCanonicalSlug.get(entry.canonicalSlug)))
+				.filter(Boolean)
+		}))
+		// A part can end up with zero entries for this locale if every topic in
+		// it is still untranslated here; drop it rather than showing an empty
+		// heading, same as canonical()'s own navParts filter.
+		.filter((part) => part.entries.length > 0);
 	let order = parts.flatMap((part) => part.entries.map((entry) => ({ ...entry, part: part.title })));
 
 	// Anything in this locale's topics/ that the README never links to (via
