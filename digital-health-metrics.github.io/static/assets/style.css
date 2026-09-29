@@ -242,6 +242,16 @@ pre {
 	inset-inline-end: 0;
 	top: calc(100% + 0.35rem);
 	z-index: 200;
+	/* `width` defaults to shrink-to-fit under `position: absolute`, and since
+	 * the options below are allowed to wrap (`white-space: normal`), the
+	 * browser treats their minimum content width (effectively their longest
+	 * word) as small enough that shrink-to-fit collapses the whole box to the
+	 * `min-width` floor — every long theme name then wraps across two or
+	 * three cramped lines even on a desktop-width screen with plenty of room
+	 * to spare. `max-content` sizes the box to its widest single-line option
+	 * instead, and `max-width` still steps in to force wrapping once that
+	 * would be wider than the viewport allows. */
+	width: max-content;
 	min-width: 14rem;
 	max-width: calc(100vw - 2 * var(--lily-space-md));
 	max-height: 60vh;
@@ -903,6 +913,15 @@ pre {
 		position: fixed;
 		inset-inline: var(--lily-space-md);
 		top: var(--site-header-height);
+		/* The base rule sets `width: max-content` so the box sizes to its
+		 * widest single-line option on a normal viewport. Here, both inset-
+		 * inline-start and -end are set instead (anchoring to the viewport,
+		 * not the button), and `width` must go back to `auto` for the box to
+		 * stretch to fill the gap between them — `max-content` would instead
+		 * win outright and leave the box anchored to one edge only, sized to
+		 * its content, which is exactly the overflow this media query exists
+		 * to prevent. */
+		width: auto;
 		min-width: 0;
 		max-width: none;
 	}
