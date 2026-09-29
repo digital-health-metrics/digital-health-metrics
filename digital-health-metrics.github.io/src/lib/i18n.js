@@ -8,13 +8,13 @@
 // localizedIndex: an untranslated locale still renders correctly in English
 // rather than crashing or showing blanks.
 //
-// Only 7 of the site's 10 public locales need an entry in TRANSLATIONS below:
+// Only 8 of the site's 11 public locales need an entry in TRANSLATIONS below:
 // the 3 English variants (en-us, en-gb, en-001) all share this same base EN
 // table with no per-variant overrides, same as they would for any other
 // English-only difference (spelling, not vocabulary) — only cy-001 (Welsh),
 // zh-cn (Simplified Chinese), es-001 (Spanish), hi-001 (Hindi), ar-001
-// (Arabic), fr-001 (French), and pt-001 (Portuguese) need their own chrome
-// translations.
+// (Arabic), fr-001 (French), pt-001 (Portuguese), and de-de (German) need
+// their own chrome translations.
 
 /**
  * @typedef {object} Messages
@@ -483,6 +483,58 @@ const pt = {
 	paginationNext: 'Seguinte'
 };
 
+/** @type {Messages} */
+const de = {
+	skipToContent: 'Zum Inhalt springen',
+	navHome: 'Startseite',
+	navContents: 'Inhalt',
+	navTopicsAZ: 'Themen A–Z',
+	navSearch: 'Suche',
+	navAbout: 'Über',
+	footerSourceLink: 'Quelle',
+	footerTaglineSuffix:
+		' — Definitionen von Metriken für digitale Gesundheit, Beispiele und Begründungen für Teams, die digitale Gesundheitsprodukte entwickeln, bewerten und beauftragen.',
+	footerNote:
+		'Die Zahlen in diesem Buch ändern sich schnell. Jedes Thema datiert seine Referenzwerte direkt im Text; überprüfen Sie sie erneut, bevor Sie eine Zahl in einem realen Business Case verwenden.',
+	pickerTheme: 'Design',
+	pickerLanguage: 'Sprache',
+	pickerTextSize: 'Textgröße',
+	pickerShare: 'Teilen',
+	shareCopyLink: 'Link kopieren',
+	shareCopied: 'Kopiert',
+	shareCopyFailed: 'Kopieren fehlgeschlagen',
+	shareEmailLabel: 'Link per E-Mail senden',
+	shareLinkedinLabel: 'Auf LinkedIn teilen',
+	shareRedditLabel: 'Auf Reddit teilen',
+	shareBlueskyLabel: 'Auf Bluesky teilen',
+	shareMastodonLabel: 'Auf Mastodon teilen',
+	startHere: 'Hier beginnen',
+	startHereSubtitle: 'Die drei Ideen, auf denen alles andere aufbaut.',
+	contentsMetaDescription: (bookTitle) => `Alle Themen in ${bookTitle}, in Lesereihenfolge.`,
+	contentsIntro: (count, parts) =>
+		`Alle ${count} Themen in Lesereihenfolge, aufgeteilt auf ${parts} Teile. Jedes Thema behandelt eine Metrik oder ein Konzept: Definition, warum es wichtig ist, wie es berechnet wird, ein gelöstes Beispiel, Datenquellen und Vorbehalte, häufige Fehler und Quellen.`,
+	topicsCountSubtitle: (n) => `${n} Themen`,
+	topicsMetaDescription: (bookTitle) => `Alle Themen in ${bookTitle}, von A bis Z aufgelistet.`,
+	topicsIntroPrefix: (count) => `Alle ${count} Themen in alphabetischer Reihenfolge. Für die Lesereihenfolge siehe das`,
+	contentsLinkText: 'Inhaltsverzeichnis',
+	jumpToLetter: 'Zum Buchstaben springen',
+	searchMetaDescription: (bookTitle) => `Durchsuchen Sie alle Themen in ${bookTitle}.`,
+	searchIntro: (count) =>
+		`Durchsuchen Sie alle ${count} Themen nach Titel, Teil, Zusammenfassung und Abschnittsüberschrift. Alles läuft in Ihrem Browser — nichts, was Sie eingeben, verlässt diese Seite.`,
+	searchInputLabel: 'Themen durchsuchen',
+	searchPlaceholder: 'DAU, Retention, PROM-Abschlussrate…',
+	searchHintEmptyHtml: 'Zum Suchen tippen. Probieren Sie <em>DAU</em>, <em>Retention</em>, oder <em>PROM</em>.',
+	noResultsPrefix: 'Kein Thema entspricht ',
+	noResultsMiddle: '. Versuchen Sie einen weiter gefassten Begriff, oder durchsuchen Sie das ',
+	resultsCountSingular: 'Thema',
+	resultsCountPlural: 'Themen',
+	topicPosition: (index, total) => `Thema ${index} von ${total}`,
+	onThisPage: 'Auf dieser Seite',
+	paginationLabel: 'Buch',
+	paginationPrevious: 'Zurück',
+	paginationNext: 'Weiter'
+};
+
 /** @type {Record<string, Messages>} */
 const TRANSLATIONS = {
 	'cy-001': cy,
@@ -491,7 +543,8 @@ const TRANSLATIONS = {
 	'hi-001': hi,
 	'ar-001': ar,
 	'fr-001': fr,
-	'pt-001': pt
+	'pt-001': pt,
+	'de-de': de
 };
 
 /**
