@@ -22,9 +22,10 @@
 			commissioning digital health products. It runs to {data.topicCount} topics across
 			{data.partCount} parts, available in {data.localeCount} locales, covering English, Welsh,
 			Simplified Chinese, Spanish, Hindi, Arabic, French, Portuguese, German, Russian, Bengali,
-			Korean, Japanese, Swedish, and Dutch — several of these as both an international and a
-			country-specific variant. English is the canonical source; the other locales are
-			AI-translated and have not been reviewed by a fluent speaker.
+			Korean, Japanese, Swedish, Dutch, Urdu, Indonesian, Italian, Ukrainian, Finnish, Norwegian,
+			Danish, and Polish — several of these as both an international and a country-specific
+			variant. English is the canonical source; the other locales are AI-translated and have not
+			been reviewed by a fluent speaker.
 			Each topic covers one metric or concept: definition, why it matters, how it's calculated, a
 			worked example, data sources and caveats, pitfalls, and sources.
 		</p>

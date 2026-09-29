@@ -8,19 +8,21 @@
 // localizedIndex: an untranslated locale still renders correctly in English
 // rather than crashing or showing blanks.
 //
-// Only 14 of the site's 23 public locales need an entry in TRANSLATIONS
+// Only 22 of the site's 32 public locales need an entry in TRANSLATIONS
 // below: the 3 English variants (en-us, en-gb, en-001) all share this same
 // base EN table with no per-variant overrides, same as they would for any
-// other English-only difference (spelling, not vocabulary) — and the 6
+// other English-only difference (spelling, not vocabulary) — and the 7
 // country-specific variants of a language already covered by an
-// international `-001` locale (ar-eg, hi-in, es-es, pt-pt, ru-ru, fr-fr)
-// deliberately reuse that locale's own translation object rather than
+// international `-001` locale (ar-eg, hi-in, es-es, pt-pt, ru-ru, fr-fr,
+// cy-gb) deliberately reuse that locale's own translation object rather than
 // getting a separate one, for the same reason their book content is reused
 // verbatim (see spec/index.md §4). That leaves cy-001 (Welsh), zh-cn
 // (Simplified Chinese), es-001 (Spanish), hi-001 (Hindi), ar-001 (Arabic),
 // fr-001 (French), pt-001 (Portuguese), de-de (German), ru-001 (Russian),
-// bn-bd (Bengali), ko-kr (Korean), ja-jp (Japanese), sv-se (Swedish), and
-// nl-nl (Dutch) with their own chrome translations.
+// bn-bd (Bengali), ko-kr (Korean), ja-jp (Japanese), sv-se (Swedish),
+// nl-nl (Dutch), ur-pk (Urdu), id-id (Indonesian), it-it (Italian),
+// uk-ua (Ukrainian), fi-fi (Finnish), no-no (Norwegian), da-dk (Danish),
+// and pl-pl (Polish) with their own chrome translations.
 
 /**
  * @typedef {object} Messages
@@ -853,6 +855,422 @@ const nl = {
 	paginationNext: 'Volgende'
 };
 
+/** @type {Messages} */
+const ur = {
+	skipToContent: 'مواد کی طرف جائیں',
+	navHome: 'ہوم',
+	navContents: 'مشمولات',
+	navTopicsAZ: 'موضوعات A–Z',
+	navSearch: 'تلاش',
+	navAbout: 'تعارف',
+	footerSourceLink: 'ماخذ',
+	footerTaglineSuffix:
+		' — ڈیجیٹل ہیلتھ میٹرک کی تعریفات، مثالیں، اور استدلال، ان ٹیموں کے لیے جو ڈیجیٹل ہیلتھ پروڈکٹس تعمیر، جانچ، اور تفویض کرتی ہیں۔',
+	footerNote:
+		'اس کتاب میں اعداد جلد پرانے ہو جاتے ہیں۔ ہر موضوع اپنے بینچ مارکس کو متن میں ہی تاریخ کے ساتھ بیان کرتا ہے؛ کسی بھی عدد کو حقیقی بزنس کیس میں استعمال کرنے سے پہلے دوبارہ تصدیق کریں۔',
+	pickerTheme: 'تھیم',
+	pickerLanguage: 'زبان',
+	pickerTextSize: 'متن کا سائز',
+	pickerShare: 'شیئر کریں',
+	shareCopyLink: 'لنک کاپی کریں',
+	shareCopied: 'کاپی ہو گیا',
+	shareCopyFailed: 'کاپی ناکام',
+	shareEmailLabel: 'ای میل لنک',
+	shareLinkedinLabel: 'LinkedIn پر شیئر کریں',
+	shareRedditLabel: 'Reddit پر شیئر کریں',
+	shareBlueskyLabel: 'Bluesky پر شیئر کریں',
+	shareMastodonLabel: 'Mastodon پر شیئر کریں',
+	startHere: 'یہاں سے شروع کریں',
+	startHereSubtitle: 'وہ تین خیالات جن پر باقی سب کچھ تعمیر ہوتا ہے۔',
+	contentsMetaDescription: (bookTitle) => `${bookTitle} کا ہر موضوع، پڑھنے کی ترتیب میں۔`,
+	contentsIntro: (count, parts) =>
+		`تمام ${count} موضوعات پڑھنے کی ترتیب میں، ${parts} حصوں میں۔ ہر موضوع ایک میٹرک یا تصور کا احاطہ کرتا ہے: تعریف، یہ کیوں اہم ہے، اسے کیسے شمار کیا جاتا ہے، ایک عملی مثال، ڈیٹا کے ذرائع اور احتیاطیں، نقصانات، اور ذرائع۔`,
+	topicsCountSubtitle: (n) => `${n} موضوعات`,
+	topicsMetaDescription: (bookTitle) => `${bookTitle} کا ہر موضوع، A سے Z تک درج۔`,
+	topicsIntroPrefix: (count) => `تمام ${count} موضوعات حروف تہجی کی ترتیب میں۔ پڑھنے کی ترتیب کے لیے، دیکھیں`,
+	contentsLinkText: 'مشمولات',
+	jumpToLetter: 'حرف پر جائیں',
+	searchMetaDescription: (bookTitle) => `${bookTitle} کے ہر موضوع کو تلاش کریں۔`,
+	searchIntro: (count) =>
+		`تمام ${count} موضوعات کو عنوان، حصہ، خلاصہ، اور سیکشن کی سرخی سے تلاش کریں۔ ہر چیز آپ کے براؤزر میں چلتی ہے — جو کچھ آپ ٹائپ کرتے ہیں وہ اس صفحے سے کبھی باہر نہیں جاتا۔`,
+	searchInputLabel: 'موضوعات تلاش کریں',
+	searchPlaceholder: 'DAU، برقراری، PROM تکمیل کی شرح…',
+	searchHintEmptyHtml: 'تلاش کے لیے ٹائپ کریں۔ آزمائیں <em>DAU</em>، <em>برقراری</em>، یا <em>PROM</em>۔',
+	noResultsPrefix: 'کوئی موضوع مطابقت نہیں رکھتا ',
+	noResultsMiddle: '۔ ایک وسیع اصطلاح آزمائیں، یا براؤز کریں ',
+	resultsCountSingular: 'موضوع',
+	resultsCountPlural: 'موضوعات',
+	topicPosition: (index, total) => `موضوع ${index} از ${total}`,
+	onThisPage: 'اس صفحے پر',
+	paginationLabel: 'کتاب',
+	paginationPrevious: 'پچھلا',
+	paginationNext: 'اگلا'
+};
+
+/** @type {Messages} */
+const id = {
+	skipToContent: 'Lewati ke konten',
+	navHome: 'Beranda',
+	navContents: 'Daftar Isi',
+	navTopicsAZ: 'Topik A–Z',
+	navSearch: 'Cari',
+	navAbout: 'Tentang',
+	footerSourceLink: 'Sumber',
+	footerTaglineSuffix:
+		' — definisi, contoh, dan penalaran metrik kesehatan digital untuk tim yang membangun, mengevaluasi, dan menugaskan produk kesehatan digital.',
+	footerNote:
+		'Angka dalam buku ini cepat berubah. Setiap topik mencantumkan tanggal tolok ukurnya secara langsung; verifikasi ulang sebelum menggunakan angka apa pun dalam kasus bisnis nyata.',
+	pickerTheme: 'Tema',
+	pickerLanguage: 'Bahasa',
+	pickerTextSize: 'Ukuran teks',
+	pickerShare: 'Bagikan',
+	shareCopyLink: 'Salin tautan',
+	shareCopied: 'Disalin',
+	shareCopyFailed: 'Gagal menyalin',
+	shareEmailLabel: 'Tautan Email',
+	shareLinkedinLabel: 'Bagikan di LinkedIn',
+	shareRedditLabel: 'Bagikan di Reddit',
+	shareBlueskyLabel: 'Bagikan di Bluesky',
+	shareMastodonLabel: 'Bagikan di Mastodon',
+	startHere: 'Mulai di sini',
+	startHereSubtitle: 'Tiga gagasan yang menjadi dasar semua hal lainnya.',
+	contentsMetaDescription: (bookTitle) => `Setiap topik dalam ${bookTitle}, dalam urutan baca.`,
+	contentsIntro: (count, parts) =>
+		`Semua ${count} topik dalam urutan baca, di ${parts} bagian. Setiap topik mencakup satu metrik atau konsep: definisi, mengapa itu penting, cara menghitungnya, contoh penerapan, sumber data dan peringatan, kesalahan umum, dan sumber.`,
+	topicsCountSubtitle: (n) => `${n} topik`,
+	topicsMetaDescription: (bookTitle) => `Setiap topik dalam ${bookTitle}, terdaftar dari A hingga Z.`,
+	topicsIntroPrefix: (count) => `Semua ${count} topik dalam urutan abjad. Untuk urutan baca, lihat`,
+	contentsLinkText: 'daftar isi',
+	jumpToLetter: 'Lompat ke huruf',
+	searchMetaDescription: (bookTitle) => `Cari setiap topik dalam ${bookTitle}.`,
+	searchIntro: (count) =>
+		`Cari semua ${count} topik berdasarkan judul, bagian, ringkasan, dan judul bagian. Semuanya berjalan di browser Anda — apa pun yang Anda ketik tidak pernah meninggalkan halaman ini.`,
+	searchInputLabel: 'Cari topik',
+	searchPlaceholder: 'DAU, retensi, tingkat penyelesaian PROM…',
+	searchHintEmptyHtml: 'Ketik untuk mencari. Coba <em>DAU</em>, <em>retensi</em>, atau <em>PROM</em>.',
+	noResultsPrefix: 'Tidak ada topik yang cocok dengan ',
+	noResultsMiddle: '. Coba istilah yang lebih luas, atau jelajahi ',
+	resultsCountSingular: 'topik',
+	resultsCountPlural: 'topik',
+	topicPosition: (index, total) => `Topik ${index} dari ${total}`,
+	onThisPage: 'Di halaman ini',
+	paginationLabel: 'Buku',
+	paginationPrevious: 'Sebelumnya',
+	paginationNext: 'Berikutnya'
+};
+
+/** @type {Messages} */
+const it = {
+	skipToContent: 'Vai al contenuto',
+	navHome: 'Home',
+	navContents: 'Indice',
+	navTopicsAZ: 'Argomenti A–Z',
+	navSearch: 'Cerca',
+	navAbout: 'Informazioni',
+	footerSourceLink: 'Origine',
+	footerTaglineSuffix:
+		' — definizioni, esempi e ragionamenti sulle metriche di salute digitale per i team che costruiscono, valutano e commissionano prodotti di salute digitale.',
+	footerNote:
+		'Le cifre in questo libro diventano rapidamente obsolete. Ogni argomento indica la data dei propri parametri di riferimento direttamente nel testo; riverificare prima di utilizzare qualsiasi numero in un caso aziendale reale.',
+	pickerTheme: 'Tema',
+	pickerLanguage: 'Lingua',
+	pickerTextSize: 'Dimensione testo',
+	pickerShare: 'Condividi',
+	shareCopyLink: 'Copia link',
+	shareCopied: 'Copiato',
+	shareCopyFailed: 'Copia non riuscita',
+	shareEmailLabel: 'Invia link via email',
+	shareLinkedinLabel: 'Condividi su LinkedIn',
+	shareRedditLabel: 'Condividi su Reddit',
+	shareBlueskyLabel: 'Condividi su Bluesky',
+	shareMastodonLabel: 'Condividi su Mastodon',
+	startHere: 'Inizia qui',
+	startHereSubtitle: 'Le tre idee su cui si basa tutto il resto.',
+	contentsMetaDescription: (bookTitle) => `Ogni argomento in ${bookTitle}, in ordine di lettura.`,
+	contentsIntro: (count, parts) =>
+		`Tutti i ${count} argomenti in ordine di lettura, suddivisi in ${parts} parti. Ogni argomento tratta una metrica o un concetto: definizione, perché è importante, come si calcola, un esempio pratico, fonti dei dati e avvertenze, insidie e fonti.`,
+	topicsCountSubtitle: (n) => `${n} argomenti`,
+	topicsMetaDescription: (bookTitle) => `Ogni argomento in ${bookTitle}, elencato dalla A alla Z.`,
+	topicsIntroPrefix: (count) => `Tutti i ${count} argomenti in ordine alfabetico. Per l'ordine di lettura, vedere l'`,
+	contentsLinkText: 'indice',
+	jumpToLetter: 'Vai alla lettera',
+	searchMetaDescription: (bookTitle) => `Cerca ogni argomento in ${bookTitle}.`,
+	searchIntro: (count) =>
+		`Cerca tutti i ${count} argomenti per titolo, parte, riepilogo e titolo di sezione. Tutto viene eseguito nel tuo browser — ciò che digiti non lascia mai questa pagina.`,
+	searchInputLabel: 'Cerca argomenti',
+	searchPlaceholder: 'DAU, retention, tasso di completamento PROM…',
+	searchHintEmptyHtml: 'Digita per cercare. Prova <em>DAU</em>, <em>retention</em>, o <em>PROM</em>.',
+	noResultsPrefix: 'Nessun argomento corrisponde a ',
+	noResultsMiddle: '. Prova un termine più ampio, oppure sfoglia l\'',
+	resultsCountSingular: 'argomento',
+	resultsCountPlural: 'argomenti',
+	topicPosition: (index, total) => `Argomento ${index} di ${total}`,
+	onThisPage: 'In questa pagina',
+	paginationLabel: 'Libro',
+	paginationPrevious: 'Precedente',
+	paginationNext: 'Successivo'
+};
+
+/** @type {Messages} */
+const uk = {
+	skipToContent: 'Перейти до вмісту',
+	navHome: 'Головна',
+	navContents: 'Зміст',
+	navTopicsAZ: 'Теми А–Я',
+	navSearch: 'Пошук',
+	navAbout: 'Про проєкт',
+	footerSourceLink: 'Джерело',
+	footerTaglineSuffix:
+		' — визначення, приклади та обґрунтування метрик цифрового здоров\'я для команд, які створюють, оцінюють та замовляють продукти цифрового здоров\'я.',
+	footerNote:
+		'Цифри в цій книзі швидко застарівають. Кожна тема вказує дату своїх контрольних показників безпосередньо в тексті; перевіряйте повторно, перш ніж використовувати будь-яке число в реальному бізнес-кейсі.',
+	pickerTheme: 'Тема',
+	pickerLanguage: 'Мова',
+	pickerTextSize: 'Розмір тексту',
+	pickerShare: 'Поділитися',
+	shareCopyLink: 'Копіювати посилання',
+	shareCopied: 'Скопійовано',
+	shareCopyFailed: 'Не вдалося скопіювати',
+	shareEmailLabel: 'Надіслати посилання електронною поштою',
+	shareLinkedinLabel: 'Поділитися в LinkedIn',
+	shareRedditLabel: 'Поділитися в Reddit',
+	shareBlueskyLabel: 'Поділитися в Bluesky',
+	shareMastodonLabel: 'Поділитися в Mastodon',
+	startHere: 'Почніть тут',
+	startHereSubtitle: 'Три ідеї, на яких базується все інше.',
+	contentsMetaDescription: (bookTitle) => `Кожна тема в ${bookTitle}, у порядку читання.`,
+	contentsIntro: (count, parts) =>
+		`Усі ${count} тем у порядку читання, у ${parts} частинах. Кожна тема охоплює одну метрику або концепцію: визначення, чому це важливо, як це обчислюється, практичний приклад, джерела даних і застереження, пастки та джерела.`,
+	topicsCountSubtitle: (n) => `${n} тем`,
+	topicsMetaDescription: (bookTitle) => `Кожна тема в ${bookTitle}, перелічена від А до Я.`,
+	topicsIntroPrefix: (count) => `Усі ${count} тем в алфавітному порядку. Для порядку читання див.`,
+	contentsLinkText: 'зміст',
+	jumpToLetter: 'Перейти до букви',
+	searchMetaDescription: (bookTitle) => `Шукайте кожну тему в ${bookTitle}.`,
+	searchIntro: (count) =>
+		`Шукайте всі ${count} тем за назвою, частиною, підсумком і заголовком розділу. Усе працює у вашому браузері — те, що ви вводите, ніколи не залишає цю сторінку.`,
+	searchInputLabel: 'Пошук тем',
+	searchPlaceholder: 'DAU, утримання, показник завершення PROM…',
+	searchHintEmptyHtml: 'Введіть текст для пошуку. Спробуйте <em>DAU</em>, <em>утримання</em>, або <em>PROM</em>.',
+	noResultsPrefix: 'Жодна тема не відповідає ',
+	noResultsMiddle: '. Спробуйте ширший термін або перегляньте ',
+	resultsCountSingular: 'тема',
+	resultsCountPlural: 'теми',
+	topicPosition: (index, total) => `Тема ${index} з ${total}`,
+	onThisPage: 'На цій сторінці',
+	paginationLabel: 'Книга',
+	paginationPrevious: 'Попередня',
+	paginationNext: 'Наступна'
+};
+
+/** @type {Messages} */
+const fi = {
+	skipToContent: 'Siirry sisältöön',
+	navHome: 'Etusivu',
+	navContents: 'Sisällys',
+	navTopicsAZ: 'Aiheet A–Ö',
+	navSearch: 'Haku',
+	navAbout: 'Tietoa',
+	footerSourceLink: 'Lähde',
+	footerTaglineSuffix:
+		' — digitaalisen terveydenhuollon mittareiden määritelmiä, esimerkkejä ja perusteluja tiimeille, jotka rakentavat, arvioivat ja tilaavat digitaalisia terveystuotteita.',
+	footerNote:
+		'Tämän kirjan luvut vanhenevat nopeasti. Jokainen aihe päivämäärittää vertailuarvonsa suoraan tekstissä; tarkista ne uudelleen ennen kuin käytät lukua todellisessa liiketoimintatapauksessa.',
+	pickerTheme: 'Teema',
+	pickerLanguage: 'Kieli',
+	pickerTextSize: 'Tekstin koko',
+	pickerShare: 'Jaa',
+	shareCopyLink: 'Kopioi linkki',
+	shareCopied: 'Kopioitu',
+	shareCopyFailed: 'Kopiointi epäonnistui',
+	shareEmailLabel: 'Lähetä linkki sähköpostitse',
+	shareLinkedinLabel: 'Jaa LinkedInissä',
+	shareRedditLabel: 'Jaa Redditissä',
+	shareBlueskyLabel: 'Jaa Blueskyssä',
+	shareMastodonLabel: 'Jaa Mastodonissa',
+	startHere: 'Aloita tästä',
+	startHereSubtitle: 'Kolme ideaa, joille kaikki muu rakentuu.',
+	contentsMetaDescription: (bookTitle) => `Jokainen aihe teoksessa ${bookTitle}, lukujärjestyksessä.`,
+	contentsIntro: (count, parts) =>
+		`Kaikki ${count} aihetta lukujärjestyksessä, ${parts} osassa. Jokainen aihe kattaa yhden mittarin tai käsitteen: määritelmän, miksi se on tärkeää, miten se lasketaan, käytännön esimerkin, tietolähteet ja varaukset, sudenkuopat sekä lähteet.`,
+	topicsCountSubtitle: (n) => `${n} aihetta`,
+	topicsMetaDescription: (bookTitle) => `Jokainen aihe teoksessa ${bookTitle}, aakkosjärjestyksessä.`,
+	topicsIntroPrefix: (count) => `Kaikki ${count} aihetta aakkosjärjestyksessä. Lukujärjestystä varten katso`,
+	contentsLinkText: 'sisällys',
+	jumpToLetter: 'Siirry kirjaimeen',
+	searchMetaDescription: (bookTitle) => `Hae jokaista aihetta teoksessa ${bookTitle}.`,
+	searchIntro: (count) =>
+		`Hae kaikkia ${count} aihetta otsikon, osan, yhteenvedon ja osion otsikon perusteella. Kaikki toimii selaimessasi — mitään kirjoittamaasi ei koskaan lähetetä pois tältä sivulta.`,
+	searchInputLabel: 'Hae aiheita',
+	searchPlaceholder: 'DAU, säilyttäminen, PROM-suoritusaste…',
+	searchHintEmptyHtml: 'Kirjoita hakeaksesi. Kokeile <em>DAU</em>, <em>säilyttäminen</em>, tai <em>PROM</em>.',
+	noResultsPrefix: 'Yksikään aihe ei vastaa hakua ',
+	noResultsMiddle: '. Kokeile laajempaa termiä tai selaa ',
+	resultsCountSingular: 'aihe',
+	resultsCountPlural: 'aihetta',
+	topicPosition: (index, total) => `Aihe ${index}/${total}`,
+	onThisPage: 'Tällä sivulla',
+	paginationLabel: 'Kirja',
+	paginationPrevious: 'Edellinen',
+	paginationNext: 'Seuraava'
+};
+
+/** @type {Messages} */
+const no = {
+	skipToContent: 'Hopp til innhold',
+	navHome: 'Hjem',
+	navContents: 'Innhold',
+	navTopicsAZ: 'Emner A–Å',
+	navSearch: 'Søk',
+	navAbout: 'Om',
+	footerSourceLink: 'Kilde',
+	footerTaglineSuffix:
+		' — definisjoner, eksempler og resonnement om digitale helsemetrikker for team som bygger, evaluerer og bestiller digitale helseprodukter.',
+	footerNote:
+		'Tallene i denne boken blir raskt utdaterte. Hvert emne daterer sine referanseverdier direkte i teksten; verifiser på nytt før du bruker et tall i en reell forretningscase.',
+	pickerTheme: 'Tema',
+	pickerLanguage: 'Språk',
+	pickerTextSize: 'Tekststørrelse',
+	pickerShare: 'Del',
+	shareCopyLink: 'Kopier lenke',
+	shareCopied: 'Kopiert',
+	shareCopyFailed: 'Kopiering mislyktes',
+	shareEmailLabel: 'Send lenke på e-post',
+	shareLinkedinLabel: 'Del på LinkedIn',
+	shareRedditLabel: 'Del på Reddit',
+	shareBlueskyLabel: 'Del på Bluesky',
+	shareMastodonLabel: 'Del på Mastodon',
+	startHere: 'Start her',
+	startHereSubtitle: 'De tre ideene alt annet bygger på.',
+	contentsMetaDescription: (bookTitle) => `Hvert emne i ${bookTitle}, i leserekkefølge.`,
+	contentsIntro: (count, parts) =>
+		`Alle ${count} emner i leserekkefølge, fordelt på ${parts} deler. Hvert emne dekker én metrikk eller ett konsept: definisjon, hvorfor det er viktig, hvordan det beregnes, et gjennomarbeidet eksempel, datakilder og forbehold, fallgruver og kilder.`,
+	topicsCountSubtitle: (n) => `${n} emner`,
+	topicsMetaDescription: (bookTitle) => `Hvert emne i ${bookTitle}, oppført fra A til Å.`,
+	topicsIntroPrefix: (count) => `Alle ${count} emner i alfabetisk rekkefølge. For leserekkefølge, se`,
+	contentsLinkText: 'innholdsfortegnelsen',
+	jumpToLetter: 'Hopp til bokstav',
+	searchMetaDescription: (bookTitle) => `Søk i hvert emne i ${bookTitle}.`,
+	searchIntro: (count) =>
+		`Søk i alle ${count} emner etter tittel, del, sammendrag og seksjonsoverskrift. Alt kjører i nettleseren din — det du skriver forlater aldri denne siden.`,
+	searchInputLabel: 'Søk i emner',
+	searchPlaceholder: 'DAU, retensjon, PROM-fullføringsrate…',
+	searchHintEmptyHtml: 'Skriv for å søke. Prøv <em>DAU</em>, <em>retensjon</em>, eller <em>PROM</em>.',
+	noResultsPrefix: 'Ingen emner samsvarer med ',
+	noResultsMiddle: '. Prøv et bredere begrep, eller bla gjennom ',
+	resultsCountSingular: 'emne',
+	resultsCountPlural: 'emner',
+	topicPosition: (index, total) => `Emne ${index} av ${total}`,
+	onThisPage: 'På denne siden',
+	paginationLabel: 'Bok',
+	paginationPrevious: 'Forrige',
+	paginationNext: 'Neste'
+};
+
+/** @type {Messages} */
+const da = {
+	skipToContent: 'Gå til indhold',
+	navHome: 'Hjem',
+	navContents: 'Indhold',
+	navTopicsAZ: 'Emner A–Å',
+	navSearch: 'Søg',
+	navAbout: 'Om',
+	footerSourceLink: 'Kilde',
+	footerTaglineSuffix:
+		' — definitioner, eksempler og ræsonnementer om digitale sundhedsmetrikker for teams, der bygger, evaluerer og bestiller digitale sundhedsprodukter.',
+	footerNote:
+		'Tallene i denne bog bliver hurtigt forældede. Hvert emne daterer sine benchmarks direkte i teksten; genbekræft, før du bruger et tal i en reel forretningscase.',
+	pickerTheme: 'Tema',
+	pickerLanguage: 'Sprog',
+	pickerTextSize: 'Tekststørrelse',
+	pickerShare: 'Del',
+	shareCopyLink: 'Kopiér link',
+	shareCopied: 'Kopieret',
+	shareCopyFailed: 'Kopiering mislykkedes',
+	shareEmailLabel: 'Send link via e-mail',
+	shareLinkedinLabel: 'Del på LinkedIn',
+	shareRedditLabel: 'Del på Reddit',
+	shareBlueskyLabel: 'Del på Bluesky',
+	shareMastodonLabel: 'Del på Mastodon',
+	startHere: 'Start her',
+	startHereSubtitle: 'De tre ideer, som alt andet bygger på.',
+	contentsMetaDescription: (bookTitle) => `Hvert emne i ${bookTitle}, i læserækkefølge.`,
+	contentsIntro: (count, parts) =>
+		`Alle ${count} emner i læserækkefølge, fordelt på ${parts} dele. Hvert emne dækker én metrik eller ét koncept: definition, hvorfor det er vigtigt, hvordan det beregnes, et gennemarbejdet eksempel, datakilder og forbehold, faldgruber og kilder.`,
+	topicsCountSubtitle: (n) => `${n} emner`,
+	topicsMetaDescription: (bookTitle) => `Hvert emne i ${bookTitle}, angivet fra A til Å.`,
+	topicsIntroPrefix: (count) => `Alle ${count} emner i alfabetisk rækkefølge. For læserækkefølge, se`,
+	contentsLinkText: 'indholdsfortegnelsen',
+	jumpToLetter: 'Gå til bogstav',
+	searchMetaDescription: (bookTitle) => `Søg i hvert emne i ${bookTitle}.`,
+	searchIntro: (count) =>
+		`Søg i alle ${count} emner efter titel, del, resumé og sektionsoverskrift. Alt kører i din browser — det, du skriver, forlader aldrig denne side.`,
+	searchInputLabel: 'Søg emner',
+	searchPlaceholder: 'DAU, fastholdelse, PROM-fuldførelsesrate…',
+	searchHintEmptyHtml: 'Skriv for at søge. Prøv <em>DAU</em>, <em>fastholdelse</em>, eller <em>PROM</em>.',
+	noResultsPrefix: 'Intet emne matcher ',
+	noResultsMiddle: '. Prøv en bredere term, eller gennemse ',
+	resultsCountSingular: 'emne',
+	resultsCountPlural: 'emner',
+	topicPosition: (index, total) => `Emne ${index} af ${total}`,
+	onThisPage: 'På denne side',
+	paginationLabel: 'Bog',
+	paginationPrevious: 'Forrige',
+	paginationNext: 'Næste'
+};
+
+/** @type {Messages} */
+const pl = {
+	skipToContent: 'Przejdź do treści',
+	navHome: 'Strona główna',
+	navContents: 'Spis treści',
+	navTopicsAZ: 'Tematy A–Z',
+	navSearch: 'Szukaj',
+	navAbout: 'O projekcie',
+	footerSourceLink: 'Źródło',
+	footerTaglineSuffix:
+		' — definicje, przykłady i uzasadnienia metryk zdrowia cyfrowego dla zespołów budujących, oceniających i zlecających produkty zdrowia cyfrowego.',
+	footerNote:
+		'Liczby w tej książce szybko się dezaktualizują. Każdy temat datuje swoje wartości odniesienia bezpośrednio w tekście; zweryfikuj ponownie przed użyciem jakiejkolwiek liczby w rzeczywistym uzasadnieniu biznesowym.',
+	pickerTheme: 'Motyw',
+	pickerLanguage: 'Język',
+	pickerTextSize: 'Rozmiar tekstu',
+	pickerShare: 'Udostępnij',
+	shareCopyLink: 'Kopiuj link',
+	shareCopied: 'Skopiowano',
+	shareCopyFailed: 'Kopiowanie nie powiodło się',
+	shareEmailLabel: 'Wyślij link e-mailem',
+	shareLinkedinLabel: 'Udostępnij na LinkedIn',
+	shareRedditLabel: 'Udostępnij na Reddit',
+	shareBlueskyLabel: 'Udostępnij na Bluesky',
+	shareMastodonLabel: 'Udostępnij na Mastodon',
+	startHere: 'Zacznij tutaj',
+	startHereSubtitle: 'Trzy idee, na których opiera się wszystko inne.',
+	contentsMetaDescription: (bookTitle) => `Każdy temat w ${bookTitle}, w kolejności czytania.`,
+	contentsIntro: (count, parts) =>
+		`Wszystkie ${count} tematy w kolejności czytania, w ${parts} częściach. Każdy temat obejmuje jedną metrykę lub koncepcję: definicję, dlaczego to ważne, jak to się oblicza, praktyczny przykład, źródła danych i zastrzeżenia, pułapki oraz źródła.`,
+	topicsCountSubtitle: (n) => `${n} tematów`,
+	topicsMetaDescription: (bookTitle) => `Każdy temat w ${bookTitle}, wymieniony od A do Z.`,
+	topicsIntroPrefix: (count) => `Wszystkie ${count} tematy w porządku alfabetycznym. Aby zobaczyć kolejność czytania, zobacz`,
+	contentsLinkText: 'spis treści',
+	jumpToLetter: 'Przejdź do litery',
+	searchMetaDescription: (bookTitle) => `Przeszukaj każdy temat w ${bookTitle}.`,
+	searchIntro: (count) =>
+		`Przeszukaj wszystkie ${count} tematy według tytułu, części, podsumowania i nagłówka sekcji. Wszystko działa w Twojej przeglądarce — to, co wpisujesz, nigdy nie opuszcza tej strony.`,
+	searchInputLabel: 'Szukaj tematów',
+	searchPlaceholder: 'DAU, retencja, wskaźnik ukończenia PROM…',
+	searchHintEmptyHtml: 'Wpisz, aby wyszukać. Spróbuj <em>DAU</em>, <em>retencja</em>, lub <em>PROM</em>.',
+	noResultsPrefix: 'Żaden temat nie pasuje do ',
+	noResultsMiddle: '. Spróbuj szerszego terminu lub przeglądaj ',
+	resultsCountSingular: 'temat',
+	resultsCountPlural: 'tematy',
+	topicPosition: (index, total) => `Temat ${index} z ${total}`,
+	onThisPage: 'Na tej stronie',
+	paginationLabel: 'Książka',
+	paginationPrevious: 'Poprzedni',
+	paginationNext: 'Następny'
+};
+
 /** @type {Record<string, Messages>} */
 const TRANSLATIONS = {
 	'cy-001': cy,
@@ -869,6 +1287,14 @@ const TRANSLATIONS = {
 	'ja-jp': ja,
 	'sv-se': sv,
 	'nl-nl': nl,
+	'ur-pk': ur,
+	'id-id': id,
+	'it-it': it,
+	'uk-ua': uk,
+	'fi-fi': fi,
+	'no-no': no,
+	'da-dk': da,
+	'pl-pl': pl,
 	// Country-specific variants of a language already covered by an
 	// international -001 locale reuse that locale's translation object.
 	'ar-eg': ar,
@@ -876,7 +1302,8 @@ const TRANSLATIONS = {
 	'es-es': es,
 	'pt-pt': pt,
 	'ru-ru': ru,
-	'fr-fr': fr
+	'fr-fr': fr,
+	'cy-gb': cy
 };
 
 /**

@@ -3,7 +3,7 @@
 // the vendored content (`$lib/server/content.js` locales()) — this module
 // only supplies how to label/order codes that content already declared.
 //
-// Exactly 23 locales are published by this site. The content monorepo also
+// Exactly 32 locales are published by this site. The content monorepo also
 // authors in `en-gb-oxendict`, an internal, unpublished locale used to draft
 // content before it is translated out to the locales below — it is
 // deliberately absent here, from i18n.js, and from scripts/sync-content.mjs,
@@ -15,6 +15,7 @@ export const LOCALE_LABELS = {
 	'en-gb': 'English - Great Britain',
 	'en-001': 'English',
 	'cy-001': 'Cymraeg',
+	'cy-gb': 'Cymraeg - Prydain Fawr',
 	'zh-cn': '中文 - 中国大陆',
 	'es-001': 'Español',
 	'hi-001': 'हिन्दी',
@@ -33,7 +34,15 @@ export const LOCALE_LABELS = {
 	'ru-ru': 'Русский - Россия',
 	'fr-fr': 'Français - France',
 	'sv-se': 'Svenska',
-	'nl-nl': 'Nederlands'
+	'nl-nl': 'Nederlands',
+	'ur-pk': 'اردو - پاکستان',
+	'id-id': 'Bahasa Indonesia',
+	'it-it': 'Italiano',
+	'uk-ua': 'Українська',
+	'fi-fi': 'Suomi',
+	'no-no': 'Norsk',
+	'da-dk': 'Dansk',
+	'pl-pl': 'Polski'
 };
 
 export const DEFAULT_LOCALE = 'en-gb';
@@ -45,7 +54,7 @@ export const DEFAULT_LOCALE = 'en-gb';
  * padding-inline-start, etc.), so it flips correctly once `dir` is actually
  * set; nothing else needs to change per RTL locale.
  */
-export const RTL_LOCALES = new Set(['ar-001', 'ar-eg']);
+export const RTL_LOCALES = new Set(['ar-001', 'ar-eg', 'ur-pk']);
 
 export function localeLabel(code) {
 	return LOCALE_LABELS[code] ?? code;
