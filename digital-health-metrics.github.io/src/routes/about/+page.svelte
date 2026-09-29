@@ -20,10 +20,11 @@
 			<strong>Digital Health Metrics</strong> is a comprehensive introduction to digital health
 			metric definitions, examples, and reasoning, written for teams building, evaluating, and
 			commissioning digital health products. It runs to {data.topicCount} topics across
-			{data.partCount} parts, available in {data.localeCount} locales — English (United States,
-			United Kingdom, and International), Welsh, Simplified Chinese, Spanish, Hindi, Arabic,
-			French, Portuguese, German, and Russian. English is the canonical source; the other locales
-			are AI-translated and have not been reviewed by a fluent speaker.
+			{data.partCount} parts, available in {data.localeCount} locales, covering English, Welsh,
+			Simplified Chinese, Spanish, Hindi, Arabic, French, Portuguese, German, Russian, Bengali,
+			Korean, Japanese, Swedish, and Dutch — several of these as both an international and a
+			country-specific variant. English is the canonical source; the other locales are
+			AI-translated and have not been reviewed by a fluent speaker.
 			Each topic covers one metric or concept: definition, why it matters, how it's calculated, a
 			worked example, data sources and caveats, pitfalls, and sources.
 		</p>

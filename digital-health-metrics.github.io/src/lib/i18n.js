@@ -8,13 +8,19 @@
 // localizedIndex: an untranslated locale still renders correctly in English
 // rather than crashing or showing blanks.
 //
-// Only 9 of the site's 12 public locales need an entry in TRANSLATIONS below:
-// the 3 English variants (en-us, en-gb, en-001) all share this same base EN
-// table with no per-variant overrides, same as they would for any other
-// English-only difference (spelling, not vocabulary) — only cy-001 (Welsh),
-// zh-cn (Simplified Chinese), es-001 (Spanish), hi-001 (Hindi), ar-001
-// (Arabic), fr-001 (French), pt-001 (Portuguese), de-de (German), and
-// ru-001 (Russian) need their own chrome translations.
+// Only 14 of the site's 23 public locales need an entry in TRANSLATIONS
+// below: the 3 English variants (en-us, en-gb, en-001) all share this same
+// base EN table with no per-variant overrides, same as they would for any
+// other English-only difference (spelling, not vocabulary) — and the 6
+// country-specific variants of a language already covered by an
+// international `-001` locale (ar-eg, hi-in, es-es, pt-pt, ru-ru, fr-fr)
+// deliberately reuse that locale's own translation object rather than
+// getting a separate one, for the same reason their book content is reused
+// verbatim (see spec/index.md §4). That leaves cy-001 (Welsh), zh-cn
+// (Simplified Chinese), es-001 (Spanish), hi-001 (Hindi), ar-001 (Arabic),
+// fr-001 (French), pt-001 (Portuguese), de-de (German), ru-001 (Russian),
+// bn-bd (Bengali), ko-kr (Korean), ja-jp (Japanese), sv-se (Swedish), and
+// nl-nl (Dutch) with their own chrome translations.
 
 /**
  * @typedef {object} Messages
@@ -587,6 +593,266 @@ const ru = {
 	paginationNext: 'Далее'
 };
 
+/** @type {Messages} */
+const bn = {
+	skipToContent: 'বিষয়বস্তুতে যান',
+	navHome: 'হোম',
+	navContents: 'সূচিপত্র',
+	navTopicsAZ: 'বিষয় A–Z',
+	navSearch: 'অনুসন্ধান',
+	navAbout: 'সম্পর্কে',
+	footerSourceLink: 'উৎস কোড',
+	footerTaglineSuffix:
+		' — ডিজিটাল স্বাস্থ্য পণ্য তৈরি, মূল্যায়ন ও নিয়োগকারী দলগুলোর জন্য ডিজিটাল স্বাস্থ্য মেট্রিক সংজ্ঞা, উদাহরণ, এবং যুক্তি।',
+	footerNote:
+		'এই বইয়ের সংখ্যাগুলো দ্রুত পরিবর্তিত হয়। প্রতিটি বিষয় তার রেফারেন্স মান সরাসরি টেক্সটে তারিখসহ উল্লেখ করে; একটি বাস্তব ব্যবসায়িক ক্ষেত্রে কোনো সংখ্যা ব্যবহারের আগে পুনরায় যাচাই করুন।',
+	pickerTheme: 'থিম',
+	pickerLanguage: 'ভাষা',
+	pickerTextSize: 'টেক্সটের আকার',
+	pickerShare: 'শেয়ার করুন',
+	shareCopyLink: 'লিঙ্ক কপি করুন',
+	shareCopied: 'কপি হয়েছে',
+	shareCopyFailed: 'কপি ব্যর্থ হয়েছে',
+	shareEmailLabel: 'ইমেইলে লিঙ্ক পাঠান',
+	shareLinkedinLabel: 'LinkedIn-এ শেয়ার করুন',
+	shareRedditLabel: 'Reddit-এ শেয়ার করুন',
+	shareBlueskyLabel: 'Bluesky-তে শেয়ার করুন',
+	shareMastodonLabel: 'Mastodon-এ শেয়ার করুন',
+	startHere: 'এখান থেকে শুরু করুন',
+	startHereSubtitle: 'তিনটি ধারণা যার উপর বাকি সবকিছু ভিত্তি করে গড়ে উঠেছে।',
+	contentsMetaDescription: (bookTitle) => `${bookTitle}-এর সব বিষয়, পড়ার ক্রম অনুসারে।`,
+	contentsIntro: (count, parts) =>
+		`পড়ার ক্রম অনুসারে সব ${count}টি বিষয়, ${parts}টি অংশে বিভক্ত। প্রতিটি বিষয় একটি মেট্রিক বা ধারণা নিয়ে আলোচনা করে: সংজ্ঞা, কেন এটি গুরুত্বপূর্ণ, কীভাবে গণনা করা হয়, একটি সমাধানকৃত উদাহরণ, তথ্যের উৎস ও সতর্কতা, সাধারণ ভুলত্রুটি, এবং উৎসসমূহ।`,
+	topicsCountSubtitle: (n) => `${n}টি বিষয়`,
+	topicsMetaDescription: (bookTitle) => `${bookTitle}-এর সব বিষয়, A থেকে Z পর্যন্ত তালিকাভুক্ত।`,
+	topicsIntroPrefix: (count) => `বর্ণানুক্রমিকভাবে সব ${count}টি বিষয়। পড়ার ক্রমের জন্য দেখুন`,
+	contentsLinkText: 'সূচিপত্র',
+	jumpToLetter: 'অক্ষরে যান',
+	searchMetaDescription: (bookTitle) => `${bookTitle}-এর সব বিষয়ে অনুসন্ধান করুন।`,
+	searchIntro: (count) =>
+		`শিরোনাম, অংশ, সারাংশ, এবং বিভাগ শিরোনাম দ্বারা সব ${count}টি বিষয় অনুসন্ধান করুন। সবকিছু আপনার ব্রাউজারে চলে — আপনি যা টাইপ করেন তা এই পৃষ্ঠা ছেড়ে যায় না।`,
+	searchInputLabel: 'বিষয় অনুসন্ধান করুন',
+	searchPlaceholder: 'DAU, ধরে রাখা, PROM সমাপ্তির হার…',
+	searchHintEmptyHtml: 'অনুসন্ধান করতে টাইপ করুন। <em>DAU</em>, <em>ধরে রাখা</em>, বা <em>PROM</em> চেষ্টা করুন।',
+	noResultsPrefix: 'কোনো বিষয় মেলে না ',
+	noResultsMiddle: '। একটি বিস্তৃত শব্দ চেষ্টা করুন, বা ব্রাউজ করুন ',
+	resultsCountSingular: 'বিষয়',
+	resultsCountPlural: 'বিষয়',
+	topicPosition: (index, total) => `বিষয় ${index}, মোট ${total}টির মধ্যে`,
+	onThisPage: 'এই পৃষ্ঠায়',
+	paginationLabel: 'বই',
+	paginationPrevious: 'পূর্ববর্তী',
+	paginationNext: 'পরবর্তী'
+};
+
+/** @type {Messages} */
+const ko = {
+	skipToContent: '본문으로 건너뛰기',
+	navHome: '홈',
+	navContents: '목차',
+	navTopicsAZ: '주제 A–Z',
+	navSearch: '검색',
+	navAbout: '소개',
+	footerSourceLink: '소스',
+	footerTaglineSuffix:
+		' — 디지털 헬스 제품을 구축, 평가, 발주하는 팀을 위한 디지털 헬스 지표 정의, 예시, 근거.',
+	footerNote:
+		'이 책의 수치는 빠르게 변합니다. 각 주제는 본문에 직접 기준값의 날짜를 명시합니다. 실제 비즈니스 사례에서 수치를 사용하기 전에 다시 확인하십시오.',
+	pickerTheme: '테마',
+	pickerLanguage: '언어',
+	pickerTextSize: '글자 크기',
+	pickerShare: '공유',
+	shareCopyLink: '링크 복사',
+	shareCopied: '복사됨',
+	shareCopyFailed: '복사 실패',
+	shareEmailLabel: '이메일로 링크 보내기',
+	shareLinkedinLabel: 'LinkedIn에 공유',
+	shareRedditLabel: 'Reddit에 공유',
+	shareBlueskyLabel: 'Bluesky에 공유',
+	shareMastodonLabel: 'Mastodon에 공유',
+	startHere: '여기서 시작하세요',
+	startHereSubtitle: '나머지 모든 것이 기반으로 삼는 세 가지 아이디어.',
+	contentsMetaDescription: (bookTitle) => `${bookTitle}의 모든 주제를 읽기 순서대로.`,
+	contentsIntro: (count, parts) =>
+		`읽기 순서대로 정리된 전체 ${count}개 주제, ${parts}개 부로 구성. 각 주제는 하나의 지표나 개념을 다룹니다: 정의, 중요한 이유, 계산 방법, 해결된 예시, 데이터 출처와 주의사항, 흔한 실수, 출처.`,
+	topicsCountSubtitle: (n) => `${n}개 주제`,
+	topicsMetaDescription: (bookTitle) => `${bookTitle}의 모든 주제를 A부터 Z까지 나열.`,
+	topicsIntroPrefix: (count) => `전체 ${count}개 주제를 알파벳순으로. 읽기 순서는`,
+	contentsLinkText: '목차',
+	jumpToLetter: '해당 글자로 이동',
+	searchMetaDescription: (bookTitle) => `${bookTitle}의 모든 주제에서 검색.`,
+	searchIntro: (count) =>
+		`제목, 부, 요약, 섹션 제목으로 전체 ${count}개 주제를 검색합니다. 모든 것이 브라우저 안에서 실행됩니다 — 입력한 내용은 이 페이지를 벗어나지 않습니다.`,
+	searchInputLabel: '주제 검색',
+	searchPlaceholder: 'DAU, 리텐션, PROM 완료율…',
+	searchHintEmptyHtml: '검색하려면 입력하세요. <em>DAU</em>, <em>리텐션</em>, <em>PROM</em>을 시도해 보세요.',
+	noResultsPrefix: '일치하는 주제가 없습니다: ',
+	noResultsMiddle: '. 더 넓은 검색어를 시도하거나 ',
+	resultsCountSingular: '개 주제',
+	resultsCountPlural: '개 주제',
+	topicPosition: (index, total) => `주제 ${index} / ${total}`,
+	onThisPage: '이 페이지에서',
+	paginationLabel: '책',
+	paginationPrevious: '이전',
+	paginationNext: '다음'
+};
+
+/** @type {Messages} */
+const ja = {
+	skipToContent: 'コンテンツへスキップ',
+	navHome: 'ホーム',
+	navContents: '目次',
+	navTopicsAZ: 'トピック A–Z',
+	navSearch: '検索',
+	navAbout: 'について',
+	footerSourceLink: 'ソース',
+	footerTaglineSuffix:
+		' — デジタルヘルス製品を構築、評価、発注するチームのためのデジタルヘルス指標の定義、例、根拠。',
+	footerNote:
+		'この本の数字はすぐに古くなります。各トピックは本文中でベンチマークの日付を明記しています。実際のビジネスケースで数字を使用する前に、必ず再確認してください。',
+	pickerTheme: 'テーマ',
+	pickerLanguage: '言語',
+	pickerTextSize: '文字サイズ',
+	pickerShare: '共有',
+	shareCopyLink: 'リンクをコピー',
+	shareCopied: 'コピーしました',
+	shareCopyFailed: 'コピーに失敗しました',
+	shareEmailLabel: 'メールでリンクを送信',
+	shareLinkedinLabel: 'LinkedInで共有',
+	shareRedditLabel: 'Redditで共有',
+	shareBlueskyLabel: 'Blueskyで共有',
+	shareMastodonLabel: 'Mastodonで共有',
+	startHere: 'ここから始める',
+	startHereSubtitle: '他のすべての基盤となる3つのアイデア。',
+	contentsMetaDescription: (bookTitle) => `${bookTitle}のすべてのトピックを読む順に。`,
+	contentsIntro: (count, parts) =>
+		`読む順に並んだ全${count}件のトピック、${parts}のパートに分割。各トピックは1つの指標または概念を扱います: 定義、重要な理由、計算方法、解決済みの例、データソースと注意点、よくある間違い、出典。`,
+	topicsCountSubtitle: (n) => `${n}件のトピック`,
+	topicsMetaDescription: (bookTitle) => `${bookTitle}のすべてのトピックをAからZまで一覧表示。`,
+	topicsIntroPrefix: (count) => `全${count}件のトピックをアルファベット順に。読む順については`,
+	contentsLinkText: '目次',
+	jumpToLetter: '文字にジャンプ',
+	searchMetaDescription: (bookTitle) => `${bookTitle}のすべてのトピックを検索。`,
+	searchIntro: (count) =>
+		`タイトル、パート、概要、セクション見出しで全${count}件のトピックを検索できます。すべてお使いのブラウザ内で実行されます — 入力した内容がこのページの外に出ることはありません。`,
+	searchInputLabel: 'トピックを検索',
+	searchPlaceholder: 'DAU、リテンション、PROM完了率…',
+	searchHintEmptyHtml: '入力して検索してください。<em>DAU</em>、<em>リテンション</em>、<em>PROM</em>などをお試しください。',
+	noResultsPrefix: '一致するトピックがありません: ',
+	noResultsMiddle: '。より広い検索語を試すか、',
+	resultsCountSingular: '件のトピック',
+	resultsCountPlural: '件のトピック',
+	topicPosition: (index, total) => `トピック ${index} / ${total}`,
+	onThisPage: 'このページの内容',
+	paginationLabel: '本書',
+	paginationPrevious: '前へ',
+	paginationNext: '次へ'
+};
+
+/** @type {Messages} */
+const sv = {
+	skipToContent: 'Hoppa till innehåll',
+	navHome: 'Start',
+	navContents: 'Innehåll',
+	navTopicsAZ: 'Ämnen A–Ö',
+	navSearch: 'Sök',
+	navAbout: 'Om',
+	footerSourceLink: 'Källa',
+	footerTaglineSuffix:
+		' — definitioner av digitala hälsomått, exempel och resonemang för team som bygger, utvärderar och beställer digitala hälsoprodukter.',
+	footerNote:
+		'Siffrorna i den här boken förändras snabbt. Varje ämne daterar sina referensvärden direkt i texten; verifiera dem igen innan du använder ett tal i ett verkligt affärsfall.',
+	pickerTheme: 'Tema',
+	pickerLanguage: 'Språk',
+	pickerTextSize: 'Textstorlek',
+	pickerShare: 'Dela',
+	shareCopyLink: 'Kopiera länk',
+	shareCopied: 'Kopierad',
+	shareCopyFailed: 'Kopiering misslyckades',
+	shareEmailLabel: 'Skicka länk via e-post',
+	shareLinkedinLabel: 'Dela på LinkedIn',
+	shareRedditLabel: 'Dela på Reddit',
+	shareBlueskyLabel: 'Dela på Bluesky',
+	shareMastodonLabel: 'Dela på Mastodon',
+	startHere: 'Börja här',
+	startHereSubtitle: 'De tre idéer som allt annat bygger på.',
+	contentsMetaDescription: (bookTitle) => `Alla ämnen i ${bookTitle}, i läsordning.`,
+	contentsIntro: (count, parts) =>
+		`Alla ${count} ämnen i läsordning, uppdelade på ${parts} delar. Varje ämne täcker ett mått eller koncept: definition, varför det spelar roll, hur det beräknas, ett löst exempel, datakällor och förbehåll, vanliga misstag och källor.`,
+	topicsCountSubtitle: (n) => `${n} ämnen`,
+	topicsMetaDescription: (bookTitle) => `Alla ämnen i ${bookTitle}, listade från A till Ö.`,
+	topicsIntroPrefix: (count) => `Alla ${count} ämnen i alfabetisk ordning. För läsordning, se`,
+	contentsLinkText: 'innehållsförteckningen',
+	jumpToLetter: 'Hoppa till bokstav',
+	searchMetaDescription: (bookTitle) => `Sök bland alla ämnen i ${bookTitle}.`,
+	searchIntro: (count) =>
+		`Sök bland alla ${count} ämnen efter titel, del, sammanfattning och avsnittsrubrik. Allt körs i din webbläsare — det du skriver lämnar aldrig den här sidan.`,
+	searchInputLabel: 'Sök ämnen',
+	searchPlaceholder: 'DAU, retention, PROM-slutförandegrad…',
+	searchHintEmptyHtml: 'Skriv för att söka. Prova <em>DAU</em>, <em>retention</em>, eller <em>PROM</em>.',
+	noResultsPrefix: 'Inget ämne matchar ',
+	noResultsMiddle: '. Prova en bredare term, eller bläddra i ',
+	resultsCountSingular: 'ämne',
+	resultsCountPlural: 'ämnen',
+	topicPosition: (index, total) => `Ämne ${index} av ${total}`,
+	onThisPage: 'På den här sidan',
+	paginationLabel: 'Bok',
+	paginationPrevious: 'Föregående',
+	paginationNext: 'Nästa'
+};
+
+/** @type {Messages} */
+const nl = {
+	skipToContent: 'Naar inhoud',
+	navHome: 'Home',
+	navContents: 'Inhoud',
+	navTopicsAZ: 'Onderwerpen A–Z',
+	navSearch: 'Zoeken',
+	navAbout: 'Over',
+	footerSourceLink: 'Bron',
+	footerTaglineSuffix:
+		' — definities van digitale gezondheidsmetrieken, voorbeelden en onderbouwing voor teams die digitale gezondheidsproducten bouwen, beoordelen en aanbesteden.',
+	footerNote:
+		'De cijfers in dit boek veranderen snel. Elk onderwerp dateert zijn referentiewaarden rechtstreeks in de tekst; controleer ze opnieuw voordat u een getal in een echte business case gebruikt.',
+	pickerTheme: 'Thema',
+	pickerLanguage: 'Taal',
+	pickerTextSize: 'Tekstgrootte',
+	pickerShare: 'Delen',
+	shareCopyLink: 'Link kopiëren',
+	shareCopied: 'Gekopieerd',
+	shareCopyFailed: 'Kopiëren mislukt',
+	shareEmailLabel: 'Link per e-mail versturen',
+	shareLinkedinLabel: 'Delen op LinkedIn',
+	shareRedditLabel: 'Delen op Reddit',
+	shareBlueskyLabel: 'Delen op Bluesky',
+	shareMastodonLabel: 'Delen op Mastodon',
+	startHere: 'Begin hier',
+	startHereSubtitle: 'De drie ideeën waarop al het andere voortbouwt.',
+	contentsMetaDescription: (bookTitle) => `Alle onderwerpen in ${bookTitle}, in leesvolgorde.`,
+	contentsIntro: (count, parts) =>
+		`Alle ${count} onderwerpen in leesvolgorde, verdeeld over ${parts} delen. Elk onderwerp behandelt één metriek of concept: definitie, waarom het belangrijk is, hoe het wordt berekend, een uitgewerkt voorbeeld, gegevensbronnen en aandachtspunten, veelgemaakte fouten, en bronnen.`,
+	topicsCountSubtitle: (n) => `${n} onderwerpen`,
+	topicsMetaDescription: (bookTitle) => `Alle onderwerpen in ${bookTitle}, van A tot Z.`,
+	topicsIntroPrefix: (count) => `Alle ${count} onderwerpen op alfabetische volgorde. Voor de leesvolgorde, zie de`,
+	contentsLinkText: 'inhoudsopgave',
+	jumpToLetter: 'Ga naar letter',
+	searchMetaDescription: (bookTitle) => `Doorzoek alle onderwerpen in ${bookTitle}.`,
+	searchIntro: (count) =>
+		`Doorzoek alle ${count} onderwerpen op titel, deel, samenvatting en sectiekop. Alles wordt in uw browser uitgevoerd — wat u typt verlaat deze pagina nooit.`,
+	searchInputLabel: 'Onderwerpen zoeken',
+	searchPlaceholder: 'DAU, retentie, PROM-voltooiingspercentage…',
+	searchHintEmptyHtml: 'Typ om te zoeken. Probeer <em>DAU</em>, <em>retentie</em>, of <em>PROM</em>.',
+	noResultsPrefix: 'Geen onderwerp komt overeen met ',
+	noResultsMiddle: '. Probeer een bredere term, of blader door de ',
+	resultsCountSingular: 'onderwerp',
+	resultsCountPlural: 'onderwerpen',
+	topicPosition: (index, total) => `Onderwerp ${index} van ${total}`,
+	onThisPage: 'Op deze pagina',
+	paginationLabel: 'Boek',
+	paginationPrevious: 'Vorige',
+	paginationNext: 'Volgende'
+};
+
 /** @type {Record<string, Messages>} */
 const TRANSLATIONS = {
 	'cy-001': cy,
@@ -597,7 +863,20 @@ const TRANSLATIONS = {
 	'fr-001': fr,
 	'pt-001': pt,
 	'de-de': de,
-	'ru-001': ru
+	'ru-001': ru,
+	'bn-bd': bn,
+	'ko-kr': ko,
+	'ja-jp': ja,
+	'sv-se': sv,
+	'nl-nl': nl,
+	// Country-specific variants of a language already covered by an
+	// international -001 locale reuse that locale's translation object.
+	'ar-eg': ar,
+	'hi-in': hi,
+	'es-es': es,
+	'pt-pt': pt,
+	'ru-ru': ru,
+	'fr-fr': fr
 };
 
 /**
