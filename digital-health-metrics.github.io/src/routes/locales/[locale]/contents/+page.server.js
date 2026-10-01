@@ -1,4 +1,4 @@
-import { book } from '$lib/server/book.js';
+import { book } from '#lib/server/book.js';
 
 export function load({ params }) {
 	const { title, parts, order } = book(params.locale);

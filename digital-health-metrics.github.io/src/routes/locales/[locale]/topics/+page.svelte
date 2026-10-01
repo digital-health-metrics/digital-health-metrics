@@ -1,8 +1,8 @@
 <script>
-	import { base } from '$app/paths';
+	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
 	import { SectionList, SectionListItem } from '@lilydesignsystem/svelte-headless';
-	import { ui } from '$lib/i18n.js';
+	import { ui } from '#lib/i18n.js';
 
 	let { data } = $props();
 	const locale = $derived(page.params.locale);
@@ -17,7 +17,13 @@
 <div class="page page-topics">
 	<header class="page-header">
 		<h1>{t.navTopicsAZ}</h1>
-		<p>{t.topicsIntroPrefix(data.topicCount)} <a href="{base}/locales/{locale}/contents/">{t.contentsLinkText}</a>.</p>
+
+		<p>
+			{t.topicsIntroPrefix(data.topicCount)} 
+			<a href="{resolve('')}/locales/{locale}/contents/">{t.contentsLinkText}</a>
+			.
+		</p>
+
 		<nav class="alphabet" aria-label={t.jumpToLetter}>
 			{#each data.groups as group (group.letter)}
 				<a href="#letter-{group.letter}">{group.letter}</a>
@@ -31,7 +37,11 @@
 			<SectionList class="letter-list">
 				{#each group.topics as topic (topic.slug)}
 					<SectionListItem class="letter-item">
-						<a class="letter-link" href="{base}{topic.href}">{topic.title}</a>
+						<a
+							class="letter-link"
+							href="{resolve('')}{topic.href}"
+						>{topic.title}</a>
+
 						<span class="letter-part">{topic.part}</span>
 						{#if topic.blurb}
 							<span class="letter-blurb">{topic.blurb}</span>

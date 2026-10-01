@@ -1,8 +1,8 @@
 <script>
-	import { base } from '$app/paths';
+	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
 	import { SearchInput, SectionList, SectionListItem } from '@lilydesignsystem/svelte-headless';
-	import { ui } from '$lib/i18n.js';
+	import { ui } from '#lib/i18n.js';
 
 	let { data } = $props();
 	const locale = $derived(page.params.locale);
@@ -25,14 +25,11 @@
 
 	const results = $derived(
 		terms.length === 0
-			? []
-			: data.topics
-					.map((topic, i) => ({ topic, haystack: haystacks[i] }))
-					.filter(({ haystack }) => terms.every((term) => haystack.includes(term)))
-					// A hit in the title beats a hit anywhere else.
-					.map(({ topic }) => ({
-						topic,
-						score: terms.filter((term) => topic.title.toLowerCase().includes(term)).length
+		? []
+		: data.topics.map((topic, i) => ({ topic, haystack: haystacks[i] })).filter(({ haystack }) => terms.every((term) => haystack.includes(term))).// A hit in the title beats a hit anywhere else.
+		map(({ topic }) => ({
+			topic,
+			score: terms.filter((term) => topic.title.toLowerCase().includes(term)).length
 					}))
 					.sort((a, b) => b.score - a.score || a.topic.title.localeCompare(b.topic.title, locale))
 					.map(({ topic }) => topic)
@@ -67,8 +64,11 @@
 			<p class="search-hint">{@html t.searchHintEmptyHtml}</p>
 		{:else if results.length === 0}
 			<p class="search-hint">
-				{t.noResultsPrefix}<strong>{query}</strong>{t.noResultsMiddle}
-				<a href="{base}/locales/{locale}/contents/">{t.contentsLinkText}</a>.
+				{t.noResultsPrefix}
+				<strong>{query}</strong>
+				{t.noResultsMiddle} 
+				<a href="{resolve('')}/locales/{locale}/contents/">{t.contentsLinkText}</a>
+				.
 			</p>
 		{:else}
 			<p class="search-count">
@@ -78,7 +78,11 @@
 			<SectionList class="search-list">
 				{#each results as topic (topic.slug)}
 					<SectionListItem class="search-item">
-						<a class="search-link" href="{base}{topic.href}">{topic.title}</a>
+						<a
+							class="search-link"
+							href="{resolve('')}{topic.href}"
+						>{topic.title}</a>
+
 						<span class="search-part">{topic.part}</span>
 						<span class="search-summary">{topic.blurb || topic.summary}</span>
 					</SectionListItem>

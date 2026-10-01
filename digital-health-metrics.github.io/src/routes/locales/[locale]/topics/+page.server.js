@@ -1,4 +1,4 @@
-import { book, index } from '$lib/server/book.js';
+import { book, index } from '#lib/server/book.js';
 
 export function load({ params }) {
 	const topics = index(params.locale).sort((a, b) => a.title.localeCompare(b.title, params.locale));

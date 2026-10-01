@@ -1,4 +1,4 @@
-import { book, index } from '$lib/server/book.js';
+import { book, index } from '#lib/server/book.js';
 
 // The whole index is embedded in this prerendered page: title, part, blurb,
 // summary, and section headings per topic is small enough to ship at once,

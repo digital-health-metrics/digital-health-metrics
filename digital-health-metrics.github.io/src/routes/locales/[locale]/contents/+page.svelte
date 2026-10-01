@@ -1,5 +1,5 @@
 <script>
-	import { base } from '$app/paths';
+	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
 	import {
 		ContentsList,
@@ -7,7 +7,7 @@
 		ContentsNav,
 		SectionHeading
 	} from '@lilydesignsystem/svelte-headless';
-	import { ui } from '$lib/i18n.js';
+	import { ui } from '#lib/i18n.js';
 
 	let { data } = $props();
 	const t = $derived(ui(page.params.locale));
@@ -45,7 +45,11 @@
 				<ContentsList class="contents-part-list">
 					{#each part.entries as entry (entry.slug)}
 						<ContentsListItem class="contents-entry">
-							<a class="contents-entry-link" href="{base}{entry.href}">{entry.title}</a>
+							<a
+								class="contents-entry-link"
+								href="{resolve('')}{entry.href}"
+							>{entry.title}</a>
+
 							{#if entry.blurb}
 								<span class="contents-entry-blurb">{entry.blurb}</span>
 							{/if}

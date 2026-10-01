@@ -1,11 +1,11 @@
 <script>
+	import { resolve } from '$app/paths';
 	import { goto } from '$app/navigation';
-	import { base } from '$app/paths';
 	import { page } from '$app/state';
 	import { Footer, Header, SkipLink } from '@lilydesignsystem/svelte-headless';
 	import PickerBar from '@lilydesignsystem/svelte-picker-bar';
-	import { DEFAULT_LOCALE, localeLabel } from '$lib/locales.js';
-	import { ui } from '$lib/i18n.js';
+	import { DEFAULT_LOCALE, localeLabel } from '#lib/locales.js';
+	import { ui } from '#lib/i18n.js';
 
 	let { data, children } = $props();
 
@@ -66,7 +66,7 @@
 
 	/** @param {string} href */
 	function current(href) {
-		return path === `${base}${href}` || path === href;
+		return path === resolve(`${href}`.slice(1)) || path === href;
 	}
 
 	// The locale picker only changes `lang`/`dir` and calls this — it never
@@ -81,14 +81,14 @@
 	function navigateToLocale(next) {
 		const links = page.data?.localeLinks;
 		if (links?.[next]) {
-			goto(`${base}${links[next]}`, { invalidateAll: true });
+			goto(resolve(`${links[next]}`.slice(1)), { invalidateAll: true });
 			return;
 		}
 		if (locale) {
-			goto(`${base}${path.replace(/\/locales\/[\w-]+/, `/locales/${next}`)}`, { invalidateAll: true });
+			goto(resolve(`${path.replace(/\/locales\/[\w-]+/, `/locales/${next}`)}`.slice(1)), { invalidateAll: true });
 			return;
 		}
-		goto(`${base}/locales/${next}/`, { invalidateAll: true });
+		goto(resolve(`locales/${next}/`), { invalidateAll: true });
 	}
 </script>
 
@@ -100,16 +100,17 @@
 
 <Header class="site-header" label="Site">
 	<div class="site-header-inner">
-		<a class="site-brand" href="{base}/">
+		<a class="site-brand" href="{resolve('')}/">
 			<span class="site-brand-mark" aria-hidden="true">⚕</span>
 			<span class="site-brand-name">{bookTitle}</span>
 		</a>
 
 		<nav class="site-nav" aria-label="Main">
 			{#each topLinks as link (link.href)}
-				<a href="{base}{link.href}" aria-current={current(link.href) ? 'page' : undefined}>
-					{link.label}
-				</a>
+				<a
+					href="{resolve('')}{link.href}"
+					aria-current={current(link.href) ? 'page' : undefined}
+				>{link.label}</a>
 			{/each}
 			<a href="https://github.com/digital-health-metrics/digital-health-metrics">GitHub</a>
 		</nav>
@@ -128,17 +129,24 @@
 				stroke-linecap="round"
 				stroke-linejoin="round"
 				aria-hidden="true"
-			>
-				<path d="M2.5 8h11M9 3.5 13.5 8 9 12.5" />
-			</svg>
+			><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5"></path></svg>
 		{/snippet}
 
 		<PickerBar
 			class="site-controls"
-			labels={{ theme: t.pickerTheme, locale: t.pickerLanguage, textSize: t.pickerTextSize, share: t.pickerShare }}
-			themesUrl="{base}/assets/themes/"
-			themeProps={{ defaultValue: 'light', detectFromSystem: true, storageKey: 'digital-health-metrics.theme' }}
-			{locales}
+			labels={{
+				theme: t.pickerTheme,
+				locale: t.pickerLanguage,
+				textSize: t.pickerTextSize,
+				share: t.pickerShare
+			}}
+			themesUrl="{resolve('')}/assets/themes/"
+			themeProps={{
+				defaultValue: 'light',
+				detectFromSystem: true,
+				storageKey: 'digital-health-metrics.theme'
+			}}
+			locales={locales}
 			localeProps={{
 				value: locale ?? '',
 				defaultValue: DEFAULT_LOCALE,
@@ -146,8 +154,11 @@
 				localeLabels: Object.fromEntries(locales.map((code) => [code, localeLabel(code)])),
 				onChange: navigateToLocale
 			}}
-			textSizeProps={{ defaultValue: 'normal', storageKey: 'digital-health-metrics.text-size' }}
-			{shareTargets}
+			textSizeProps={{
+				defaultValue: 'normal',
+				storageKey: 'digital-health-metrics.text-size'
+			}}
+			shareTargets={shareTargets}
 			shareProps={{
 				title: bookTitle,
 				copyLabel: t.shareCopyLink,
@@ -175,12 +186,16 @@
 		</p>
 		<nav class="site-footer-links" aria-label="Footer">
 			{#if locale}
-				<a href="{base}/locales/{locale}/contents/">{t.navContents}</a>
-				<a href="{base}/locales/{locale}/topics/">{t.navTopicsAZ}</a>
-				<a href="{base}/locales/{locale}/search/">{t.navSearch}</a>
+				<a href="{resolve('')}/locales/{locale}/contents/">{t.navContents}</a>
+				<a href="{resolve('')}/locales/{locale}/topics/">{t.navTopicsAZ}</a>
+				<a href="{resolve('')}/locales/{locale}/search/">{t.navSearch}</a>
 			{/if}
-			<a href="{base}/about/">{t.navAbout}</a>
-			<a href="https://github.com/digital-health-metrics/digital-health-metrics">{t.footerSourceLink}</a>
+
+			<a href="{resolve('')}/about/">{t.navAbout}</a>
+
+			<a
+				href="https://github.com/digital-health-metrics/digital-health-metrics"
+			>{t.footerSourceLink}</a>
 		</nav>
 	</div>
 </Footer>

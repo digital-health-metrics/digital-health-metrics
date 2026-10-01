@@ -1,5 +1,5 @@
 <script>
-	import { base } from '$app/paths';
+	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
 </script>
 
@@ -22,7 +22,11 @@
 
 	<p>Try one of these instead:</p>
 	<ul class="error-links">
-		<li><a href="{base}/">Home</a> — choose a language</li>
-		<li><a href="{base}/about/">About</a></li>
+		<li>
+			<a href="{resolve('')}/">Home</a>
+			— choose a language
+		</li>
+
+		<li><a href="{resolve('')}/about/">About</a></li>
 	</ul>
 </div>

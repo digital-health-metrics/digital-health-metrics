@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit';
-import { topic } from '$lib/server/book.js';
-import { locales, topicSlugs } from '$lib/server/content.js';
+import { topic } from '#lib/server/book.js';
+import { locales, topicSlugs } from '#lib/server/content.js';
 
 // Slugs can differ by locale (see book.js), so the full (locale, slug) pair
 // set is enumerated explicitly here rather than relying on a naive cross

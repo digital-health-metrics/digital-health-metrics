@@ -8,12 +8,12 @@
 
 import { Marked } from 'marked';
 import GithubSlugger from 'github-slugger';
-import { base } from '$app/paths';
+import { resolve } from '$app/paths';
 import { isExternal, rewriteHref } from './paths.js';
 
 /** Split a leading `# Title` off the source. Every book file starts with one. */
 export function splitTitle(source) {
-	const match = /^\s*#\s+(.+?)\s*$/m.exec(source);
+	const match = (/^\s*#\s+(.+?)\s*$/m).exec(source);
 	if (!match || source.slice(0, match.index).trim() !== '') {
 		return { title: '', body: source };
 	}
@@ -28,11 +28,9 @@ export function firstParagraph(body) {
 	for (const block of body.split(/\n\s*\n/)) {
 		const text = block.trim();
 		if (!text || text.startsWith('#') || text.startsWith('-') || text.startsWith('```')) continue;
-		return text
-			.replace(/\[([^\]]+)\]\([^)]*\)/g, '$1') // links -> their text
-			.replace(/[*_`]/g, '')
-			.replace(/\s+/g, ' ')
-			.trim();
+
+		return text.replace(/\[([^\]]+)\]\([^)]*\)/g, '$1').// links -> their text
+		replace(/[*_`]/g, '').replace(/\s+/g, ' ').trim();
 	}
 	return '';
 }
@@ -52,7 +50,7 @@ export function render(source, file) {
 
 	marked.use({
 		walkTokens(token) {
-			if (token.type === 'link') token.href = rewriteHref(token.href, file, base);
+			if (token.type === 'link') token.href = rewriteHref(token.href, file, resolve(''));
 		},
 		renderer: {
 			heading(token) {

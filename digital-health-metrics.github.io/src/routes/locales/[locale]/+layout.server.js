@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit';
-import { book } from '$lib/server/book.js';
-import { locales } from '$lib/server/content.js';
+import { book } from '#lib/server/book.js';
+import { locales } from '#lib/server/content.js';
 
 // `entries()` for the [locale] segment lives in +page.server.js (this
 // directory's own) and in topics/[slug]/+page.server.js — `entries()` is only

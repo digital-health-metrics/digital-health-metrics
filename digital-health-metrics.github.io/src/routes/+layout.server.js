@@ -1,5 +1,5 @@
-import { splitTitle } from '$lib/markdown.js';
-import { read, locales } from '$lib/server/content.js';
+import { splitTitle } from '#lib/markdown.js';
+import { read, locales } from '#lib/server/content.js';
 
 // The book's own title, from its README, shown in the header and the footer.
 // Read directly rather than through book() so this locale-agnostic layout

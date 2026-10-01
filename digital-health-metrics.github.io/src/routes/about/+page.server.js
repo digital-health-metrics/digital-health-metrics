@@ -1,7 +1,7 @@
-import { book } from '$lib/server/book.js';
-import { locales } from '$lib/server/content.js';
+import { book } from '#lib/server/book.js';
+import { locales } from '#lib/server/content.js';
 import { DEFAULT_THEMES } from '@lilydesignsystem/svelte-picker-bar';
-import { DEFAULT_LOCALE } from '$lib/locales.js';
+import { DEFAULT_LOCALE } from '#lib/locales.js';
 
 export function load() {
 	const { order, parts } = book(DEFAULT_LOCALE);

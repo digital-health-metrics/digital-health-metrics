@@ -8,11 +8,11 @@
 // RTL_LOCALES in $lib/locales.js, dir="rtl". Every other route (home, about)
 // keeps the template's own lang="en" dir="ltr", since it has no locale to
 // report — the root locale picker itself is presented in English.
-import { RTL_LOCALES } from '$lib/locales.js';
+import { RTL_LOCALES } from '#lib/locales.js';
 
 const LOCALE_ROUTE = /^\/locales\/([\w-]+)\//;
 
-/** @type {import('@sveltejs/kit').Handle} */
+/** @type {import('@sveltejs/kit/hooks').Handle} */
 export async function handle({ event, resolve }) {
 	const locale = LOCALE_ROUTE.exec(event.url.pathname)?.[1];
 	if (!locale) return resolve(event);

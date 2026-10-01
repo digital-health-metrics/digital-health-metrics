@@ -1,5 +1,5 @@
 <script>
-	import { base } from '$app/paths';
+	import { resolve } from '$app/paths';
 	import {
 		ArticleLayout,
 		BreadcrumbList,
@@ -12,7 +12,7 @@
 		PaginationListItem,
 		PaginationNav
 	} from '@lilydesignsystem/svelte-headless';
-	import { ui } from '$lib/i18n.js';
+	import { ui } from '#lib/i18n.js';
 
 	let { data } = $props();
 	const t = $derived(ui(data.locale));
@@ -30,8 +30,14 @@
 <div class="page page-topic">
 	<BreadcrumbNav class="breadcrumb" label="Breadcrumb">
 		<BreadcrumbList>
-			<BreadcrumbListItem><a href="{base}/locales/{data.locale}/">{t.navHome}</a></BreadcrumbListItem>
-			<BreadcrumbListItem><a href="{base}/locales/{data.locale}/contents/">{t.navContents}</a></BreadcrumbListItem>
+			<BreadcrumbListItem><a href="{resolve('')}/locales/{data.locale}/">{t.navHome}</a></BreadcrumbListItem>
+
+			<BreadcrumbListItem>
+				<a
+					href="{resolve('')}/locales/{data.locale}/contents/"
+				>{t.navContents}</a>
+			</BreadcrumbListItem>
+
 			{#if data.part}
 				<BreadcrumbListItem>{data.part}</BreadcrumbListItem>
 			{/if}
@@ -42,7 +48,9 @@
 	<ArticleLayout class="topic" label={data.title}>
 		<header class="topic-header">
 			<p class="topic-position">
-				{t.topicPosition(data.index + 1, data.total)}{#if data.part}&nbsp;· {data.part}{/if}
+				{t.topicPosition(data.index + 1, data.total)}{#if data.part}
+					· {data.part}
+				{/if}
 			</p>
 			<h1>{data.title}</h1>
 		</header>
@@ -67,7 +75,10 @@
 		<PaginationList>
 			<PaginationListItem class="pagination-previous">
 				{#if data.previous}
-					<a href="{base}{data.previous.href}" rel="prev">
+					<a
+						href="{resolve('')}{data.previous.href}"
+						rel="prev"
+					>
 						<span class="pagination-direction">{t.paginationPrevious}</span>
 						<span class="pagination-title">{data.previous.title}</span>
 					</a>
@@ -75,7 +86,7 @@
 			</PaginationListItem>
 			<PaginationListItem class="pagination-next">
 				{#if data.next}
-					<a href="{base}{data.next.href}" rel="next">
+					<a href="{resolve('')}{data.next.href}" rel="next">
 						<span class="pagination-direction">{t.paginationNext}</span>
 						<span class="pagination-title">{data.next.title}</span>
 					</a>

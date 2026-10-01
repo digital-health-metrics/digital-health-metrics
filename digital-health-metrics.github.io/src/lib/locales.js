@@ -1,6 +1,6 @@
 // Locale display metadata shared between the root locale-picker page and the
 // header's language picker. The set of *available* locales always comes from
-// the vendored content (`$lib/server/content.js` locales()) — this module
+// the vendored content (`#lib/server/content.js` locales()) — this module
 // only supplies how to label/order codes that content already declared.
 //
 // Exactly 32 locales are published by this site. The content monorepo also

@@ -1,6 +1,6 @@
-import { render } from '$lib/markdown.js';
-import { book, localizeHtml, readmeSource } from '$lib/server/book.js';
-import { locales } from '$lib/server/content.js';
+import { render } from '#lib/markdown.js';
+import { book, localizeHtml, readmeSource } from '#lib/server/book.js';
+import { locales } from '#lib/server/content.js';
 
 // This is the first page reached for each locale, so its entries() drives
 // prerendering for the whole [locale] subtree: the crawler discovers

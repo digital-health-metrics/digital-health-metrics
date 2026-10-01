@@ -1,5 +1,5 @@
 <script>
-	import { base } from '$app/paths';
+	import { resolve } from '$app/paths';
 	import { SectionList, SectionListItem } from '@lilydesignsystem/svelte-headless';
 
 	let { data } = $props();
@@ -26,8 +26,11 @@
 		<SectionList class="locale-list">
 			{#each data.locales as locale (locale.code)}
 				<SectionListItem class="locale-item">
-					<a class="locale-link" href="{base}/locales/{locale.code}/">
-						{locale.label}
+					<a
+						class="locale-link"
+						href="{resolve('')}/locales/{locale.code}/"
+					>
+						{locale.label} 
 						{#if locale.isDefault}<span class="locale-default-tag">default</span>{/if}
 					</a>
 				</SectionListItem>
