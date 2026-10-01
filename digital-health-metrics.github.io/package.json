@@ -17,9 +17,9 @@
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "^3.0.10",
-    "@sveltejs/kit": "^2.70.2",
+    "@sveltejs/kit": "^2.70.3",
     "@sveltejs/vite-plugin-svelte": "^5.1.1",
-    "svelte": "^5.56.9",
+    "svelte": "^5.57.1",
     "svelte-check": "^4.7.6",
     "typescript": "^5.9.3",
     "vite": "^6.4.3"
@@ -28,6 +28,6 @@
     "@lilydesignsystem/svelte-headless": "^0.2.0",
     "@lilydesignsystem/svelte-picker-bar": "^0.1.0",
     "github-slugger": "^2.0.0",
-    "marked": "^18.0.10"
+    "marked": "^18.0.14"
   }
 }
