@@ -11,7 +11,7 @@
     "sync:content": "node scripts/sync-content.mjs",
     "sync:lily": "node scripts/vendor-lily.mjs",
     "dev": "vite dev",
-    "build": "vite build",
+    "build": "vite build && node scripts/build-search-index.mjs build",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json"
   },

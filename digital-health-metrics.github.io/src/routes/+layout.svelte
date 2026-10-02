@@ -1,4 +1,5 @@
 <script>
+	import SearchGate from '#lib/SearchGate.svelte';
 	import { resolve } from '$app/paths';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/state';
@@ -88,6 +89,9 @@
 			goto(resolve(`${path.replace(/\/locales\/[\w-]+/, `/locales/${next}`)}`.slice(1)), { refreshAll: true });
 			return;
 		}
+		// A search (/?<target>) is on the root page: the picker's automatic
+		// restore of the stored locale must not navigate away and drop it.
+		if (page.url.pathname === '/' && page.url.search) return;
 		goto(resolve(`locales/${next}/`), { refreshAll: true });
 	}
 </script>
@@ -172,7 +176,7 @@
 
 <div class="site-body">
 	<main id="main" class="site-main">
-		{@render children()}
+		<SearchGate {children} />
 	</main>
 </div>
 
