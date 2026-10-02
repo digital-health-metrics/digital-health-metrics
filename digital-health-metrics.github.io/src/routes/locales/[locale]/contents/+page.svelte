@@ -47,7 +47,7 @@
 						<ContentsListItem class="contents-entry">
 							<a
 								class="contents-entry-link"
-								href="{resolve('')}{entry.href}"
+								href={resolve(entry.href.slice(1))}
 							>{entry.title}</a>
 
 							{#if entry.blurb}

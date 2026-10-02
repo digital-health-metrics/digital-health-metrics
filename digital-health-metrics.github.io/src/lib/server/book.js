@@ -272,7 +272,12 @@ export function topic(locale, slug) {
 	};
 }
 
-const TOPIC_HREF = /href="\/locales\/([\w-]+)\/topics\/([^/]+)\/"/g;
+// The leading group captures whatever comes before "/locales/" — empty in
+// absolute-path mode, or a relative prefix like "../.." under SvelteKit's
+// relative-path mode (resolve('')) — so it can be preserved unchanged in the
+// rewritten href rather than only matching (and silently never firing for)
+// an href that happens to start with "/locales/" literally.
+const TOPIC_HREF = /href="([^"]*?)\/locales\/([\w-]+)\/topics\/([^/]+)\/"/g;
 
 /**
  * Rewrite rendered HTML's topic links from whichever locale they were written
@@ -282,9 +287,9 @@ const TOPIC_HREF = /href="\/locales\/([\w-]+)\/topics\/([^/]+)\/"/g;
  * topic cross-references.
  */
 export function localizeHtml(html, locale) {
-	return html.replace(TOPIC_HREF, (match, fromLocale, slug) => {
+	return html.replace(TOPIC_HREF, (match, prefix, fromLocale, slug) => {
 		const mapped = peers(fromLocale, slug)[locale];
-		return mapped ? `href="/locales/${locale}/topics/${mapped}/"` : match;
+		return mapped ? `href="${prefix}/locales/${locale}/topics/${mapped}/"` : match;
 	});
 }
 

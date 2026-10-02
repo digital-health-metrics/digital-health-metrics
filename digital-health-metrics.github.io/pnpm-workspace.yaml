@@ -25,3 +25,5 @@ minimumReleaseAgeExclude:
   - '@lilydesignsystem/svelte-share-picker@0.1.2'
   - '@lilydesignsystem/svelte-text-size-picker@0.1.2'
   - '@lilydesignsystem/svelte-theme-picker@0.1.2'
+  - '@sveltejs/adapter-static@4.0.0'
+  - '@sveltejs/kit@3.0.0'

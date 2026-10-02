@@ -30,11 +30,11 @@
 <div class="page page-topic">
 	<BreadcrumbNav class="breadcrumb" label="Breadcrumb">
 		<BreadcrumbList>
-			<BreadcrumbListItem><a href="{resolve('')}/locales/{data.locale}/">{t.navHome}</a></BreadcrumbListItem>
+			<BreadcrumbListItem><a href={resolve(`locales/${data.locale}/`)}>{t.navHome}</a></BreadcrumbListItem>
 
 			<BreadcrumbListItem>
 				<a
-					href="{resolve('')}/locales/{data.locale}/contents/"
+					href={resolve(`locales/${data.locale}/contents/`)}
 				>{t.navContents}</a>
 			</BreadcrumbListItem>
 
@@ -76,7 +76,7 @@
 			<PaginationListItem class="pagination-previous">
 				{#if data.previous}
 					<a
-						href="{resolve('')}{data.previous.href}"
+						href={resolve(data.previous.href.slice(1))}
 						rel="prev"
 					>
 						<span class="pagination-direction">{t.paginationPrevious}</span>
@@ -86,7 +86,7 @@
 			</PaginationListItem>
 			<PaginationListItem class="pagination-next">
 				{#if data.next}
-					<a href="{resolve('')}{data.next.href}" rel="next">
+					<a href={resolve(data.next.href.slice(1))} rel="next">
 						<span class="pagination-direction">{t.paginationNext}</span>
 						<span class="pagination-title">{data.next.title}</span>
 					</a>

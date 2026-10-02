@@ -67,7 +67,7 @@
 				{t.noResultsPrefix}
 				<strong>{query}</strong>
 				{t.noResultsMiddle} 
-				<a href="{resolve('')}/locales/{locale}/contents/">{t.contentsLinkText}</a>
+				<a href={resolve(`locales/${locale}/contents/`)}>{t.contentsLinkText}</a>
 				.
 			</p>
 		{:else}
@@ -80,7 +80,7 @@
 					<SectionListItem class="search-item">
 						<a
 							class="search-link"
-							href="{resolve('')}{topic.href}"
+							href={resolve(topic.href.slice(1))}
 						>{topic.title}</a>
 
 						<span class="search-part">{topic.part}</span>

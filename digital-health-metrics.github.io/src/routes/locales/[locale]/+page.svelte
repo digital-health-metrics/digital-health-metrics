@@ -26,7 +26,7 @@
 			<SectionList class="start-list">
 				{#each data.startHere as item (item.href)}
 					<SectionListItem class="start-item">
-						<a class="start-link" href="{resolve('')}{item.href}">{item.title}</a>
+						<a class="start-link" href={resolve(item.href.slice(1))}>{item.title}</a>
 						<span class="start-blurb">{item.blurb}</span>
 					</SectionListItem>
 				{/each}

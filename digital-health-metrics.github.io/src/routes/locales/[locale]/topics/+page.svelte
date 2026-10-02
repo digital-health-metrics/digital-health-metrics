@@ -20,7 +20,7 @@
 
 		<p>
 			{t.topicsIntroPrefix(data.topicCount)} 
-			<a href="{resolve('')}/locales/{locale}/contents/">{t.contentsLinkText}</a>
+			<a href={resolve(`locales/${locale}/contents/`)}>{t.contentsLinkText}</a>
 			.
 		</p>
 
@@ -39,7 +39,7 @@
 					<SectionListItem class="letter-item">
 						<a
 							class="letter-link"
-							href="{resolve('')}{topic.href}"
+							href={resolve(topic.href.slice(1))}
 						>{topic.title}</a>
 
 						<span class="letter-part">{topic.part}</span>

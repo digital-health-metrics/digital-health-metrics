@@ -81,14 +81,14 @@
 	function navigateToLocale(next) {
 		const links = page.data?.localeLinks;
 		if (links?.[next]) {
-			goto(resolve(`${links[next]}`.slice(1)), { invalidateAll: true });
+			goto(resolve(`${links[next]}`.slice(1)), { refreshAll: true });
 			return;
 		}
 		if (locale) {
-			goto(resolve(`${path.replace(/\/locales\/[\w-]+/, `/locales/${next}`)}`.slice(1)), { invalidateAll: true });
+			goto(resolve(`${path.replace(/\/locales\/[\w-]+/, `/locales/${next}`)}`.slice(1)), { refreshAll: true });
 			return;
 		}
-		goto(resolve(`locales/${next}/`), { invalidateAll: true });
+		goto(resolve(`locales/${next}/`), { refreshAll: true });
 	}
 </script>
 
@@ -100,7 +100,7 @@
 
 <Header class="site-header" label="Site">
 	<div class="site-header-inner">
-		<a class="site-brand" href="{resolve('')}/">
+		<a class="site-brand" href={resolve('')}>
 			<span class="site-brand-mark" aria-hidden="true">⚕</span>
 			<span class="site-brand-name">{bookTitle}</span>
 		</a>
@@ -108,7 +108,7 @@
 		<nav class="site-nav" aria-label="Main">
 			{#each topLinks as link (link.href)}
 				<a
-					href="{resolve('')}{link.href}"
+					href={resolve(link.href.slice(1))}
 					aria-current={current(link.href) ? 'page' : undefined}
 				>{link.label}</a>
 			{/each}
@@ -140,7 +140,7 @@
 				textSize: t.pickerTextSize,
 				share: t.pickerShare
 			}}
-			themesUrl="{resolve('')}/assets/themes/"
+			themesUrl={resolve('assets/themes/')}
 			themeProps={{
 				defaultValue: 'light',
 				detectFromSystem: true,
@@ -186,12 +186,12 @@
 		</p>
 		<nav class="site-footer-links" aria-label="Footer">
 			{#if locale}
-				<a href="{resolve('')}/locales/{locale}/contents/">{t.navContents}</a>
-				<a href="{resolve('')}/locales/{locale}/topics/">{t.navTopicsAZ}</a>
-				<a href="{resolve('')}/locales/{locale}/search/">{t.navSearch}</a>
+				<a href={resolve(`locales/${locale}/contents/`)}>{t.navContents}</a>
+				<a href={resolve(`locales/${locale}/topics/`)}>{t.navTopicsAZ}</a>
+				<a href={resolve(`locales/${locale}/search/`)}>{t.navSearch}</a>
 			{/if}
 
-			<a href="{resolve('')}/about/">{t.navAbout}</a>
+			<a href={resolve('about/')}>{t.navAbout}</a>
 
 			<a
 				href="https://github.com/digital-health-metrics/digital-health-metrics"

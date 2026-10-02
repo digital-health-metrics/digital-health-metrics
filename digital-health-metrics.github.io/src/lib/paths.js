@@ -56,7 +56,10 @@ export function rewriteHref(href, fromFile, base = '') {
 	const target = hashAt === -1 ? href : href.slice(0, hashAt);
 	if (!target) return href;
 	const route = routeFor(contentPath(target, fromFile));
-	return route ? base + route + hash : href;
+	// `route` always starts with "/"; strip a trailing one from `base` (SvelteKit's
+	// resolve('') returns a relative prefix like "../.." under relative paths, but
+	// can include a trailing slash) so the two never double up.
+	return route ? base.replace(/\/$/, '') + route + hash : href;
 }
 
 /** True when a link leaves the site. */

@@ -23,10 +23,10 @@
 	<p>Try one of these instead:</p>
 	<ul class="error-links">
 		<li>
-			<a href="{resolve('')}/">Home</a>
+			<a href={resolve('')}>Home</a>
 			— choose a language
 		</li>
 
-		<li><a href="{resolve('')}/about/">About</a></li>
+		<li><a href={resolve('about/')}>About</a></li>
 	</ul>
 </div>
