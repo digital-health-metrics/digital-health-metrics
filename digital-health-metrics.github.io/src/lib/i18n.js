@@ -8,7 +8,7 @@
 // localizedIndex: an untranslated locale still renders correctly in English
 // rather than crashing or showing blanks.
 //
-// Only 22 of the site's 32 public locales need an entry in TRANSLATIONS
+// Only 23 of the site's 33 public locales need an entry in TRANSLATIONS
 // below: the 3 English variants (en-us, en-gb, en-001) all share this same
 // base EN table with no per-variant overrides, same as they would for any
 // other English-only difference (spelling, not vocabulary) — and the 7
@@ -22,7 +22,8 @@
 // bn-bd (Bengali), ko-kr (Korean), ja-jp (Japanese), sv-se (Swedish),
 // nl-nl (Dutch), ur-pk (Urdu), id-id (Indonesian), it-it (Italian),
 // uk-ua (Ukrainian), fi-fi (Finnish), no-no (Norwegian), da-dk (Danish),
-// and pl-pl (Polish) with their own chrome translations.
+// pl-pl (Polish), and vi-001 (Vietnamese) with their own chrome
+// translations.
 
 /**
  * @typedef {object} Messages
@@ -1272,6 +1273,58 @@ const pl = {
 };
 
 /** @type {Record<string, Messages>} */
+/** @type {Messages} */
+const vi = {
+	skipToContent: 'Bỏ qua đến nội dung',
+	navHome: 'Trang chủ',
+	navContents: 'Mục lục',
+	navTopicsAZ: 'Chủ đề A–Z',
+	navSearch: 'Tìm kiếm',
+	navAbout: 'Giới thiệu',
+	footerSourceLink: 'Nguồn',
+	footerTaglineSuffix:
+		' — định nghĩa, ví dụ, và lý giải về các chỉ số sức khỏe kỹ thuật số dành cho các đội ngũ xây dựng, đánh giá, và ủy quyền các sản phẩm sức khỏe kỹ thuật số.',
+	footerNote:
+		'Các con số trong cuốn sách này nhanh chóng trở nên lỗi thời. Mỗi chủ đề liệt kê ngày của các chuẩn mực của nó ngay trong văn bản; hãy xác minh lại trước khi sử dụng bất kỳ con số nào trong một trường hợp kinh doanh thực tế.',
+	pickerTheme: 'Chủ đề giao diện',
+	pickerLanguage: 'Ngôn ngữ',
+	pickerTextSize: 'Cỡ chữ',
+	pickerShare: 'Chia sẻ',
+	shareCopyLink: 'Sao chép liên kết',
+	shareCopied: 'Đã sao chép',
+	shareCopyFailed: 'Sao chép thất bại',
+	shareEmailLabel: 'Liên kết Email',
+	shareLinkedinLabel: 'Chia sẻ trên LinkedIn',
+	shareRedditLabel: 'Chia sẻ trên Reddit',
+	shareBlueskyLabel: 'Chia sẻ trên Bluesky',
+	shareMastodonLabel: 'Chia sẻ trên Mastodon',
+	startHere: 'Bắt đầu ở đây',
+	startHereSubtitle: 'Ba ý tưởng mà mọi thứ khác đều dựa trên đó.',
+	contentsMetaDescription: (bookTitle) => `Mọi chủ đề trong ${bookTitle}, theo thứ tự đọc.`,
+	contentsIntro: (count, parts) =>
+		`Tất cả ${count} chủ đề theo thứ tự đọc, trong ${parts} phần. Mỗi chủ đề bao gồm một chỉ số hoặc khái niệm: định nghĩa, tại sao nó quan trọng, cách tính toán nó, một ví dụ tính toán, nguồn dữ liệu và lưu ý, những cạm bẫy thường gặp, và nguồn.`,
+	topicsCountSubtitle: (n) => `${n} chủ đề`,
+	topicsMetaDescription: (bookTitle) => `Mọi chủ đề trong ${bookTitle}, được liệt kê từ A đến Z.`,
+	topicsIntroPrefix: (count) => `Tất cả ${count} chủ đề theo thứ tự bảng chữ cái. Để xem theo thứ tự đọc, xem`,
+	contentsLinkText: 'mục lục',
+	jumpToLetter: 'Nhảy đến chữ cái',
+	searchMetaDescription: (bookTitle) => `Tìm kiếm mọi chủ đề trong ${bookTitle}.`,
+	searchIntro: (count) =>
+		`Tìm kiếm tất cả ${count} chủ đề theo tiêu đề, phần, tóm tắt, và tiêu đề mục. Mọi thứ chạy trong trình duyệt của bạn — bất cứ điều gì bạn gõ không bao giờ rời khỏi trang này.`,
+	searchInputLabel: 'Tìm kiếm chủ đề',
+	searchPlaceholder: 'DAU, giữ chân, tỷ lệ hoàn thành PROM…',
+	searchHintEmptyHtml: 'Gõ để tìm kiếm. Hãy thử <em>DAU</em>, <em>giữ chân</em>, hoặc <em>PROM</em>.',
+	noResultsPrefix: 'Không có chủ đề nào khớp với ',
+	noResultsMiddle: '. Hãy thử một thuật ngữ rộng hơn, hoặc duyệt qua ',
+	resultsCountSingular: 'chủ đề',
+	resultsCountPlural: 'chủ đề',
+	topicPosition: (index, total) => `Chủ đề ${index} trong số ${total}`,
+	onThisPage: 'Trên trang này',
+	paginationLabel: 'Sách',
+	paginationPrevious: 'Trước',
+	paginationNext: 'Tiếp theo'
+};
+
 const TRANSLATIONS = {
 	'cy-001': cy,
 	'zh-cn': zh,
@@ -1295,6 +1348,7 @@ const TRANSLATIONS = {
 	'no-no': no,
 	'da-dk': da,
 	'pl-pl': pl,
+	'vi-001': vi,
 	// Country-specific variants of a language already covered by an
 	// international -001 locale reuse that locale's translation object.
 	'ar-eg': ar,
