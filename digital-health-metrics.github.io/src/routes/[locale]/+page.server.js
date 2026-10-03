@@ -49,7 +49,7 @@ export function load({ params }) {
 			return {
 				title: entry?.title ?? label,
 				blurb: entry?.blurb ?? '',
-				href: entry?.href ?? `/locales/${locale}/topics/${canonicalSlug}/`
+				href: entry?.href ?? `/${locale}/topics/${canonicalSlug}/`
 			};
 		}
 	);

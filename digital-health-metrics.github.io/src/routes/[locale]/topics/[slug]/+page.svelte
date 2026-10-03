@@ -30,11 +30,11 @@
 <div class="page page-topic">
 	<BreadcrumbNav class="breadcrumb" label="Breadcrumb">
 		<BreadcrumbList>
-			<BreadcrumbListItem><a href={resolve(`locales/${data.locale}/`)}>{t.navHome}</a></BreadcrumbListItem>
+			<BreadcrumbListItem><a href={resolve(`${data.locale}/`)}>{t.navHome}</a></BreadcrumbListItem>
 
 			<BreadcrumbListItem>
 				<a
-					href={resolve(`locales/${data.locale}/contents/`)}
+					href={resolve(`${data.locale}/contents/`)}
 				>{t.navContents}</a>
 			</BreadcrumbListItem>
 

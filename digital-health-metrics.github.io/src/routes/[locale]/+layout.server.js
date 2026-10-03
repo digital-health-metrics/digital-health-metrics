@@ -12,7 +12,7 @@ export function load({ params }) {
 	}
 	// This locale's own book title (translated locales/<locale>/index.md when
 	// it has one, else canonical English — see book.js). Set here, once, for
-	// the whole /locales/[locale]/ subtree, rather than in every leaf page's
+	// the whole /[locale]/ subtree, rather than in every leaf page's
 	// own load: the root +layout.svelte reads it off the merged page.data,
 	// where it overrides the root layout's canonical-locale bookTitle used
 	// for the locale-agnostic routes (the root picker, /about/).

@@ -37,7 +37,7 @@ export function routeFor(path) {
 	// [^/]+, not [\w.-]+: translated locales use native-script/accented topic
 	// slugs (e.g. a Chinese locale's own transliterated slug) that \w won't match.
 	const topic = /^locales\/([\w-]+)\/topics\/([^/]+)(?:\/index\.md)?$/.exec(path);
-	if (topic) return `/locales/${topic[1]}/topics/${topic[2]}/`;
+	if (topic) return `/${topic[1]}/topics/${topic[2]}/`;
 	return null;
 }
 

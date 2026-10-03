@@ -67,7 +67,7 @@
 				{t.noResultsPrefix}
 				<strong>{query}</strong>
 				{t.noResultsMiddle} 
-				<a href={resolve(`locales/${locale}/contents/`)}>{t.contentsLinkText}</a>
+				<a href={resolve(`${locale}/contents/`)}>{t.contentsLinkText}</a>
 				.
 			</p>
 		{:else}

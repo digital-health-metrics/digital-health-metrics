@@ -12,7 +12,7 @@
 
 	// page.data is the merged data across the whole layout hierarchy, so on a
 	// locale-scoped route this picks up that locale's own bookTitle (set by
-	// locales/[locale]/+layout.server.js, overriding this root layout's own
+	// [locale]/+layout.server.js, overriding this root layout's own
 	// canonical-locale one) instead of always showing the English title in
 	// the header/footer. The 404.html fallback is rendered without layout
 	// data at all, so this falls back to something sensible rather than
@@ -28,10 +28,10 @@
 	const topLinks = $derived(
 		locale
 			? [
-					{ href: `/locales/${locale}/`, label: t.navHome },
-					{ href: `/locales/${locale}/contents/`, label: t.navContents },
-					{ href: `/locales/${locale}/topics/`, label: t.navTopicsAZ },
-					{ href: `/locales/${locale}/search/`, label: t.navSearch },
+					{ href: `/${locale}/`, label: t.navHome },
+					{ href: `/${locale}/contents/`, label: t.navContents },
+					{ href: `/${locale}/topics/`, label: t.navTopicsAZ },
+					{ href: `/${locale}/search/`, label: t.navSearch },
 					{ href: '/about/', label: t.navAbout }
 				]
 			: [
@@ -74,7 +74,7 @@
 	// navigates on its own. On a topic page, `localeLinks` (from book.js, via
 	// each topic's .locale-peer-id) gives the exact URL for the same topic in
 	// the target locale, since slugs can differ by locale. Off a topic page,
-	// swapping the `/locales/<code>/` prefix is exact (home/contents/topics/
+	// swapping the leading `/<code>/` segment is exact (home/contents/topics/
 	// search have no per-locale slug). With no locale in the URL at all
 	// (the root picker, /about/), there's nothing to preserve — go to that
 	// locale's home.
@@ -86,13 +86,13 @@
 			return;
 		}
 		if (locale) {
-			goto(resolve(`${path.replace(/\/locales\/[\w-]+/, `/locales/${next}`)}`.slice(1)), { refreshAll: true });
+			goto(resolve(`${path.replace(/^\/[\w-]+/, `/${next}`)}`.slice(1)), { refreshAll: true });
 			return;
 		}
 		// A search (/?<target>) is on the root page: the picker's automatic
 		// restore of the stored locale must not navigate away and drop it.
 		if (page.url.pathname === '/' && page.url.search) return;
-		goto(resolve(`locales/${next}/`), { refreshAll: true });
+		goto(resolve(`${next}/`), { refreshAll: true });
 	}
 </script>
 
@@ -190,9 +190,9 @@
 		</p>
 		<nav class="site-footer-links" aria-label="Footer">
 			{#if locale}
-				<a href={resolve(`locales/${locale}/contents/`)}>{t.navContents}</a>
-				<a href={resolve(`locales/${locale}/topics/`)}>{t.navTopicsAZ}</a>
-				<a href={resolve(`locales/${locale}/search/`)}>{t.navSearch}</a>
+				<a href={resolve(`${locale}/contents/`)}>{t.navContents}</a>
+				<a href={resolve(`${locale}/topics/`)}>{t.navTopicsAZ}</a>
+				<a href={resolve(`${locale}/search/`)}>{t.navSearch}</a>
 			{/if}
 
 			<a href={resolve('about/')}>{t.navAbout}</a>

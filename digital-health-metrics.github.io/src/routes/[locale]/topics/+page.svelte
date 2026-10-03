@@ -20,7 +20,7 @@
 
 		<p>
 			{t.topicsIntroPrefix(data.topicCount)} 
-			<a href={resolve(`locales/${locale}/contents/`)}>{t.contentsLinkText}</a>
+			<a href={resolve(`${locale}/contents/`)}>{t.contentsLinkText}</a>
 			.
 		</p>
 

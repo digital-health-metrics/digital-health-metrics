@@ -43,7 +43,6 @@ function urlFor(file) {
 
 function localeOf(url) {
 	const seg = url.split('/').filter(Boolean);
-	if (seg[0] === 'locales' && seg[1] && LOCALE.test(seg[1])) return seg[1].toLowerCase();
 	if (seg[0] && LOCALE.test(seg[0])) return seg[0].toLowerCase();
 	return null;
 }
