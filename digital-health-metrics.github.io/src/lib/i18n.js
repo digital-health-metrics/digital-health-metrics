@@ -8,7 +8,7 @@
 // localizedIndex: an untranslated locale still renders correctly in English
 // rather than crashing or showing blanks.
 //
-// Only 23 of the site's 33 public locales need an entry in TRANSLATIONS
+// Only 24 of the site's 34 public locales need an entry in TRANSLATIONS
 // below: the 3 English variants (en-us, en-gb, en-001) all share this same
 // base EN table with no per-variant overrides, same as they would for any
 // other English-only difference (spelling, not vocabulary) — and the 7
@@ -22,8 +22,8 @@
 // bn-bd (Bengali), ko-kr (Korean), ja-jp (Japanese), sv-se (Swedish),
 // nl-nl (Dutch), ur-pk (Urdu), id-id (Indonesian), it-it (Italian),
 // uk-ua (Ukrainian), fi-fi (Finnish), no-no (Norwegian), da-dk (Danish),
-// pl-pl (Polish), and vi-001 (Vietnamese) with their own chrome
-// translations.
+// pl-pl (Polish), vi-001 (Vietnamese), and et-001 (Estonian) with their own
+// chrome translations.
 
 /**
  * @typedef {object} Messages
@@ -1325,6 +1325,57 @@ const vi = {
 	paginationNext: 'Tiếp theo'
 };
 
+const et = {
+	skipToContent: 'Liigu sisu juurde',
+	navHome: 'Avaleht',
+	navContents: 'Sisukord',
+	navTopicsAZ: 'Teemad A–Z',
+	navSearch: 'Otsing',
+	navAbout: 'Teave',
+	footerSourceLink: 'Lähtekood',
+	footerTaglineSuffix:
+		' — digitaalse tervishoiu mõõdikute definitsioonid, näited ja selgitused meeskondadele, kes ehitavad, haldavad ja hindavad digitaalseid terviseprodukte.',
+	footerNote:
+		'Selle raamatu arvud vananevad kiiresti. Iga teema märgib oma võrdlusaluste kuupäeva otse tekstis; kontrolli neid uuesti enne, kui kasutad mõnda arvu tegelikus äriotsuses.',
+	pickerTheme: 'Teema',
+	pickerLanguage: 'Keel',
+	pickerTextSize: 'Teksti suurus',
+	pickerShare: 'Jaga',
+	shareCopyLink: 'Kopeeri link',
+	shareCopied: 'Kopeeritud',
+	shareCopyFailed: 'Kopeerimine ebaõnnestus',
+	shareEmailLabel: 'E-posti link',
+	shareLinkedinLabel: 'Jaga LinkedInis',
+	shareRedditLabel: 'Jaga Redditis',
+	shareBlueskyLabel: 'Jaga Blueskyl',
+	shareMastodonLabel: 'Jaga Mastodonis',
+	startHere: 'Alusta siit',
+	startHereSubtitle: 'Kolm ideed, millel kõik muu põhineb.',
+	contentsMetaDescription: (bookTitle) => `Iga teema raamatus ${bookTitle}, lugemisjärjekorras.`,
+	contentsIntro: (count, parts) =>
+		`Kõik ${count} teemat lugemisjärjekorras, ${parts} osas. Iga teema käsitleb ühte mõõdikut või mõistet: definitsioon, miks see on oluline, kuidas seda arvutada, läbitöötatud näide, andmeallikad ja hoiatused, levinud lõksud ning allikad.`,
+	topicsCountSubtitle: (n) => `${n} teemat`,
+	topicsMetaDescription: (bookTitle) => `Iga teema raamatus ${bookTitle}, loetletud tähestikulises järjekorras.`,
+	topicsIntroPrefix: (count) => `Kõik ${count} teemat tähestikulises järjekorras. Lugemisjärjekorra nägemiseks vaata`,
+	contentsLinkText: 'sisukorda',
+	jumpToLetter: 'Hüppa tähe juurde',
+	searchMetaDescription: (bookTitle) => `Otsi iga teemat raamatust ${bookTitle}.`,
+	searchIntro: (count) =>
+		`Otsi kõiki ${count} teemat pealkirja, osa, kokkuvõtte ja alapealkirjade järgi. Kõik toimub sinu brauseris — see, mida sa sisestad, ei lahku kunagi sellelt lehelt.`,
+	searchInputLabel: 'Otsi teemasid',
+	searchPlaceholder: 'DAU, püsimus, PROM-i täitmismäär…',
+	searchHintEmptyHtml: 'Kirjuta otsimiseks. Proovi <em>DAU</em>, <em>püsimus</em> või <em>PROM</em>.',
+	noResultsPrefix: 'Ühtegi teemat ei vastanud päringule ',
+	noResultsMiddle: '. Proovi laiemat terminit või sirvi ',
+	resultsCountSingular: 'teema',
+	resultsCountPlural: 'teemat',
+	topicPosition: (index, total) => `Teema ${index} / ${total}`,
+	onThisPage: 'Sellel lehel',
+	paginationLabel: 'Raamat',
+	paginationPrevious: 'Eelmine',
+	paginationNext: 'Järgmine'
+};
+
 const TRANSLATIONS = {
 	'cy-001': cy,
 	'zh-cn': zh,
@@ -1349,6 +1400,7 @@ const TRANSLATIONS = {
 	'da-dk': da,
 	'pl-pl': pl,
 	'vi-001': vi,
+	'et-001': et,
 	// Country-specific variants of a language already covered by an
 	// international -001 locale reuse that locale's translation object.
 	'ar-eg': ar,
