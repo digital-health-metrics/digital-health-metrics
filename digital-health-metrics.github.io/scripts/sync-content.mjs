@@ -53,7 +53,8 @@ const PUBLIC_LOCALES = [
 	'da-dk',
 	'pl-pl',
 	'vi-001',
-	'et-001'
+	'et-001',
+	'th-001'
 ];
 
 import { cp, mkdir, rm, readdir } from 'node:fs/promises';

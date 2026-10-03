@@ -8,7 +8,7 @@
 // localizedIndex: an untranslated locale still renders correctly in English
 // rather than crashing or showing blanks.
 //
-// Only 24 of the site's 34 public locales need an entry in TRANSLATIONS
+// Only 25 of the site's 35 public locales need an entry in TRANSLATIONS
 // below: the 3 English variants (en-us, en-gb, en-001) all share this same
 // base EN table with no per-variant overrides, same as they would for any
 // other English-only difference (spelling, not vocabulary) — and the 7
@@ -22,8 +22,8 @@
 // bn-bd (Bengali), ko-kr (Korean), ja-jp (Japanese), sv-se (Swedish),
 // nl-nl (Dutch), ur-pk (Urdu), id-id (Indonesian), it-it (Italian),
 // uk-ua (Ukrainian), fi-fi (Finnish), no-no (Norwegian), da-dk (Danish),
-// pl-pl (Polish), vi-001 (Vietnamese), and et-001 (Estonian) with their own
-// chrome translations.
+// pl-pl (Polish), vi-001 (Vietnamese), et-001 (Estonian), and th-001 (Thai)
+// with their own chrome translations.
 
 /**
  * @typedef {object} Messages
@@ -1376,6 +1376,57 @@ const et = {
 	paginationNext: 'Järgmine'
 };
 
+const th = {
+	skipToContent: 'ข้ามไปยังเนื้อหา',
+	navHome: 'หน้าแรก',
+	navContents: 'สารบัญ',
+	navTopicsAZ: 'หัวข้อ ก-ฮ',
+	navSearch: 'ค้นหา',
+	navAbout: 'เกี่ยวกับ',
+	footerSourceLink: 'ซอร์สโค้ด',
+	footerTaglineSuffix:
+		' — คำนิยาม ตัวอย่าง และคำอธิบายตัวชี้วัดด้านสุขภาพดิจิทัล สำหรับทีมที่สร้าง จัดการ และประเมินผลิตภัณฑ์สุขภาพดิจิทัล',
+	footerNote:
+		'ตัวเลขในหนังสือเล่มนี้ล้าสมัยได้อย่างรวดเร็ว แต่ละหัวข้อระบุวันที่ของเกณฑ์มาตรฐานไว้ในเนื้อหาโดยตรง โปรดตรวจสอบอีกครั้งก่อนนำตัวเลขใดๆ ไปใช้ในกรณีธุรกิจจริง',
+	pickerTheme: 'ธีม',
+	pickerLanguage: 'ภาษา',
+	pickerTextSize: 'ขนาดตัวอักษร',
+	pickerShare: 'แชร์',
+	shareCopyLink: 'คัดลอกลิงก์',
+	shareCopied: 'คัดลอกแล้ว',
+	shareCopyFailed: 'คัดลอกไม่สำเร็จ',
+	shareEmailLabel: 'ลิงก์อีเมล',
+	shareLinkedinLabel: 'แชร์บน LinkedIn',
+	shareRedditLabel: 'แชร์บน Reddit',
+	shareBlueskyLabel: 'แชร์บน Bluesky',
+	shareMastodonLabel: 'แชร์บน Mastodon',
+	startHere: 'เริ่มที่นี่',
+	startHereSubtitle: 'สามแนวคิดที่ทุกอย่างอื่นตั้งอยู่บนพื้นฐานนี้',
+	contentsMetaDescription: (bookTitle) => `ทุกหัวข้อใน ${bookTitle} เรียงตามลำดับการอ่าน`,
+	contentsIntro: (count, parts) =>
+		`ทั้งหมด ${count} หัวข้อเรียงตามลำดับการอ่าน แบ่งเป็น ${parts} ส่วน แต่ละหัวข้อครอบคลุมตัวชี้วัดหรือแนวคิดหนึ่งอย่าง: คำนิยาม เหตุผลที่สำคัญ วิธีคำนวณ ตัวอย่างการคำนวณ แหล่งข้อมูลและข้อควรระวัง ข้อผิดพลาดที่พบบ่อย และแหล่งอ้างอิง`,
+	topicsCountSubtitle: (n) => `${n} หัวข้อ`,
+	topicsMetaDescription: (bookTitle) => `ทุกหัวข้อใน ${bookTitle} เรียงตามลำดับตัวอักษร`,
+	topicsIntroPrefix: (count) => `ทั้งหมด ${count} หัวข้อเรียงตามลำดับตัวอักษร หากต้องการดูตามลำดับการอ่าน โปรดดู`,
+	contentsLinkText: 'สารบัญ',
+	jumpToLetter: 'ไปยังตัวอักษร',
+	searchMetaDescription: (bookTitle) => `ค้นหาทุกหัวข้อใน ${bookTitle}`,
+	searchIntro: (count) =>
+		`ค้นหาทั้งหมด ${count} หัวข้อตามชื่อเรื่อง ส่วน บทสรุป และหัวข้อย่อย ทุกอย่างทำงานในเบราว์เซอร์ของคุณ — สิ่งที่คุณพิมพ์จะไม่ออกจากหน้านี้`,
+	searchInputLabel: 'ค้นหาหัวข้อ',
+	searchPlaceholder: 'DAU, การรักษาผู้ใช้, อัตราการทำแบบสอบถาม PROM…',
+	searchHintEmptyHtml: 'พิมพ์เพื่อค้นหา ลองพิมพ์ <em>DAU</em>, <em>การรักษาผู้ใช้</em> หรือ <em>PROM</em>',
+	noResultsPrefix: 'ไม่พบหัวข้อที่ตรงกับ ',
+	noResultsMiddle: ' ลองใช้คำที่กว้างขึ้น หรือเรียกดูที่ ',
+	resultsCountSingular: 'หัวข้อ',
+	resultsCountPlural: 'หัวข้อ',
+	topicPosition: (index, total) => `หัวข้อที่ ${index} จาก ${total}`,
+	onThisPage: 'ในหน้านี้',
+	paginationLabel: 'หนังสือ',
+	paginationPrevious: 'ก่อนหน้า',
+	paginationNext: 'ถัดไป'
+};
+
 const TRANSLATIONS = {
 	'cy-001': cy,
 	'zh-cn': zh,
@@ -1401,6 +1452,7 @@ const TRANSLATIONS = {
 	'pl-pl': pl,
 	'vi-001': vi,
 	'et-001': et,
+	'th-001': th,
 	// Country-specific variants of a language already covered by an
 	// international -001 locale reuse that locale's translation object.
 	'ar-eg': ar,
