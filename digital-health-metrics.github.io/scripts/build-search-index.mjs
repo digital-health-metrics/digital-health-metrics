@@ -1,11 +1,19 @@
 // Builds build/search-index.json from the generated HTML. See spec/search/index.md.
 import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join, sep } from 'node:path';
+import { LOCALE_ALIASES } from '#lib/locales.js';
 
 const BUILD = process.argv[2] ?? 'build';
 const MAX_TEXT = 20000;
 const DEFAULTS = ['en-gb', 'en-001', 'en-us', 'en'];
+// Real locale codes always have a hyphenated region/script subtag (e.g.
+// "en-gb"), which this regex requires — deliberately excluding a bare
+// two-letter segment, since otherwise some other, unrelated two-letter route
+// could be misidentified as a locale. The site's own two-letter locale
+// aliases (e.g. "/en/" for "en-001" — see $lib/locales.js) are therefore
+// matched separately, by exact lookup against LOCALE_ALIASES, below.
 const LOCALE = /^[a-z]{2,3}(-[a-z0-9]{2,8})+$/i;
+const ALIASES = new Set(Object.keys(LOCALE_ALIASES));
 
 function walk(dir, out = []) {
 	for (const e of readdirSync(dir, { withFileTypes: true })) {
@@ -43,7 +51,8 @@ function urlFor(file) {
 
 function localeOf(url) {
 	const seg = url.split('/').filter(Boolean);
-	if (seg[0] && LOCALE.test(seg[0])) return seg[0].toLowerCase();
+	const first = seg[0]?.toLowerCase();
+	if (first && (LOCALE.test(first) || ALIASES.has(first))) return first;
 	return null;
 }
 

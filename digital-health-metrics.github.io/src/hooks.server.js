@@ -14,12 +14,16 @@
 // event.url.pathname, because a single leading path segment is no longer a
 // reliable signal on its own once the "locales/" prefix is gone — a plain
 // pathname regex would also match static routes like /about/.
-import { RTL_LOCALES } from '#lib/locales.js';
+//
+// event.params.locale may be a two-letter alias (e.g. "en") rather than the
+// real code ("en-001") — canonicalLocale() resolves it, so an alias route's
+// lang/dir match the real locale's page exactly, not just its body content.
+import { RTL_LOCALES, canonicalLocale } from '#lib/locales.js';
 
 /** @type {import('@sveltejs/kit/hooks').Handle} */
 export async function handle({ event, resolve }) {
 	const isLocaleRoute = event.route.id === '/[locale]' || event.route.id?.startsWith('/[locale]/');
-	const locale = isLocaleRoute ? event.params.locale : undefined;
+	const locale = isLocaleRoute ? canonicalLocale(event.params.locale) : undefined;
 	if (!locale) return resolve(event);
 
 	const dir = RTL_LOCALES.has(locale) ? 'rtl' : 'ltr';

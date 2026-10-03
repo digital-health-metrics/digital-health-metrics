@@ -1,19 +1,22 @@
 import { render } from '#lib/markdown.js';
 import { book, localizeHtml, readmeSource } from '#lib/server/book.js';
-import { locales } from '#lib/server/content.js';
+import { routableLocales } from '#lib/server/content.js';
+import { canonicalLocale } from '#lib/locales.js';
 
-// This is the first page reached for each locale, so its entries() drives
-// prerendering for the whole [locale] subtree: the crawler discovers
-// contents/topics/search for each locale from the nav links this page (via
-// the shared layout) renders. Only topics/[slug] needs its own entries(),
-// since slugs vary by locale in a way a plain crawl still handles fine, but
-// declaring it explicitly is more robust (see that file).
+// Every other route under [locale]/ (contents, topics, topics/[slug],
+// search) declares the same entries() pattern, each over routableLocales()
+// — real locales plus their aliases (see that function) — rather than
+// relying on the prerender crawler to discover them from this page's own
+// nav links, since those links always point at the real code (never an
+// alias), so an alias subtree's own pages would otherwise go undiscovered.
 export function entries() {
-	return locales().map((locale) => ({ locale }));
+	return routableLocales().map((locale) => ({ locale }));
 }
 
 export function load({ params }) {
-	const { locale } = params;
+	// params.locale may be an alias; resolved once here so readmeSource/book
+	// below, and every href this load() builds, always use the real code.
+	const locale = canonicalLocale(params.locale);
 	// This locale's own translated locales/<locale>/index.md when it has one,
 	// else the canonical (English) README — so an untranslated locale still
 	// renders instead of crashing, rather than the page silently staying English.

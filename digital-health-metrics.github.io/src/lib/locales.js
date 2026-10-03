@@ -62,3 +62,23 @@ export const RTL_LOCALES = new Set(['ar-001', 'ar-eg', 'ur-pk']);
 export function localeLabel(code) {
 	return LOCALE_LABELS[code] ?? code;
 }
+
+/**
+ * Two-letter alias -> this site's "-001" (International/World) code for that
+ * language, e.g. `'en' -> 'en-001'`, derived from LOCALE_LABELS so any future
+ * "-001" locale gets one automatically. `/<alias>/...` renders exactly the
+ * same content as `/<code>/...` (resolved in each route's own load(), see
+ * `[locale]/+layout.server.js`) — every link the site itself generates still
+ * uses the full code, so an alias is an additional way in, not a second copy
+ * of the site's own navigation.
+ */
+export const LOCALE_ALIASES = Object.fromEntries(
+	Object.keys(LOCALE_LABELS)
+		.filter((code) => code.endsWith('-001'))
+		.map((code) => [code.slice(0, -'-001'.length), code])
+);
+
+/** Resolve a URL locale segment (alias or already-real code) to its real code. */
+export function canonicalLocale(code) {
+	return LOCALE_ALIASES[code] ?? code;
+}

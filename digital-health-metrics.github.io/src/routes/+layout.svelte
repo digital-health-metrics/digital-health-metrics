@@ -5,7 +5,7 @@
 	import { page } from '$app/state';
 	import { Footer, Header, SkipLink } from '@lilydesignsystem/svelte-headless';
 	import PickerBar from '@lilydesignsystem/svelte-picker-bar';
-	import { DEFAULT_LOCALE, localeLabel } from '#lib/locales.js';
+	import { DEFAULT_LOCALE, canonicalLocale, localeLabel } from '#lib/locales.js';
 	import { ui } from '#lib/i18n.js';
 
 	let { data, children } = $props();
@@ -20,7 +20,11 @@
 	// gone wrong.
 	const bookTitle = $derived(page.data?.bookTitle ?? data?.bookTitle ?? 'Digital Health Metrics');
 	const locales = $derived(data?.locales ?? []);
-	const locale = $derived(page.params.locale);
+	// page.params.locale may be a two-letter alias (e.g. "en" for "en-001" —
+	// see $lib/locales.js) resolved here so every nav link, UI chrome string,
+	// and locale-switcher calculation below treats an alias route exactly
+	// like its real locale, not like an unrecognized one.
+	const locale = $derived(canonicalLocale(page.params.locale));
 	const t = $derived(ui(locale ?? DEFAULT_LOCALE));
 
 	// Contents/Topics/Search only make sense once a locale is chosen; outside
