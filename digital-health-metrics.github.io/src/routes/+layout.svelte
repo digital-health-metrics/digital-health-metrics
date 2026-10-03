@@ -185,6 +185,9 @@
 		<p>
 			<strong>{bookTitle}</strong>{t.footerTaglineSuffix}
 		</p>
+		<p class="site-footer-byline">
+			Led by <a href="https://linkedin.com/in/joelparkerhenderson">Joel Parker Henderson</a>.
+		</p>
 		<p class="site-footer-note">
 			{t.footerNote}
 		</p>
