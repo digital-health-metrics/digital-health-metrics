@@ -115,7 +115,7 @@ and `+layout.svelte`.
 Bug: wordmark came only from the root (locale-agnostic) `+layout.server.js`,
 which deliberately never picks a locale.
 
-Fix: have `locales/[locale]/+layout.server.js` supply this locale's own title,
-which overrides the root layout's canonical one via SvelteKit's merged
-`page.data` on any route under `/locales/<locale>/` — the root picker and
-`/about/` (no locale in the URL) correctly keep the canonical English title.
+Fix: have `[locale]/+layout.server.js` supply this locale's own title, which
+overrides the root layout's canonical one via SvelteKit's merged `page.data`
+on any route under `/<locale>/` — the root picker and `/about/` (no locale in
+the URL) correctly keep the canonical English title.
