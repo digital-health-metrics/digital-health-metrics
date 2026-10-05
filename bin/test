@@ -18,8 +18,37 @@ symlink_target_or_err() {
 ## main
 
 top="$(git rev-parse --show-toplevel)"
-locales="en-gb-oxendict en-001 en-gb en-us cy-001 cy-gb zh-cn es-001 es-es hi-001 hi-in ar-001 ar-eg fr-001 fr-fr pt-001 pt-pt de-de ru-001 ru-ru bn-bd ko-kr ja-jp sv-se nl-nl ur-pk id-id it-it uk-ua fi-fi no-no da-dk pl-pl vi-001 et-001 th-001"
+locales="en-gb-oxendict en-001 en-gb en-us cy-001 cy-gb zh-cn es-001 es-es hi-001 hi-in ar-001 ar-eg fr-001 fr-fr pt-001 pt-pt de-de ru-001 ru-ru bn-bd ko-kr ja-jp sv-se nl-nl ur-pk id-id it-it uk-ua fi-fi no-no da-dk pl-pl vi-001 et-001 th-001 tr-tr"
 topics="patient-portal-adoption-rate telehealth-visit-rate appointment-no-show-rate clinical-alert-override-rate digital-referral-turnaround-time"
+
+## A locale's topics directory name is translated per locale (en-* keep
+## `topics`; es-es uses `temas`, etc.), and so is each topic's slug. The one
+## stable identity is the topic's .locale-peer-id, so look topics up by it.
+topics_dir_for() {
+    if test -d "$top/locales/$1/topics"; then
+        echo "$top/locales/$1/topics"
+        return
+    fi
+    find "$top/locales/$1" -mindepth 1 -maxdepth 1 -type d | head -n 1
+}
+
+topic_dir_for() {
+    locale="$1"; topic="$2"
+    peer="$(cat "$top/locales/en-gb-oxendict/topics/$topic/.locale-peer-id")"
+    find "$(topics_dir_for "$locale")" -mindepth 1 -maxdepth 1 -type d | while read -r d; do
+        if test -f "$d/.locale-peer-id" && test "$(cat "$d/.locale-peer-id")" = "$peer"; then
+            echo "$d"
+        fi
+    done | head -n 1
+}
+
+test_locale_has_one_topics_dir() {
+    for locale in $locales; do
+        case "$locale" in en-*) continue ;; esac
+        count="$(find "$top/locales/$locale" -mindepth 1 -maxdepth 1 -type d | wc -l | tr -d ' ')"
+        test "$count" = 1 || err "locales/$locale should have exactly one (translated) topics directory, found $count"
+    done
+}
 
 test_locales_exist() {
     for locale in $locales; do
@@ -40,8 +69,8 @@ test_locale_root_files() {
 test_topic_files() {
     for locale in $locales; do
         for topic in $topics; do
-            dir="$top/locales/$locale/topics/$topic"
-            directory_exists_or_err "$dir"
+            dir="$(topic_dir_for "$locale" "$topic")"
+            test -n "$dir" || { err "Topic $topic has no directory in locale $locale"; continue; }
             file_size_or_err "$dir/.locale-peer-id"
             file_size_or_err "$dir/index.md"
             symlink_exists_or_err "$dir/README.md"
@@ -55,17 +84,13 @@ test_topic_files() {
 ## the site resolves "this page, in locale X" (see
 ## spec/locales-for-global-sharing-with-svelte/index.md).
 test_peer_id_parity() {
-    for topic in $topics; do
-        reference=""
-        for locale in $locales; do
-            f="$top/locales/$locale/topics/$topic/.locale-peer-id"
-            test -f "$f" || continue
-            value="$(cat "$f")"
-            if [ -z "$reference" ]; then
-                reference="$value"
-            elif [ "$value" != "$reference" ]; then
-                err "Peer id mismatch for topic $topic, locale $locale: $value != $reference"
-            fi
+    for locale in $locales; do
+        for d in $(find "$(topics_dir_for "$locale")" -mindepth 1 -maxdepth 1 -type d | sed 's/ /%20/g'); do
+            d="$(printf %s "$d" | sed 's/%20/ /g')"
+            id="$(cat "$d/.locale-peer-id" 2>/dev/null || true)"
+            test -n "$id" || { err "Missing peer id: $d"; continue; }
+            find "$top/locales/en-gb-oxendict/topics" -name .locale-peer-id | xargs grep -lx "$id" >/dev/null 2>&1 \
+                || err "Peer id $id in $d matches no canonical topic"
         done
     done
 }
@@ -88,6 +113,7 @@ test_localize_up_to_date() {
 main() {
     test_locales_exist
     test_locale_root_files
+    test_locale_has_one_topics_dir
     test_topic_files
     test_peer_id_parity
     test_localize_up_to_date

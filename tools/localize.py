@@ -15,7 +15,7 @@ each topic's .locale-peer-id (byte-identical across locales -- it identifies
 the topic, not the translation) and its README.md -> index.md symlink into
 every derived locale, since this project's content lives one directory
 deeper (locales/<code>/topics/<slug>/index.md) than that book's flat
-chapter files.
+topic files.
 
 Run:
 

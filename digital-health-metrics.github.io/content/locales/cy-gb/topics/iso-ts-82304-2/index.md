@@ -54,4 +54,4 @@ Yn nodweddiadol, cynhelir asesiad yn erbyn ISO/TS 82304-2 gan adolygydd wedi'i h
 - Pwyllgor Technegol ISO 215 (Gwybodeg Iechyd), gwybodaeth cyhoeddi a grŵp gweithio
 - Sefydliadau labelu ansawdd a churadu ap iechyd cenedlaethol a masnachol sy'n cyhoeddi eu methodoleg asesu yn seiliedig ar y safon hon
 
-Gweler hefyd: [sgôr graddfa defnyddioldeb system](../system-usability-scale-score/), offeryn defnyddioldeb-benodol, cyflenwol, cul yn aml a ddefnyddir ochr yn ochr ag asesiad ansawdd ISO/TS 82304-2 ehangach.
+Gweler hefyd: [sgôr graddfa defnyddioldeb system](../sgôr-graddfa-defnyddioldeb-system/), offeryn defnyddioldeb-benodol, cyflenwol, cul yn aml a ddefnyddir ochr yn ochr ag asesiad ansawdd ISO/TS 82304-2 ehangach.

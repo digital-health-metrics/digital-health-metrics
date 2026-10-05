@@ -54,10 +54,11 @@ const PUBLIC_LOCALES = [
 	'pl-pl',
 	'vi-001',
 	'et-001',
-	'th-001'
+	'th-001',
+	'tr-tr'
 ];
 
-import { cp, mkdir, rm, readdir } from 'node:fs/promises';
+import { cp, mkdir, rm, readdir, readFile, writeFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { dirname } from 'node:path';
@@ -92,6 +93,19 @@ for (const file of rootFiles) {
 	count += 1;
 }
 
+/**
+ * This locale's topics directory name: `topics` if present (the English
+ * locales), else the locale's single translated subdirectory (e.g. `temas`).
+ * @param {string} localeFrom
+ */
+async function findTopicsDirName(localeFrom) {
+	if (existsSync(join(localeFrom, 'topics'))) return 'topics';
+	const dirs = (await readdir(localeFrom, { withFileTypes: true })).filter(
+		(e) => e.isDirectory() && !e.name.startsWith('.')
+	);
+	return dirs.length === 1 ? dirs[0].name : '';
+}
+
 const localesDir = join(book, 'locales');
 if (!existsSync(localesDir)) {
 	console.warn(`No locales/ directory found at ${localesDir} yet — syncing 0 topics.`);
@@ -112,17 +126,28 @@ for (const locale of localeNames) {
 	// read by book.js's readmeSource/localizedIndex) — vendored even when
 	// still an empty placeholder, so the site's fallback-to-canonical logic
 	// sees "no content" rather than a missing file.
+	//
+	// The book translates the `topics` directory name per locale (e.g. es-es
+	// uses `temas/`), but the site's routes and content paths are always
+	// `topics/`. So find this locale's topics directory (`topics/` itself for
+	// the English locales, otherwise the locale's one subdirectory), and
+	// rewrite the index.md's `](<dir>/<slug>/)` links back to `](topics/...)`.
+	const topicsDirName = await findTopicsDirName(localeFrom);
 	const localeIndexFrom = join(localeFrom, 'index.md');
 	if (existsSync(localeIndexFrom)) {
 		const localeDirTo = join(contentDir, 'locales', locale);
 		await mkdir(localeDirTo, { recursive: true });
-		await cp(localeIndexFrom, join(localeDirTo, 'index.md'));
+		let indexSource = await readFile(localeIndexFrom, 'utf8');
+		if (topicsDirName && topicsDirName !== 'topics') {
+			indexSource = indexSource.replaceAll(`](${topicsDirName}/`, '](topics/');
+		}
+		await writeFile(join(localeDirTo, 'index.md'), indexSource);
 		count += 1;
 	}
 
-	const topicsFrom = join(localeFrom, 'topics');
-	if (!existsSync(topicsFrom)) {
-		console.warn(`skip (missing): locales/${locale}/topics/`);
+	const topicsFrom = topicsDirName ? join(localeFrom, topicsDirName) : '';
+	if (!topicsDirName || !existsSync(topicsFrom)) {
+		console.warn(`skip (missing): locales/${locale}/ topics directory`);
 		continue;
 	}
 	const topicsTo = join(contentDir, 'locales', locale, 'topics');

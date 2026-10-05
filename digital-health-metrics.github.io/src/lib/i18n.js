@@ -8,7 +8,7 @@
 // localizedIndex: an untranslated locale still renders correctly in English
 // rather than crashing or showing blanks.
 //
-// Only 25 of the site's 35 public locales need an entry in TRANSLATIONS
+// Only 26 of the site's 36 public locales need an entry in TRANSLATIONS
 // below: the 3 English variants (en-us, en-gb, en-001) all share this same
 // base EN table with no per-variant overrides, same as they would for any
 // other English-only difference (spelling, not vocabulary) — and the 7
@@ -22,7 +22,7 @@
 // bn-bd (Bengali), ko-kr (Korean), ja-jp (Japanese), sv-se (Swedish),
 // nl-nl (Dutch), ur-pk (Urdu), id-id (Indonesian), it-it (Italian),
 // uk-ua (Ukrainian), fi-fi (Finnish), no-no (Norwegian), da-dk (Danish),
-// pl-pl (Polish), vi-001 (Vietnamese), et-001 (Estonian), and th-001 (Thai)
+// pl-pl (Polish), vi-001 (Vietnamese), et-001 (Estonian), th-001 (Thai), and tr-tr (Turkish)
 // with their own chrome translations.
 
 /**
@@ -1427,6 +1427,62 @@ const th = {
 	paginationNext: 'ถัดไป'
 };
 
+const tr = {
+	skipToContent: 'İçeriğe geç',
+	navHome: 'Ana sayfa',
+	navContents: 'İçindekiler',
+	navTopicsAZ: 'Konular A–Z',
+	navSearch: 'Ara',
+	navAbout: 'Hakkında',
+	footerSourceLink: 'Kaynak',
+	footerTaglineSuffix:
+		' — dijital sağlık ürünleri geliştiren, değerlendiren ve satın alan ekipler için dijital sağlık metriklerinin tanımları, örnekleri ve gerekçeleri.',
+	footerNote:
+		'Bu kitaptaki rakamlar hızla eskir. Her konu kıyaslama değerlerinin tarihini metin içinde belirtir; herhangi bir sayıyı gerçek bir iş senaryosunda kullanmadan önce yeniden doğrulayın.',
+	pickerTheme: 'Tema',
+	pickerLanguage: 'Dil',
+	pickerTextSize: 'Metin boyutu',
+	pickerShare: 'Paylaş',
+	shareCopyLink: 'Bağlantıyı kopyala',
+	shareCopied: 'Kopyalandı',
+	shareCopyFailed: 'Kopyalanamadı',
+	shareEmailLabel: 'Bağlantıyı e-postayla gönder',
+	shareLinkedinLabel: 'LinkedIn’de paylaş',
+	shareRedditLabel: 'Reddit’te paylaş',
+	shareBlueskyLabel: 'Bluesky’da paylaş',
+	shareMastodonLabel: 'Mastodon’da paylaş',
+
+	startHere: 'Buradan başlayın',
+	startHereSubtitle: 'Diğer her şeyin üzerine kurulduğu üç fikir.',
+
+	contentsMetaDescription: (bookTitle) => `${bookTitle} içindeki tüm konular, okuma sırasına göre.`,
+	contentsIntro: (count, parts) =>
+		`Tüm ${count} konu okuma sırasıyla, ${parts} bölüm halinde. Her konu bir metriği veya kavramı ele alır: tanım, neden önemli olduğu, nasıl hesaplandığı, çözümlü örnek, veri kaynakları ve dikkat edilecek noktalar, sık yapılan hatalar ve kaynaklar.`,
+	topicsCountSubtitle: (n) => `${n} konu`,
+
+	topicsMetaDescription: (bookTitle) => `${bookTitle} içindeki tüm konular, A’dan Z’ye sıralı.`,
+	topicsIntroPrefix: (count) => `Tüm ${count} konu alfabetik sırayla. Okuma sırası için bkz.`,
+	contentsLinkText: 'içindekiler',
+	jumpToLetter: 'Harfe git',
+
+	searchMetaDescription: (bookTitle) => `${bookTitle} içindeki tüm konularda arama yapın.`,
+	searchIntro: (count) =>
+		`Tüm ${count} konuyu başlık, bölüm, özet ve bölüm başlığına göre arayın. Her şey tarayıcınızda çalışır — yazdığınız hiçbir şey bu sayfadan çıkmaz.`,
+	searchInputLabel: 'Konularda ara',
+	searchPlaceholder: 'DAU, elde tutma, PROM tamamlama oranı…',
+	searchHintEmptyHtml: 'Aramak için yazın. <em>DAU</em>, <em>elde tutma</em> veya <em>PROM</em> deneyin.',
+	noResultsPrefix: 'Eşleşen konu yok: ',
+	noResultsMiddle: '. Daha geniş bir terim deneyin veya şuna göz atın: ',
+	resultsCountSingular: 'konu',
+	resultsCountPlural: 'konu',
+
+	topicPosition: (index, total) => `Konu ${index} / ${total}`,
+	onThisPage: 'Bu sayfada',
+	paginationLabel: 'Kitap',
+	paginationPrevious: 'Önceki',
+	paginationNext: 'Sonraki'
+};
+
 const TRANSLATIONS = {
 	'cy-001': cy,
 	'zh-cn': zh,
@@ -1453,6 +1509,7 @@ const TRANSLATIONS = {
 	'vi-001': vi,
 	'et-001': et,
 	'th-001': th,
+	'tr-tr': tr,
 	// Country-specific variants of a language already covered by an
 	// international -001 locale reuse that locale's translation object.
 	'ar-eg': ar,
