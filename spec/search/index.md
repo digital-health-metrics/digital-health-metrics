@@ -40,6 +40,17 @@ nothing to preserve in that case.
   `en-001`, `en-us`, `en`), plus every page that has no locale prefix. The 404
   page and redirects are skipped.
 
+## Sitemap
+
+`scripts/build-sitemap.mjs` runs after the search index (part of `pnpm run build`) and writes
+`build/sitemap.xml`, referenced from `static/robots.txt`. It lists each real locale's home,
+contents, topics A-Z and topic pages, plus `/about/`; it skips the root redirect, the two-letter
+alias routes, the per-locale search pages and the 404 page. Each locale page carries `hreflang`
+alternates for its translations (international `-001` locales use the bare language code, e.g.
+`es`; others use `es-ES`). Topic pages are matched across locales by `.locale-peer-id`, since slugs
+differ per locale. The site URL defaults to `https://digital-health-metrics.github.io`;
+`SITE_URL` overrides it.
+
 ## Matching and ranking
 
 - Case-insensitive; every word of the query must appear in the page.

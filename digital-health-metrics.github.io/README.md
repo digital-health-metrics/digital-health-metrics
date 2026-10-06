@@ -18,7 +18,7 @@ Run inside this directory (pnpm).
 | `pnpm run sync:lily` | Re-vendor Lily theme CSS into `static/assets/themes/` (`scripts/vendor-lily.mjs`). |
 | `pnpm run dev` | Dev server. |
 | `pnpm run check` | `svelte-kit sync` and `svelte-check`; expect 0 errors. |
-| `pnpm run build` | `vite build`, then write `build/search-index.json` (`scripts/build-search-index.mjs`). |
+| `pnpm run build` | `vite build`, then write `build/search-index.json` (`scripts/build-search-index.mjs`) and `build/sitemap.xml` (`scripts/build-sitemap.mjs`). |
 | `pnpm run preview` | Serve the production build. |
 
 ## How content reaches the site
