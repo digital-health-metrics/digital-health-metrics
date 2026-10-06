@@ -7,7 +7,8 @@
   "license": "ISC",
   "packageManager": "pnpm@11.21.0",
   "scripts": {
-    "sync": "node scripts/sync-content.mjs && node scripts/vendor-lily.mjs",
+    "sync": "node scripts/sync-content.mjs && node scripts/generate-llms.mjs && node scripts/vendor-lily.mjs",
+    "sync:llms": "node scripts/generate-llms.mjs",
     "sync:content": "node scripts/sync-content.mjs",
     "sync:lily": "node scripts/vendor-lily.mjs",
     "dev": "vite dev",

@@ -12,7 +12,8 @@ Run inside this directory (pnpm).
 | Command | What it does |
 |---|---|
 | `pnpm install` | Install dependencies. |
-| `pnpm run sync` | `sync:content` then `sync:lily`. Run after the book or Lily changes. |
+| `pnpm run sync` | `sync:content`, `sync:llms`, then `sync:lily`. Run after the book or Lily changes. |
+| `pnpm run sync:llms` | Regenerate `static/llms.txt` and `static/llms.json` from the vendored content (`scripts/generate-llms.mjs`). Generated; never hand-edit. |
 | `pnpm run sync:content` | Vendor `../locales/` into `content/` (`scripts/sync-content.mjs`). |
 | `pnpm run sync:lily` | Re-vendor Lily theme CSS into `static/assets/themes/` (`scripts/vendor-lily.mjs`). |
 | `pnpm run dev` | Dev server. |

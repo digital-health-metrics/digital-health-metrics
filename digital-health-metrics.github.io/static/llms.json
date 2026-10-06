@@ -1,0 +1,459 @@
+{
+  "name": "Digital Health Metrics",
+  "description": "A reference book of digital health metric definitions: what each metric means, how to calculate it, a worked example, data sources and caveats, and common pitfalls, organised for people building, running, and evaluating digital health products and services.",
+  "url": "https://digital-health-metrics.github.io/",
+  "repository": "https://github.com/digital-health-metrics/digital-health-metrics",
+  "defaultLocale": "en-gb",
+  "topicCount": 31,
+  "topicUrlPattern": "https://digital-health-metrics.github.io/{locale}/topics/{slug}/",
+  "notes": [
+    "Topic slugs are translated per locale; match the same topic across locales by content, not slug.",
+    "Non-English locales are AI-assisted translations pending native review."
+  ],
+  "locales": [
+    {
+      "code": "en-us",
+      "label": "English - United States",
+      "url": "https://digital-health-metrics.github.io/en-us/",
+      "direction": "ltr"
+    },
+    {
+      "code": "en-gb",
+      "label": "English - Great Britain",
+      "url": "https://digital-health-metrics.github.io/en-gb/",
+      "direction": "ltr"
+    },
+    {
+      "code": "en-001",
+      "label": "English",
+      "url": "https://digital-health-metrics.github.io/en-001/",
+      "direction": "ltr"
+    },
+    {
+      "code": "cy-001",
+      "label": "Cymraeg",
+      "url": "https://digital-health-metrics.github.io/cy-001/",
+      "direction": "ltr"
+    },
+    {
+      "code": "cy-gb",
+      "label": "Cymraeg - Prydain Fawr",
+      "url": "https://digital-health-metrics.github.io/cy-gb/",
+      "direction": "ltr"
+    },
+    {
+      "code": "zh-cn",
+      "label": "中文 - 中国大陆",
+      "url": "https://digital-health-metrics.github.io/zh-cn/",
+      "direction": "ltr"
+    },
+    {
+      "code": "es-001",
+      "label": "Español",
+      "url": "https://digital-health-metrics.github.io/es-001/",
+      "direction": "ltr"
+    },
+    {
+      "code": "hi-001",
+      "label": "हिन्दी",
+      "url": "https://digital-health-metrics.github.io/hi-001/",
+      "direction": "ltr"
+    },
+    {
+      "code": "ar-001",
+      "label": "العربية",
+      "url": "https://digital-health-metrics.github.io/ar-001/",
+      "direction": "rtl"
+    },
+    {
+      "code": "fr-001",
+      "label": "Français",
+      "url": "https://digital-health-metrics.github.io/fr-001/",
+      "direction": "ltr"
+    },
+    {
+      "code": "pt-001",
+      "label": "Português",
+      "url": "https://digital-health-metrics.github.io/pt-001/",
+      "direction": "ltr"
+    },
+    {
+      "code": "de-de",
+      "label": "Deutsch",
+      "url": "https://digital-health-metrics.github.io/de-de/",
+      "direction": "ltr"
+    },
+    {
+      "code": "ru-001",
+      "label": "Русский",
+      "url": "https://digital-health-metrics.github.io/ru-001/",
+      "direction": "ltr"
+    },
+    {
+      "code": "ar-eg",
+      "label": "العربية - مصر",
+      "url": "https://digital-health-metrics.github.io/ar-eg/",
+      "direction": "rtl"
+    },
+    {
+      "code": "bn-bd",
+      "label": "বাংলা - বাংলাদেশ",
+      "url": "https://digital-health-metrics.github.io/bn-bd/",
+      "direction": "ltr"
+    },
+    {
+      "code": "hi-in",
+      "label": "हिन्दी - भारत",
+      "url": "https://digital-health-metrics.github.io/hi-in/",
+      "direction": "ltr"
+    },
+    {
+      "code": "ko-kr",
+      "label": "한국어",
+      "url": "https://digital-health-metrics.github.io/ko-kr/",
+      "direction": "ltr"
+    },
+    {
+      "code": "es-es",
+      "label": "Español - España",
+      "url": "https://digital-health-metrics.github.io/es-es/",
+      "direction": "ltr"
+    },
+    {
+      "code": "pt-pt",
+      "label": "Português - Portugal",
+      "url": "https://digital-health-metrics.github.io/pt-pt/",
+      "direction": "ltr"
+    },
+    {
+      "code": "ja-jp",
+      "label": "日本語",
+      "url": "https://digital-health-metrics.github.io/ja-jp/",
+      "direction": "ltr"
+    },
+    {
+      "code": "ru-ru",
+      "label": "Русский - Россия",
+      "url": "https://digital-health-metrics.github.io/ru-ru/",
+      "direction": "ltr"
+    },
+    {
+      "code": "fr-fr",
+      "label": "Français - France",
+      "url": "https://digital-health-metrics.github.io/fr-fr/",
+      "direction": "ltr"
+    },
+    {
+      "code": "sv-se",
+      "label": "Svenska",
+      "url": "https://digital-health-metrics.github.io/sv-se/",
+      "direction": "ltr"
+    },
+    {
+      "code": "nl-nl",
+      "label": "Nederlands",
+      "url": "https://digital-health-metrics.github.io/nl-nl/",
+      "direction": "ltr"
+    },
+    {
+      "code": "ur-pk",
+      "label": "اردو - پاکستان",
+      "url": "https://digital-health-metrics.github.io/ur-pk/",
+      "direction": "rtl"
+    },
+    {
+      "code": "id-id",
+      "label": "Bahasa Indonesia",
+      "url": "https://digital-health-metrics.github.io/id-id/",
+      "direction": "ltr"
+    },
+    {
+      "code": "it-it",
+      "label": "Italiano",
+      "url": "https://digital-health-metrics.github.io/it-it/",
+      "direction": "ltr"
+    },
+    {
+      "code": "uk-ua",
+      "label": "Українська",
+      "url": "https://digital-health-metrics.github.io/uk-ua/",
+      "direction": "ltr"
+    },
+    {
+      "code": "fi-fi",
+      "label": "Suomi",
+      "url": "https://digital-health-metrics.github.io/fi-fi/",
+      "direction": "ltr"
+    },
+    {
+      "code": "no-no",
+      "label": "Norsk",
+      "url": "https://digital-health-metrics.github.io/no-no/",
+      "direction": "ltr"
+    },
+    {
+      "code": "da-dk",
+      "label": "Dansk",
+      "url": "https://digital-health-metrics.github.io/da-dk/",
+      "direction": "ltr"
+    },
+    {
+      "code": "pl-pl",
+      "label": "Polski",
+      "url": "https://digital-health-metrics.github.io/pl-pl/",
+      "direction": "ltr"
+    },
+    {
+      "code": "vi-001",
+      "label": "Tiếng Việt",
+      "url": "https://digital-health-metrics.github.io/vi-001/",
+      "direction": "ltr"
+    },
+    {
+      "code": "et-001",
+      "label": "Eesti",
+      "url": "https://digital-health-metrics.github.io/et-001/",
+      "direction": "ltr"
+    },
+    {
+      "code": "th-001",
+      "label": "ไทย",
+      "url": "https://digital-health-metrics.github.io/th-001/",
+      "direction": "ltr"
+    },
+    {
+      "code": "tr-tr",
+      "label": "Türkçe",
+      "url": "https://digital-health-metrics.github.io/tr-tr/",
+      "direction": "ltr"
+    }
+  ],
+  "parts": [
+    {
+      "name": "Patient engagement and access",
+      "topics": [
+        {
+          "title": "Patient portal adoption rate",
+          "slug": "patient-portal-adoption-rate",
+          "url": "https://digital-health-metrics.github.io/en-gb/topics/patient-portal-adoption-rate/",
+          "summary": "registration, activation, and active use; three different rates too often conflated as one"
+        },
+        {
+          "title": "Telehealth visit rate",
+          "slug": "telehealth-visit-rate",
+          "url": "https://digital-health-metrics.github.io/en-gb/topics/telehealth-visit-rate/",
+          "summary": "the share of care delivered remotely, and why video and telephone should never be reported as one number"
+        },
+        {
+          "title": "Appointment no-show rate",
+          "slug": "appointment-no-show-rate",
+          "url": "https://digital-health-metrics.github.io/en-gb/topics/appointment-no-show-rate/",
+          "summary": "the oldest operational metric in healthcare, and one of the best-evidenced targets for digital reminders"
+        },
+        {
+          "title": "Patient engagement consistency rate",
+          "slug": "patient-engagement-consistency-rate",
+          "url": "https://digital-health-metrics.github.io/en-gb/topics/patient-engagement-consistency-rate/",
+          "summary": "how regularly a patient interacts with a digital tool over time, as distinct from whether they have used it at all"
+        },
+        {
+          "title": "User retention rate",
+          "slug": "user-retention-rate",
+          "url": "https://digital-health-metrics.github.io/en-gb/topics/user-retention-rate/",
+          "summary": "the cohort retention curve that separates a product with a sustainable use pattern from one riding a wave of novelty"
+        },
+        {
+          "title": "DAU/MAU stickiness ratio",
+          "slug": "dau-mau-stickiness-ratio",
+          "url": "https://digital-health-metrics.github.io/en-gb/topics/dau-mau-stickiness-ratio/",
+          "summary": "the standard product-analytics measure of engagement intensity across a whole user base"
+        },
+        {
+          "title": "Patient Net Promoter Score",
+          "slug": "patient-net-promoter-score",
+          "url": "https://digital-health-metrics.github.io/en-gb/topics/patient-net-promoter-score/",
+          "summary": "the widely used, and widely criticized, single-question satisfaction metric"
+        },
+        {
+          "title": "System Usability Scale score",
+          "slug": "system-usability-scale-score",
+          "url": "https://digital-health-metrics.github.io/en-gb/topics/system-usability-scale-score/",
+          "summary": "a standardised 10-item questionnaire quantifying how usable a piece of software actually is"
+        }
+      ]
+    },
+    {
+      "name": "Digital care operations and safety",
+      "topics": [
+        {
+          "title": "Clinical alert override rate",
+          "slug": "clinical-alert-override-rate",
+          "url": "https://digital-health-metrics.github.io/en-gb/topics/clinical-alert-override-rate/",
+          "summary": "the standard signal for alert fatigue in clinical decision support"
+        },
+        {
+          "title": "Digital referral turnaround time",
+          "slug": "digital-referral-turnaround-time",
+          "url": "https://digital-health-metrics.github.io/en-gb/topics/digital-referral-turnaround-time/",
+          "summary": "the process metric that shows whether an e-referral system is actually saving time"
+        },
+        {
+          "title": "Time to intervention",
+          "slug": "time-to-intervention-rate",
+          "url": "https://digital-health-metrics.github.io/en-gb/topics/time-to-intervention-rate/",
+          "summary": "how quickly a clinical team responds to an automated health alert"
+        },
+        {
+          "title": "Bed-day reduction",
+          "slug": "bed-day-reduction",
+          "url": "https://digital-health-metrics.github.io/en-gb/topics/bed-day-reduction/",
+          "summary": "inpatient bed days saved by shifting recovery to a virtual ward, always reported alongside a safety metric"
+        }
+      ]
+    },
+    {
+      "name": "Clinical outcomes and quality",
+      "topics": [
+        {
+          "title": "Biometric improvement rate",
+          "slug": "biometric-improvement-rate",
+          "url": "https://digital-health-metrics.github.io/en-gb/topics/biometric-improvement-rate/",
+          "summary": "the share of patients achieving a clinically meaningful change in a tracked biometric such as HbA1c or BMI"
+        },
+        {
+          "title": "Biometric stabilization rate",
+          "slug": "biometric-stabilization-rate",
+          "url": "https://digital-health-metrics.github.io/en-gb/topics/biometric-stabilization-rate/",
+          "summary": "sustained control within a target range, as distinct from a one-off improvement"
+        },
+        {
+          "title": "Triage routing accuracy",
+          "slug": "triage-routing-accuracy",
+          "url": "https://digital-health-metrics.github.io/en-gb/topics/triage-routing-accuracy/",
+          "summary": "whether an AI or digital triage tool correctly routes a patient to the right level of care"
+        },
+        {
+          "title": "Medication adherence rate",
+          "slug": "medication-adherence-rate",
+          "url": "https://digital-health-metrics.github.io/en-gb/topics/medication-adherence-rate/",
+          "summary": "the proportion of days a patient had access to their medication as prescribed"
+        },
+        {
+          "title": "Hospital readmission rate",
+          "slug": "hospital-readmission-rate",
+          "url": "https://digital-health-metrics.github.io/en-gb/topics/hospital-readmission-rate/",
+          "summary": "the metric most directly tied to payer economics and value-based care contracts"
+        },
+        {
+          "title": "ePROM completion rate",
+          "slug": "epro-completion-rate",
+          "url": "https://digital-health-metrics.github.io/en-gb/topics/epro-completion-rate/",
+          "summary": "the completion rate for electronic patient-reported outcome measures, and why a declining rate can itself be a clinical signal"
+        }
+      ]
+    },
+    {
+      "name": "Marketing and growth economics",
+      "topics": [
+        {
+          "title": "True customer acquisition cost",
+          "slug": "true-customer-acquisition-cost",
+          "url": "https://digital-health-metrics.github.io/en-gb/topics/true-customer-acquisition-cost/",
+          "summary": "the fully loaded cost of acquiring one new patient, commonly undercounted by 30-50%"
+        },
+        {
+          "title": "LTV to CAC ratio",
+          "slug": "ltv-to-cac-ratio",
+          "url": "https://digital-health-metrics.github.io/en-gb/topics/ltv-to-cac-ratio/",
+          "summary": "lifetime value against true acquisition cost; 3:1 is the widely cited sustainable baseline"
+        },
+        {
+          "title": "Marketing efficiency ratio",
+          "slug": "marketing-efficiency-ratio",
+          "url": "https://digital-health-metrics.github.io/en-gb/topics/marketing-efficiency-ratio/",
+          "summary": "total revenue over total marketing spend, an independent check against platform-reported ROAS"
+        }
+      ]
+    },
+    {
+      "name": "Digital health equity",
+      "topics": [
+        {
+          "title": "Digital access rate",
+          "slug": "digital-access-rate",
+          "url": "https://digital-health-metrics.github.io/en-gb/topics/digital-access-rate/",
+          "summary": "the precondition metric for every other digital health measure in this book"
+        },
+        {
+          "title": "Digital literacy rate",
+          "slug": "digital-literacy-rate",
+          "url": "https://digital-health-metrics.github.io/en-gb/topics/digital-literacy-rate/",
+          "summary": "whether patients who do have access can actually use it unaided"
+        }
+      ]
+    },
+    {
+      "name": "Technical and operational infrastructure",
+      "topics": [
+        {
+          "title": "Physician burnout rate",
+          "slug": "physician-burnout-rate",
+          "url": "https://digital-health-metrics.github.io/en-gb/topics/physician-burnout-rate/",
+          "summary": "tracked alongside clinician-facing digital tool burden, since badly designed software is a documented contributor"
+        },
+        {
+          "title": "Device uptime rate",
+          "slug": "device-uptime-rate",
+          "url": "https://digital-health-metrics.github.io/en-gb/topics/device-uptime-rate/",
+          "summary": "the foundational infrastructure metric underneath every remote monitoring programme"
+        }
+      ]
+    },
+    {
+      "name": "Financial and economic value",
+      "topics": [
+        {
+          "title": "Cost per episode of care",
+          "slug": "cost-per-episode-of-care",
+          "url": "https://digital-health-metrics.github.io/en-gb/topics/cost-per-episode-of-care/",
+          "summary": "the standard unit of financial comparison in value-based care contracts"
+        },
+        {
+          "title": "Emergency department diversion rate",
+          "slug": "ed-diversion-rate",
+          "url": "https://digital-health-metrics.github.io/en-gb/topics/ed-diversion-rate/",
+          "summary": "patient contacts safely redirected away from the ED, always reported alongside a missed-emergency safety metric"
+        },
+        {
+          "title": "Return on investment (ROI) and value on investment (VOI)",
+          "slug": "roi-and-voi",
+          "url": "https://digital-health-metrics.github.io/en-gb/topics/roi-and-voi/",
+          "summary": "whether a digital investment paid for itself financially, and whether it was worth doing accounting for everything that matters"
+        }
+      ]
+    },
+    {
+      "name": "Evaluation frameworks",
+      "topics": [
+        {
+          "title": "RE-AIM framework",
+          "slug": "re-aim-framework",
+          "url": "https://digital-health-metrics.github.io/en-gb/topics/re-aim-framework/",
+          "summary": "Reach, Effectiveness, Adoption, Implementation, and Maintenance; five dimensions rather than one metric"
+        },
+        {
+          "title": "WHO Digital Health Assessment Framework",
+          "slug": "who-digital-health-assessment-framework",
+          "url": "https://digital-health-metrics.github.io/en-gb/topics/who-digital-health-assessment-framework/",
+          "summary": "WHO's guidance for assessing feasibility, safety, and equity across national-scale deployments"
+        },
+        {
+          "title": "ISO/TS 82304-2",
+          "slug": "iso-ts-82304-2",
+          "url": "https://digital-health-metrics.github.io/en-gb/topics/iso-ts-82304-2/",
+          "summary": "the international technical specification behind most health and wellness app quality labels"
+        }
+      ]
+    }
+  ]
+}
