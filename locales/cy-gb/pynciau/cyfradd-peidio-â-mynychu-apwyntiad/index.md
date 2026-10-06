@@ -1,39 +1,39 @@
 # Cyfradd Peidio â Mynychu Apwyntiad
 
-Cyfradd peidio â mynychu apwyntiad (a elwir hefyd yn gyfradd "did not attend", neu DNA) yw'r gyfran o apwyntiadau a drefnwyd lle na wnaeth y claf na mynychu na chanslo gyda rhybudd rhesymol. Dyma un o'r metrigau gweithredol hynaf mewn gofal iechyd, ac mae offer digidol, yn enwedig atgoffwyr, ailamserlennu hunanwasanaeth, a threfnu drwy borth, bellach ymysg y dulliau mwyaf effeithiol a gorau eu tystiolaeth ar gyfer ei leihau.
+Cyfradd peidio â mynychu apwyntiad (a elwir hefyd yn gyfradd "did not attend", neu DNA) yw cyfran yr apwyntiadau a drefnwyd lle na wnaeth y claf na mynychu na chanslo gyda rhybudd rhesymol. Dyma un o'r metrigau gweithredol hynaf ym maes gofal iechyd, ac mae offer digidol, yn enwedig nodiadau atgoffa, aildrefnu hunanwasanaeth a threfnu apwyntiadau drwy borth, bellach ymhlith y dulliau mwyaf effeithiol a gorau eu tystiolaeth o'i lleihau.
 
-## Pam mae hyn yn bwysig
+## Pam mae'n bwysig
 
-Mae pob achos o beidio â mynychu yn uned o gapasiti clinigol na ellir fel arfer ei adfer, gan na all y rhan fwyaf o wasanaethau lenwi bwlch yr un diwrnod ar rybudd byr, felly mae'r gyfradd yn dylanwadu'n uniongyrchol ar hyd rhestrau aros, cost fesul apwyntiad wedi'i gwblhau, ac amser clinigwr a gollwyd. Nid yw ymddygiad peidio â mynychu wedi'i ddosbarthu'n gyfartal: mae'n cydberthyn ag amddifadedd, mynediad at drafnidiaeth, cyfrifoldebau gofalu, a baich rheoli sawl cyflwr hirdymor, felly mae trin cyfradd uchel yn bur fel problem ymddygiad claf, yn hytrach nag yn rhannol yn arwydd am rwystrau mynediad, yn tueddu i gynhyrchu ymyriadau (fel cosbau cyffredinol) sy'n gwreiddio anghydraddoldeb yn hytrach na'i leihau. Mae atgoffwyr digidol ac ailamserlennu digidol hawdd yn gyson ymysg yr ymyriadau mwyaf effeithiol a rhataf sydd ar gael, a dyna pam mae'r metrig hwn yn perthyn yn glir mewn rhaglen fesur iechyd digidol yn hytrach nag mewn adroddiadau gweithredol yn unig.
+Mae pob achos o beidio â mynychu yn golygu colli uned o gapasiti clinigol na ellir fel arfer ei hadfer, gan na all y rhan fwyaf o wasanaethau lenwi bwlch ar yr un diwrnod ar fyr rybudd. Felly mae'r gyfradd yn effeithio'n uniongyrchol ar hyd rhestrau aros, ar gost pob apwyntiad a gwblhawyd, ac ar yr amser clinigol a gollir. Nid yw ymddygiad peidio â mynychu wedi'i rannu'n gyfartal: mae'n gysylltiedig ag amddifadedd, mynediad at drafnidiaeth, cyfrifoldebau gofalu a baich rheoli sawl cyflwr hirdymor. Os caiff cyfradd uchel ei thrin fel problem ymddygiad cleifion yn unig, yn hytrach nag fel arwydd, yn rhannol, o rwystrau rhag mynediad, mae'n tueddu i esgor ar ymyriadau (megis cosbau cyffredinol) sy'n cadarnhau anghydraddoldeb yn hytrach na'i leihau. Mae nodiadau atgoffa digidol ac aildrefnu digidol hawdd yn gyson ymhlith yr ymyriadau mwyaf effeithiol a rhataf sydd ar gael, a dyna pam mae'r metrig hwn yn perthyn yn glir i raglen fesur iechyd digidol, ac nid yn unig i adroddiadau gweithredol.
 
-## Sut mae'n cael ei gyfrifo
+## Sut caiff ei gyfrifo
 
 ```
-Cyfradd peidio â mynychu = apwyntiadau wedi'u nodi'n "did not attend" /
-                           cyfanswm apwyntiadau a drefnwyd × 100
+Cyfradd peidio â mynychu = apwyntiadau a nodwyd yn "did not attend" /
+                           cyfanswm yr apwyntiadau a drefnwyd × 100
 ```
 
-Fel arfer, caiff apwyntiad a drefnwyd ei eithrio o'r rhifiadur, neu ei symud i gategori ar wahân, os cafodd ei ganslo gan y naill barti neu'r llall gyda mwy na chyfnod rhybudd penodol (yn gyffredin 24 awr). Fel arfer caiff canslo hwyr (o dan y cyfnod rhybudd hwnnw) ei adrodd ar wahân i achosion gwirioneddol o beidio â mynychu, gan fod yr oblygiadau gweithredol ac ymddygiadol yn wahanol.
+Fel arfer, caiff apwyntiad a drefnwyd ei eithrio o'r enwadur, neu ei roi mewn categori ar wahân, os cafodd ei ganslo gan y naill barti neu'r llall gyda mwy na chyfnod rhybudd penodedig (24 awr yn gyffredin). Fel arfer caiff canslo hwyr (o fewn y cyfnod rhybudd hwnnw) ei adrodd ar wahân i achosion gwirioneddol o beidio â mynychu, gan fod y goblygiadau gweithredol ac ymddygiadol yn wahanol.
 
-## Enghraifft wedi'i gweithio
+## Enghraifft wedi'i datrys
 
-Mae clinig cymunedol yn trefnu 2,000 o apwyntiadau mewn mis. O'r rhain, canslwyd 140 gyda mwy na 24 awr o rybudd (wedi'u hailfwcio a'u heithrio o'r rhifiadur), canslwyd 60 yn hwyr (o dan 24 awr), a chofnodwyd 180 fel achos gwirioneddol o beidio â mynychu heb unrhyw gyswllt o gwbl. Y gyfradd peidio â mynychu yw 180 / 2,000 × 100 = 9%. Pe bai'r 60 canslad hwyr wedi'u plygu i mewn i'r un categori â'r achosion gwirioneddol o beidio â mynychu, byddai'r gyfradd a adroddwyd yn codi i 12%, a dyna pam y dylid nodi'r diffiniad a ddefnyddiwyd bob amser wrth ochr y ffigwr.
+Mae clinig cymunedol yn trefnu 2,000 o apwyntiadau mewn mis. O'r rhain, canslwyd 140 gyda mwy na 24 awr o rybudd (cawsant eu haildrefnu a'u heithrio o'r enwadur), canslwyd 60 yn hwyr (o fewn 24 awr), a chofnodwyd 180 fel achosion gwirioneddol o beidio â mynychu heb unrhyw gyswllt o gwbl. Y gyfradd peidio â mynychu yw 180 / 2,000 × 100 = 9%. Pe bai'r 60 canslo hwyr yn cael eu cynnwys yn yr un categori â'r achosion gwirioneddol o beidio â mynychu, byddai'r gyfradd a adroddir yn codi i 12%, a dyna pam y dylid datgan y diffiniad a ddefnyddiwyd bob amser ochr yn ochr â'r ffigur.
 
-## Ffynonellau data a rhybuddion
+## Ffynonellau data a chyfyngiadau
 
-Y system amserlennu neu reoli practis yw'r brif ffynhonnell, gan ddefnyddio ei chodau statws apwyntiad; mae ansawdd y metrig yn dibynnu'n gyfan gwbl ar staff yn defnyddio'r statws cywir yn gyson yn hytrach na bwced "wedi canslo" cyffredinol ar gyfer popeth. Dylai sefydliadau sy'n cyflwyno atgoffwyr digidol (SMS, hysbysiad gwthio ap, neu rybuddion porth) fesur y gyfradd peidio â mynychu cyn ac ar ôl y newid ar gyfer cymysgedd claf a gwasanaeth cymaradwy, gan fod effeithiolrwydd atgoffwyr wedi'i ddogfennu'n dda mewn astudiaethau ar hap ac arsylwadol ond yn amrywio yn ôl poblogaeth a sianel.
+Y system amserlennu neu reoli practis yw'r brif ffynhonnell, gan ddefnyddio ei chodau statws apwyntiadau. Mae ansawdd y metrig yn dibynnu'n llwyr ar i staff ddefnyddio'r statws cywir yn gyson, yn hytrach na rhoi popeth mewn categori cyffredinol "wedi canslo". Dylai sefydliadau sy'n cyflwyno nodiadau atgoffa digidol (SMS, hysbysiadau gwthio ap neu rybuddion porth) fesur y gyfradd peidio â mynychu cyn ac ar ôl y newid, ar gyfer cymysgedd cymaradwy o gleifion a gwasanaethau, gan fod effeithiolrwydd nodiadau atgoffa wedi'i ddogfennu'n dda mewn hap-dreialon dan reolaeth ac astudiaethau arsylwadol, ond yn amrywio yn ôl y boblogaeth a'r sianel.
 
-## Peryglon
+## Peryglon cyffredin
 
-- **Cymharu cyfraddau amrwd ar draws clinigau â phraffigau gorfwcio gwahanol**: bydd clinig sy'n gorfwcio'n fwriadol i ddigolledu am gyfradd peidio â mynychu ddisgwyliedig yn dangos cyfradd ymddangosiadol wahanol i un nad yw'n gwneud hynny, yn annibynnol ar ymddygiad gwirioneddol cleifion.
-- **Cymysgu canslo hwyr ag achosion gwirioneddol o beidio â mynychu**: mae gan y ddau achosion gwahanol ac atebion digidol gwahanol (yn aml gellir datrys problem canslo hwyr drwy ailamserlennu hunanwasanaeth haws; yn aml gellir datrys problem gwirioneddol o beidio â mynychu drwy well atgoffwyr a chywirdeb cyswllt).
-- **Rhagfarn goroesiad o bolisïau rhyddhau**: bydd gwasanaethau sy'n rhyddhau cleifion ar ôl achosion dro ar ôl tro o beidio â mynychu yn gweld eu cyfradd eu hunain yn gwella'n fecanyddol, gan symud yr un cleifion yn syml i rywle arall yn y system.
-- **Beio allgáu digidol ar y claf**: ni fydd claf heb ffôn clyfar na gwasanaeth testun dibynadwy yn elwa o strategaeth atgoffa digidol yn unig, felly mae angen dull aml-sianel fel arfer (llythyr, galwad, testun, ap) i osgoi ehangu bylchau mynediad.
+- **Cymharu cyfraddau crai rhwng clinigau sydd â gwahanol arferion gorfwcio**: bydd clinig sy'n gorfwcio'n fwriadol i wneud iawn am gyfradd peidio â mynychu ddisgwyliedig yn dangos cyfradd ymddangosiadol wahanol i un nad yw'n gwneud hynny, a hynny'n annibynnol ar wir ymddygiad cleifion.
+- **Cymysgu canslo hwyr ag achosion gwirioneddol o beidio â mynychu**: mae gan y ddau achosion gwahanol ac atebion digidol gwahanol (yn aml gellir datrys problem canslo hwyr drwy ei gwneud yn haws i gleifion aildrefnu eu hunain; yn aml gellir datrys problem wirioneddol o beidio â mynychu drwy well nodiadau atgoffa a manylion cyswllt cywirach).
+- **Tuedd goroesi sy'n deillio o bolisïau rhyddhau**: bydd gwasanaethau sy'n rhyddhau cleifion ar ôl iddynt beidio â mynychu dro ar ôl tro yn gweld eu cyfradd eu hunain yn gwella'n fecanyddol, tra'n symud yr un cleifion i fan arall yn y system yn unig.
+- **Beio'r claf am allgáu digidol**: ni fydd claf heb ffôn clyfar na gwasanaeth negeseuon testun dibynadwy yn elwa ar strategaeth nodiadau atgoffa ddigidol yn unig, felly fel arfer mae angen dull amlsianel (llythyr, galwad, neges destun, ap) i osgoi ehangu bylchau mynediad.
 
 ## Ffynonellau
 
 - NHS England, apwyntiadau a gollwyd mewn practis cyffredinol a gofal cleifion allanol, ystadegau a chanllawiau cyhoeddedig
-- Adolygiadau systematig Cochrane ar ymyriadau i leihau apwyntiadau gofal iechyd a gollwyd, gan gynnwys systemau atgoffa
-- Llenyddiaeth adolygiad gan gymheiriaid ar gydberthnasau economaidd-gymdeithasol a demograffig o beidio â mynychu apwyntiadau
+- Adolygiadau systematig Cochrane o ymyriadau i leihau apwyntiadau gofal iechyd a gollwyd, gan gynnwys systemau atgoffa
+- Llenyddiaeth a adolygwyd gan gymheiriaid ar nodweddion economaidd-gymdeithasol a demograffig sy'n gysylltiedig â pheidio â mynychu apwyntiadau
 
-Gweler hefyd: [cyfradd ymweliadau telefeddygaeth](../cyfradd-ymweliadau-telefeddygaeth/), gan fod ymddygiad peidio â mynychu yn aml yn wahanol yn ôl dull ymgynghori, a [cyfradd mabwysiadu porth cleifion](../cyfradd-mabwysiadu-porth-cleifion/), gan mai hunan-drefnu ac atgoffwyr drwy'r porth yw prif ymyriad digidol y maes hwn.
+Gweler hefyd: [cyfradd ymweliadau teleiechyd](../cyfradd-ymweliadau-teleiechyd/), gan fod ymddygiad peidio â mynychu yn aml yn wahanol yn ôl dull yr ymgynghoriad, a [cyfradd mabwysiadu porth cleifion](../cyfradd-mabwysiadu-porth-cleifion/), gan mai trefnu apwyntiadau eich hun a nodiadau atgoffa drwy'r porth yw prif ymyriad digidol y maes hwn.

@@ -1,0 +1,205 @@
+# English-to-Welsh terminology for locales/cy-001 and locales/cy-gb (cy-gb is a copy of cy-001).
+# Source of choices: TermCymru, the Welsh Government term bank (2026-07-02 export, gov.wales).
+# source column: "TermCymru A/B/C" = status of the bank entry used (A best); "standard" = not in the bank,
+# standard Welsh used; "book" = a convention for this book. The bank's choice wins unless it is the wrong sense.
+# Register: formal written Welsh. Keep English acronyms (DAU/MAU, ROI, VOI, HbA1c, PROM, ePROM, SUS, NPS,
+# RE-AIM, ISO/TS 82304-2) and give the Welsh expansion on first use. Mind treigladau after feminine nouns and prepositions.
+english	welsh	gender	source	notes
+patient	claf (pl. cleifion)	g	standard	not a headword in the bank; "claf mewnol", "Diogelwch Cleifion Cymru" show usage
+patient portal	porth cleifion	g	TermCymru B	"porth" is the web-portal sense; the exact entry "porthol" is a legal term, wrong sense
+appointment	apwyntiad (pl. apwyntiadau)	g	standard
+no-show / did not attend (DNA)	peidio â mynychu (DNA)	-	TermCymru B	"mynychu" = attend; keep the English acronym DNA
+reminder	nodyn atgoffa (pl. nodiadau atgoffa)	g	TermCymru B
+waiting list	rhestr aros (pl. rhestrau aros)	b	TermCymru B
+waiting time	amser aros (pl. amseroedd aros)	g	TermCymru B
+outpatient	claf allanol	g	TermCymru A
+inpatient	claf mewnol	g	TermCymru A
+clinic	clinig (pl. clinigau)	g	TermCymru B
+clinician	clinigydd (pl. clinigwyr)	g	TermCymru B
+general practice	practis cyffredinol / meddygaeth deulu	g	TermCymru B
+GP	meddyg teulu	g	TermCymru B
+primary care	gofal sylfaenol	g	TermCymru A
+secondary care	gofal eilaidd	g	TermCymru B
+social care	gofal cymdeithasol	g	TermCymru B
+public health	iechyd y cyhoedd	g	TermCymru A
+NHS	y GIG	g	TermCymru A
+health board	bwrdd iechyd	g	standard
+telehealth	teleiechyd	g	TermCymru C	not "telefeddygaeth" (= telemedicine)
+virtual consultation	ymgynghoriad rhithwir	g	TermCymru B
+consultation	ymgynghoriad (pl. ymgyngoriadau)	g	TermCymru A
+virtual ward	ward rithwir (pl. wardiau rhithwir)	b	TermCymru A
+remote monitoring	monitro o bell	-	standard
+triage	brysbennu	-	TermCymru B
+referral	atgyfeiriad (pl. atgyfeiriadau)	g	TermCymru A
+e-referral	e-atgyfeiriad	g	TermCymru C
+turnaround time	amser prosesu	g	standard	not in the bank; "amser trosi" (conversion time) was wrong
+emergency department	adran damweiniau ac achosion brys	b	TermCymru B	bank gives "damweiniau ac achosion brys" for A&E
+admission	derbyniad (pl. derbyniadau)	g	TermCymru B
+readmission	ail-dderbyniad	g	standard
+discharge (noun)	rhyddhad / rhyddhau cleifion	g	TermCymru B	"rhedlif" is bodily discharge, wrong sense
+length of stay	hyd arhosiad	g	standard
+bed day	diwrnod gwely	g	standard
+episode of care	cyfnod gofal	g	TermCymru C	"cyfnod" in Patient Episode Database = "Cronfa Ddata Cyfnodau Gofal Cleifion Cymru"
+intervention	ymyriad (countable) / ymyrraeth (mass)	g/b	TermCymru A
+alert	rhybudd	g	TermCymru B
+alert fatigue	blinder rhybuddion	g	book
+override (an alert)	diystyru	-	book	TermCymru "gwrth-wneud" is the IT sense (reverse an action); "diystyru" fits clinicians ignoring an alert
+clinical decision support	cymorth i wneud penderfyniadau clinigol	g	standard
+medication	meddyginiaeth (pl. meddyginiaethau)	b	TermCymru B
+medication adherence	cadw at feddyginiaeth	-	standard	"cydgordio meddyginiaethau" (concordance) is a different concept
+prescription	presgripsiwn	g	TermCymru B
+chronic condition	cyflwr cronig (pl. cyflyrau cronig)	g	TermCymru A
+long-term condition	cyflwr hirdymor	g	standard
+biometric	biometrig	-	standard
+blood pressure	pwysedd gwaed	g	TermCymru A
+body mass index	mynegai màs y corff (BMI)	g	TermCymru C
+device	dyfais (pl. dyfeisiau)	b	TermCymru B
+uptime	amser gweithredu	g	standard	availability = argaeledd
+digital	digidol	-	TermCymru A
+digital health	iechyd digidol	g	TermCymru A
+digital inclusion	cynhwysiant digidol	g	TermCymru C
+digital exclusion	allgáu digidol	g	TermCymru C
+digital literacy	llythrennedd digidol	g	TermCymru A	cf. "Fframwaith Llythrennedd Digidol Statudol"
+digital access	mynediad digidol	g	TermCymru B
+smartphone	ffôn clyfar	g	TermCymru C
+text message	neges destun	b	standard
+push notification	hysbysiad gwthio	g	TermCymru B
+app	ap (pl. apiau)	g	TermCymru A
+website	gwefan	b	TermCymru B
+online	ar-lein	-	TermCymru A
+user	defnyddiwr (pl. defnyddwyr)	g	TermCymru B
+user experience	profiad defnyddiwr	g	TermCymru A
+usability	defnyddioldeb	g	TermCymru B
+accessibility	hygyrchedd	g	TermCymru B
+interface	rhyngwyneb	g	TermCymru B
+interoperability	gallu i ryngweithredu	g	TermCymru B
+artificial intelligence	deallusrwydd artiffisial	g	TermCymru A
+machine learning	dysgu peirianyddol	g	TermCymru A
+algorithm	algorithm	g	TermCymru B
+false positive	canlyniad positif anghywir	g	TermCymru A
+accuracy	cywirdeb	g	standard
+survey	arolwg (pl. arolygon)	g	TermCymru A
+questionnaire	holiadur	g	TermCymru A
+feedback	adborth	g	TermCymru B
+satisfaction	boddhad	g	TermCymru C
+experience	profiad	g	TermCymru A
+engagement	ymgysylltiad / ymgysylltu	g	TermCymru A	"Ennyn Diddordeb" (C, education) is a narrower sense
+retention (of users)	cadw (defnyddwyr)	-	TermCymru B	"swm dargadw" is retention of money, wrong sense; cf. "Cynllun Cadw Staff Nyrsio"
+adoption	mabwysiadu	-	TermCymru C
+registration	cofrestru	-	TermCymru C
+cohort	carfan (pl. carfanau)	b	TermCymru B
+stickiness (DAU/MAU)	gludedd	g	book
+net promoter score	sgôr hyrwyddwyr net	g	book	keep NPS
+rate	cyfradd (pl. cyfraddau)	b	TermCymru B
+ratio	cymhareb (pl. cymarebau)	b	TermCymru C
+percentage	canran	b	TermCymru C
+numerator	rhifiadur	g	standard
+denominator	enwadur	g	TermCymru C
+average	cyfartaledd	g	TermCymru B
+median	canolrif	g	TermCymru A
+sample	sampl	b	TermCymru A
+correlation	cydberthynas	b	TermCymru A
+bias	tuedd	b	TermCymru B
+confidence interval	cyfwng hyder	g	TermCymru B
+statistically significant	arwyddocaol yn ystadegol	-	TermCymru A	noun: arwyddocâd ystadegol
+formula	fformiwla (pl. fformiwlâu)	b	TermCymru A
+calculation	cyfrifiad	g	TermCymru C	verb: cyfrifo
+worked example	enghraifft wedi'i datrys	b	book
+metric	metrig (pl. metrigau)	g	standard	not in the bank
+indicator	dangosydd	g	TermCymru A
+key performance indicator	dangosydd perfformiad allweddol	g	TermCymru A
+benchmark	meincnod	g	TermCymru B	verb: meincnodi
+baseline	llinell sylfaen	b	TermCymru B
+threshold	trothwy	g	TermCymru B
+target	targed	g	TermCymru B
+dashboard	dangosfwrdd	g	TermCymru C
+report	adroddiad	g	TermCymru B
+data	data	g	TermCymru A
+dataset	set ddata	b	TermCymru B
+data source	ffynhonnell data	b	TermCymru B
+data protection	diogelu data	-	TermCymru B
+privacy	preifatrwydd	g	TermCymru B
+consent	cydsyniad	g	TermCymru B
+security	diogelwch	g	TermCymru B	"sicrhad" (A) is financial security, wrong sense
+patient safety	diogelwch cleifion	g	TermCymru A
+framework	fframwaith (pl. fframweithiau)	g	TermCymru B
+evaluation	gwerthuso / gwerthusiad	-	TermCymru A
+assessment	asesiad (pl. asesiadau)	g	TermCymru A
+effectiveness	effeithiolrwydd	g	TermCymru A
+implementation	gweithredu	-	standard
+maintenance (RE-AIM)	cynhaliaeth	b	standard	dimension name; verb "cynnal"; "parhau" in the bank is environmental
+reach (RE-AIM)	cyrhaeddiad	g	standard	the bank's "reach" is a chemicals regulation
+sustainability	cynaliadwyedd	g	TermCymru B
+standard	safon (pl. safonau)	b	TermCymru A
+specification	manyleb	b	TermCymru C
+certification	ardystio	-	TermCymru B
+quality	ansawdd	g	TermCymru A	the bank's exact entry "rhinwedd" is agricultural
+peer review	adolygiad gan gymheiriaid	g	TermCymru A
+systematic review	adolygiad systematig	g	standard
+randomised controlled trial	hap-dreial dan reolaeth	g	TermCymru B
+evidence	tystiolaeth	b	TermCymru A
+guidance	canllawiau	-	TermCymru A
+statistics	ystadegau	-	TermCymru A
+cost	cost (pl. costau)	b	TermCymru A
+saving	arbediad (pl. arbedion)	g	TermCymru C
+budget	cyllideb	b	TermCymru A
+investment	buddsoddiad	g	TermCymru C
+return on investment (ROI)	adenillion o fuddsoddi (ROI)	-	TermCymru A	from "adenillion cymdeithasol o fuddsoddi"
+value on investment (VOI)	gwerth o fuddsoddi (VOI)	g	book
+value for money	gwerth am arian	g	TermCymru C
+cost-benefit analysis	dadansoddiad cost a budd	g	TermCymru C
+revenue	refeniw	g	TermCymru C
+commissioning	comisiynu	-	TermCymru A
+procurement	caffael	-	TermCymru A
+contract	contract (pl. contractau)	g	TermCymru B
+tariff	tariff	g	TermCymru B
+business case	achos busnes	g	TermCymru C
+efficiency	effeithlonrwydd	g	TermCymru A
+productivity	cynhyrchiant	g	TermCymru B
+payer	talwr	g	standard
+value-based care	gofal ar sail gwerth	g	standard
+customer	cwsmer (pl. cwsmeriaid)	g	TermCymru A
+acquisition (of customers)	caffael	-	TermCymru B
+marketing	marchnata	-	TermCymru C
+conversion	trosi	-	TermCymru A
+campaign	ymgyrch	b	TermCymru A
+channel	sianel	b	TermCymru B
+burnout	diffygiad (burnout)	g	TermCymru B	bank definition: acute stress response with exhaustion; give "(burnout)" at first use
+exhaustion	gorflinder	g	TermCymru B
+wellbeing	llesiant	g	TermCymru B
+workforce	gweithlu	g	TermCymru A
+workload	llwyth gwaith	g	TermCymru B
+doctor / physician	meddyg (pl. meddygon)	g	TermCymru C
+nurse	nyrs	b	TermCymru C
+equity	tegwch	g	TermCymru B	health equity: tegwch iechyd (cf. "Tegwch Iechyd Cymru")
+inequality	anghydraddoldeb	g	TermCymru A	health inequality: anghydraddoldeb iechyd
+inequity	annhegwch	g	TermCymru B
+deprivation	amddifadedd	g	TermCymru A
+vulnerable	agored i niwed	-	TermCymru A
+disability	anabledd	g	TermCymru B
+Why it matters	Pam mae'n bwysig	-	book	section heading
+How it's calculated	Sut caiff ei gyfrifo	-	book	section heading
+How it's applied	Sut caiff ei gymhwyso	-	book	section heading (framework topics)
+Worked example	Enghraifft wedi'i datrys	-	book	section heading
+Data sources and caveats	Ffynonellau data a chyfyngiadau	-	book	section heading
+Pitfalls	Peryglon cyffredin	-	book	section heading
+Sources	Ffynonellau	-	book	section heading
+See also	Gweler hefyd	-	book
+vendor / supplier	cyflenwr (pl. cyflenwyr)	g	TermCymru B	bank: "supplier"
+escalation	uwchgyfeirio	-	TermCymru A/B	bank: "escalate" = uwchgyfeirio
+elective care	gofal a gynlluniwyd	g	TermCymru B
+surgery	llawdriniaeth	b	TermCymru B
+pathway	llwybr (pl. llwybrau)	g	TermCymru A
+hypertension	gorbwysedd	g	TermCymru B	masked hypertension: gorbwysedd cudd
+cardiovascular	cardiofasgwlaidd	-	TermCymru C
+governance	llywodraethiant	g	TermCymru A	"llywodraethu" is the verbal noun (to govern)
+contraindication	gwrtharwydd	g	TermCymru B
+percentile	canradd (pl. canraddau)	b	TermCymru A
+audit trail	trywydd archwilio	g	TermCymru C
+mean	cymedr	g	TermCymru B	average generally: cyfartaledd
+randomised controlled trial	hap-dreial dan reolaeth	g	TermCymru B
+under-triage / over-triage	tan-frysbennu / gor-frysbennu	-	book
+encounter	cyswllt (pl. cysylltiadau)	g	book
+hip replacement	gosod clun newydd	-	TermCymru C
+return on ad spend (ROAS)	adenillion ar wariant hysbysebu (ROAS)	-	book
+hospital at home	Ysbyty yn y Cartref	g	TermCymru C

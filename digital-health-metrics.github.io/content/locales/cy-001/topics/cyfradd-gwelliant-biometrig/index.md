@@ -1,48 +1,50 @@
 # Cyfradd Gwelliant Biometrig
 
-Cyfradd gwelliant biometrig yw'r gyfran o gleifion cofrestredig mewn rhaglen iechyd digidol sy'n cyflawni gwelliant clinigol ystyrlon mewn mesuriad biometrig a olrheinir — yn fwyaf cyffredin haemoglobin glycedig (HbA1c) mewn rhaglenni diabetes a chardiometabolig, neu fynegai màs corff (BMI) mewn rhaglenni rheoli pwysau — dros gyfnod cofrestru penodedig. Dyma'r metrig canlyniad sy'n cyfiawnhau honiadau clinigol cynnyrch iechyd digidol yn y pen draw: mae rhifau ymgysylltiad a mabwysiadu yn disgrifio sut mae cynnyrch yn cael ei ddefnyddio, ond mae gwelliant biometrig yn nes at dystiolaeth ei fod yn gweithio.
+Cyfradd gwelliant biometrig yw cyfran y cleifion cofrestredig mewn rhaglen iechyd digidol sy'n cyflawni gwelliant clinigol ystyrlon mewn mesur biometrig a ddilynir, dros gyfnod cofrestru penodedig. Yn fwyaf cyffredin, haemoglobin glycedig (HbA1c) yw hwnnw mewn rhaglenni diabetes a rhaglenni cardiometabolig, neu fynegai màs y corff (BMI) mewn rhaglenni rheoli pwysau. Dyma'r metrig canlyniad sydd yn y pen draw yn cyfiawnhau honiadau clinigol cynnyrch iechyd digidol: mae'r ffigurau ymgysylltu a mabwysiadu yn disgrifio sut y defnyddir cynnyrch, ond mae gwelliant biometrig yn nes at fod yn dystiolaeth ei fod yn gweithio.
 
-## Pam mae hyn yn bwysig
+## Pam mae'n bwysig
 
-Yn aml, caiff rhaglenni iechyd digidol eu gwerthu a'u comisiynu ar addewid canlyniadau iechyd gwell, a chyfradd gwelliant biometrig yw'r ffordd fwyaf uniongyrchol, feintiol o brofi'r addewid hwnnw yn erbyn trothwy clinigol penodol, cydnabyddedig, yn hytrach nag honiad amwys o "iechyd gwell". Mae taliadwyr, cyflogwyr, a systemau iechyd fwyfwy yn cysylltu ad-daliad neu adnewyddu contract â newid biometrig a ddangosir, felly mae rhaglen na all adrodd y gyfradd hon yn hygred dan anfantais fasnachol yn ogystal â chlinigol. Mae'r metrig hefyd yn wiriad disgyblaeth ar ddyluniad rhaglen: mae'n llawer haws adrodd ymgysylltiad (mewngofnodion, negeseuon a anfonwyd) na chanlyniadau, a dylai tîm fod yn amheus o unrhyw raglen sy'n adrodd y cyntaf yn frwdfrydig tra'n aneglur am yr olaf.
+Yn aml, caiff rhaglenni iechyd digidol eu gwerthu a'u comisiynu ar sail yr addewid o well canlyniadau iechyd, a chyfradd gwelliant biometrig yw'r ffordd fwyaf uniongyrchol a mesuradwy o brofi'r addewid hwnnw yn erbyn trothwy clinigol penodol a chydnabyddedig, yn hytrach nag yn erbyn honiad amwys am "well iechyd". Mae talwyr, cyflogwyr a systemau iechyd yn cysylltu ad-daliad neu adnewyddu contract fwyfwy â newid biometrig a ddangoswyd, felly mae rhaglen na all adrodd ar y gyfradd hon yn gredadwy o dan anfantais fasnachol yn ogystal ag un glinigol. Mae'r metrig hefyd yn brawf o ddisgyblaeth wrth ddylunio rhaglen: mae'n llawer haws adrodd ar ymgysylltu (mewngofnodi, negeseuon a anfonwyd) nag ar ganlyniadau, a dylai tîm fod yn amheus o unrhyw raglen sy'n adrodd ar y cyntaf yn frwdfrydig ond yn amwys ynghylch yr olaf.
 
-## Sut mae'n cael ei gyfrifo
+## Sut caiff ei gyfrifo
 
 ```
 Cyfradd gwelliant biometrig = cleifion sy'n cyflawni gwelliant clinigol
-                               ystyrlon penodol / cleifion â mesuriad
-                               llinell sylfaen a dilynol dilys × 100
+                              ystyrlon diffiniedig / cleifion sydd â
+                              mesuriad llinell sylfaen a mesuriad
+                              dilynol dilys × 100
 
 Trothwyon clinigol ystyrlon cyffredin:
   HbA1c   — gostyngiad o ≥ 0.5 pwynt canran, neu gyrraedd targed
-            penodol (e.e. < 7.0%) o linell sylfaen y tu allan i'r
-            ystod
-  BMI     — gostyngiad o ≥ 5% o bwysau corff y llinell sylfaen, wedi'i
-            gynnal hyd at bwynt mesur dilynol
+            diffiniedig (e.e. < 7.0%) o linell sylfaen y tu allan i'r
+            amrediad
+  BMI     — gostyngiad o ≥ 5% ym mhwysau'r corff ar y llinell
+            sylfaen, a gynhelir hyd at y pwynt mesur dilynol
 
-Adroddwch ar wahân ar gyfer pob biometrig a olrheinir; peidiwch byth â
-chyfuno gwelliant HbA1c a BMI yn un ganran "gwelliant" gyfun.
+Adroddwch ar wahân ar gyfer pob mesur biometrig a ddilynir; peidiwch
+byth â chyfuno gwelliant HbA1c a gwelliant BMI yn un ganran
+"gwelliant" gyfunol.
 ```
 
-## Enghraifft waith
+## Enghraifft wedi'i datrys
 
-Mae rhaglen iechyd digidol gardiometabolig yn cofrestru 800 o gleifion â HbA1c llinell sylfaen y tu allan i'r ystod. O'r rhain, mae gan 620 fesuriad llinell sylfaen a dilynol dilys ar 6 mis (mae 180 wedi'u colli i ddilyniant ac wedi'u heithrio o'r enwadur, heb eu cyfrif fel methiannau). O'r 620 â mesuriadau paru, mae 340 yn cyflawni gostyngiad o o leiaf 0.5 pwynt canran. Y gyfradd gwelliant biometrig yw 340 / 620 × 100 = 55%. Byddai adrodd hyn yn erbyn y 800 llawn a gofrestrwyd (340 / 800 = 42.5%) yn cymysgu colli dilyniant â methiant triniaeth, gan ddangos cyfradd is nag sy'n wir am gleifion a gwblhaodd fesuriad mewn gwirionedd.
+Mae rhaglen iechyd digidol gardiometabolig yn cofrestru 800 o gleifion y mae eu HbA1c ar y llinell sylfaen y tu allan i'r amrediad. O'r rhain, mae gan 620 fesuriad llinell sylfaen dilys a mesuriad dilynol dilys ar ôl 6 mis (collwyd 180 yn ystod y dilyniant, a chânt eu heithrio o'r enwadur yn hytrach na'u cyfrif fel methiannau). O'r 620 sydd â mesuriadau pâr, mae 340 yn cyflawni gostyngiad o 0.5 pwynt canran o leiaf. Y gyfradd gwelliant biometrig yw 340 / 620 × 100 = 55%. Pe bai'r gyfradd yn cael ei hadrodd yn erbyn y 800 a gofrestrwyd i gyd (340 / 800 = 42.5%), byddai hynny'n cymysgu colli cleifion yn ystod y dilyniant â methiant triniaeth, gan danddatgan y gyfradd ar gyfer y cleifion a gwblhaodd y mesuriadau mewn gwirionedd.
 
-## Ffynonellau data a rhybuddion
+## Ffynonellau data a chyfyngiadau
 
-Yn nodweddiadol, daw gwerthoedd biometrig llinell sylfaen a dilynol o ddyfais gysylltiedig (mesurydd glwcos Bluetooth neu glorian glyfar), canlyniad labordy a fewnforiwyd o'r cofnod iechyd electronig, neu werth a hunan-adroddwyd gan y claf — ac mae'r tri ffynhonnell hyn yn cario dibynadwyedd gwahanol iawn, felly dylid adrodd y ffynhonnell ochr yn ochr â'r gyfradd. Anaml y mae colli dilyniant yn hap: yn aml y mae cleifion sy'n datgysylltu o raglen hefyd y rhai lleiaf tebygol o fod wedi gwella, felly gall cyfradd gwelliant uchel a gyfrifir dim ond ar gleifion a gwblhaodd ddilyniant orbwysleisio effaith wirioneddol lefel poblogaeth y rhaglen. Mae effeithiau tymhorol ac ymatchwel-tuag-at-y-cymedr yn real ar gyfer HbA1c a phwysau ill dau, felly dylai rhaglen gymharu yn erbyn grŵp rheoli cyfredol neu hanesyddol lle bo modd yn hytrach na thrin unrhyw welliant fel prawf o effaith y rhaglen.
+Fel arfer, daw gwerthoedd biometrig y llinell sylfaen a'r mesuriad dilynol o ddyfais gysylltiedig (glwcomedr Bluetooth neu glorian glyfar), o ganlyniad labordy a fewnforiwyd o'r cofnod iechyd electronig, neu o werth a hunan-adroddwyd gan y claf. Mae dibynadwyedd y tair ffynhonnell hyn yn wahanol iawn, felly dylid adrodd ar y ffynhonnell ochr yn ochr â'r gyfradd. Anaml y mae colli cleifion yn ystod y dilyniant yn ddigwyddiad ar hap: yn aml, y cleifion sy'n rhoi'r gorau i ymgysylltu â rhaglen yw'r rhai lleiaf tebygol o fod wedi gwella hefyd, felly gall cyfradd gwelliant uchel a gyfrifir ar gleifion a gwblhaodd y dilyniant yn unig orddatgan gwir effaith y rhaglen ar lefel y boblogaeth. Mae effeithiau tymhorol ac effeithiau atchweliad at y cyfartaledd yn real ar gyfer HbA1c a phwysau fel ei gilydd, felly dylai rhaglen gymharu â grŵp rheoli cydamserol neu hanesyddol lle bo modd, yn hytrach na thrin unrhyw welliant fel prawf o effaith y rhaglen.
 
-## Peryglon
+## Peryglon cyffredin
 
-- **Eithrio, yn hytrach nag adrodd, colli dilyniant**: gall gollwng cleifion heb fesuriad dilynol o'r enwadur yn dawel chwyddo'r gyfradd gwelliant ymddangosiadol yn sylweddol; adroddwch bob amser gyfradd cwblhau ar gyfer mesur dilynol ochr yn ochr â chyfradd gwelliant ei hun.
-- **Cymysgu mesuriadau hunan-adroddwyd a rhai o ddyfais heb eu labelu**: mae pwysau hunan-adroddwyd yn systematig lai dibynadwy na darlleniad clorian glyfar gysylltiedig, ac mae cymysgu'r ddau ffynhonnell yn cuddio faint o welliant ymddangosiadol yw sŵn mesur.
-- **Dim rheolaeth na chyferbyniad ffeithiol wrthfynt**: mae llawer o fesurau biometrig cronig yn amrywio neu'n atchwel tuag at y cymedr ar eu pen eu hunain; nid yw cyfradd gwelliant un-fraich heb unrhyw grŵp cymharu yn dystiolaeth derfynol, dim ond awgrymog, o effaith rhaglen.
-- **Trin symudiad cymedrig cymedrig fel tystiolaeth o welliant eang**: gall symudiad cymedrig lefel poblogaeth bach gael ei yrru gan ychydig o ymatebwyr mawr tra nad yw'r rhan fwyaf o gleifion yn gweld unrhyw newid; adroddwch y dosraniad (e.e. y gyfran sy'n croesi'r trothwy clinigol ystyrlon), nid y symudiad cymedrig yn unig.
+- **Eithrio cleifion a gollwyd yn ystod y dilyniant yn hytrach nag adrodd arnynt**: gall hepgor cleifion heb fesuriad dilynol o'r enwadur yn dawel chwyddo'r gyfradd gwelliant ymddangosiadol yn sylweddol; adroddwch bob amser ar y gyfradd cwblhau ar gyfer y mesuriad dilynol ochr yn ochr â'r gyfradd gwelliant ei hun.
+- **Cymysgu mesuriadau hunan-adroddedig a mesuriadau o ddyfais heb eu labelu**: mae pwysau hunan-adroddedig yn llai dibynadwy yn systematig na darlleniad o glorian glyfar gysylltiedig, ac mae cymysgu'r ddwy ffynhonnell yn cuddio faint o'r gwelliant ymddangosiadol sy'n sŵn mesur.
+- **Dim grŵp rheoli na chyferbyniad gwrthffeithiol**: mae llawer o fesurau biometrig cronig yn amrywio neu'n atchwelyd at y cyfartaledd ar eu pen eu hunain; mae cyfradd gwelliant un fraich heb unrhyw grŵp cymharu yn awgrymu effaith y rhaglen, ond nid yw'n derfynol.
+- **Trin newid cymedrol yn y cyfartaledd fel tystiolaeth o welliant eang**: gall ychydig o gleifion sy'n ymateb yn fawr achosi gwelliant bach yn y cyfartaledd ar lefel y boblogaeth tra nad yw'r rhan fwyaf o gleifion yn gweld unrhyw newid; adroddwch ar y dosraniad (e.e. cyfran y cleifion sy'n croesi'r trothwy clinigol ystyrlon), nid ar y newid yn y cyfartaledd yn unig.
 
 ## Ffynonellau
 
-- Cymdeithas Diabetes America (ADA), Safonau Gofal mewn Diabetes, canllawiau targed HbA1c a newid ystyrlon yn glinigol
-- Canolfannau Rheoli ac Atal Clefydau (CDC), Adran Cyfieithu Diabetes, canllawiau gwerthuso rhaglenni
-- Llenyddiaeth adolygiad-gan-gymheiriaid ar ganlyniadau rhaglenni diabetes digidol a rheoli pwysau, er enghraifft astudiaethau a gyhoeddwyd yn npj Digital Medicine a Diabetes Care
+- Cymdeithas Diabetes America (ADA), Standards of Care in Diabetes, canllawiau ar y targed HbA1c a newid ystyrlon yn glinigol
+- Canolfannau Rheoli ac Atal Clefydau (CDC), Division of Diabetes Translation, canllawiau ar werthuso rhaglenni
+- Llenyddiaeth a adolygwyd gan gymheiriaid ar ganlyniadau rhaglenni diabetes a rheoli pwysau digidol, er enghraifft astudiaethau a gyhoeddwyd yn npj Digital Medicine a Diabetes Care
 
-Gweler hefyd: [cyfradd cydymffurfiad meddyginiaeth](../cyfradd-cydymffurfiad-meddyginiaeth/), gyrrwr blaenorol cyffredin i welliant biometrig mewn rhaglenni cyflwr cronig.
+Gweler hefyd: [cyfradd cadw at feddyginiaeth](../cyfradd-cadw-at-feddyginiaeth/), sy'n aml yn ysgogi gwelliant biometrig mewn rhaglenni ar gyfer cyflyrau cronig.

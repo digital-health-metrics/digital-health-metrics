@@ -1,46 +1,46 @@
 # Cymhareb Gludedd DAU/MAU
 
-Mae cymhareb gludedd DAU/MAU yn cymharu defnyddwyr gweithredol dyddiol (DAU) yn erbyn defnyddwyr gweithredol misol (MAU) — yr un mesur sylfaenol a ddefnyddir ar gyfer defnyddwyr gweithredol wythnosol (WAU) yn erbyn MAU — i fynegi pa gyfran o boblogaeth ddefnyddwyr ehangach cynnyrch sy'n ymgysylltu ag ef ar unrhyw ddiwrnod penodol. Dyma'r mesur dadansoddeg-cynnyrch safonol o ddwyster ymgysylltiad, yn wahanol i a yw defnyddiwr yn cael ei gadw o gwbl (gweler cyfradd cadw defnyddwyr) neu ba mor gyson y mae un claf cofrestredig penodol yn ymgysylltu dros amser (gweler cyfradd cysondeb ymgysylltiad claf): mae gludedd yn disgrifio rhythm defnydd lefel-poblogaeth, nid patrwm unrhyw unigolyn.
+Mae'r gymhareb gludedd DAU/MAU yn cymharu defnyddwyr gweithredol dyddiol (DAU) â defnyddwyr gweithredol misol (MAU), sef yr un mesur sylfaenol ag a ddefnyddir i gymharu defnyddwyr gweithredol wythnosol (WAU) â MAU. Mae'n mynegi pa gyfran o sylfaen ehangach defnyddwyr cynnyrch sy'n ymgysylltu ag ef ar unrhyw ddiwrnod penodol. Dyma'r mesur safonol ym maes dadansoddeg cynnyrch ar gyfer dwyster ymgysylltu. Mae'n wahanol i'r cwestiwn a gaiff defnyddiwr ei gadw o gwbl (gweler y gyfradd cadw defnyddwyr) neu pa mor gyson y mae un claf cofrestredig penodol yn ymgysylltu dros amser (gweler y gyfradd cysondeb ymgysylltiad cleifion): mae gludedd yn disgrifio rhythm y defnydd ar lefel y boblogaeth, ac nid patrwm unrhyw unigolyn.
 
-## Pam mae hyn yn bwysig
+## Pam mae'n bwysig
 
-Gall dau gynnyrch iechyd digidol adrodd cyfrif defnyddwyr gweithredol misol union yr un fath tra bo ganddynt ddwyster ymgysylltiad sylfaenol gwahanol iawn: un lle mae'r rhan fwyaf o'r defnyddwyr hynny'n agor yr ap bron bob dydd, a'r llall lle mae'r rhan fwyaf yn ei agor unwaith y mis yn union cyn y byddai fel arall yn cyfrif fel anweithredol. Mae cymhareb gludedd DAU/MAU yn gwahaniaethu rhwng y ddau sefyllfa wahanol iawn hyn gydag un ffigur meincnod syml, dealledig y gall timau cynnyrch a chlinigol ei olrhain dros amser a'i gymharu yn erbyn ystodau diwydiant hysbys — mae cymhareb o gwmpas 20% yn feincnod rhesymol a nodir yn gyffredin ar gyfer llawer o apiau defnyddwyr, tra dylid barnu cynhyrchion arferiad-dyddiol (dyddiadur bwyd neu symptom y disgwylir i glaf ei ddefnyddio bob dydd) yn erbyn bar sylweddol uwch. Gan fod gludedd yn sensitif i sut mae "gweithredol" wedi'i ddiffinio, mae'n fwyaf defnyddiol fel tuedd ar gyfer un cynnyrch dros amser, ac fel cymhariaeth yn erbyn cynhyrchion a adeiladwyd ar gyfer patrwm defnydd tebyg, yn hytrach na meincnod cyffredinol ar draws diwydiannau.
+Gall dau gynnyrch iechyd digidol adrodd ar yr un nifer o ddefnyddwyr gweithredol misol a chael dwyster ymgysylltu sylfaenol gwahanol iawn: un lle mae'r rhan fwyaf o'r defnyddwyr hynny'n agor yr ap bron bob dydd, ac un arall lle mae'r rhan fwyaf yn ei agor unwaith y mis, ychydig cyn y byddent fel arall yn cael eu cyfrif yn anweithredol. Mae'r gymhareb gludedd DAU/MAU yn gwahaniaethu rhwng y ddwy sefyllfa wahanol iawn hyn gydag un ffigur meincnod syml sy'n cael ei ddeall yn dda, y gall timau cynnyrch a thimau clinigol ei olrhain dros amser a'i gymharu ag amrediadau hysbys yn y diwydiant. Mae cymhareb o tua 20% yn feincnod rhesymol a nodir yn gyffredin ar gyfer llawer o apiau i ddefnyddwyr, tra dylid barnu cynhyrchion sy'n creu arfer dyddiol (dyddiadur bwyd neu symptomau y disgwylir i glaf ei ddefnyddio bob dydd) yn ôl safon sylweddol uwch. Gan fod gludedd yn sensitif i'r ffordd y diffinnir "gweithredol", mae'n fwyaf defnyddiol fel tuedd ar gyfer un cynnyrch dros amser, ac fel cymhariaeth â chynhyrchion a gynlluniwyd ar gyfer patrwm defnydd tebyg, yn hytrach nag fel meincnod absoliwt ar draws y diwydiant.
 
-## Sut mae'n cael ei gyfrifo
+## Sut caiff ei gyfrifo
 
 ```
-Cymhareb gludedd DAU/MAU = defnyddwyr gweithredol dyddiol cyfartalog
-                            yn y cyfnod / defnyddwyr gweithredol
-                            misol yn yr un cyfnod × 100
+Cymhareb gludedd DAU/MAU = nifer cyfartalog y defnyddwyr gweithredol
+                           dyddiol yn y cyfnod / nifer y defnyddwyr
+                           gweithredol misol yn yr un cyfnod × 100
 
-Mae cymhareb WAU/MAU (wythnosol, yr un egwyddor) yn amrywiad mwynach,
-mwy priodol ar gyfer cynhyrchion y disgwylir eu defnyddio ychydig o
-weithiau'r wythnos yn hytrach na phob dydd.
+Mae'r gymhareb WAU/MAU (wythnosol, yr un egwyddor) yn amrywiad
+meddalach, sy'n fwy priodol ar gyfer cynhyrchion y disgwylir eu
+defnyddio ychydig o weithiau'r wythnos yn hytrach nag yn ddyddiol.
 
 Rhaid diffinio "gweithredol" yn fanwl gywir ac yn gyson (e.e. gweithred
-cymhwyso wedi'i chwblhau, nid agoriad ap goddefol) ar draws y
-rhifiadur a'r enwadur ill dau.
+gymwys a gwblhawyd, ac nid agor yr ap yn oddefol) yn y rhifiadur a'r
+enwadur.
 ```
 
-## Enghraifft waith
+## Enghraifft wedi'i datrys
 
-Mae gan ap rheoli diabetes digidol 10,000 o ddefnyddwyr gweithredol misol mewn mis penodol, a ddiffinnir fel unrhyw ddefnyddiwr sy'n cwblhau o leiaf un weithred gymhwyso (cofnod glwcos, cofnod pryd bwyd, neu wirio meddyginiaeth) yn y mis hwnnw. Mae cyfartaledd cyfrifon defnyddwyr gweithredol dyddiol ar draws 30 diwrnod y mis hwnnw'n rhoi DAU cyfartalog o 2,200. Y gymhareb gludedd DAU/MAU yw 2,200 / 10,000 × 100 = 22%, gan ddangos bod, ar ddiwrnod nodweddiadol, tua 22% o sylfaen defnyddwyr misol yr ap yn ymgysylltu ag ef — ffigur rhesymol ar gyfer offeryn cyflwr-cronig arferiad-dyddiol, er un y byddai'r tîm cynnyrch am ei weld yn tueddu i fyny dros amser wrth i'r ymddygiad delfrydol (cofnodi dyddiol) ddod yn fwy arferol i gleifion cofrestredig.
+Mae gan ap digidol i reoli diabetes 10,000 o ddefnyddwyr gweithredol misol mewn mis penodol, a ddiffinnir fel unrhyw ddefnyddiwr sy'n cwblhau o leiaf un weithred gymwys (cofnodi glwcos, cofnodi pryd o fwyd, neu dicio i ddangos cymryd meddyginiaeth) yn y mis hwnnw. Mae cyfartaledd nifer y defnyddwyr gweithredol dyddiol dros 30 diwrnod y mis hwnnw yn rhoi DAU cyfartalog o 2,200. Y gymhareb gludedd DAU/MAU yw 2,200 / 10,000 × 100 = 22%, sy'n dangos bod tua 22% o sylfaen ddefnyddwyr fisol yr ap yn ymgysylltu ag ef ar ddiwrnod arferol. Mae hwn yn ffigur rhesymol ar gyfer offeryn cyflyrau cronig sy'n creu arfer dyddiol, er y byddai'r tîm cynnyrch eisiau ei weld yn tueddu i godi dros amser wrth i'r ymddygiad delfrydol (cofnodi bob dydd) ddod yn fwy o arfer i'r cleifion cofrestredig.
 
-## Ffynonellau data a rhybuddion
+## Ffynonellau data a chyfyngiadau
 
-Cyfrifir DAU, WAU, a MAU i gyd o'r un cofnodion digwyddiad sylfaenol, gan ddefnyddio un diffiniad cyson o ddigwyddiad "gweithredol cymhwyso" ar draws pob ffenestr; bydd newid y diffiniad hwnnw rhwng cyfrifiadau'r rhifiadur a'r enwadur (er enghraifft, cyfrif unrhyw agoriad ap ar gyfer DAU ond dim ond gweithred wedi'i gwblhau ar gyfer MAU) yn cynhyrchu cymhareb wyrgam nad yw'n adlewyrchu dwyster ymgysylltiad gwirioneddol. Mae'r meincnod priodol ar gyfer gludedd yn dibynnu'n fawr ar batrwm defnydd bwriadedig y cynnyrch: bydd offeryn a fwriadwyd i'w ddefnyddio unwaith yr wythnos (gwiriad symptom wythnosol) yn dangos, ac fe ddylai ddangos, cymhareb DAU/MAU is nag offeryn a fwriadwyd i'w ddefnyddio bob dydd (ap cydymaith monitor glwcos parhaus), felly dylid dehongli gludedd bob amser yn erbyn amledd defnydd bwriadedig y cynnyrch ei hun, nid targed cyffredinol sengl.
+Caiff DAU, WAU a MAU eu cyfrifo i gyd o'r un cofnodion digwyddiadau sylfaenol, gan ddefnyddio un diffiniad cyson o ddigwyddiad "gweithredol cymwys" ym mhob ffenestr. Bydd newid y diffiniad hwnnw rhwng cyfrifo'r rhifiadur a'r enwadur (er enghraifft, cyfrif unrhyw achos o agor yr ap ar gyfer DAU ond gweithred a gwblhawyd yn unig ar gyfer MAU) yn esgor ar gymhareb gam nad yw'n adlewyrchu gwir ddwyster ymgysylltu. Mae'r meincnod priodol ar gyfer gludedd yn dibynnu'n fawr ar y patrwm defnydd a fwriedir ar gyfer y cynnyrch: bydd gan offeryn y bwriedir ei ddefnyddio unwaith yr wythnos (gwiriad wythnosol o symptomau) gymhareb DAU/MAU is nag offeryn y bwriedir ei ddefnyddio'n ddyddiol (ap cydymaith ar gyfer monitor glwcos parhaus), ac fe ddylai fod felly. Felly dylid dehongli gludedd bob amser yn erbyn amlder defnydd bwriadedig y cynnyrch ei hun, ac nid yn erbyn un targed cyffredinol.
 
-## Peryglon
+## Peryglon cyffredin
 
-- **Cymharu cymarebau gludedd ar draws cynhyrchion ag amledd defnydd bwriadedig gwahanol**: bydd offeryn defnydd-wythnosol yn strwythurol yn dangos cymhareb DAU/MAU is nag offeryn defnydd-dyddiol hyd yn oed os yw'r ddau'n perfformio'n union fel y bwriadwyd ar gyfer eu hachosion defnydd priodol; meincnodwch yn erbyn cyfradd fwriadedig y cynnyrch ei hun, nid targed cyffredinol sengl.
-- **Defnyddio diffiniadau gweithgaredd anghyson ar draws y rhifiadur a'r enwadur**: gall hyn gynhyrchu cymhareb gludedd nad yw'n adlewyrchu dwyster ymgysylltiad gwirioneddol ac na ellir ei chymharu'n ystyrlon dros amser nac yn erbyn cynhyrchion eraill.
-- **Trin cymhareb gludedd sy'n codi fel un cadarnhaol yn ddiamod heb wirio tuedd MAU cyffredinol**: mae cymhareb sy'n codi wedi'i yrru gan sylfaen defnyddwyr craidd, mwy arferol sy'n crebachu tra bo MAU cyffredinol yn gostwng yn sefyllfa wahanol iawn — ac yn fwy pryderus — nag un wedi'i yrru gan ymgysylltiad dyddiol gwirioneddol gynyddol ar draws sylfaen defnyddwyr sefydlog neu gynyddol.
-- **Anwybyddu effeithiau diwrnod-o'r-wythnos a thymhorol ar DAU**: gall DAU amrywio'n sylweddol yn ôl diwrnod o'r wythnos (diwrnod gwaith yn erbyn penwythnos) neu dymor ar gyfer llawer o gynhyrchion iechyd; cyfartalwch DAU dros gyfnod sy'n dal cylchred naturiol lawn yn hytrach na ffenestr fer a allai fod wedi'i wyro.
+- **Cymharu cymarebau gludedd rhwng cynhyrchion sydd ag amlder defnydd bwriadedig gwahanol**: bydd gan offeryn a ddefnyddir yn wythnosol gymhareb DAU/MAU is, yn strwythurol, nag offeryn a ddefnyddir yn ddyddiol, hyd yn oed os yw'r ddau yn perfformio'n union fel y bwriadwyd ar gyfer eu defnydd priodol; meincnodwch yn erbyn amlder bwriadedig y cynnyrch ei hun, ac nid yn erbyn un targed cyffredinol.
+- **Defnyddio diffiniadau anghyson o weithgarwch yn y rhifiadur a'r enwadur**: gall hyn esgor ar gymhareb gludedd nad yw'n adlewyrchu gwir ddwyster ymgysylltu ac na ellir ei chymharu'n ystyrlon dros amser nac â chynhyrchion eraill.
+- **Trin cymhareb gludedd sy'n codi fel peth cadarnhaol yn ddiamod heb wirio tuedd gyffredinol MAU**: mae cymhareb sy'n codi am fod craidd o ddefnyddwyr mwy ymroddedig yn crebachu, tra bod MAU cyffredinol yn gostwng, yn sefyllfa wahanol iawn, ac yn un sy'n peri mwy o bryder, i un sy'n codi am fod ymgysylltu dyddiol yn cynyddu go iawn ar draws sylfaen ddefnyddwyr sefydlog neu gynyddol.
+- **Anwybyddu effeithiau diwrnod yr wythnos ac effeithiau tymhorol ar DAU**: i lawer o gynhyrchion iechyd, gall DAU amrywio'n sylweddol yn ôl diwrnod yr wythnos (diwrnod gwaith o'i gymharu â phenwythnos) neu dymor; cyfrifwch gyfartaledd DAU dros gyfnod sy'n cwmpasu cylchred naturiol gyflawn yn hytrach na ffenestr fer a allai ogwyddo'r canlyniad.
 
 ## Ffynonellau
 
-- Llenyddiaeth adolygiad-gan-gymheiriaid a diwydiant ar fetrigau ymgysylltiad cynnyrch symudol a digidol, fframweithiau meincnodi a ddefnyddir yn eang o blatfformau dadansoddeg symudol
-- Cynghrair Therapiwteg Digidol, canllawiau arfer gorau ar fesur ymgysylltiad ar gyfer therapiwteg ddigidol
-- Llenyddiaeth adolygiad-gan-gymheiriaid ar fesur ymgysylltiad iechyd digidol, er enghraifft astudiaethau a gyhoeddwyd yn y Journal of Medical Internet Research (JMIR mHealth and uHealth)
+- Llenyddiaeth a adolygwyd gan gymheiriaid a llenyddiaeth y diwydiant ar fetrigau ymgysylltu â chynhyrchion symudol a digidol, a fframweithiau meincnodi a ddefnyddir yn eang gan lwyfannau dadansoddeg symudol
+- Digital Therapeutics Alliance, canllawiau arferion gorau ar fesur ymgysylltu ar gyfer therapiwteg ddigidol
+- Llenyddiaeth a adolygwyd gan gymheiriaid ar fesur ymgysylltu ym maes iechyd digidol, er enghraifft astudiaethau a gyhoeddwyd yn y Journal of Medical Internet Research (JMIR mHealth and uHealth)
 
-Gweler hefyd: [cyfradd cadw defnyddwyr](../cyfradd-cadw-defnyddwyr/) a [cyfradd cysondeb ymgysylltiad claf](../cyfradd-cysondeb-ymgysylltiad-claf/), y ddau fetrig ymgysylltiad cysylltiedig y mae'r gymhareb hon yn cael ei drysu amlaf â nhw.
+Gweler hefyd: [cyfradd cadw defnyddwyr](../cyfradd-cadw-defnyddwyr/) a [cyfradd cysondeb ymgysylltiad cleifion](../cyfradd-cysondeb-ymgysylltiad-cleifion/), y ddau fetrig ymgysylltu cysylltiedig y caiff y gymhareb hon ei drysu â nhw amlaf.

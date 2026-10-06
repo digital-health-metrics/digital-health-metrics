@@ -1,50 +1,50 @@
 # Cyfradd Amser Gweithredu Dyfais
 
-Cyfradd amser gweithredu dyfais yw'r gyfran o amser monitro a drefnwyd y mae dyfais iechyd gysylltiedig — synhwyrydd monitro claf o bell, dyfais wisgadwy, neu uned telefeddygaeth cartref — mewn gwirionedd ar-lein, yn trosglwyddo data, ac yn gweithredu'n gywir, yn hytrach nag all-lein, wedi'i ddatgysylltu, neu'n camweithredu. Dyma'r metrig seilwaith sylfaenol o dan bob rhaglen monitro o bell neu ddyfais gysylltiedig: mae rhybudd clinigol, tuedd biometrig, neu ffigur ymgysylltiad a gyfrifir o ddyfais a oedd yn aml all-lein dim ond yr un mor ddibynadwy â'r cysylltedd y tu ôl iddo.
+Mae cyfradd amser gweithredu dyfais yn mesur cyfran yr amser monitro a drefnwyd y mae dyfais iechyd gysylltiedig, sef synhwyrydd i fonitro cleifion o bell, dyfais wisgadwy neu uned teleiechyd gartref, ar-lein mewn gwirionedd, yn trosglwyddo data ac yn gweithio'n gywir, yn hytrach nag all-lein, wedi datgysylltu neu'n camweithio. Dyma'r metrig seilwaith sylfaenol sy'n sail i bob rhaglen monitro o bell neu ddyfeisiau cysylltiedig: dim ond mor ddibynadwy â'r cysylltedd y tu ôl iddo yw rhybudd clinigol, tuedd biometrig neu ffigur ymgysylltu a gyfrifwyd o ddyfais a oedd yn aml all-lein.
 
-## Pam mae hyn yn bwysig
+## Pam mae'n bwysig
 
-Mae holl gynnig gwerth clinigol rhaglen monitro claf o bell yn dibynnu ar ddal data parhaus neu bron-parhaus; mae dyfais ag amser gweithredu gwael yn creu bylchau tawel yn narlun clinigol claf y gellir eu camgymryd am sefydlogrwydd (dim rhybudd am nad oes data, nid am nad oes dim wedi newid) yn hytrach na'u nodi'n gywir fel methiant monitro. Mae amser gweithredu dyfais hefyd yn ddangosydd blaenllaw o gost rhaglen a phrofiad claf: mae dyfais sy'n aml yn colli cysylltiad yn cynhyrchu galwadau cymorth, rhwystredigaeth claf, ac allgymorth clinigol posib diangen i wirio a yw bwlch data'n adlewyrchu digwyddiad clinigol gwirioneddol neu ddim ond nam technegol. Gan fod methiannau amser gweithredu dyfais yn aml yn briodoladwy i seilwaith y mae'r sefydliad yn ei reoli (porth cellog wedi'i gyflunio'n wael, sylw Wi-Fi gwan yng nghartref claf, fflyd dyfeisiau heb ei chynnal yn ddigonol) yn hytrach na'r claf, mae'r metrig hwn yn perthyn yn bendant i'r tîm gweithrediadau technegol a gwerthwr, nid ei blygu'n ddiwahaniaeth i metrigau ymgysylltiad claf.
+Mae holl werth clinigol rhaglen monitro cleifion o bell yn dibynnu ar gasglu data'n barhaus neu bron yn barhaus. Mae dyfais sydd ag amser gweithredu gwael yn creu bylchau tawel yn narlun clinigol claf y gellir eu camgymryd am sefydlogrwydd (dim rhybudd am nad oes data, ac nid am nad oes dim wedi newid) yn hytrach na'u nodi'n gywir fel methiant monitro. Mae amser gweithredu dyfeisiau hefyd yn ddangosydd blaenllaw o gost y rhaglen a phrofiad y claf: mae dyfais sy'n colli ei chysylltiad yn aml yn arwain at alwadau am gymorth, rhwystredigaeth i'r claf ac, o bosibl, allgymorth clinigol diangen i wirio a yw bwlch yn y data'n adlewyrchu digwyddiad clinigol go iawn neu ddim ond nam technegol. Gan fod methiannau o ran amser gweithredu dyfeisiau yn aml i'w priodoli i seilwaith y mae'r sefydliad yn ei reoli (porth cellog sydd wedi'i ffurfweddu'n wael, signal Wi-Fi gwan yng nghartref claf, fflyd o ddyfeisiau na chaiff ei chynnal a'i chadw'n ddigonol) yn hytrach nag i'r claf, mae'r metrig hwn yn perthyn yn gadarn i'r cyflenwr a'r tîm gweithrediadau technegol, ac ni ddylid ei gynnwys yn ddiwahân ymhlith metrigau ymgysylltiad cleifion.
 
-## Sut mae'n cael ei gyfrifo
+## Sut caiff ei gyfrifo
 
 ```
-Cyfradd amser gweithredu dyfais = amser roedd y ddyfais ar-lein ac yn
-                                   trosglwyddo data dilys / cyfanswm
-                                   amser monitro a drefnwyd × 100
+Cyfradd amser gweithredu dyfais = yr amser yr oedd y ddyfais ar-lein ac
+                                  yn trosglwyddo data dilys / cyfanswm
+                                  yr amser monitro a drefnwyd × 100
 
-Segmentwch achosion gwraidd amser segur lle bo data'n caniatáu:
-  Methiant ochr-dyfais    (batri, nam caledwedd, chwalfa cadarnwedd)
-  Methiant cysylltedd     (colli cellog/Wi-Fi/VPN)
-  Ffactorau ochr-claf     (dyfais wedi'i diffodd, wedi symud allan o
-                           gyrraedd)
+Rhannwch achosion sylfaenol amser segur lle mae'r data'n caniatáu:
+  Methiant ar ochr y ddyfais (batri, nam caledwedd, cadarnwedd yn chwalu)
+  Methiant cysylltedd        (colli cysylltiad cellog/Wi-Fi/VPN)
+  Ffactorau ar ochr y claf   (dyfais wedi'i diffodd, wedi symud y tu
+                              allan i'r amrediad)
 
 Paramedrau technegol ategol i'w holrhain ochr yn ochr ag amser
 gweithredu:
-  Defnydd CPU cyfartalog, defnydd cof, a lefel batri fesul dyfais
-  Amser cyfartalog rhwng methiannau cysylltedd
-  Amser cyfartalog i ailgysylltu ar ôl colli cysylltiad
+  Defnydd cyfartalog o'r CPU, defnydd cof a lefel y batri fesul dyfais
+  Yr amser cyfartalog rhwng methiannau cysylltedd
+  Yr amser cyfartalog i ailgysylltu ar ôl colli cysylltiad
 ```
 
-## Enghraifft waith
+## Enghraifft wedi'i datrys
 
-Mae rhaglen monitro cardiaidd o bell yn defnyddio 1,000 o ddyfeisiau cysylltiedig, pob un yn disgwylwyd i drosglwyddo'n barhaus. Dros fis 30 diwrnod (720 awr monitro a drefnwyd fesul dyfais), mae'r fflyd yn cofnodi cyfanswm cyfun o 705,600 awr ar-lein gwirioneddol yn erbyn 720,000 awr a drefnwyd, gan roi cyfradd amser gweithredu dyfais lefel-fflyd o 705,600 / 720,000 × 100 = 98%. Mae dadansoddiad achos-gwraidd o'r 14,400 awr amser segur yn dangos 60% yn briodoladwy i golli cysylltedd cellog wedi'i grynhoi mewn rhanbarth gwasanaeth gwledig penodol, 25% i ddyfeisiau â batris heneiddio wedi'u baneru ar gyfer eu disodli, a 15% i gleifion yn diffodd eu dyfais dros dro. Mae'r dadansoddiad hwn yn pwyntio tuag at ddau ymyriad clir, gwahanol — trwsio cysylltedd ar gyfer y rhanbarth yr effeithir arno a rhaglen disodli batri ragweithiol — na fyddai un ffigur amser gweithredu cyfun wedi'u gwahaniaethu.
+Mae rhaglen monitro cardiaidd o bell yn defnyddio 1,000 o ddyfeisiau cysylltiedig, a disgwylir i bob un drosglwyddo'n barhaus. Dros fis o 30 diwrnod (720 awr o fonitro a drefnwyd fesul dyfais), mae'r fflyd yn cofnodi cyfanswm o 705,600 awr ar-lein go iawn o'i gymharu â 720,000 awr a drefnwyd, sy'n rhoi cyfradd amser gweithredu dyfeisiau ar draws y fflyd o 705,600 / 720,000 × 100 = 98%. Mae dadansoddi gwraidd y 14,400 awr o amser segur yn dangos bod 60% i'w priodoli i golli cysylltiad cellog, wedi'i grynhoi mewn rhanbarth gwledig penodol, 25% i ddyfeisiau â batris sy'n heneiddio ac a nodwyd i'w newid, a 15% i gleifion yn diffodd eu dyfais dros dro. Mae'r dadansoddiad hwn yn tynnu sylw at ddau ymyriad clir a gwahanol, sef datrys problem cysylltedd yn y rhanbarth yr effeithir arno a rhaglen ragweithiol i newid batris, na fyddai un ffigur cyfunol ar gyfer amser gweithredu wedi gallu eu gwahaniaethu.
 
-## Ffynonellau data a rhybuddion
+## Ffynonellau data a chyfyngiadau
 
-Daw data amser gweithredu o system rheoli a thelemetreg dyfais gweithgynhyrchwr neu blatfform y gwerthwr ei hun, sy'n cofnodi digwyddiadau cysylltiad a churiad calon fesul dyfais; dylai'r sefydliad gadarnhau'n union beth y mae'r gwerthwr yn ei gyfrif fel "ar-lein" (gall dyfais adrodd ei bod wedi cysylltu â rhwydwaith tra'n methu â throsglwyddo data clinigol dilys, a ddylai gyfrif fel amser segur at ddibenion clinigol hyd yn oed os yw dangosfwrdd y gwerthwr ei hun yn ei adrodd fel wedi cysylltu). Dylid adrodd amser gweithredu fesul carfan dyfais neu ddaearyddiaeth lle bo cyfaint yn caniatáu, gan fod ansawdd cysylltedd yn aml wedi'i grynhoi'n ddaearyddol (sylw cellog gwledig, Wi-Fi adeilad hŷn) yn hytrach na'i ddosbarthu'n gyfartal ar draws poblogaeth claf, a gall ffigur fflyd-gyfan cyfun guddio problem rhanbarthol difrifol, y gellir mynd i'r afael ag ef.
+Daw data amser gweithredu o system rheoli dyfeisiau a thelemetreg gwneuthurwr y ddyfais neu gyflenwr y platfform, sy'n cofnodi digwyddiadau cysylltu a churiadau fesul dyfais. Dylai'r sefydliad gadarnhau'n union beth y mae'r cyflenwr yn ei gyfrif yn "ar-lein": gall dyfais adrodd ei bod wedi'i chysylltu â rhwydwaith ac eto fethu â throsglwyddo data clinigol dilys, a dylai hynny gyfrif fel amser segur at ddibenion clinigol hyd yn oed os yw dangosfwrdd y cyflenwr ei hun yn ei adrodd fel dyfais gysylltiedig. Dylid adrodd ar amser gweithredu fesul carfan o ddyfeisiau neu fesul daearyddiaeth lle mae'r niferoedd yn caniatáu, gan fod ansawdd cysylltedd yn aml wedi'i grynhoi'n ddaearyddol (signal cellog gwledig, Wi-Fi hŷn mewn adeiladau) yn hytrach na'i ddosbarthu'n gyfartal ar draws poblogaeth o gleifion. Gall ffigur cyfunol ar gyfer y fflyd gyfan guddio problem ranbarthol ddifrifol y gellir mynd i'r afael â hi.
 
-## Peryglon
+## Peryglon cyffredin
 
-- **Cymysgu cysylltiad rhwydwaith â throsglwyddiad data dilys**: gall dyfais ymddangos "wedi cysylltu" ar ddangosfwrdd gwerthwr tra'n methu â throsglwyddo data clinigol defnyddiadwy; diffiniwch a mesurwch amser gweithredu yn erbyn derbyniad data dilys gwirioneddol, nid cysylltedd rhwydwaith amrwd yn unig.
-- **Adrodd cyfartaledd fflyd-gyfan yn unig**: gall hyn guddio problem amser segur difrifol, wedi'i grynhoi'n ddaearyddol neu'n benodol i garfan dyfais y byddai cyfartaledd wedi'i dargedu'n ei ddatgelu ac y mae ganddo drwsiad penodol, y gellir mynd i'r afael ag ef.
-- **Peidio â gwahaniaethu achos gwraidd amser segur**: mae angen ymyriad hollol wahanol ar amser segur ochr-dyfais, cysylltedd, ac ochr-claf; ni ellir gweithredu ar un canran amser segur heb segmentu achos gwraidd.
-- **Trin bwlch data fel sefydlogrwydd clinigol yn ddiofyn**: dylai ffrwd data ar goll o ddyfais all-lein sbarduno gwiriad cysylltedd technegol, nid ei ddehongli'n dawel fel "dim newyddion yn newyddion da" ar gyfer statws clinigol y claf.
+- **Cymysgu cysylltiad rhwydwaith â throsglwyddo data dilys**: gall dyfais ymddangos yn "gysylltiedig" ar ddangosfwrdd y cyflenwr ac eto fethu â throsglwyddo data clinigol y gellir ei ddefnyddio; diffiniwch a mesurwch amser gweithredu yn erbyn y data dilys a dderbyniwyd mewn gwirionedd, ac nid yn erbyn cysylltedd rhwydwaith crai yn unig.
+- **Adrodd ar gyfartaledd y fflyd gyfan yn unig**: gall hyn guddio problem ddifrifol o ran amser segur sy'n benodol i ardal ddaearyddol neu garfan o ddyfeisiau, y byddai cyfartaledd wedi'i dargedu yn ei datgelu, ac sydd ag ateb penodol.
+- **Peidio â gwahaniaethu rhwng achosion sylfaenol amser segur**: mae amser segur ar ochr y ddyfais, amser segur oherwydd cysylltedd ac amser segur ar ochr y claf yn galw am ymyriad hollol wahanol; ni ellir gweithredu ar un ganran o amser segur heb ei rhannu yn ôl achos sylfaenol.
+- **Trin bwlch yn y data fel sefydlogrwydd clinigol yn ddiofyn**: dylai ffrwd ddata sydd ar goll o ddyfais all-lein sbarduno gwiriad o'r cysylltedd technegol, yn hytrach na chael ei dehongli'n dawel fel "dim newyddion yw newyddion da" am gyflwr clinigol y claf.
 
 ## Ffynonellau
 
-- Canllawiau Dylunio Continua / Cynghrair Iechyd Cysylltiedig Personol, safonau rhyngweithredu technegol ar gyfer dyfeisiau iechyd cysylltiedig
-- ONC / HealthIT.gov, canllawiau ar weithredu rhaglen monitro claf o bell a gofynion technegol
-- Llenyddiaeth adolygiad-gan-gymheiriaid ar ddibynadwyedd dyfais monitro claf o bell a chyflawnrwydd data, er enghraifft astudiaethau a gyhoeddwyd yn npj Digital Medicine
+- Continua Design Guidelines / Personal Connected Health Alliance, safonau rhyngweithredu technegol ar gyfer dyfeisiau iechyd cysylltiedig
+- ONC / HealthIT.gov, canllawiau ar roi rhaglenni monitro cleifion o bell ar waith a'r gofynion technegol
+- Llenyddiaeth a adolygwyd gan gymheiriaid ar ddibynadwyedd dyfeisiau monitro cleifion o bell a chyflawnrwydd data, er enghraifft astudiaethau a gyhoeddwyd yn npj Digital Medicine
 
-Gweler hefyd: [cywirdeb llwybro brysbennu](../cywirdeb-llwybro-brysbennu/), sy'n dibynnu ar dderbyn data dyfais cyflawn, dibynadwy er mwyn gwneud penderfyniad brysbennu cywir yn y lle cyntaf.
+Gweler hefyd: [cywirdeb llwybro brysbennu](../cywirdeb-llwybro-brysbennu/), sy'n dibynnu ar dderbyn data dyfeisiau cyflawn a dibynadwy er mwyn gwneud penderfyniad brysbennu cywir yn y lle cyntaf.

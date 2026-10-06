@@ -1,46 +1,46 @@
 # Cyfradd Ail-dderbyniad Ysbyty
 
-Cyfradd ail-dderbyniad ysbyty yw'r gyfran o gleifion a ryddhawyd sy'n cael eu hail-dderbyn i'r ysbyty, heb ei gynllunio, o fewn ffenestr benodedig ar ôl rhyddhau — yn fwyaf cyffredin 30 diwrnod. Ar gyfer iechyd digidol, dyma'r metrig sydd fwyaf uniongyrchol gysylltiedig ag economeg taliadwyr a chontractau gofal seiliedig ar werth: mae'n annhebygol y bydd rhaglen monitro o bell, dilyniant ôl-ryddhau digidol, neu ofal-drosglwyddo digidol na all ddangos effaith gredadwy ar ail-dderbyniadau yn ennill cefnogaeth ad-daliad parhaus, ni waeth pa mor dda yw ei rhifau ymgysylltiad.
+Cyfradd ail-dderbyniad ysbyty yw cyfran y cleifion a ryddhawyd sy'n cael eu hail-dderbyn i'r ysbyty, heb gynllun, o fewn cyfnod penodedig ar ôl iddynt gael eu rhyddhau, sef 30 diwrnod yn fwyaf cyffredin. O ran iechyd digidol, dyma'r metrig sydd fwyaf uniongyrchol gysylltiedig ag economeg talwyr a chontractau gofal ar sail gwerth: mae rhaglen monitro o bell, rhaglen ddilynol ar ôl rhyddhau neu raglen ddigidol ar gyfer pontio gofal na all ddangos effaith gredadwy ar ail-dderbyniadau yn annhebygol o ennill cymorth parhaus o ran ad-dalu, ni waeth pa mor dda y mae ei ffigurau ymgysylltu'n edrych.
 
-## Pam mae hyn yn bwysig
+## Pam mae'n bwysig
 
-Mae ail-dderbyniad heb ei gynllunio yn ddrud, yn amharu ar y claf, ac mewn llawer o systemau iechyd erbyn hyn yn cael ei gosbi'n uniongyrchol: mae cynlluniau fel Rhaglen Lleihau Ail-dderbyniadau Ysbytai UDA yn lleihau taliad i ysbytai â chyfraddau ail-dderbyniad uwch na'r disgwyl ar gyfer cyflyrau penodol, sef pam mae ysbytai'n comisiynu'n weithredol raglenni ôl-ryddhau digidol a monitro o bell wedi'u hanelu at eu lleihau. Ystyrir bod cyfran ystyrlon o ail-dderbyniadau'n botensial ataliadwy — wedi'u gyrru gan gyfarwyddiadau rhyddhau annigonol, apwyntiadau dilynol a gollwyd, camddealltwriaeth meddyginiaeth, neu ddirywiad symptomau heb ei ddatrys y gallai pwynt cyswllt digidol wedi'i ddylunio'n dda ei ddal yn gynt — sef yn union y bwlch y mae offer gofal-trosglwyddo digidol yn ei dargedu. Dylid darllen cyfradd ail-dderbyniad bob amser ochr yn ochr â chymysgedd achosion: bydd gan raglen sy'n gwasanaethu poblogaeth fwy cymhleth, salach gyfradd sylfaenol strwythurol uwch nag un sy'n gwasanaethu poblogaeth iachach, yn annibynnol ar ansawdd y rhaglen.
+Mae ail-dderbyniad heb gynllun yn ddrud, yn tarfu ar y claf ac, mewn llawer o systemau iechyd erbyn hyn, yn cael ei gosbi'n uniongyrchol: mae cynlluniau fel Rhaglen Lleihau Ail-dderbyniadau Ysbytai yr Unol Daleithiau yn gostwng taliadau i ysbytai sydd â chyfraddau ail-dderbyniad uwch na'r disgwyl ar gyfer cyflyrau penodol, a dyna pam y mae ysbytai'n comisiynu rhaglenni digidol ar ôl rhyddhau a rhaglenni monitro o bell yn weithredol gyda'r nod o'u lleihau. Ystyrir bod cyfran sylweddol o ail-dderbyniadau yn rhai y gellid eu hatal, o bosibl: cânt eu hachosi gan gyfarwyddiadau annigonol wrth ryddhau, apwyntiadau dilynol a fethwyd, camddealltwriaeth ynghylch meddyginiaeth, neu symptomau'n gwaethygu heb sylw, y gallai pwynt cyswllt digidol wedi'i gynllunio'n dda eu canfod yn gynt. Dyna'r union fwlch y mae offer digidol ar gyfer pontio gofal yn ei dargedu. Dylid darllen y gyfradd ail-dderbyniad bob amser ochr yn ochr â chymysgedd achosion: bydd gan raglen sy'n gwasanaethu poblogaeth fwy cymhleth a salach gyfradd sylfaenol uwch, yn strwythurol, nag un sy'n gwasanaethu poblogaeth iachach, ac mae hynny'n wir ni waeth beth fo ansawdd y rhaglen.
 
-## Sut mae'n cael ei gyfrifo
+## Sut caiff ei gyfrifo
 
 ```
-Cyfradd ail-dderbyniad 30 diwrnod = ail-dderbyniadau heb eu cynllunio o
-                                    fewn 30 diwrnod i ryddhau / cyfanswm
-                                    rhyddhau mynegai × 100
+Cyfradd ail-dderbyniad 30 diwrnod = ail-dderbyniadau heb gynllun o fewn
+                                    30 diwrnod i'r rhyddhau / cyfanswm y
+                                    rhyddhau cychwynnol × 100
 
-Eithrio o'r rhifiadur: ail-dderbyniadau wedi'u cynllunio (e.e. weithdrefn
-dilynol wedi'i drefnu), a throsglwyddiadau sy'n barhad o'r un bennod
-gofal yn hytrach na derbyniad newydd.
+Eithriwch o'r rhifiadur: ail-dderbyniadau a gynlluniwyd (e.e. triniaeth
+ddilynol a drefnwyd), a throsglwyddiadau sy'n rhan o'r un cyfnod gofal
+yn hytrach na derbyniad newydd.
 
 Addaswch am risg lle bo modd, gan ddefnyddio mynegai cymysgedd achosion
-neu gyd-forbidedd cydnabyddedig, cyn cymharu cyfraddau ar draws
-poblogaethau cleifion neu gyfnodau amser gwahanol.
+neu gyd-forbidedd a gydnabyddir, cyn cymharu cyfraddau rhwng
+poblogaethau neu gyfnodau amser gwahanol o gleifion.
 ```
 
-## Enghraifft waith
+## Enghraifft wedi'i datrys
 
-Mae ysbyty'n rhyddhau 1,200 o gleifion â methiant y galon mewn chwarter. O'r rhain, ail-dderbynnir 210 o fewn 30 diwrnod, ac o'r rheiny mae 15 yn ail-dderbyniadau wedi'u cynllunio ar gyfer gweithdrefn a drefnwyd ac wedi'u heithrio. Y gyfradd ail-dderbyniad 30 diwrnod heb ei chynllunio yw (210 − 15) / 1,200 × 100 = 16.25%. Cyflwynir rhaglen monitro o bell ar gyfer is-set o 400 o'r cleifion hyn (a ddewiswyd yn ôl risg clinigol, nid ar hap), ac mae eu cyfradd ail-dderbyniad 30 diwrnod heb ei chynllunio yn 14%, o gymharu â 18% ar gyfer yr 800 na chofrestrwyd. Gan fod cofrestru wedi'i seilio ar risg clinigol yn hytrach na dyraniad ar hap, mae'r gwahaniaeth hwn yn awgrymog yn hytrach na thystiolaeth derfynol o effaith y rhaglen, a dylid ei ddehongli ochr yn ochr â dadansoddiad addasu risg yn hytrach na'i gymryd ar wyneb y dŵr.
+Mae ysbyty'n rhyddhau 1,200 o gleifion â methiant y galon mewn chwarter. O'r rhain, caiff 210 eu hail-dderbyn o fewn 30 diwrnod, ac mae 15 o'r rheini'n ail-dderbyniadau a gynlluniwyd ar gyfer triniaeth a drefnwyd, a chânt eu heithrio. Y gyfradd ail-dderbyniad 30 diwrnod heb gynllun yw (210 − 15) / 1,200 × 100 = 16.25%. Cyflwynir rhaglen monitro o bell i is-set o 400 o'r cleifion hyn (a ddewiswyd ar sail risg clinigol, ac nid ar hap), a'u cyfradd ail-dderbyniad heb gynllun yw 14%, o'i chymharu â 18% ar gyfer yr 800 o gleifion na chawsant eu cofrestru. Gan fod y cofrestru wedi'i seilio ar risg clinigol yn hytrach na dyrannu ar hap, mae'r gwahaniaeth hwn yn awgrymu effaith y rhaglen yn hytrach na bod yn dystiolaeth derfynol ohoni, a dylid ei ddehongli ochr yn ochr â dadansoddiad o addasu am risg, yn hytrach na'i gymryd ar ei olwg.
 
-## Ffynonellau data a rhybuddion
+## Ffynonellau data a chyfyngiadau
 
-Yn nodweddiadol, tynnir data ail-dderbyniad o borthiant derbyniad-rhyddhau-trosglwyddo (ADT) yr ysbyty ei hun ar gyfer ail-dderbyniadau i'r un cyfleuster, ond ni fydd claf a ail-dderbynnir i ysbyty gwahanol yn ymddangos yn y borthiant hwnnw o gwbl, felly mae olrhain ail-dderbyniad un-ysbyty yn systematig yn tanamcangyfrif cyfraddau ail-dderbyniad gwirioneddol oni bai ei fod yn cael ei ategu â data cyfnewid gwybodaeth iechyd rhanbarthol, data hawliadau taliadwr, neu gronfeydd data pob-taliadwr lefel-wladwriaeth. Mae priodoli i raglen ddigidol angen gofal: anaml y mae cleifion sy'n dewis ymuno â rhaglen monitro o bell wirfoddol yn sampl ar hap o'r boblogaeth a ryddhawyd, felly bydd cymhariaeth naïf o gyfraddau ail-dderbyniad rhwng cleifion cofrestredig a rhai heb gofrestru yn tueddu i gael eu drysu gan yr union effeithiau dethol a wnaeth rai cleifion yn fwy tebygol o gofrestru yn y lle cyntaf.
+Fel arfer, caiff data am ail-dderbyniadau ei dynnu o ffrwd derbyn, rhyddhau a throsglwyddo (ADT) yr ysbyty ei hun ar gyfer ail-dderbyniadau i'r un cyfleuster. Ond ni fydd claf a gaiff ei ail-dderbyn i ysbyty gwahanol yn ymddangos yn y ffrwd honno o gwbl, felly mae olrhain ail-dderbyniadau mewn un ysbyty yn tanamcangyfrif y gwir gyfraddau ail-dderbyniad yn systematig, oni bai ei fod yn cael ei ategu gan ddata cyfnewidfa gwybodaeth iechyd ranbarthol, data hawliadau talwyr neu gronfeydd data pob talwr ar lefel talaith. Mae angen gofal wrth briodoli canlyniadau i raglen ddigidol: anaml y mae cleifion sy'n dewis ymuno â rhaglen monitro o bell wirfoddol yn sampl ar hap o'r boblogaeth a ryddhawyd, felly bydd cymhariaeth syml o gyfraddau ail-dderbyniad rhwng cleifion cofrestredig a rhai nad ydynt wedi'u cofrestru yn tueddu i gael ei drysu gan yr union effeithiau dethol a barodd i rai cleifion fod yn fwy tebygol o gofrestru yn y lle cyntaf.
 
-## Peryglon
+## Peryglon cyffredin
 
-- **Cymharu cyfraddau amrwd, heb eu haddasu am risg, ar draws poblogaethau**: bydd rhaglen sy'n gwasanaethu poblogaeth salach yn dangos cyfradd ail-dderbyniad amrwd uwch nag un sy'n gwasanaethu poblogaeth iachach hyd yn oed os yw'r rhaglen ei hun yn fwy effeithiol; addaswch am risg bob amser cyn cymharu.
-- **Tanamcangyfrif ail-dderbyniadau i gyfleusterau eraill**: bydd dibynnu ar ddata ADT un ysbyty yn unig yn colli ail-dderbyniadau mewn mannau eraill, gan danamcangyfrif y gyfradd wirioneddol, yn enwedig mewn ardaloedd â systemau ysbyty cystadleuol lluosog.
-- **Rhagfarn dethol mewn cofrestriad rhaglen wirfoddol**: mae cleifion sy'n dewis cofrestru mewn rhaglen ddilynol ddigidol yn aml yn wahanol yn systematig (mewn llythrennedd iechyd, cefnogaeth gymdeithasol, neu gymhelliant) i'r rhai nad ydynt, gan ddrysu unrhyw gymhariaeth naïf cyn/ar ôl neu gofrestredig/heb gofrestru.
-- **Cyfrif pob dychweliad i'r un cyfleuster fel ail-dderbyniad**: nid yw ail-dderbyniad wedi'i gynllunio, wedi'i drefnu (er enghraifft gweithdrefn ail-gam wedi'i chynllunio) yn arwydd o ryddhau wedi methu a dylid ei eithrio o'r rhifiadur, nid ei gymysgu â dychweliadau gwirioneddol heb eu cynllunio.
+- **Cymharu cyfraddau crai nad ydynt wedi'u haddasu am risg rhwng poblogaethau**: bydd rhaglen sy'n gwasanaethu poblogaeth salach yn dangos cyfradd ail-dderbyniad crai uwch na rhaglen sy'n gwasanaethu poblogaeth iachach, hyd yn oed os yw'r rhaglen ei hun yn fwy effeithiol; addaswch am risg bob amser cyn cymharu.
+- **Tanamcangyfrif ail-dderbyniadau i gyfleusterau eraill**: bydd dibynnu ar ddata ADT un ysbyty yn unig yn methu ail-dderbyniadau mewn mannau eraill, gan danddatgan y gyfradd wirioneddol, yn enwedig mewn ardaloedd sydd â sawl system ysbytai sy'n cystadlu â'i gilydd.
+- **Tuedd dethol wrth gofrestru ar raglenni gwirfoddol**: mae cleifion sy'n dewis cofrestru ar raglen ddilynol ddigidol yn aml yn wahanol yn systematig (o ran llythrennedd iechyd, cymorth cymdeithasol neu gymhelliant) i'r rhai nad ydynt yn gwneud hynny, ac mae hynny'n drysu unrhyw gymhariaeth syml cyn ac ar ôl neu rhwng cleifion cofrestredig a rhai nad ydynt wedi'u cofrestru.
+- **Cyfrif pob dychweliad i'r un cyfleuster fel ail-dderbyniad**: nid yw ail-dderbyniad a gynlluniwyd ac a drefnwyd (er enghraifft ail gam triniaeth a gynlluniwyd) yn arwydd o fethiant wrth ryddhau a dylid ei eithrio o'r rhifiadur, yn hytrach na'i gymysgu â dychweliadau go iawn heb gynllun.
 
 ## Ffynonellau
 
-- Canolfannau Gwasanaethau Medicare a Medicaid (CMS), manylebau Rhaglen Lleihau Ail-dderbyniadau Ysbytai a mesur Ail-dderbyniad Ysbyty-Gyfan
-- Sefydliad Gwella Gofal Iechyd (IHI), canllawiau ar leihau ail-dderbyniadau ataliadwy
-- Llenyddiaeth adolygiad-gan-gymheiriaid ar ymyriadau monitro o bell digidol a gofal-trosglwyddo ar gyfer lleihau ail-dderbyniad, er enghraifft astudiaethau a gyhoeddwyd yn JAMA Network Open ac npj Digital Medicine
+- Canolfannau Gwasanaethau Medicare a Medicaid (CMS), manylebau Rhaglen Lleihau Ail-dderbyniadau Ysbytai a mesur Ail-dderbyniadau ar draws yr Ysbyty Cyfan
+- Y Sefydliad Gwella Gofal Iechyd (IHI), canllawiau ar leihau ail-dderbyniadau y gellir eu hosgoi
+- Llenyddiaeth a adolygwyd gan gymheiriaid ar ymyriadau monitro o bell digidol a phontio gofal er mwyn lleihau ail-dderbyniadau, er enghraifft astudiaethau a gyhoeddwyd yn JAMA Network Open ac npj Digital Medicine
 
-Gweler hefyd: [cywirdeb llwybro brysbennu](../cywirdeb-llwybro-brysbennu/), gan y gall llwybro cychwynnol amhriodol fod yn yrrwr i lawr yr afon o dderbyniadau osgoi-adwy ei hun.
+Gweler hefyd: [cywirdeb llwybro brysbennu](../cywirdeb-llwybro-brysbennu/), gan y gall llwybro cychwynnol amhriodol ei hun arwain, yn ddiweddarach, at dderbyniadau y gellid eu hosgoi.
