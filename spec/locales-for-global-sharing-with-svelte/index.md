@@ -5,7 +5,9 @@ Translate content into multiple locales.
 How this site supports multiple locales end to end: content, web
 routing, UI chrome, and bugs.
 
-Read locales via file `locales.tsv`.
+The published locales are enumerated explicitly in `src/lib/locales.js`
+(`LOCALE_LABELS`) and `scripts/sync-content.mjs` (`PUBLIC_LOCALES`) — see
+`spec/index.md` §4 "Adding a locale".
 
 ## .locale-peer.id file
 

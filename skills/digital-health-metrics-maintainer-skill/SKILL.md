@@ -5,9 +5,13 @@ description: Maintain this repository — add or edit a topic under locales/<loc
 
 # Maintaining digital-health-metrics
 
-Topics live under `locales/<code>/topics/<slug>/`, one directory per topic, across six locales:
+Topics live under `locales/<code>/topics/<slug>/` (English locales), one directory per topic, across 37 locales:
 `en-gb-oxendict` (hand-authored canonical source), `en-001`/`en-gb`/`en-us` (mechanically derived
-from it by `tools/localize.py` — never hand-edited), and `cy-001`/`zh-cn` (hand-translated).
+from it by `tools/localize.py` — never hand-edited), and 33 hand-translated locales (26 languages;
+country variants such as `es-es` copy their `-001` sibling). The list is in `spec/index.md` §4.
+The English locales use `topics/<slug>/` exactly; every other locale translates both the `topics`
+segment and each slug (e.g. `locales/es-es/temas/tasa-de-inasistencia-a-citas/`), so locate a
+topic in another locale by its `.locale-peer-id`, not by path.
 Every topic directory contains:
 
 - `index.md` — the actual content
@@ -23,7 +27,7 @@ watch-list of bugs already fixed once in a sibling project — is in
 The canonical topic template and repository layout are in [`spec/index.md`](../../spec/index.md).
 
 `bin/test` is the validation gate: it checks every locale/topic has its required files, that
-peer ids match across locales for the same topic, and that `en-001`/`en-gb`/`en-us` are still in
+each non-English locale has exactly one translated topics directory, that every peer id belongs to a canonical topic, and that `en-001`/`en-gb`/`en-us` are still in
 sync with `en-gb-oxendict`. Run it before treating any structural change as done.
 
 ## Adding a new topic
@@ -39,15 +43,18 @@ sync with `en-gb-oxendict`. Run it before treating any structural change as done
    step 2.
 4. **Derive the English variants**: `python3 tools/localize.py`. Never hand-edit `en-001`,
    `en-gb`, or `en-us` — edit `en-gb-oxendict` and rerun the script.
-5. **Translate `cy-001` and `zh-cn`**, or say explicitly that a topic is not yet translated rather
-   than leaving it silently missing.
+5. **Translate into every other locale** (the list in `spec/index.md` §6 step 5): pick a translated
+   slug, create `<translated topics dir>/<translated slug>/` with the topic's `.locale-peer-id`
+   copied verbatim and a `README.md` symlink, translate the text, and point internal links at the
+   translated slugs. Copy `-001` content verbatim into its country variants. Or say explicitly that
+   a topic is not yet translated rather than leaving it silently missing.
 6. **Cross-link** related topics using `../<slug>/` (never `.md`, never absolute). Add a
    reciprocal link from any existing topic this one clearly relates to.
 7. **Update `README.md`**: add one bullet to the correct category section,
    `- [Title](locales/en-gb-oxendict/topics/<slug>/) — one-line hook`. Don't create a new category
    for a single topic unless it genuinely doesn't fit an existing one.
 8. **Update each locale's own `locales/<code>/index.md`** (its translated home page) with the
-   same new bullet, in that locale's language.
+   same new bullet, in that locale's language, linking `<translated topics dir>/<translated slug>/`.
 9. **Run `bin/test`** and fix anything it reports.
 10. **Re-sync the website**: `cd digital-health-metrics.github.io && pnpm run sync:content`.
 
@@ -60,7 +67,7 @@ sync with `en-gb-oxendict`. Run it before treating any structural change as done
   edit only touched `en-gb-oxendict`, immediately rerun `tools/localize.py` so the three derived
   English locales don't drift.
 - If you rename a slug, grep the whole repo for the old slug (in every locale that uses it —
-  slugs can legitimately differ by locale) and for the old title text in every `README.md` /
+  slugs differ by locale) and for the old title text in every `README.md` /
   `index.md` before finishing.
 - Never touch `.locale-peer-id` when editing content — it identifies the topic across locales,
   not a particular translation's freshness.
@@ -71,6 +78,6 @@ sync with `en-gb-oxendict`. Run it before treating any structural change as done
 
 Run `bin/test` from the repository root. It checks, for every locale and every topic:
 `.locale-peer-id`, `index.md`, and a `README.md` symlink pointing at `index.md` all exist; that
-the same topic's peer id matches byte-for-byte across all six locales; and that `en-001`,
+every peer id belongs to a canonical topic (the canonical topic list is in `bin/test`); and that `en-001`,
 `en-gb`, and `en-us` are exactly what `tools/localize.py` would currently produce from
 `en-gb-oxendict`. A clean run prints `All checks passed.`

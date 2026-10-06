@@ -27,14 +27,15 @@ Product managers, delivery leads, and analysts building, running, or evaluating 
 |---|---|
 | `README.md` | Reader-facing front door and table of contents. Must list every topic under a category heading, matching what is actually on disk. |
 | `locales/<code>/index.md` | That locale's own translated home page (title, intro, "New here?" picks, category headings, blurbs). `README.md` is a symlink to `index.md`. |
-| `locales/<code>/topics/<slug>/index.md` | One topic: a metric or concept, in the canonical template (§3). `README.md` is a symlink to `index.md`. |
+| `locales/<code>/topics/<slug>/index.md` | One topic: a metric or concept, in the canonical template (§3). `README.md` is a symlink to `index.md`. Applies to the English locales; every other locale translates both the `topics` segment and the `<slug>` (§4, "Translated paths"), e.g. `locales/es-es/temas/tasa-de-inasistencia-a-citas/index.md`. |
 | `locales/<code>/topics/<slug>/.locale-peer-id` | A byte-identical 32-character lowercase hex id, shared by every locale's version of "the same" topic, regardless of slug. See `spec/locales-for-global-sharing-with-svelte/`. |
 | `tools/localize.py` | Derives `en-001`, `en-gb`, and `en-us` from `en-gb-oxendict` by mechanical spelling substitution. Never hand-edit those three locales; edit `en-gb-oxendict` and rerun the script. |
-| `bin/test` | Validates locale/topic structure, peer-id parity, and that the derived English locales are up to date. Run before every commit that touches `locales/`. |
+| `bin/test` | Validates locale/topic structure (finding each topic by its `.locale-peer-id`, never by path), that every locale has exactly one translated topics directory, peer-id integrity, and that the derived English locales are up to date. Run before every commit that touches `locales/`. |
 | `spec/index.md` | This file — the source of truth. |
 | `spec/locales-for-global-sharing-with-svelte/` | The locale architecture: content structure, slug rules, the locale picker, and a regression watch-list of bugs already fixed once in a sibling project. |
 | `spec/lily-design-system-svelte-with-picker-bar/` | The design-system integration instruction for the website. |
-| `digital-health-metrics.github.io/` | The SvelteKit site that publishes this book to GitHub Pages. Has its own README for build and sync commands. |
+| `skills/digital-health-metrics-maintainer-skill/` | Agent skill for maintaining this repository (adding and editing topics, validating structure). |
+| `digital-health-metrics.github.io/` | The SvelteKit site that publishes this book to GitHub Pages. Its `README.md` documents build, sync, and how to register a locale. |
 
 ---
 
@@ -59,7 +60,7 @@ A small number of topics document a multi-dimensional evaluation framework (e.g.
 
 ## 4. Locales
 
-Thirty-six locale directories under `locales/`:
+Thirty-seven locale directories under `locales/` — one internal authoring locale and thirty-six published ones:
 
 - `en-gb-oxendict` — the hand-authored canonical source. All new topics are drafted here first.
 - `en-001`, `en-gb`, `en-us` — mechanically derived from `en-gb-oxendict` by `tools/localize.py`. Never hand-edited.
@@ -67,6 +68,20 @@ Thirty-six locale directories under `locales/`:
 - `ar-eg`, `hi-in`, `es-es`, `pt-pt`, `ru-ru`, `fr-fr`, `cy-gb` — country-specific variants of a language already published as an international `-001` locale. These intentionally reuse that locale's translated text byte-for-byte rather than being retranslated: for this book's formal, technical register, regional differences within a language aren't expected to change the wording. If that assumption ever proves wrong for a specific topic, diverge that locale's file directly rather than trying to keep it mechanically in sync with its `-001` sibling.
 
 `en-gb-oxendict` is an internal authoring locale: it is never published by the website (see `digital-health-metrics.github.io/src/lib/locales.js` and `scripts/sync-content.mjs`, both of which enumerate the thirty-six public locales explicitly rather than discovering them from `locales/`). Full detail, including the slug and locale-picker rules, lives in `spec/locales-for-global-sharing-with-svelte/`.
+
+### Translated paths
+
+Outside the English locales, every directory name under `locales/<code>/` is translated into that locale's language: the `topics` segment (`temas`, `sujets`, `konular`, `主题`, …) and each topic slug (lower-case, words joined by hyphens, accents and native script kept, Unicode NFC, no spaces, dots, slashes or punctuation). Each such locale has exactly one translated topics directory. Country variants reuse their `-001` sibling's names. Slugs may be unique per locale; the `.locale-peer-id` — not the path — is what ties "the same topic" together. Internal links use the translated names: `<topics>/<slug>/` in a locale's `index.md`, `../<slug>/` between topics.
+
+The website is unaffected: `scripts/sync-content.mjs` maps each locale's translated topics directory back to `topics/` when vendoring content, so site routes stay `/<locale>/topics/<slug>/`.
+
+### Adding a locale
+
+1. Create `locales/<code>/` with `index.md`, a `README.md` symlink, and `.locale-peer-id`; copy each topic's `.locale-peer-id` from `en-gb-oxendict`.
+2. Translate the topics directory name and every slug; write the translated topics.
+3. Register the code in `bin/test` (`locales`), `scripts/sync-content.mjs` (`PUBLIC_LOCALES`), `src/lib/locales.js` (`LOCALE_LABELS`, plus `RTL_LOCALES` if right-to-left), and `src/lib/i18n.js` (a chrome-strings object and its `TRANSLATIONS` entry).
+4. Update the locale counts and lists in this file, the root `README.md`, and `src/lib/i18n.js`/`locales.js` header comments.
+5. Run `bin/test`, then `pnpm run sync && pnpm run build` in the site.
 
 `ar-001`, `ar-eg`, and `ur-pk` are right-to-left. `digital-health-metrics.github.io/src/hooks.server.js` sets `dir="rtl"` on `<html>` for any locale listed in `$lib/locales.js`'s `RTL_LOCALES`, since `adapter-static` still runs the full hooks pipeline once per route at build time. The site's CSS uses logical properties throughout (`inset-inline-start/end`, `padding-inline-start`, etc.), so it needs no other change to support a new RTL locale beyond adding its code to `RTL_LOCALES`.
 
@@ -83,11 +98,11 @@ Thirty-six locale directories under `locales/`:
 
 ## 6. Adding a new topic
 
-1. Pick a slug: lower-case, hyphenated, in English, stable once published (other locales may translate the slug; see `spec/locales-for-global-sharing-with-svelte/`).
+1. Pick a slug: lower-case, hyphenated, in English, stable once published (every non-English locale translates it; see §4 "Translated paths" and `spec/locales-for-global-sharing-with-svelte/`).
 2. Generate a fresh 32-character lowercase hex peer id (e.g. `python3 -c "import uuid; print(uuid.uuid4().hex)"`).
 3. Write `locales/en-gb-oxendict/topics/<slug>/index.md` to the template in §3, symlink `README.md` to `index.md`, and write `.locale-peer-id` with the id from step 2.
 4. Run `python3 tools/localize.py` to derive `en-001`, `en-gb`, and `en-us`.
-5. Hand-translate `cy-001`, `zh-cn`, `es-001`, `hi-001`, `ar-001`, `fr-001`, `pt-001`, `de-de`, `ru-001`, `bn-bd`, `ko-kr`, `ja-jp`, `sv-se`, `nl-nl`, `ur-pk`, `id-id`, `it-it`, `uk-ua`, `fi-fi`, `no-no`, `da-dk`, `pl-pl`, `vi-001`, `et-001`, `th-001`, and `tr-tr` (or leave the topic absent from those locales until translated — the site falls back gracefully, but prefer translating seed content promptly). Copy the same content verbatim into `ar-eg`, `hi-in`, `es-es`, `pt-pt`, `ru-ru`, `fr-fr`, and `cy-gb` from their respective `-001` sibling.
+5. Hand-translate into `cy-001`, `zh-cn`, `es-001`, `hi-001`, `ar-001`, `fr-001`, `pt-001`, `de-de`, `ru-001`, `bn-bd`, `ko-kr`, `ja-jp`, `sv-se`, `nl-nl`, `ur-pk`, `id-id`, `it-it`, `uk-ua`, `fi-fi`, `no-no`, `da-dk`, `pl-pl`, `vi-001`, `et-001`, `th-001`, and `tr-tr` (or leave the topic absent from those locales until translated — the site falls back gracefully, but prefer translating seed content promptly). Each translation goes in that locale's translated topics directory under a translated slug, with the topic's `.locale-peer-id` copied verbatim and a `README.md` symlink; translate the link text of internal links and point their targets at the translated slugs. Copy the same content verbatim into `ar-eg`, `hi-in`, `es-es`, `pt-pt`, `ru-ru`, `fr-fr`, and `cy-gb` from their respective `-001` sibling (same directory names).
 6. Add the topic to the root `README.md` table of contents, under the right category, and to each locale's own `locales/<code>/index.md`.
 7. Run `bin/test` and fix anything it reports before committing.
 8. If the website's content hasn't been re-synced, run `pnpm run sync` inside `digital-health-metrics.github.io/`.
