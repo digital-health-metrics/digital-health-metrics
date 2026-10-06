@@ -32,6 +32,14 @@ For adding or editing topics, use the skill in
 | `bin/test` | Structure validation. Run before every commit that touches `locales/`. |
 | `digital-health-metrics.github.io/` | The SvelteKit site. See its `README.md`. |
 
+## Detailed guides
+
+- [`AGENTS/topics.md`](AGENTS/topics.md): writing and editing topics.
+- [`AGENTS/locales.md`](AGENTS/locales.md): locales, translated paths, adding a locale.
+- [`AGENTS/site.md`](AGENTS/site.md): the SvelteKit site.
+- [`AGENTS/dependencies.md`](AGENTS/dependencies.md): upgrades and pins.
+- [`AGENTS/testing.md`](AGENTS/testing.md): validation and definition of done.
+
 ## Rules that are easy to get wrong
 
 - **Translated paths.** Outside the English locales, the `topics` directory and every topic slug are

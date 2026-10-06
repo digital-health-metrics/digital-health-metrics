@@ -1,0 +1,28 @@
+# Agents: the website
+
+The SvelteKit site is `digital-health-metrics.github.io/`; read its `README.md` first. It is fully
+prerendered (`@sveltejs/adapter-static`) and deployed by `.github/workflows/pages.yml` on every push
+to `main`.
+
+## Rules
+
+- `content/` is vendored. Edit `locales/` and run `pnpm run sync:content`; never edit `content/`.
+- Routes are always `/<locale>/topics/<slug>/`. `scripts/sync-content.mjs` maps each locale's
+  translated topics directory back to `topics/`, so the site code never sees translated segments.
+- Interface strings live in `src/lib/i18n.js` (one object per language, `Messages` typedef at the
+  top). A locale without an entry falls back to English.
+- Locale labels, RTL list and two-letter `-001` aliases live in `src/lib/locales.js`.
+- Search: see [`spec/search/`](../spec/search/index.md). The index is built after `vite build`.
+- Lily Design System: use the published `@lilydesignsystem/*` packages with the pinned overrides in
+  `pnpm-workspace.yaml`; do not vendor components. Theme CSS is vendored by `pnpm run sync:lily`.
+  See [`spec/lily-design-system-svelte-with-picker-bar/`](../spec/lily-design-system-svelte-with-picker-bar/index.md).
+- Use the Svelte MCP server (docs and `svelte-autofixer`) when writing or changing `.svelte` files.
+
+## Verify
+
+```sh
+pnpm run sync && pnpm run check && pnpm run build
+```
+
+`check` must report 0 errors. After a change that affects routes or content, confirm a built page
+under `build/` links correctly (for example `build/es-es/topics/<slug>/index.html`).

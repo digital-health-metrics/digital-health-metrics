@@ -1,0 +1,44 @@
+# Agents: locales and translation
+
+Canonical rules: [`spec/index.md`](../spec/index.md) §4 and
+[`spec/locales-for-global-sharing-with-svelte/`](../spec/locales-for-global-sharing-with-svelte/index.md).
+
+## Which locales are hand-edited
+
+| Locales | Rule |
+|---|---|
+| `en-gb-oxendict` | Hand-authored canonical source. Internal; never published. |
+| `en-001`, `en-gb`, `en-us` | Derived by `tools/localize.py`. Never hand-edit; rerun the script. |
+| Other `-001` and `xx-yy` codes | Hand-translated, AI-assisted, pending native review. |
+| `ar-eg`, `hi-in`, `es-es`, `pt-pt`, `ru-ru`, `fr-fr`, `cy-gb` | Byte-identical copies of their `-001` sibling, including directory names. |
+
+## Translated paths
+
+Non-English locales translate both the `topics` directory and every slug. Each has exactly one
+translated topics directory. Directory names are lower-case, hyphen-joined, Unicode NFC, with no
+spaces, dots, slashes or punctuation; accents and native scripts are kept. Always locate a topic in
+another locale by its `.locale-peer-id`.
+
+When translating a topic: create `<translated topics dir>/<translated slug>/`, copy the
+`.locale-peer-id` verbatim, add `README.md -> index.md`, translate the text, keep headings, code
+blocks, numbers and citations, translate link text only, and point link targets at the translated
+slugs (`../<slug>/`). A locale's `index.md` links `<translated topics dir>/<slug>/`.
+
+## Right-to-left
+
+`ar-001`, `ar-eg` and `ur-pk` are RTL, listed in `RTL_LOCALES` in `src/lib/locales.js`. The CSS uses
+logical properties throughout; do not add physical left/right rules.
+
+## Adding a locale
+
+Follow "Adding a locale" in `spec/index.md` §4. Registration points: `bin/test`,
+`scripts/sync-content.mjs` (`PUBLIC_LOCALES`), `src/lib/locales.js` (`LOCALE_LABELS`),
+`src/lib/i18n.js` (chrome strings), and the locale counts and lists in the docs.
+
+## Pitfalls
+
+- Matching slugs with ASCII-only regexes (`[\w-]+`) breaks every accented or native-script slug; use
+  `[^/]+`.
+- Never assume slugs are equal across locales; resolve through the peer id.
+- Do not translate proper nouns that are real names (for example the "Hospital Readmissions Reduction
+  Program").
