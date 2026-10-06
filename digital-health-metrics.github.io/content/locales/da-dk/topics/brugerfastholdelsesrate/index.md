@@ -45,4 +45,4 @@ Fastholdelsesberegning kræver sporing af individuelle brugere fra deres oprinde
 - Collegialt bedømt litteratur om digital sundhedsfastholdelse og frafald, f.eks. undersøgelser offentliggjort i Journal of Medical Internet Research (JMIR)
 - Rock Health, industrianalyser af digitale sundhedsengagementmønstre
 
-Se også: [DAU/MAU-stickiness-ratio](../dau-mau-stickiness-ratio/), den komplementære metrik for engagementsintensitet blandt brugere, der forbliver tilmeldt.
+Se også: [dAU/MAU-klæbrighedsforhold](../dau-mau-klæbrighedsforhold/), den komplementære metrik for engagementsintensitet blandt brugere, der forbliver tilmeldt.

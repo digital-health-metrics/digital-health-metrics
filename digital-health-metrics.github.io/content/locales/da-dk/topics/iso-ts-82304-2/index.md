@@ -56,4 +56,4 @@ Vurdering mod ISO/TS 82304-2 udføres typisk af en trænet vurderer eller en akk
 - ISO Technical Committee 215 (Sundhedsinformatik), publikations- og arbejdsgruppeinformation
 - Nationale og kommercielle kvalitetsmærknings- og kurateringsorganisationer for sundhedsapps, der publicerer deres vurderingsmetodologi baseret på denne standard
 
-Se også: [System Usability Scale-score](../system-usability-scale-score/), et supplerende, snævrere instrument specifikt for brugbarhed, der ofte bruges sammen med en bredere ISO/TS 82304-2-kvalitetsvurdering.
+Se også: [score på systemets brugervenlighedsskala](../score-på-systemets-brugervenlighedsskala/), et supplerende, snævrere instrument specifikt for brugbarhed, der ofte bruges sammen med en bredere ISO/TS 82304-2-kvalitetsvurdering.

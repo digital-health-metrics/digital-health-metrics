@@ -11,9 +11,9 @@ Ny her? Start med [patientportal-adoptionsrate](topics/patientportal-adoptionsra
 - [Udeblivelsesrate for aftaler](topics/udeblivelsesrate-for-aftaler/) — den ældste operationelle metrik i sundhedsvæsenet, og et af de bedst dokumenterede mål for digitale påmindelser
 - [Konsistensrate for patientengagement](topics/konsistensrate-for-patientengagement/) — hvor regelmæssigt en patient interagerer med et digitalt værktøj over tid, til forskel fra om de nogensinde har brugt det overhovedet
 - [Brugerfastholdelsesrate](topics/brugerfastholdelsesrate/) — kohortefastholdelseskurven, der adskiller et produkt med et bæredygtigt brugsmønster fra et, der rider på en bølge af nyhed
-- [DAU/MAU-stickiness-ratio](topics/dau-mau-stickiness-ratio/) — standard produktanalysemetrikken for engagementsintensitet på tværs af en hel brugerbase
-- [Patient Net Promoter Score](topics/patient-net-promoter-score/) — den bredt anvendte, og bredt kritiserede, enkeltspørgsmål-tilfredshedsmetrik
-- [System Usability Scale-score](topics/system-usability-scale-score/) — et standardiseret 10-spørgsmåls spørgeskema, der kvantificerer, hvor brugbart et stykke software rent faktisk er
+- [DAU/MAU-klæbrighedsforhold](topics/dau-mau-klæbrighedsforhold/) — standard produktanalysemetrikken for engagementsintensitet på tværs af en hel brugerbase
+- [Patientens nettoanbefalingsscore](topics/patientens-nettoanbefalingsscore/) — den bredt anvendte, og bredt kritiserede, enkeltspørgsmål-tilfredshedsmetrik
+- [Score på systemets brugervenlighedsskala](topics/score-på-systemets-brugervenlighedsskala/) — et standardiseret 10-spørgsmåls spørgeskema, der kvantificerer, hvor brugbart et stykke software rent faktisk er
 
 ## Digital plejedrift og sikkerhed
 

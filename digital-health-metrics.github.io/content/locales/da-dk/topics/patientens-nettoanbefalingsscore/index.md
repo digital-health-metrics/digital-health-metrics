@@ -1,4 +1,4 @@
-# Patient Net Promoter Score
+# Patientens nettoanbefalingsscore
 
 Patient Net Promoter Score (NPS) er den bredt anvendte, og bredt kritiserede, enkeltspørgsmål-tilfredshedsmetrik, der spørger patienter, hvor sandsynligt det er, at de vil anbefale et digitalt sundhedsprodukt eller en service til en ven eller kollega, på en skala fra 0 til 10. Svar grupperes i detraktorer (0-6), passive (7-8) og promotorer (9-10), og scoren beregnes som procentdelen af promotorer minus procentdelen af detraktorer.
 
@@ -41,4 +41,4 @@ NPS-data indsamles typisk via en kort undersøgelse sendt elektronisk efter en i
 - Press Ganey og lignende sundhedsvæsenspatientoplevelsesmålingsorganisationer, benchmarkdata specifikt for sundhedsvæsenet
 - Collegialt bedømt litteratur, der kritiserer og kontekstualiserer NPS i sundhedsvæsensindstillinger, f.eks. undersøgelser offentliggjort i Journal of Medical Internet Research (JMIR)
 
-Se også: [System Usability Scale-score](../system-usability-scale-score/), en relateret men adskilt patientrapporteret metrik, der måler specifik softwarebrugbarhed snarere end generel tilfredshed og loyalitet.
+Se også: [score på systemets brugervenlighedsskala](../score-på-systemets-brugervenlighedsskala/), en relateret men adskilt patientrapporteret metrik, der måler specifik softwarebrugbarhed snarere end generel tilfredshed og loyalitet.

@@ -1,4 +1,4 @@
-# System Usability Scale-Score
+# Score op de System Usability Scale
 
 De System Usability Scale-score (SUS) is een gestandaardiseerde vragenlijst van 10 items die wordt gebruikt om te kwantificeren hoe bruikbaar een stuk software is, resulterend in een enkele score van 0 tot 100 die kan worden benchmarkt tegen goed gevestigde industrienormen. In tegenstelling tot Net Promoter Score, die aanbevelingsbereidheid meet, of door patiënten gerapporteerde uitkomstmaten, die klinische of functionele status meten, meet SUS één specifiek ding: hoe gemakkelijk de software zelf te leren en te gebruiken is, voor zowel patiënten als klinisch personeel.
 

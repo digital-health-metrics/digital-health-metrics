@@ -13,7 +13,7 @@ Sind Sie neu hier? Beginnen Sie mit [Adoptionsrate des Patientenportals](themen/
 - [Nutzerbindungsrate](themen/nutzerbindungsrate/) — die Kohorten-Bindungskurve, die ein Produkt mit nachhaltigem Nutzungsmuster von einem unterscheidet, das auf einer Welle der Neuheit reitet
 - [DAU/MAU-Stickiness-Verhältnis](themen/dau-mau-stickiness-verhaeltnis/) — das Standard-Produktanalysemaß für Engagement-Intensität über eine gesamte Nutzerbasis hinweg
 - [Patienten-Net-Promoter-Score](themen/patienten-net-promoter-score/) — die weit verbreitete und ebenso weit kritisierte Ein-Fragen-Zufriedenheitskennzahl
-- [System-Usability-Scale-Score](themen/system-usability-scale-score/) — ein standardisierter 10-Punkte-Fragebogen, der quantifiziert, wie benutzbar ein Stück Software tatsächlich ist
+- [System-Usability-Scale-Wert](themen/system-usability-scale-wert/) — ein standardisierter 10-Punkte-Fragebogen, der quantifiziert, wie benutzbar ein Stück Software tatsächlich ist
 
 ## Digitale Versorgungsprozesse und Sicherheit
 

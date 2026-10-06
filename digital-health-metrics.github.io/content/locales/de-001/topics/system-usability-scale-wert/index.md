@@ -1,4 +1,4 @@
-# System-Usability-Scale-Score
+# System-Usability-Scale-Wert
 
 Der System-Usability-Scale-Score (SUS) ist ein standardisierter 10-Punkte-Fragebogen, der verwendet wird, um zu quantifizieren, wie benutzbar ein Stück Software ist, und einen einzelnen Score von 0 bis 100 erzeugt, der gegen gut etablierte Branchennormen gemessen werden kann. Im Gegensatz zum Net Promoter Score, der die Weiterempfehlungsbereitschaft misst, oder patientenberichteten Ergebnismaßen, die den klinischen oder funktionalen Status messen, misst der SUS eine spezifische Sache: wie leicht die Software selbst zu erlernen und zu bedienen ist, sei es für Patienten oder klinisches Personal.
 

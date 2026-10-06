@@ -1,4 +1,4 @@
-# System Usability Scale-score
+# Score på systemets brugervenlighedsskala
 
 System Usability Scale (SUS) er et standardiseret 10-spørgsmåls spørgeskema, der kvantificerer, hvor brugbart et stykke software rent faktisk er, med svar givet på en 5-punkts enighedsskala, der kombineres til en enkelt score fra 0 til 100. I modsætning til Net Promoter Score, som måler generel tilfredshed og anbefalingssandsynlighed, er SUS specifikt designet til at måle brugbarhed — hvor let og effektivt en bruger rent faktisk kan udføre opgaver med et stykke software.
 
@@ -47,4 +47,4 @@ SUS-data indsamles via det standardiserede 10-spørgsmåls spørgeskema administ
 - Sauro, J., "A Practical Guide to the System Usability Scale", akkumulerede industribenchmark-data
 - Collegialt bedømt litteratur om SUS-anvendelse i sundhedsvæsenets softwareevaluering, f.eks. undersøgelser offentliggjort i Journal of Medical Internet Research (JMIR) og JMIR Human Factors
 
-Se også: [patient Net Promoter Score](../patient-net-promoter-score/), en relateret men adskilt patientrapporteret metrik, der måler tilfredshed og loyalitet snarere end specifik softwarebrugbarhed.
+Se også: [patientens nettoanbefalingsscore](../patientens-nettoanbefalingsscore/), en relateret men adskilt patientrapporteret metrik, der måler tilfredshed og loyalitet snarere end specifik softwarebrugbarhed.

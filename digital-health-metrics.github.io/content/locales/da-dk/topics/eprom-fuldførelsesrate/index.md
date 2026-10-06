@@ -41,4 +41,4 @@ ePROM-fuldførelsesdata kommer typisk direkte fra den digitale platform, der lev
 - U.S. Food and Drug Administration (FDA), retningslinjer for patientrapporterede resultatmål til klinisk brug
 - Collegialt bedømt litteratur om ePROM-fuldførelse og manglende data, f.eks. undersøgelser offentliggjort i Journal of Clinical Oncology og Quality of Life Research
 
-Se også: [patient Net Promoter Score](../patient-net-promoter-score/), en relateret men adskilt patientrapporteret metrik, der måler tilfredshed snarere end klinisk resultat.
+Se også: [patientens nettoanbefalingsscore](../patientens-nettoanbefalingsscore/), en relateret men adskilt patientrapporteret metrik, der måler tilfredshed snarere end klinisk resultat.

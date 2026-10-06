@@ -1,4 +1,4 @@
-# DAU/MAU-Stickiness-ratio
+# DAU/MAU-klæbrighedsforhold
 
 DAU/MAU-stickiness-ratio er den standard produktanalysemetrik for engagementsintensitet på tværs af en hel brugerbase, beregnet som forholdet mellem daglige aktive brugere og månedlige aktive brugere. Den besvarer et andet spørgsmål end fastholdelse: i stedet for at spørge, om brugere forbliver tilmeldt over tid, spørger den, hvor ofte de brugere, der er tilmeldt, rent faktisk bruger produktet inden for en given måned.
 

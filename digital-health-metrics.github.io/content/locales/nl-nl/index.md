@@ -13,7 +13,7 @@ Nieuw hier? Begin met [adoptiegraad van het patiëntenportaal](topics/adoptiegra
 - [Gebruikersretentiepercentage](topics/gebruikersretentiepercentage/) — de cohortretentiecurve die een product met een duurzaam gebruikspatroon onderscheidt van een die op een golf van nieuwigheid meevaart
 - [DAU/MAU-stickinessratio](topics/dau-mau-stickinessratio/) — de standaard productanalysemaatstaf voor betrokkenheidsintensiteit over een hele gebruikersbasis
 - [Patiënt Net Promoter Score](topics/patiënt-net-promoter-score/) — de veelgebruikte, en veelbekritiseerde, enkele-vraag-tevredenheidsmaatstaf
-- [System Usability Scale-score](topics/system-usability-scale-score/) — een gestandaardiseerde vragenlijst van 10 items die kwantificeert hoe bruikbaar een stuk software werkelijk is
+- [Score op de System Usability Scale](topics/score-op-de-system-usability-scale/) — een gestandaardiseerde vragenlijst van 10 items die kwantificeert hoe bruikbaar een stuk software werkelijk is
 
 ## Digitale zorgprocessen en veiligheid
 

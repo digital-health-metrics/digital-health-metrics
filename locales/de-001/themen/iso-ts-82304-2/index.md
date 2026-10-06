@@ -59,4 +59,4 @@ Die Bewertung anhand von ISO/TS 82304-2 wird typischerweise von einem geschulten
 - ISO-Technikkomitee 215 (Health Informatics), Veröffentlichungs- und Arbeitsgruppeninformationen
 - Nationale und kommerzielle Organisationen zur Qualitätskennzeichnung und Kuratierung von Gesundheits-Apps, die ihre Bewertungsmethodik basierend auf diesem Standard veröffentlichen
 
-Siehe auch: [System-Usability-Scale-Score](../system-usability-scale-score/), ein ergänzendes, engeres, speziell auf Benutzerfreundlichkeit fokussiertes Instrument, das oft zusammen mit einer breiteren ISO/TS 82304-2-Qualitätsbewertung verwendet wird.
+Siehe auch: [System-Usability-Scale-Wert](../system-usability-scale-wert/), ein ergänzendes, engeres, speziell auf Benutzerfreundlichkeit fokussiertes Instrument, das oft zusammen mit einer breiteren ISO/TS 82304-2-Qualitätsbewertung verwendet wird.

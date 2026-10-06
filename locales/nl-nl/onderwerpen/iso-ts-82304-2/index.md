@@ -60,4 +60,4 @@ Beoordeling tegen ISO/TS 82304-2 wordt meestal uitgevoerd door een getrainde beo
 - ISO Technisch Comité 215 (Gezondheidsinformatica), publicatie- en werkgroepinformatie
 - Nationale en commerciële organisaties voor kwaliteitslabelering en curatie van gezondheidsapps die hun beoordelingsmethodologie publiceren gebaseerd op deze standaard
 
-Zie ook: [System Usability Scale-score](../system-usability-scale-score/), een aanvullend, nauwer instrument specifiek voor bruikbaarheid dat vaak wordt gebruikt samen met een bredere ISO/TS 82304-2-kwaliteitsbeoordeling.
+Zie ook: [score op de System Usability Scale](../score-op-de-system-usability-scale/), een aanvullend, nauwer instrument specifiek voor bruikbaarheid dat vaak wordt gebruikt samen met een bredere ISO/TS 82304-2-kwaliteitsbeoordeling.
