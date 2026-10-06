@@ -20,6 +20,15 @@ to `main`.
   See [`spec/lily-design-system-svelte-with-picker-bar/`](../spec/lily-design-system-svelte-with-picker-bar/index.md).
 - Use the Svelte MCP server (docs and `svelte-autofixer`) when writing or changing `.svelte` files.
 
+## Publishing
+
+The site lives in its own repo (`digital-health-metrics/digital-health-metrics.github.io`); the monorepo
+folder is a subtree of it. Pushing the monorepo does **not** deploy by itself. `bin/publish` splits the
+folder and pushes it to the site repo's `main`; `.github/workflows/publish-site.yml` does this
+automatically on pushes to `main` that touch the folder (needs the `SITE_DEPLOY_KEY` secret). Use
+`bin/publish --dry-run` to check first. Never force-push the site repo: the split is deterministic, so a
+non-fast-forward means the histories diverged and needs a human.
+
 ## Verify
 
 ```sh

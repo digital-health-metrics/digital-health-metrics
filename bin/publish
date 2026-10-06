@@ -1,0 +1,30 @@
+#!/bin/sh
+set -euf
+
+## Publish the website: push digital-health-metrics.github.io/ (this repo's
+## site folder) to the site's own repository as a subtree split. The split is
+## deterministic, so re-running it on the same commits yields the same hashes
+## and the push is always a fast-forward of the site repo's main branch.
+##
+## Usage: bin/publish [--dry-run]
+## Env:   SITE_REMOTE  push URL (default: the site repo over SSH, for deploy keys)
+
+remote="${SITE_REMOTE:-git@github.com:digital-health-metrics/digital-health-metrics.github.io.git}"
+prefix="digital-health-metrics.github.io"
+dry=""
+test "${1:-}" = "--dry-run" && dry="--dry-run"
+
+top="$(git rev-parse --show-toplevel)"
+cd "$top"
+
+test -z "$(git status --porcelain -- "$prefix")" \
+    || { >&2 echo "Error: uncommitted changes under $prefix/; commit them first."; exit 1; }
+
+## git subtree split prints progress with carriage returns; the hash is last.
+sha="$(git subtree split --prefix="$prefix" HEAD 2>/dev/null | tr '\r' '\n' | tail -n 1 | tr -d '[:space:]')"
+test -n "$sha" && git cat-file -e "${sha}^{commit}" \
+    || { >&2 echo "Error: subtree split did not produce a commit."; exit 1; }
+
+echo "Publishing $sha to $remote (main)"
+## shellcheck disable=SC2086
+git push $dry "$remote" "${sha}:refs/heads/main"

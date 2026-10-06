@@ -48,7 +48,14 @@ See [`../spec/index.md`](../spec/index.md) §4 "Adding a locale" for the checkli
 
 ## Deployment
 
-Pushing to `main` publishes the `build/` output to GitHub Pages. The repository is
-`<org>.github.io`, so the site is served from the domain root (`BASE_PATH` is empty); set
+The site is published from its own repository, `digital-health-metrics/digital-health-metrics.github.io`,
+whose workflow (`.github/workflows/pages.yml`) builds and deploys GitHub Pages on every push to `main`.
+This folder is that repository's content: the monorepo publishes it with `bin/publish` (a `git subtree
+split` of this folder pushed to the site repo; deterministic, so always a fast-forward). On every push to
+the monorepo's `main` that touches this folder, `.github/workflows/publish-site.yml` runs `bin/publish`
+using the `SITE_DEPLOY_KEY` secret (a write-enabled deploy key on the site repo; one-time setup is
+described at the top of that workflow). To publish by hand: `bin/publish --dry-run`, then `bin/publish`.
+
+The repository is named `<org>.github.io`, so the site is served from the domain root (`BASE_PATH` is empty); set
 `BASE_PATH` only for subpath previews. See [`../spec/search/`](../spec/search/index.md) for the
 post-publish search verification.
