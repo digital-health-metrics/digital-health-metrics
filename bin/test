@@ -18,7 +18,7 @@ symlink_target_or_err() {
 ## main
 
 top="$(git rev-parse --show-toplevel)"
-locales="en-gb-oxendict en-001 en-gb en-us cy-001 cy-gb zh-cn es-001 es-es hi-001 hi-in ar-001 ar-eg fr-001 fr-fr pt-001 pt-pt de-de ru-001 ru-ru bn-bd ko-kr ja-jp sv-se nl-nl ur-pk id-id it-it uk-ua fi-fi no-no da-dk pl-pl vi-001 et-001 th-001 tr-tr"
+locales="en-gb-oxendict en-001 en-gb en-us cy-001 cy-gb zh-cn es-001 es-es hi-001 hi-in ar-001 ar-eg fr-001 fr-fr pt-001 pt-pt de-de de-001 ru-001 ru-ru bn-bd ko-kr ja-jp sv-se nl-nl ur-pk id-id it-it uk-ua fi-fi no-no da-dk pl-pl vi-001 et-001 th-001 tr-tr"
 topics="patient-portal-adoption-rate telehealth-visit-rate appointment-no-show-rate clinical-alert-override-rate digital-referral-turnaround-time"
 
 ## A locale's topics directory name is translated per locale (en-* keep

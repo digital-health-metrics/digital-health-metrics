@@ -32,6 +32,7 @@ const PUBLIC_LOCALES = [
 	'fr-001',
 	'pt-001',
 	'de-de',
+	'de-001',
 	'ru-001',
 	'ar-eg',
 	'bn-bd',

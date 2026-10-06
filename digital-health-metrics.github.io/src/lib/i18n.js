@@ -8,13 +8,14 @@
 // localizedIndex: an untranslated locale still renders correctly in English
 // rather than crashing or showing blanks.
 //
-// Only 26 of the site's 36 public locales need an entry in TRANSLATIONS
+// Only 26 of the site's 37 public locales need an entry in TRANSLATIONS
 // below: the 3 English variants (en-us, en-gb, en-001) all share this same
 // base EN table with no per-variant overrides, same as they would for any
-// other English-only difference (spelling, not vocabulary) — and the 7
-// country-specific variants of a language already covered by an
-// international `-001` locale (ar-eg, hi-in, es-es, pt-pt, ru-ru, fr-fr,
-// cy-gb) deliberately reuse that locale's own translation object rather than
+// other English-only difference (spelling, not vocabulary) — and the 8
+// locales that share a language with another published locale (ar-eg, hi-in,
+// es-es, pt-pt, ru-ru, fr-fr, cy-gb — country variants of an international
+// `-001` locale — and de-001, the international copy of de-de) deliberately
+// reuse that other locale's own translation object rather than
 // getting a separate one, for the same reason their book content is reused
 // verbatim (see spec/index.md §4). That leaves cy-001 (Welsh), zh-cn
 // (Simplified Chinese), es-001 (Spanish), hi-001 (Hindi), ar-001 (Arabic),
@@ -1512,6 +1513,7 @@ const TRANSLATIONS = {
 	'tr-tr': tr,
 	// Country-specific variants of a language already covered by an
 	// international -001 locale reuse that locale's translation object.
+	'de-001': de,
 	'ar-eg': ar,
 	'hi-in': hi,
 	'es-es': es,

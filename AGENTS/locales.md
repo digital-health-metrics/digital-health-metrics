@@ -11,6 +11,7 @@ Canonical rules: [`spec/index.md`](../spec/index.md) §4 and
 | `en-001`, `en-gb`, `en-us` | Derived by `tools/localize.py`. Never hand-edit; rerun the script. |
 | Other `-001` and `xx-yy` codes | Hand-translated, AI-assisted, pending native review. |
 | `ar-eg`, `hi-in`, `es-es`, `pt-pt`, `ru-ru`, `fr-fr`, `cy-gb` | Byte-identical copies of their `-001` sibling, including directory names. |
+| `de-001` | Byte-identical copy of `de-de` (German has no separate `-001` source; edit `de-de`, then recopy). |
 
 ## Translated paths
 
@@ -23,6 +24,15 @@ When translating a topic: create `<translated topics dir>/<translated slug>/`, c
 `.locale-peer-id` verbatim, add `README.md -> index.md`, translate the text, keep headings, code
 blocks, numbers and citations, translate link text only, and point link targets at the translated
 slugs (`../<slug>/`). A locale's `index.md` links `<translated topics dir>/<slug>/`.
+
+## Welsh terminology (cy-001, cy-gb)
+
+Welsh text follows the Welsh Government's TermCymru term bank (2026-07-02 export). Use
+[`tools/cy-glossary.tsv`](../tools/cy-glossary.tsv) for the book's recurring terms: it records the chosen
+Welsh, its TermCymru status (A best, C weakest) and which bank entries are the wrong sense (for
+example *burnout*, *reach*, *portal*, *retention*). For a term not in the glossary, search the bank
+before inventing a rendering, prefer status A and the Iechyd (health) subject, and add the new term to
+the glossary. `cy-gb` is a byte-identical copy of `cy-001`: edit `cy-001`, then recopy.
 
 ## Right-to-left
 

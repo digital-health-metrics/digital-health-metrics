@@ -164,3 +164,18 @@ Fix: have `[locale]/+layout.server.js` supply this locale's own title, which
 overrides the root layout's canonical one via SvelteKit's merged `page.data`
 on any route under `/<locale>/` — the root picker and `/about/` (no locale in
 the URL) correctly keep the canonical English title.
+
+### Bug: an unknown locale in the URL was saved as the visitor's locale
+
+Bug: the root layout trusted `page.params.locale` as a locale. A stale or mistyped
+link such as `/de-001/` (German is `de-de` here; there is no `de-001`) rendered the
+404 page, but the locale picker still wrote `de-001` into `<html lang>` and into the
+saved locale (`localStorage`), so later visits tried to restore a locale that does
+not exist. The picker also showed an empty value on that page.
+
+Fix: `+layout.svelte` accepts a URL locale only if it is one of the published
+locales (after alias resolution); otherwise there is no locale, the picker falls
+back to the visitor's saved locale, and `navigateToLocale` does nothing on a 404.
+Verify in a browser: save `cy-001`, open `/de-001/` — the saved locale must still
+be `cy-001` — and open `/de-de/` — the picker, `lang` and saved locale must all
+become `de-de`.

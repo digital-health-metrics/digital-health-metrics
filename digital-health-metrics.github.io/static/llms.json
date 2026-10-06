@@ -78,8 +78,14 @@
       "direction": "ltr"
     },
     {
-      "code": "de-de",
+      "code": "de-001",
       "label": "Deutsch",
+      "url": "https://digital-health-metrics.github.io/de-001/",
+      "direction": "ltr"
+    },
+    {
+      "code": "de-de",
+      "label": "Deutsch - Deutschland",
       "url": "https://digital-health-metrics.github.io/de-de/",
       "direction": "ltr"
     },

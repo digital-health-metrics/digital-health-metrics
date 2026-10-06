@@ -6,7 +6,7 @@ specification is the source of truth.
 ## What this repo is
 
 A reference book of digital health metric definitions (one Markdown file per topic), translated into
-36 published locales, plus the SvelteKit site that publishes it to GitHub Pages.
+37 published locales, plus the SvelteKit site that publishes it to GitHub Pages.
 
 ## Source of truth
 
@@ -28,7 +28,7 @@ For adding or editing topics, use the skill in
 |---|---|
 | `locales/en-gb-oxendict/` | Hand-authored canonical source. Internal; never published. |
 | `locales/en-001`, `en-gb`, `en-us` | Derived by `python3 tools/localize.py`. Never hand-edit. |
-| `locales/<other>/` | Hand-translated (AI-assisted, pending native review). Country variants (`es-es`, `ar-eg`, `hi-in`, `pt-pt`, `ru-ru`, `fr-fr`, `cy-gb`) copy their `-001` sibling. |
+| `locales/<other>/` | Hand-translated (AI-assisted, pending native review). Country variants (`es-es`, `ar-eg`, `hi-in`, `pt-pt`, `ru-ru`, `fr-fr`, `cy-gb`) copy their `-001` sibling; `de-001` is the reverse, a copy of `de-de`. |
 | `bin/test` | Structure validation. Run before every commit that touches `locales/`. |
 | `digital-health-metrics.github.io/` | The SvelteKit site. See its `README.md`. |
 
@@ -76,4 +76,4 @@ pnpm run build     # prerender the site and write the search index
 1. `bin/test` passes.
 2. If `locales/` changed: `pnpm run sync:content`, then `pnpm run check` and `pnpm run build` pass.
 3. Specs and the README are updated if behaviour or structure changed.
-4. Commit messages say what and why. Do not push or publish unless asked.
+4. Commit messages say what and why. Do not push or publish unless asked. Publishing the site is `bin/publish` (see `AGENTS/site.md`).

@@ -24,7 +24,14 @@
 	// see $lib/locales.js) resolved here so every nav link, UI chrome string,
 	// and locale-switcher calculation below treats an alias route exactly
 	// like its real locale, not like an unrecognized one.
-	const locale = $derived(canonicalLocale(page.params.locale));
+	// Only a locale the site actually publishes counts: an unknown code in the
+	// URL (a stale or mistyped link such as /de-001/ — German here is de-de)
+	// is not a locale. Treating it as one made the picker write that code into
+	// <html lang> and into the visitor's saved locale, poisoning later visits.
+	const locale = $derived.by(() => {
+		const code = canonicalLocale(page.params.locale);
+		return code && locales.includes(code) ? code : undefined;
+	});
 	const t = $derived(ui(locale ?? DEFAULT_LOCALE));
 
 	// Contents/Topics/Search only make sense once a locale is chosen; outside
@@ -93,6 +100,9 @@
 			goto(resolve(`${path.replace(/^\/[\w-]+/, `/${next}`)}`.slice(1)), { refreshAll: true });
 			return;
 		}
+		// The 404 page has no locale to go to; the picker's restore of the
+		// stored locale must not navigate a visitor away from it.
+		if (page.status === 404) return;
 		// A search (/?<target>) is on the root page: the picker's automatic
 		// restore of the stored locale must not navigate away and drop it.
 		if (page.url.pathname === '/' && page.url.search) return;
