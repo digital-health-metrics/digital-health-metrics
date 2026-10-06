@@ -4,6 +4,7 @@ For the `digital-health-metrics.github.io` Svelte app...
 
 Use PNPM and Lily dependencies (not vendored):
 - https://www.npmjs.com/package/@lilydesignsystem/svelte-headless
+- https://www.npmjs.com/package/@lilydesignsystem/svelte-search-picker
 - https://www.npmjs.com/package/@lilydesignsystem/svelte-theme-picker
 - https://www.npmjs.com/package/@lilydesignsystem/svelte-text-size-picker
 - https://www.npmjs.com/package/@lilydesignsystem/svelte-locale-picker
@@ -26,11 +27,13 @@ In Lily SharePicker use:
   - Share on Bluesky
   - Share on Mastodon (link to mastodonshare.com)
 
-Dependency pins (see `digital-health-metrics.github.io/pnpm-workspace.yaml`):
-- `svelte-picker-bar@0.1.0` pins its sub-pickers to `^0.1.0`, which allows their broken 0.1.1 releases. The workspace `overrides` force the fixed versions (`svelte-headless ^0.2.0`, theme-picker `^0.1.2`, locale-picker `^0.1.3`, text-size-picker `^0.1.2`, share-picker `^0.1.2`) across the whole dependency graph. Keep them until picker-bar publishes a release that depends on the fixed versions.
+Dependency notes (see `digital-health-metrics.github.io/pnpm-workspace.yaml`):
+- `svelte-picker-bar` 0.2.0 depends on the five sub-pickers (search, theme, locale, text-size, share) at their fixed versions, so the `overrides` that the 0.1.x releases needed are gone. Do not reintroduce overrides pinning sub-pickers below 0.2.0 (picker-bar 0.1.0's sub-pickers rendered unstyled).
 - `typescript` stays on 6.x: 7.x breaks the SvelteKit build and is outside the peer range of `@sveltejs/kit` and `svelte-check`.
 
-Search picker: all theme stylesheets already carry `.search-picker*` styles, but no Lily search-picker package is published yet and the site has no component using them. Until one exists, search is the page in `spec/search/`.
+In Lily SearchPicker use:
+- the picker-bar's built-in search picker, whose form does a GET to `/` so a search for `foo` goes to `/?foo` (the route in `spec/search/`)
+- labels `search`, `searchInput`, `searchSubmit` from the site's i18n (`navSearch`, `searchInputLabel`)
 
 In Lily TextSizePicker use:
 - all Lily default text sizes (not any application-specific custom text sizes)

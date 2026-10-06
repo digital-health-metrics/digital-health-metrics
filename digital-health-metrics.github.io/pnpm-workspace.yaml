@@ -1,19 +1,6 @@
 packages:
   - '.'
 
-# svelte-picker-bar@0.1.0 pins its four sub-pickers to `^0.1.0`, which still
-# allows their broken 0.1.1 release (rendered class names silently dropped
-# because it calls svelte-headless's IconButton/Listbox with a `baseClass`
-# prop those primitives didn't support until 0.2.0 — the listbox then renders
-# unstyled and unpositioned, pushing the whole page down when opened). Force
-# every resolution to the fixed versions across the whole dependency graph.
-overrides:
-  '@lilydesignsystem/svelte-headless': ^0.2.0
-  '@lilydesignsystem/svelte-theme-picker': ^0.1.2
-  '@lilydesignsystem/svelte-locale-picker': ^0.1.3
-  '@lilydesignsystem/svelte-text-size-picker': ^0.1.2
-  '@lilydesignsystem/svelte-share-picker': ^0.1.2
-
 allowBuilds:
   esbuild: true
 
@@ -27,3 +14,4 @@ minimumReleaseAgeExclude:
   - '@lilydesignsystem/svelte-theme-picker@0.1.2'
   - '@sveltejs/adapter-static@4.0.0'
   - '@sveltejs/kit@3.0.0'
+  - '@lilydesignsystem/svelte-headless@0.4.0'

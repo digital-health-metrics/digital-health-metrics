@@ -42,12 +42,9 @@ See [`../spec/index.md`](../spec/index.md) §4 "Adding a locale" for the checkli
 
 ## Dependency notes
 
-- `pnpm-workspace.yaml` overrides `svelte-picker-bar`'s sub-pickers to their fixed versions; see the
-  comment there and [`../spec/lily-design-system-svelte-with-picker-bar/`](../spec/lily-design-system-svelte-with-picker-bar/index.md).
+- `svelte-picker-bar` 0.2.0 includes the search picker; the old sub-picker overrides are gone. See [`../spec/lily-design-system-svelte-with-picker-bar/`](../spec/lily-design-system-svelte-with-picker-bar/index.md).
 - `typescript` stays on 6.x: 7.x breaks the build and is outside the peer range of
   `@sveltejs/kit` and `svelte-check`.
-- The theme stylesheets already include `.search-picker*` styles for a future Lily search picker;
-  no component uses them yet.
 
 ## Deployment
 
