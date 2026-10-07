@@ -975,6 +975,65 @@ pre {
 		padding: var(--lily-space-md);
 	}
 
+	/* Search on a narrow screen. The theme drops the search panel below the
+	 * button, anchored to it, so on a phone it ran off the screen and covered
+	 * the nav links. Instead, make the whole picker row (.site-controls) the
+	 * anchor and open the panel over that row at full width, with its submit
+	 * button, while the other pickers are hidden: it stays inside the header
+	 * and covers neither the nav nor the content. The theme positions the panel
+	 * inside :where(), which has no specificity, so these plain selectors win.
+	 * Logical properties keep it correct in right-to-left locales. */
+	.site-controls {
+		position: relative;
+	}
+
+	.site-controls .search-picker {
+		position: static;
+	}
+
+	.site-controls .search-picker-panel {
+		position: absolute;
+		inset-block: 0;
+		inset-inline: 0;
+		z-index: 200;
+		display: flex;
+		box-sizing: border-box;
+		width: auto;
+		min-width: 0;
+		max-width: none;
+		margin: 0;
+		padding: 0;
+		background-color: var(--lily-surface);
+	}
+
+	/* Setting `display` above would defeat the `hidden` attribute, so restate it. */
+	.site-controls .search-picker-panel[hidden] {
+		display: none;
+	}
+
+	.site-controls .search-picker-form {
+		display: flex;
+		flex: 1;
+		gap: 0.25rem;
+		width: 100%;
+		min-width: 0;
+	}
+
+	.site-controls .search-picker-input {
+		flex: 1;
+		min-width: 0;
+	}
+
+	/* While searching, the row spans the whole header width, so the field does too. */
+	.site-controls:has(.search-picker-button[aria-expanded='true']) {
+		width: 100%;
+		margin-inline-start: 0;
+	}
+
+	.site-controls:has(.search-picker-button[aria-expanded='true']) > :not(.search-picker) {
+		visibility: hidden;
+	}
+
 	.topic-contents .contents-list {
 		flex-direction: column;
 		gap: 0.15rem;

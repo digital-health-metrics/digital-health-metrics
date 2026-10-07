@@ -59,6 +59,16 @@ differ per locale. The site URL defaults to `https://digital-health-metrics.gith
 - Results show title, URL and a snippet with matches highlighted; at most 50.
 - An empty or unmatched search says so and links back to the home page.
 
+## Search field on narrow screens
+
+The header's search field is the Lily search picker. At 40rem and below the theme's panel (anchored below the
+button) ran off the screen and covered the nav links, so `static/assets/style.css` opens it over the picker row
+instead: `.site-controls` becomes the anchor and, while the search button is expanded, spans the header width;
+the panel fills it (with its ⏎ submit button) and the other pickers are hidden (`visibility`). Plain class
+selectors override the theme, which positions the panel inside `:where()` (no specificity). The panel's
+`[hidden]` rule is restated because the media query sets `display`. Logical properties make it work unchanged
+in right-to-left locales; above 40rem nothing changes. Escape closes it and restores the pickers.
+
 ## Verification
 
 After each publish: `GET /search-index.json` returns 200 and contains known
