@@ -5,7 +5,7 @@
 	import { page } from '$app/state';
 	import { Footer, Header, SkipLink } from '@lilydesignsystem/svelte-headless';
 	import PickerBar from '@lilydesignsystem/svelte-picker-bar';
-	import { DEFAULT_LOCALE, canonicalLocale, localeLabel } from '#lib/locales.js';
+	import { DEFAULT_LOCALE, LOCALE_STORAGE_KEY, canonicalLocale, localeLabel } from '#lib/locales.js';
 	import { ui } from '#lib/i18n.js';
 
 	let { data, children } = $props();
@@ -91,6 +91,10 @@
 	// locale's home.
 	/** @param {string} next */
 	function navigateToLocale(next) {
+		// Already showing this locale (the URL may be its two-letter alias, e.g.
+		// /en/ for en-001): navigating would only rewrite the alias to the
+		// canonical code, so an alias URL stays as it was opened.
+		if (next === locale) return;
 		const links = page.data?.localeLinks;
 		if (links?.[next]) {
 			goto(resolve(`${links[next]}`.slice(1)), { refreshAll: true });
@@ -103,9 +107,12 @@
 		// The 404 page has no locale to go to; the picker's restore of the
 		// stored locale must not navigate a visitor away from it.
 		if (page.status === 404) return;
-		// A search (/?<target>) is on the root page: the picker's automatic
-		// restore of the stored locale must not navigate away and drop it.
-		if (page.url.pathname === '/' && page.url.search) return;
+		// The root page owns the decision about where "/" goes (the browser's
+		// language, then the saved locale, then the default — see
+		// preferredLocale in $lib/locales.js) and keeps a search query
+		// (/?<target>) in place. The picker's own restore of the saved locale
+		// must not race it by navigating first.
+		if (page.url.pathname === '/') return;
 		goto(resolve(`${next}/`), { refreshAll: true });
 	}
 </script>
@@ -171,7 +178,7 @@
 			localeProps={{
 				value: locale ?? '',
 				defaultValue: DEFAULT_LOCALE,
-				storageKey: 'digital-health-metrics.locale',
+				storageKey: LOCALE_STORAGE_KEY,
 				localeLabels: Object.fromEntries(locales.map((code) => [code, localeLabel(code)])),
 				onChange: navigateToLocale
 			}}

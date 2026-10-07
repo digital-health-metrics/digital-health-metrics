@@ -31,17 +31,16 @@ Keep proper nouns unconverted. Example: "Hospital Readmissions Reduction Program
 
 ## Verify
 
-For each locale subdirectory:
+Run `python3 tools/verify_locales.py` (the rules are in `spec/index.md`, "Locale completeness"). For each
+locale it checks that `index.md`, the `README.md` symlink and `.locale-peer-id` exist, that all topics and
+their files exist, that slugs are translated, that the home page lists every topic, that internal links
+resolve, that country variants are identical to their base locale, and, as warnings, that each translation
+matches the English source's structure and figures.
 
-- File exists: `index.md`
-- Symlink exists: `README.md`
-- Locale peer id tracking file exists: `.locale-peer-id`
+Then, by hand:
 
-Then:
-
-- Fix any broken internal links
 - Fix any residual wrong-dialect spellings
-- Update `./spec/locale/index.md`
+- Check the pickers, the locale's home page and one topic page in a browser (see the regression notes below)
 
 ## Content structure (book side)
 
@@ -59,18 +58,30 @@ Each locale is `locales/<code>/` in the book repo, containing:
   `scripts/sync-content.mjs` maps each locale's translated directory back to
   `topics/` in the site's `content/`, so site URLs are unchanged.
 - `locales/<code>/index.md` + `.locale-peer-id` + `README.md` symlink — the
-  locale's own translated README (site home/contents page source). Every
-  locale gets this file scaffolded (matching the topic-file pattern) even
-  before it has a translation; it starts empty.
+  locale's own translated README (site home/contents page source). It lists
+  every topic under the same eight category headings as the English home
+  page, with a translated blurb for each; the site builds the contents page
+  and the "Start here" links from it, so a topic missing from this file is
+  missing from the contents page.
 
 ## Slugs
 
-Slugs are per-locale, not shared.** Translated locales rename topic directories
-to native-script/accented slugs.
+Slugs are per-locale, not shared. Translated locales rename topic directories
+to native-script/accented slugs, lower-case, words joined by hyphens, no spaces
+or punctuation, Unicode NFC.
 
-Example: `es-001` `año-de-vida-ajustado-por-calidad`, `ur-001` `صحت-ایڈجسٹڈ-متوقع-زندگی`.
+Example: `es-001` `tasa-de-inasistencia-a-citas`, `zh-cn` `预约爽约率`,
+`ur-pk` `موضوعات/اپائنٹمنٹ-نو-شو-کی-شرح`. A slug equal to the English one is allowed only for a title
+that is purely an acronym or proper name (`iso-ts-82304-2`, `re-aim-framework`).
 
-Nothing in the site assumes slugs match across locales.
+Nothing in the site assumes slugs match across locales; topics are matched across
+locales by `.locale-peer-id`.
+
+**Renaming a slug changes its URL, and the old URL returns 404.** This is deliberate:
+the site is static, keeps no redirect table, and does not add redirects when a
+translation is retitled. Rename only when the title genuinely improves, and expect
+external links to the old URL to break. The landing page, the `../<slug>/` links, the
+sitemap and `llms.json` are regenerated or updated together with the rename.
 
 ## Locale picker (labels + ordering)
 
@@ -102,6 +113,14 @@ future `-001` locale gets its alias for free, nothing to maintain by hand.
   `data.locale` — so the site's own links, UI chrome, and `<html lang>`
   always come out identical to the real locale's own page, not the alias.
   `book.js`/`content.js` never see an alias at all.
+- An alias URL does not forward anywhere on the server, and there is no
+  redirect from `/<language>-001/` to `/<language>/` (one was tried and
+  removed): every `-001` URL is served as is. An alias URL is also not rewritten
+  to its canonical one: `navigateToLocale` in `src/routes/+layout.svelte`
+  returns early when the requested locale is already the one being shown
+  (`next === locale`), because the locale picker would otherwise restore the
+  canonical code on load and change `/en/` to `/en-001/`. A visitor who opens
+  `/en/` stays on `/en/`.
 - This is a one-way, non-sticky alias: landing on `/en/` renders `en-001`'s
   content, but every link on that page (nav, breadcrumbs, cross-references,
   locale switcher) points at `/en-001/...`, same as any other page. Clicking
@@ -120,6 +139,38 @@ future `-001` locale gets its alias for free, nothing to maintain by hand.
   "en" — it checks `LOCALE_ALIASES` separately, so alias pages are correctly
   excluded from the index as duplicates of their real locale, not
   miscounted as locale-agnostic default-bucket pages.
+
+## Browser-language redirect at `/`
+
+`/` sends a visitor to the published locale that matches their browser's language.
+`preferredLocale()` and `matchLocale()` in `src/lib/locales.js` decide, and
+`src/routes/+page.svelte` navigates (client-side, with `replaceState`). Order:
+
+1. **Browser language** — each tag in `navigator.languages` in turn (underscores accepted,
+   case ignored); the first tag that matches wins:
+   1. exact published locale: `cy_GB` / `cy-GB` → `/cy-gb/`, `de-DE` → `/de-de/`
+   2. no exact locale, but the language's international (`-001`) locale — the canonical route,
+      not the two-letter alias: `en-AU` → `/en-001/` (not `/en/`), `de-AT` → `/de-001/`,
+      `pt-BR` → `/pt-001/`, bare `cy` → `/cy-001/`
+   3. any published locale of that language that has no `-001` locale: `ja` → `/ja-jp/`,
+      `nb` / `nn` → `/no-no/`
+   Traditional Chinese (`zh-TW`, `zh-HK`, `zh-Hant`) matches nothing, because the only
+   Chinese locale is Simplified (`zh-cn`).
+2. **Saved locale** — the locale the picker last stored (`LOCALE_STORAGE_KEY`), if the browser
+   language matched nothing.
+3. **Default locale** (`DEFAULT_LOCALE`, `en-gb`).
+
+A search query (`/?foo`) disables the redirect so search keeps working. The locale picker must
+not also navigate at `/` (it would race this redirect), so `navigateToLocale` in
+`src/routes/+layout.svelte` returns early when the path is `/`. The browser language takes
+precedence over the saved locale on purpose: the picker saves the default locale on a first visit,
+so a saved value cannot be told apart from an explicit choice, and letting it win would defeat the
+redirect for every returning visitor. The cost is that a visitor who chose a locale that differs
+from their browser language is shown the browser-language locale when they open `/` (links to
+`/<locale>/…` are unaffected).
+
+To verify: open `/` in a browser (or Playwright context) with `locale: 'en-AU'` and confirm
+`/en-001/`; with `locale: 'cy-GB'` confirm `/cy-gb/`; with `locale: 'xx-YY'` confirm `/en-gb/`; with `/?foo` confirm it stays on `/`.
 
 ## Bug fixes (regression watch-list)
 

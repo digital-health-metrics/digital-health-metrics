@@ -3,7 +3,7 @@
 	import { goto } from '$app/navigation';
 	import { page } from '$app/state';
 	import { SectionList, SectionListItem } from '@lilydesignsystem/svelte-headless';
-	import { DEFAULT_LOCALE } from '#lib/locales.js';
+	import { DEFAULT_LOCALE, preferredLocale } from '#lib/locales.js';
 
 	let { data } = $props();
 
@@ -13,12 +13,17 @@
 	// SearchGate.svelte) — a server-side redirect here would drop that query
 	// and break search, so this only redirects client-side, and only when
 	// there's no query to preserve. With a query, the page stays put so
-	// search still works. With JavaScript disabled this effect never runs
+	// search still works. The destination is the locale matching the
+	// browser's language (navigator.languages, e.g. "cy_GB" -> /cy-gb/), else
+	// the locale the visitor last used, else the default. With JavaScript disabled this effect never runs
 	// (prerendered, no hydration), so the <noscript> meta-refresh below does
 	// the same redirect unconditionally — the query-string search itself
 	// requires JavaScript regardless, so there's nothing to preserve there.
 	$effect(() => {
-		if (!page.url.search) goto(defaultLocaleHref, { replaceState: true });
+		if (!page.url.search) {
+			const target = preferredLocale(data.locales.map((locale) => locale.code));
+			goto(resolve(`${target}/`), { replaceState: true });
+		}
 	});
 </script>
 

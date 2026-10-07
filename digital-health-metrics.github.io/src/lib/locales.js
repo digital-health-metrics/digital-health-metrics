@@ -80,6 +80,69 @@ export const LOCALE_ALIASES = Object.fromEntries(
 		.map((code) => [code.slice(0, -'-001'.length), code])
 );
 
+/** localStorage key under which the locale picker saves the visitor's locale. */
+export const LOCALE_STORAGE_KEY = 'digital-health-metrics.locale';
+
+/** Language subtags browsers send that this site files under another code. */
+const LANGUAGE_ALIASES = { nb: 'no', nn: 'no' };
+
+/**
+ * The published locale that best matches the browser's language preferences,
+ * or undefined if none does. `languages` is `navigator.languages` (or
+ * `[navigator.language]`); each tag is tried in order and the first tag that
+ * matches anything wins. Per tag:
+ *   1. exact locale: `cy_GB` / `cy-GB` -> `cy-gb`, `de-DE` -> `de-de`
+ *   2. no exact locale, but the language's international (`-001`) locale:
+ *      `en-AU` -> `en-001` (not the `/en/` alias), `de-AT` -> `de-001`,
+ *      `pt-BR` -> `pt-001`, bare `cy` -> `cy-001`
+ *   3. otherwise any published locale of that language: `ja` -> `ja-jp`,
+ *      `nb` -> `no-no`
+ * Traditional Chinese (`zh-TW`, `zh-HK`, `zh-Hant`) deliberately matches
+ * nothing: the only Chinese locale is Simplified (`zh-cn`).
+ *
+ * @param {readonly string[] | null | undefined} languages
+ * @param {readonly string[]} available published locale codes
+ */
+export function matchLocale(languages, available) {
+	const have = new Set(available);
+	for (const raw of languages ?? []) {
+		const tag = String(raw ?? '').trim().toLowerCase().replace(/_/g, '-');
+		if (!tag) continue;
+		if (have.has(tag)) return tag;
+		const parts = tag.split('-');
+		const language = LANGUAGE_ALIASES[parts[0]] ?? parts[0];
+		if (language === 'zh' && (parts.includes('hant') || ['tw', 'hk', 'mo'].includes(parts.at(-1)))) {
+			continue;
+		}
+		const international = LOCALE_ALIASES[language];
+		if (international && have.has(international)) return international;
+		const sameLanguage = available.find((code) => code.startsWith(`${language}-`));
+		if (sameLanguage) return sameLanguage;
+	}
+	return undefined;
+}
+
+/**
+ * Where "/" should send this visitor (browser only): the locale matching the
+ * browser's language (see matchLocale), else the locale they last used, else
+ * the default.
+ * @param {readonly string[]} available published locale codes
+ */
+export function preferredLocale(available) {
+	if (typeof navigator !== 'undefined') {
+		const languages = navigator.languages?.length ? navigator.languages : [navigator.language];
+		const match = matchLocale(languages, available);
+		if (match) return match;
+	}
+	try {
+		const saved = localStorage.getItem(LOCALE_STORAGE_KEY);
+		if (saved && available.includes(saved)) return saved;
+	} catch {
+		// private mode or blocked storage: fall through to the default
+	}
+	return DEFAULT_LOCALE;
+}
+
 /** Resolve a URL locale segment (alias or already-real code) to its real code. */
 export function canonicalLocale(code) {
 	return LOCALE_ALIASES[code] ?? code;

@@ -12,13 +12,14 @@ Search lives on the home page and is driven by the query string:
 | `/?foo` | search for `foo` |
 | `/?foo+bar` or `/?foo%20bar` | search for `foo bar` (every word must match) |
 | `/?q=foo` | accepted as an alias of `/?foo` |
-| `/` | no query: redirects to the default locale's home page |
+| `/` | no query: redirects to the visitor's best locale (see below), else the default locale's home page |
 
 The whole query string is the target, URL-decoded, with `+` read as a space.
 The page stays prerendered: the query is read in the browser only, never during
 prerendering. A search box on the home page navigates to `/?<target>`.
 
-`/` with no query redirects client-side to the default locale (e.g. `/en-gb/`)
+`/` with no query redirects client-side to the visitor's best locale (see "Browser-language
+redirect" in `spec/locales-for-global-sharing-with-svelte/`; `/en-gb/` when nothing else applies)
 rather than showing the locale picker, since the picker page itself is where
 search lives — a server-side redirect would drop the query string and break
 search. The redirect only fires when there's no query to preserve; with one,
