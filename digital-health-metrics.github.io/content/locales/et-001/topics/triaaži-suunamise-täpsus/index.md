@@ -1,46 +1,49 @@
 # Triaaži Suunamise Täpsus
 
-Triaaži suunamise täpsus on patsiendikontaktide osakaal, mille puhul automatiseeritud või AI-toega triaažitööriist suunab patsiendi õigesti õigele hooldustasemele ja -kohta — näiteks enesehooldus, esmatasandi arstiabi, erakorralise meditsiini osakond mitte-eluohtlike seisundite jaoks või kiirabi — hinnatuna kliiniliselt valideeritud võrdlusstandardi alusel. See on ohutuse ja tõhususe mõõdik iga digitaalse juurdepääsuvärava, sümptomikontrollija või AI-triaažisüsteemi jaoks: kogu tööriista väärtuspakkumine põhineb patsientide õigel, kiirel ja järjepideval suunamisel.
+Triaaži suunamise täpsus on patsiendikontaktide osakaal, mille puhul automatiseeritud või tehisintellekti toel töötav triaažitööriist suunab patsiendi õigesti sobivale ravitasemele ja -kohale – näiteks eneseabi, perearstiabi, kiirabi või erakorraline ravi –, hinnatuna kliiniliselt valideeritud võrdlusstandardi vastu. See on iga digitaalse esimese kontakti, sümptomikontrolli või tehisintellekti triaažisüsteemi ohutuse ja tõhususe mõõdik: tööriista kogu väärtuspakkumine põhineb patsientide õigel, kiirel ja järjepideval suunamisel.
 
 ## Miks see on oluline
 
-Ebatäpne triaažitööriist tekitab kahju mõlemas suunas: alatriaaž (patsiendi suunamine madalamale hooldustasemele kui vajalik) võib edasi lükata tegeliku erakorralise olukorra ravi, samas kui ületriaaž (patsiendi suunamine kõrgemale hooldustasemele kui vajalik) raiskab napi erakorralise ja kiirabi võimsuse ning suurendab kulusid ja patsiendi ärevust ilma kliinilise kasuta. Kuna neil kahel rikke tüübil on nii erinevad tagajärjed, tuleb triaaži suunamise täpsust alati esitada koos vigade suunaga, mitte ühe koondtäpsuse näitajana, mis varjab, kas tööriist eksib ohutult või ohtlikult. Regulaatorid ja tervishoiusüsteemid, kes hindavad AI-triaažitööriista kasutuselevõtuks, nõuavad üha enam sellist kihilist täpsuse aruandlust kliinilise heakskiidu tingimusena, eriti tööriistade puhul, mis töötavad teatud iseseisvusega klinitsistist.
+Ebatäpne triaažitööriist põhjustab kahju mõlemas suunas: alatriaaž (patsiendi suunamine madalamale ravitasemele, kui ta vajab) võib viivitada tegeliku hädaolukorra ravi, samas kui ülitriaaž (patsiendi suunamine kõrgemale ravitasemele, kui ta vajab) raiskab napi erakorralise ja kiirabi võimekuse ning suurendab kulusid ja patsiendi ärevust ilma kliinilise kasuta. Kuna nendel kahel tõrketüübil on nii erinevad tagajärjed, tuleks triaaži suunamise täpsust alati esitada koos vigade suunaga, mitte ühe koondtäpsuse näitajana, mis varjab, kas tööriist eksib ohutul või ohtlikul viisil. Regulaatorid ja tervishoiusüsteemid, kes hindavad tehisintellekti triaažitööriista kasutuselevõttu, nõuavad üha enam seda laadi kihistatud täpsusaruandlust kliinilise heakskiidu tingimusena, eriti tööriistade puhul, mis tegutsevad kliinikust mingil määral sõltumatult.
 
 ## Kuidas seda arvutatakse
 
 ```
-Triaaži suunamise täpsus = õigesti suunatud patsiendikontaktid /
-                           patsiendikontaktid kokku, mida hinnati
-                           võrdlusstandardi alusel × 100
+Triaaži suunamise täpsus = õigesti suunatud kontaktid / triaažitud
+                           kontaktid kokku × 100
 
-Esitage alati vigade suund eraldi:
-  Alatriaaži määr  = patsiendikontaktid suunatud madalamale
-                     hooldustasemele kui võrdlusstandard näitab /
-                     patsiendikontaktid kokku × 100
-  Ületriaaži määr  = patsiendikontaktid suunatud kõrgemale
-                     hooldustasemele kui võrdlusstandard näitab /
-                     patsiendikontaktid kokku × 100
+Esitage alatriaaž ja ülitriaaž eraldi:
+  Alatriaaži määr = kontaktid, mis on suunatud võrdlusstandardist
+                    madalamale kiireloomulisuse tasemele /
+                    triaažitud kontaktid kokku × 100
+  Ülitriaaži määr = kontaktid, mis on suunatud võrdlusstandardist
+                    kõrgemale kiireloomulisuse tasemele /
+                    triaažitud kontaktid kokku × 100
+
+Võrdlusstandard on tavaliselt sama juhtumi tagasivaatav kliiniku
+ülevaatus, mis on võimaluse korral tööriista väljundi suhtes
+pimendatud.
 ```
 
 ## Läbitöötatud näide
 
-AI-põhine sümptomikontrollija hindab valideerimisuuringus 2000 patsiendikontakti klinitsisti hinnatud võrdlusstandardi alusel. Neist suunab tööriist 1800 õigesti (90% koondtäpsus), kuid 200 vea jaotamine paljastab, et 150 olid alatriaaž (patsient oleks pidanud saama suunatud kõrgemale hooldustasemele, kuid saadeti madalamale) ja ainult 50 olid ületriaaž. Need 150 alatriaaži juhtumit — 7,5% koguvalimist — esindavad kliiniliselt murettekitavamat vea tüüpi, ning kliiniline ülevaatus paljastab, et need mõjutavad ebaproportsionaalselt patsiente, kellel on ebatüüpilised sümptomite esitlused, oluline ohutuspiirang, mida 90% koondtäpsuse näitaja täielikult varjas.
+Tehisintellekti sümptomikontrolli tööriist triaažib kuu jooksul 5000 patsiendikontakti. Pimendatud kliiniku ülevaatus 500 sellisest kontaktist koosnevast juhuvalimist leiab, et 430 suunati õigele kiireloomulisuse tasemele (täpsus 86%), 45 alatriaažiti (9%) ja 25 ülitriaažiti (5%). 9% alatriaaži määr on näitaja, mis vajab kõige kiireloomulisemalt uurimist, kuna see esindab kontakte, kus patsient võidi suunata vähem kiireloomulisele ravile, kui ta tegelikult vajas; 5% ülitriaaži määr on võimekuse ja kulu mure, kuid mitte otsene ohutusmure.
 
 ## Andmeallikad ja hoiatused
 
-Usaldusväärse võrdlusstandardi loomine nõuab tavaliselt klinitsisti hinnatud ülevaadet tegelike patsiendikontaktide esindusliku valimi kohta, kas prospektiivselt või retrospektiivselt, ning selle võrdlusstandardi kvaliteet on otsustav tegur, kui tähenduslik täpsuse mõõdik üldse on. Triaažitööriist, mida valideeritakse ainult sünteetilisel või kureeritud testikomplektil, näitab sageli kõrgemat täpsust kui see, mis saavutatakse tegelikel, mitmetähenduslikel patsiendi esitlustel, seega tuleb valideerimismetoodika esitada koos täpsusnäitajaga, et seda korrektselt hinnata.
+Võrdlusstandard, mille vastu triaaži täpsust mõõdetakse, on äärmiselt oluline: ühe kliiniku ülevaatus toob kaasa selle kliiniku enda otsustusvariatsiooni, mistõttu usaldusväärne täpsusnäitaja nõuab tavaliselt kas mitut sõltumatut hindajat dokumenteeritud hindajatevahelise kokkuleppega või võrdlust järgneva, kinnitatud kliinilise tulemusega (millist ravi patsient tegelikult vajas, tuvastatud tagantjärele). Ka valimi moodustamine on oluline: ainult mugavusvalimi kontaktide või ainult ebatavaliseks märgitud kontaktide ülevaatamine ei anna näitajat, mis üldistuks tööriista üldisele toimimisele. Täpsusnäitajaid tuleks esitada eraldi esitatud sümptomi või kaebuse kategooria kaupa, kui aluseks olevate juhtude maht seda lubab, kuna triaažitööriistad toimivad harva kõigi seisundite puhul ühtlaselt.
 
 ## Lõksud
 
-- **Valideerimine ainult retrospektiivsete, lihtsate andmetega**: tööriista tegelik suunamise täpsus elavate, mitmetähenduslike patsiendi sisendite puhul erineb sageli oluliselt täpsusest kureeritud valideerimiskomplektil, mis loodi arenduse käigus.
-- **Ühe koondtäpsuse näitaja esitamine ilma vigade suunata**: see varjab, kas tööriist eksib ohutuse (ületriaaž) või ohu (alatriaaž) suunas, mis on kõige olulisem eristus patsiendiohutuse jaoks.
-- **Madala kvaliteediga võrdlusstandardi kasutamine**: kui võrdlusstandard ise on ebausaldusväärne või ebajärjekindel, mõõdab täpsusmõõdik parimal juhul kooskõla vigase standardiga, mitte tõelist kliinilist õigsust.
-- **Alamrühma tulemuslikkuse ignoreerimine**: tööriist võib saavutada hea koondtäpsuse, eksides samal ajal süstemaatiliselt teatud patsiendipopulatsioonide või sümptomite esitluste puhul; jaotamine demograafia ja esitluse tüübi järgi paljastab varjatud ohutusauke.
+- **Ühe segatud täpsusnäitaja esitamine**: alatriaaži ja ülitriaaži ühte arvu kokku koondamine varjab, kas tööriista vead kalduvad ohtlikuma tõrketüübi poole; esitage need alati eraldi.
+- **Ühe, pimendamata hindaja kasutamine võrdlusstandardina**: see võib täpsusnäitaja vaikselt kallutada selle poole, mida see hindaja ise oleks teinud, mitte sõltumatu kliinilise standardi poole.
+- **Valideerimine ainult tagasivaatavatel, mugavatel andmetel**: tööriista tegelik suunamistäpsus reaalse, ebaselge patsiendisisendi korral erineb sageli oluliselt selle täpsusest arenduse käigus koostatud kureeritud valideerimiskomplektil.
+- **Toimivuse triivi tähelepanuta jätmine pärast kasutuselevõttu**: tehisintellekti triaažimudeli täpsus võib aja jooksul halveneda, kui patsiendipopulatsioonid, esinevad sümptomid või ravitee kättesaadavus muutuvad; täpsust tuleks korduvalt uuesti mõõta, mitte valideerida üks kord ja eeldada stabiilsust.
 
 ## Allikad
 
-- Agency for Healthcare Research and Quality (AHRQ), diagnostilise täpsuse ja triaaži ohutuse uuringud
-- FDA raamistik tarkvara kui meditsiiniseadme (SaMD) kohta, kliinilise valideerimise juhised AI-triaažitööriistadele
-- Eelretsenseeritud kirjandus AI-triaaži täpsuse kohta, näiteks uuringud, mis on avaldatud ajakirjades npj Digital Medicine ja BMJ Health & Care Informatics
+- ONC / HealthIT.gov, kliinilise otsusetoe ja tehisintellektil põhinevate tööriistade ohutuse ning kvaliteedi tagamise juhised
+- Eelretsenseeritud kirjandus sümptomikontrollijate ja tehisintellekti triaažitööriistade täpsuse kohta, näiteks ajakirjades JAMIA, npj Digital Medicine ja BMJ Health & Care Informatics avaldatud uuringud
+- NHS England, digitaalsete triaaži- ja kaugkonsultatsioonitööriistade kliinilise ohutuse juhised (DCB0129/DCB0160 kliinilise riskijuhtimise standardid)
 
-Vaata ka: [digitaalse suunamise läbimisaeg](../digitaalse-suunamise-läbimisaeg/), protsessimõõdik, mis asub triaažiotsuse suhtes kõige otsesemalt allavoolu.
+Vaata ka: [digitaalse suunamise läbimisaeg](../digitaalse-suunamise-läbimisaeg/), protsessimõõdik, mis asub triaažiotsusest otse allavoolu.

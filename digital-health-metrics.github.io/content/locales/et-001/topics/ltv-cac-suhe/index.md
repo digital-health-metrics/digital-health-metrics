@@ -1,44 +1,43 @@
 # LTV-CAC Suhe
 
-LTV-CAC suhe võrdleb patsiendi eluaegset väärtust (koguv tulu, mida organisatsioon eeldab patsiendilt saada kogu nende suhte vältel) tegeliku kuluga selle patsiendi hankimiseks, andes kõige põhilisema üksiktesti selle kohta, kas digitaalse tervise ärimudel on tegelikult jätkusuutlik. Suhe 3:1 — kus patsiendi eluaegne väärtus on kolm korda suurem kui nende hankimise kulu — on laialdaselt tsiteeritud jätkusuutlik baastase tellimus- ja patsiendipõhiste ärimudelite puhul.
+LTV-CAC suhe võrdleb kliendi eluaegset väärtust (LTV) – kogutulu või -marginaali, mida organisatsioon eeldab patsiendilt või kliendilt kogu tema suhte jooksul tootega teenivat – selle kliendi hankimise tegeliku kuluga (vt tegelik kliendi hankimise kulu). See on üks kõige olulisem ühikumajanduse mõõdik, mille abil hinnata, kas digitaaltervise organisatsiooni kasv on rahaliselt jätkusuutlik, kuna kahjumiga hangitud kasvav kliendibaas ei ole tervise märk, olenemata sellest, kui positiivne kasvukõver välja näeb.
 
 ## Miks see on oluline
 
-Ettevõte võib näidata muljetavaldavat kasvu uute patsientide registreerumistes, kaotades samal ajal raha iga üksiku patsiendi pealt, kui hankimiskulud ületavad tulu, mida iga patsient tegelikult genereerib — olukord, mis võib kesta pikka aega avastamata, kui organisatsioon jälgib ainult registreerumiste kasvu, võrdlemata seda hankimise majandusega. LTV-CAC suhe sunnib seda võrdlust selgesõnaliselt esile, andes investoritele, juhatustele ja juhtkonna meeskondadele ühe arvu, et hinnata, kas kasvav ettevõte tegelikult liigub jätkusuutliku kasumlikkuse poole või lihtsalt põletab kapitali kiiremini kasvades. Kuna nii LTV kui ka CAC nõuavad hoolikat, ausat arvutust, et olla tähendusrikkad (vt vastavaid artikleid kummagi kohta), on usaldusväärne LTV-CAC suhe ainult nii hea kui tema kahe aluseks oleva sisendi täpsus.
+Digitaaltervise organisatsioon võib oma kasutajaskonda järjepidevalt kasvatada, hävitades samal ajal vaikselt väärtust iga uue kliendi pealt, kui hankimiskulu ületab eluaegset väärtust; LTV-CAC suhe on mõõdik, mis teeb selle nähtavaks viisil, mida kasvumäär või kliendiarv üksi ei suuda. Suhe 3:1 (eluaegne väärtus vähemalt kolm korda hankimiskulu) on laialdaselt viidatud lähtejoone võrdlusalus jätkusuutliku tellimus- või korduvtuluga ettevõtte jaoks, andes piisavalt marginaali, et katta hankimisest kaugemale ulatuvad tegevuskulud ja siiski teenida tulu; suhe alla 1:1 tähendab, et organisatsioon kaotab raha iga hangitud kliendi pealt, ja suhe kaugelt üle 3:1 (näiteks 10:1 või kõrgem) võib tegelikult viidata alainvesteerimisele kasvu, kuna see viitab, et organisatsioon võiks kasumlikult hankida rohkem kliente kui praegu. Investorid, nõukogud ja maksjad, kes hindavad digitaaltervise ettevõtte rahalist jätkusuutlikkust, käsitlevad seda suhet ühe esimese arvuna, mida nad küsivad.
 
 ## Kuidas seda arvutatakse
 
 ```
-LTV-CAC suhe = patsiendi eluaegne väärtus / tegelik kliendi
-              hankimise kulu
+LTV = keskmine tulu (või marginaal) kliendi kohta perioodis × keskmine
+      kliendi eluiga samas perioodiühikus
 
-Patsiendi eluaegne väärtus = keskmine tulu patsiendi kohta perioodi
-                             kohta × keskmine patsiendi eluiga
-                             (1 / väljalangemise määr)
+LTV-CAC suhe = LTV / tegelik CAC
 
-Suhe 3:1 on laialdaselt tsiteeritud jätkusuutlik baastase; suhe alla
-1:1 näitab, et iga uus patsient maksab hankimiseks rohkem, kui nad
-kunagi tulu genereerivad — kohe jätkusuutmatu positsioon.
+Suhe 3:1 on üldiselt viidatud jätkusuutlik lähtejoon; alla 1:1
+näitab, et organisatsioon kaotab hankimisel raha; kaugelt üle 3:1
+(nt 10:1+) võib viidata alainvesteerimisele kasvu.
 ```
 
 ## Läbitöötatud näide
 
-Digitaalne terviseteenuse tellimusteenus genereerib keskmiselt 20 dollarit tulu patsiendi kohta kuus, kuise väljalangemise määraga 4%, andes keskmise patsiendi eluea 25 kuud (1 / 0,04) ja eluaegse väärtuse 500 dollarit (25 kuud × 20 dollarit). Kui ettevõtte tegelik kliendi hankimise kulu, täielikult koormatud kõigi turundus- ja müügikuludega, on 150 dollarit, on LTV-CAC suhe 500/150 = 3,3:1 — veidi üle laialdaselt tsiteeritud jätkusuutliku baastaseme 3:1. Kui ettevõte oleks selle asemel kasutanud mitte-täielikult-koormatud CAC-i ainult 80 dollariga (ainult otsesed reklaamikulud), oleks teatatud suhe olnud eksitavalt optimistlik 6,25:1, illustreerides, miks aluseks oleva CAC arvutuse täpsus on ülioluline.
+Digitaaltervise tellimusteenus teenib keskmiselt 40 dollarit kuutulu patsiendi kohta ja keskmine patsient jääb tellijaks 18 kuuks, mis annab LTV-ks 40 dollarit × 18 = 720 dollarit. Selle teenuse tegelik CAC (vt selle teema läbitöötatud näite lähenemisviisi) on arvutatud 180 dollarit hangitud patsiendi kohta. LTV-CAC suhe on 720 dollarit / 180 dollarit = 4:1, mugavalt üle 3:1 jätkusuutlikkuse lähtejoone. Kui tegelik CAC oleks arvutatud ainult reklaamiplatvormi esitatud kulu (120 dollarit, enne agentuuritasude ja vastuvõtu tööjõu lisamist) põhjal, paistaks suhe 6:1 – ühikumajanduse oluliselt soodsam ja eksitavam pilt kui tegelik 4:1 näitaja.
 
 ## Andmeallikad ja hoiatused
 
-LTV-CAC suhe on usaldusväärne ainult niivõrd, kui selle kaks aluseks olevat sisendit; kunstlikult madal CAC (ebatäieliku kuluarvestuse tõttu) või kunstlikult kõrge LTV (optimistlike väljalangemise eelduste tõttu) mõlemad tekitavad eksitavalt soodsa suhte. Väljalangemise määrad ja seega LTV võivad varieeruda oluliselt patsiendikohortide, hankimiskanalite ja registreerumisest möödunud aja järgi, mis tähendab, et üks koond LTV näitaja võib varjata olulist varieeruvust, mis on asjakohane konkreetsete hankimiskanalite või patsiendisegmentide kohta otsuste tegemisel.
+LTV sõltub eeldusest keskmise kliendi eluea kohta, mis ise tuletatakse organisatsiooni enda püsimuse või väljalangemise andmetest (vt kasutajate püsimuse määr) – kõrge väljalangemisega ettevõttel on lühem efektiivne keskmine eluiga ja seega madalam LTV, isegi kui tulu kliendi kohta perioodis näib terve. Kuna LTV on tulevikku suunatud hinnang, mitte jälgitud ajalooline fakt, tuleks see regulaarselt ümber arvutada, kui püsimuse andmed koguneb, ja läbi vaadata, kui väljalangemise eeldused osutuvad valeks, mitte kord fikseerida ja aegunuks jätta. Platvormi esitatud CAC kasutamine tegeliku CAC asemel selles suhtes on üks levinumaid viise, kuidas organisatsioon saab end veenda, et tema ühikumajandus on tervem, kui see tegelikult on, kuna alahinnatud CAC suurendab suhet mehaaniliselt.
 
 ## Lõksud
 
-- **Mitte-täielikult-koormatud CAC-i kasutamine**: see tekitab kunstlikult soodsa suhte, mis ei peegelda tegelikku ärimajandust; kasutage alati tegelikku CAC-i, mis hõlmab kõiki hankimisega seotud kulusid.
-- **Optimistlike väljalangemise eelduste kasutamine LTV jaoks**: LTV arvutus, mis põhineb parima juhtumi väljalangemise määral, mitte tegelikult täheldatud väljalangemisel, ülehindab eluaegset väärtust.
-- **Ühe koondsuhte esitamine ilma jaotamiseta**: LTV-CAC võib varieeruda dramaatiliselt hankimiskanali või patsiendisegmendi järgi; terve koondsuhe võib varjata jätkusuutmatuid üksikuid kanaleid.
-- **Tagasimakse ajaraami ignoreerimine**: 5 aasta jooksul saavutatud 3:1 suhe on palju vähem atraktiivne kui sama suhe saavutatud 1 aasta jooksul, kapitalikulude ja riski tõttu; kaaluge alati tagasimakseperioodi koos suhtega.
+- **Platvormi esitatud CAC kasutamine tegeliku CAC asemel**: see suurendab suhet mehaaniliselt ja võib panna jätkusuutmatu hankimisstrateegia tunduma jätkusuutlik; kasutage alati täielikult koormatud tegeliku CAC näitajat.
+- **Aegunud või optimistliku keskmise kliendi eluea eelduse kasutamine**: aegunud püsimuskõverast arvutatud LTV ei peegelda praegust väljalangemiskäitumist, eriti pärast toote, hinna või turu muutust, mis nihutab püsimust.
+- **Väga kõrge suhte käsitlemine üheselt heana**: suhe kaugelt üle 3:1 võib viidata alainvesteerimisele kasvu, mitte erakordsele tõhususele, kuna see tähendab, et organisatsioon võiks tõenäoliselt kasumlikult hankida rohkem kliente kui praegu.
+- **Ühe segatud suhte arvutamine väga erinevate klientide segmentide lõikes**: kõrge tulu ja madala väljalangemisega segment võib varjata teist segmenti halva ühikumajandusega; arvutage suhe sisuka segmendi kaupa (nt hankimiskanali või tootesarja järgi), kui maht seda lubab.
 
 ## Allikad
 
-- SaaS- ja tellimusäri tööstusstandardid LTV-CAC võrdlusuuringuteks
-- Eelretsenseeritud ja tööstuskirjandus digitaalse tervise kasvumajanduse kohta, näiteks analüüsid, mis on avaldatud Rock Health'i ja sarnaste digitaalse tervise uurimisorganisatsioonide poolt
+- Eelretsenseeritud ja tööstuskirjandus tellimus- ja korduvtulu ühikumajanduse kohta, riskikapitali ja SaaS-mõõdikute uurimisorganisatsioonide laialdaselt kasutatavad võrdlusanalüüsi raamistikud
+- Healthcare Financial Management Association (HFMA), digitaaltervise organisatsioonide rahalise jätkusuutlikkuse mõõdikute juhised
+- Rock Health ja sarnased digitaaltervise turu-uuringute organisatsioonid, digitaaltervise ühikumajanduse tööstuse võrdlusanalüüs
 
-Vaata ka: [tegelik kliendi hankimise kulu](../tegelik-kliendi-hankimise-kulu/) ja [turunduse tõhususe suhe](../turunduse-tõhususe-suhe/), kaks teist kasvumajanduse põhimõõdikut, millega koos seda suhet tavaliselt esitatakse.
+Vaata ka: [tegelik kliendi hankimise kulu](../tegelik-kliendi-hankimise-kulu/) ja [turunduse tõhususe suhe](../turunduse-tõhususe-suhe/), kaks teist põhilist kasvumajanduse mõõdikut, mille kõrval seda suhet tavaliselt esitatakse.

@@ -1,47 +1,50 @@
 # Biomeetrilise Stabiliseerumise Määr
 
-Biomeetrilise stabiliseerumise määr mõõdab nende patsientide osakaalu, kes säilitavad jälgitava biomeetrilise näitaja kliinilises sihtvahemikus pideva perioodi jooksul, erinevalt biomeetrilise paranemise määrast, mis mõõdab ühekordset muutust algtasemest. See eksisteerib, kuna üksik paranenud mõõtmine ei tõesta püsivat kontrolli — patsient võib näidata head väärtust ühel järelkontrollivisiidil ja seejärel tagasi libiseda, ning just püsiv stabiliseerumine aja jooksul ennustab tegelikult paremaid pikaajalisi kliinilisi tulemusi.
+Biomeetrilise stabiliseerumise määr on kaasatud patsientide osakaal, kes saavutavad ja säilitavad biomeetrilise näitaja kliiniliselt määratletud sihtvahemiku – kõige sagedamini vererõhu allpool lävendit, näiteks 130/80 mmHg – ühendatud seireseadme abil pikema aja jooksul, mitte ühel ajahetkel. See erineb biomeetrilise paranemise määrast (vt see teema): paranemine mõõdab muutuse suurust lähtejoonest, samas kui stabiliseerumine mõõdab, kas patsient püsib pärast ravi või seire algust usaldusväärselt ohutus vahemikus, mis on kõige olulisem tulemus patsientide jaoks, kes on sihtväärtusele juba lähedal või juba ravil.
 
 ## Miks see on oluline
 
-Kroonilised seisundid, nagu diabeet ja hüpertensioon, nõuavad püsivat kontrolli, mitte ühte head mõõtmist, et vähendada tüsistuste riski, mis tähendab, et digitaalne terviseprogramm, mis esitab paranemist ainult ühes järelkontrolli ajapunktis, võib maalida mittetäieliku või isegi eksitava pildi oma kliinilisest mõjust. Biomeetrilise stabiliseerumise määr sunnib hindamist vaatama patsiendi kogu andmete kulgu, mitte ühte hetkepilti, muutes selle rangemaks ja kliiniliselt tähendusrikkamaks testiks selle kohta, kas programm pakub püsivat väärtust. See on eriti oluline programmide jaoks, mis õigustavad jätkuvaid tellimus- või liikmemakse, kuna püsiva kaasatuse väärtuspakkumine sõltub püsiva, mitte ainult esialgse kasu demonstreerimisest.
+Suure osa krooniliste haiguste programmides osalevate patsientide jaoks – eriti hüpertensiooni puhul, kus vererõhu sihtväärtused on juhistes hästi paika pandud ja otseselt seotud kardiovaskulaarse riskiga – ei ole kliiniline eesmärk ühekordne paranemine, vaid püsiv kontroll, ning patsient, kes kõigub sihtvahemikku sisse ja sealt välja, kujutab endast oluliselt erinevat riski kui see, kes paraneb korra ja jääb sinna. Ühendatud seadmed (mobiilsidega vererõhumansetid, pidevad glükoosimonitorid) võimaldavad stabiliseerumist mõõta pidevalt, mitte ainult kliinikuvisiitidel, tuues esile patsiendid, kelle kliinikus tehtud mõõtmised näivad kontrollitud, kuid kelle kodused näidud on ebastabiilsed – mustrit, mida nimetatakse maskeeritud hüpertensiooniks ja mida perioodiline silmast silma mõõtmine üksi tuvastada ei suuda. Stabiliseerumise määra esitamine, mitte ainult ühe "sihtväärtusel" hetktõmmise esitamine, sunnib programmi silmitsi seisma sellega, kui järjepidevalt, mitte ainult kui sageli, ta patsiente vahemikus hoiab.
 
 ## Kuidas seda arvutatakse
 
 ```
-Biomeetrilise stabiliseerumise määr = patsiendid, kes säilitavad
-                                      biomeetrilise näitaja
-                                      sihtvahemikus kõigi
-                                      planeeritud mõõtmiste juures
-                                      määratletud perioodi jooksul /
-                                      patsiendid kokku, kellel on
-                                      täielikud planeeritud mõõtmised
-                                      × 100
+Biomeetrilise stabiliseerumise määr = patsiendid, kellel ≥ 80% näitudest
+                                      jääb mõõteperioodi jooksul
+                                      sihtvahemikku / patsiendid, kellel
+                                      on selles perioodis minimaalne arv
+                                      kehtivaid näite × 100
 
-See nõuab mitut andmepunkti patsiendi kohta aja jooksul, mitte ainult
-algtaset ja ühte järelkontrolli — tavaliselt vähemalt kolm mõõtmist
-kuue kuni kaheteistkümne kuu jooksul, sõltuvalt seisundist.
+Näited lävenditest:
+  Vererõhk — siht < 130/80 mmHg (või patsiendi riskiprofiilile
+             kohaldatav kliinilise juhise lävend)
+  Glükoos  — sihtvahemik pideva glükoosimonitooringu juhise kohaselt,
+             esitatud kui "aeg vahemikus"
+
+Enne patsiendi lisamist nimetajasse tuleks kehtestada minimaalne
+mõõtmissageduse lävend (nt vähemalt 3 näitu nädalas), et vältida
+harva mõõtvate patsientide kunstlikku stabiilsena paistmist.
 ```
 
 ## Läbitöötatud näide
 
-Hüpertensiooni haldamise programm jälgib 300 patsiendi vererõhku kaheteistkümne kuu jooksul kvartaalsete mõõtmistega (neli andmepunkti patsiendi kohta). Neist 180 patsiendil on kõik neli mõõtmist kliinilises sihtvahemikus, andes biomeetrilise stabiliseerumise määraks 60%. Eraldi analüüs näitab, et veel 90 patsienti saavutasid hea mõõtmise vähemalt ühel ajapunktil, kuid langesid vahemikust välja vähemalt ühel teisel ajapunktil — need patsiendid loeksid "paranenuks" lihtsa algtaseme-järelkontrolli mõõtmise all, kuid paljastavad oluliselt vähem veenva loo, kui arvestada nende kogu kulgu, näidates täpselt sellist varjatud varieeruvust, mille jaoks stabiliseerumise mõõdik on loodud.
+Hüpertensiooni kaugjälgimise programm kaasab 600 patsienti mobiilsidega vererõhumansettidega, kellelt oodatakse vähemalt 3 näitu nädalas. Neist 540 vastab 3-kuulise mõõteperioodi jooksul minimaalse mõõtmissageduse lävendile ja kaasatakse nimetajasse. Nendest 540-st on 350 patsiendil vähemalt 80% näitudest allpool 130/80 mmHg, mis annab biomeetrilise stabiliseerumise määraks 350 / 540 × 100 = 65%. Ebapiisavate näitude tõttu välja jäetud 60 patsienti esitatakse eraldi andmete täielikkuse lünkana, mitte ei liideta ei lugejasse ega "stabiliseerumata" rühma, kuna nende tegelik kontrolli seisund on tõepoolest teadmata, mitte halb.
 
 ## Andmeallikad ja hoiatused
 
-Stabiliseerumise mõõtmine nõuab järjepidevaid, regulaarselt planeeritud mõõtmisi iga patsiendi jaoks aja jooksul, mis tähendab, et programmidel, kus mõõtmiste planeerimine on ebaregulaarne või patsiendi algatusel, on seda mõõdikut raskem usaldusväärselt arvutada, ning puuduvaid mõõtmisi tuleb käsitleda selgesõnaliselt (kas nimetajast välja jättes või ebaõnnestumisena käsitledes), mitte vaikimisi ignoreerides. Kliiniline sihtvahemik ja nõutav järjepidevate mõõtmiste arv tuleks kehtestada väljakujunenud kliiniliste juhiste alusel konkreetse seisundi jaoks, mitte valida tagantjärele soodsa arvu tootmiseks.
+Näidud pärinevad otse ühendatud seadme enda andmevoost, mis on objektiivsem ja palju sagedasem kui kliinikus tehtav mõõtmine, kuid seadme paigutuse ja tehnika vead (valesti valitud suurusega või valesti asetatud vererõhumansett) võivad tuua kaasa süstemaatilise nihke, mida üksik kliinikus tehtud valideerimismõõtmine ei pruugi tabada. Sihtvahemiku valik peaks järgima patsiendi konkreetsele riskiprofiilile ja kaasuvatele haigustele kohaldatavat kehtivat kliinilist juhist, mitte ühte universaalset lävendit, kuna juhiste sihtväärtused erinevad patsiendi vanuse, neerufunktsiooni ja kardiovaskulaarse riski järgi. Harva mõõtvat patsienti ei tohiks kunagi vaikimisi "stabiilsena" lugeda; tema nimetajast välja jätmine koos väljajätmise läbipaistva esitamisega on ausam kui tema lugemine kontrollituks või kontrollimatuks liiga vähese andmestiku põhjal.
 
 ## Lõksud
 
-- **Ainult paranemise esitamine ilma stabiliseerumiseta**: ühekordne paranemine algtasemest ei tõesta püsivat kontrolli; mõlemad mõõdikud tuleks esitada koos täieliku pildi saamiseks.
-- **Puuduvate mõõtmistega patsientide vaikimisi väljajätmine**: planeeritud mõõtmise vahele jätnud patsientide nimetajast väljajätmine võib kunstlikult tõsta stabiliseerumise määra, kui puuduvad mõõtmised tulevad ebaproportsionaalselt halvemini toimetulevatelt patsientidelt.
-- **Liiga lühikese mõõtmisperioodi kasutamine**: "stabiliseerumise" väljakuulutamiseks ainult kahe andmepunkti nõudmine ei taba varieeruvust, mida pikem periood paljastaks.
-- **Üldise sihtvahemiku kasutamine kliiniliselt kehtestatud asemel**: sobiv stabiliseerumisvahemik varieerub seisundi, patsiendi vanuse ja kaasuvate haiguste järgi; üldine vahemik võib nii üle- kui alahinnata tegelikku kliinilist kontrolli.
+- **Ühe vahemikus oleva näidu käsitlemine stabiliseerumisena**: stabiliseerumine tähendab püsivat kontrolli määratletud perioodi jooksul, mitte hetktõmmist; nõudke alati vahemikus olevate näitude minimaalset osakaalu selle perioodi jooksul, mitte ühte sobivat mõõtmist.
+- **Harva mõõtvate patsientide vaikimisi välja jätmine ilma sellest teatamata**: patsiendid, kes mõõdavad harva, ei ole automaatselt stabiilsed ega ebastabiilsed; jätke nad nimetajast läbipaistvalt välja ja esitage väljajätmise määr eraldi andmete täielikkuse mõõdikuna.
+- **Seadme kalibreerimise ja tehnikavigade tähelepanuta jätmine**: halvasti istuv mansett või kalibreerimata seade võib näite süstemaatiliselt ühes suunas nihutada, mida toorestest seadmeandmetest naiivselt arvutatud stabiliseerumise määr perioodilise valideerimiseta ei tabagi.
+- **Ühe universaalse sihtvahemiku kasutamine kõigi patsientide puhul**: kliiniliste juhiste sihtväärtused varieeruvad patsiendi riskiprofiili ja kaasuvate haiguste järgi; ühe üldise lävendi kohaldamine kliiniliselt heterogeensele populatsioonile liigitab mõned patsiendid nende tegeliku individuaalse sihtväärtuse suhtes valesti stabiliseerunuks või stabiliseerumata.
 
 ## Allikad
 
-- American Heart Association, püsiva vererõhukontrolli juhised
-- American Diabetes Association, pikaajalise glükeemilise kontrolli standardid
-- Eelretsenseeritud kirjandus digitaalse kroonilise haiguse haldamise püsivate tulemuste kohta, näiteks uuringud, mis on avaldatud ajakirjades Diabetes Care ja Hypertension
+- American Heart Association (AHA) / American College of Cardiology (ACC), vererõhu juhiste sihtväärtused ja kodus vererõhu jälgimise juhised
+- International Diabetes Federation ja American Diabetes Association (ADA), pideva glükoosimonitooringu "aja vahemikus" konsensusjuhised
+- Eelretsenseeritud kirjandus biomeetrilise kaugjälgimise ja seisundi püsiva kontrolli kohta, näiteks ajakirjas npj Digital Medicine avaldatud uuringud
 
-Vaata ka: [biomeetrilise paranemise määr](../biomeetrilise-paranemise-määr/), seotud mõõdik muutuse ulatuse kohta algtasemest, erinevalt püsivast kontrollist pärast eesmärgi saavutamist.
+Vaata ka: [biomeetrilise paranemise määr](../biomeetrilise-paranemise-määr/), seotud mõõdik muutuse suuruse kohta lähtejoonest, erinevalt sihtväärtuse saavutamise järgsest püsivast kontrollist.

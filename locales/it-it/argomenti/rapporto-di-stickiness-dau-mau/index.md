@@ -1,42 +1,46 @@
 # Rapporto di Stickiness DAU/MAU
 
-Il rapporto di stickiness DAU/MAU è la metrica standard di analisi del prodotto per l'intensità del coinvolgimento in tutta la base utenti, calcolata come il rapporto tra utenti attivi giornalieri e utenti attivi mensili. Risponde a una domanda diversa dalla fidelizzazione: invece di chiedere se gli utenti rimangono iscritti nel tempo, chiede quanto spesso gli utenti che sono iscritti utilizzino effettivamente il prodotto in un dato mese.
+Il rapporto di stickiness DAU/MAU confronta gli utenti attivi giornalieri (DAU) con gli utenti attivi mensili (MAU), la stessa misura di base utilizzata per gli utenti attivi settimanali (WAU) rispetto ai MAU, per esprimere quale quota della più ampia base di utenti di un prodotto lo utilizza in un dato giorno. È la misura standard di analisi di prodotto dell'intensità del coinvolgimento, distinta dal fatto che un utente sia fidelizzato o meno (vedere il tasso di fidelizzazione degli utenti) o da quanto costantemente un paziente arruolato specifico si impegni nel tempo (vedere il tasso di costanza del coinvolgimento del paziente): la stickiness descrive il ritmo d'uso a livello di popolazione, non il comportamento di un singolo individuo.
 
 ## Perché è importante
 
-Un alto rapporto DAU/MAU indica che un prodotto è diventato parte della routine quotidiana di un utente, mentre un rapporto basso indica che gli utenti, sebbene tecnicamente "attivi" durante un mese, lo utilizzano solo occasionalmente. Per i prodotti di salute digitale che dipendono da un'interazione frequente per fornire valore — tracciamento quotidiano dei farmaci, monitoraggio continuo dei sintomi, stimoli quotidiani di salute comportamentale — questo rapporto è un indicatore diretto di se il prodotto raggiunga effettivamente la frequenza di utilizzo che il suo modello clinico presuppone. Un prodotto progettato per l'uso quotidiano ma che raggiunge un rapporto DAU/MAU equivalente all'uso di poche volte al mese probabilmente non sta fornendo il valore clinico che il suo design presuppone, indipendentemente da quanti utenti rimangano tecnicamente "iscritti".
+Due prodotti di salute digitale possono riportare un numero identico di utenti attivi mensili pur avendo un'intensità di coinvolgimento sottostante molto diversa: in uno la maggior parte di quegli utenti apre l'app quasi ogni giorno, nell'altro la maggior parte la apre una volta al mese, poco prima che altrimenti verrebbe contata come inattiva. Il rapporto di stickiness DAU/MAU distingue queste due situazioni molto diverse con un'unica cifra di riferimento semplice e ben compresa, che i team di prodotto e clinici possono monitorare nel tempo e confrontare con intervalli noti del settore: un rapporto intorno al 20% è un parametro ragionevole comunemente citato per molte app di consumo, mentre i prodotti basati su un'abitudine quotidiana (un diario alimentare o dei sintomi che il paziente dovrebbe usare ogni giorno) vanno giudicati con una soglia significativamente più alta. Poiché la stickiness è sensibile a come si definisce "attivo", è più utile come andamento nel tempo per un singolo prodotto e come confronto con prodotti costruiti per un modello d'uso simile, anziché come parametro assoluto trasversale ai settori.
 
 ## Come si calcola
 
 ```
-Rapporto di stickiness DAU/MAU = media utenti attivi giornalieri
-                                 in un mese / utenti attivi
-                                 mensili nello stesso mese
+Rapporto di stickiness DAU/MAU = utenti attivi giornalieri medi nel
+                                 periodo / utenti attivi mensili nello
+                                 stesso periodo × 100
 
-Espresso come percentuale: un rapporto del 50% indica che l'utente
-attivo mensile medio utilizza il prodotto per circa metà dei
-giorni del mese; un rapporto del 10% indica un utilizzo di circa 3
-giorni al mese.
+Il rapporto WAU/MAU (settimanale, stesso principio) è una variante più
+morbida, più adatta ai prodotti che ci si aspetta vengano usati alcune
+volte a settimana anziché ogni giorno.
+
+"Attivo" deve essere definito in modo preciso e coerente (ad es. un'azione
+idonea completata, non un'apertura passiva dell'app) sia nel numeratore
+sia nel denominatore.
 ```
 
 ## Esempio pratico
 
-Un'app digitale di gestione del diabete progettata per la registrazione quotidiana del glucosio ha 5.000 utenti attivi mensili in un dato mese, e il numero medio di utenti attivi giornalieri durante quel mese è 1.500, dando un rapporto di stickiness DAU/MAU del 30%. Poiché l'app è progettata sulla base di un modello clinico che presuppone una registrazione quotidiana per fornire approfondimenti tempestivi, un rapporto di stickiness del 30% (equivalente a circa 9 giorni di utilizzo al mese) solleva la questione se il prodotto stia effettivamente fornendo il suo valore clinico previsto per la maggior parte degli utenti, anche se il suo numero aggregato di utenti attivi mensili sembra sano. Questo ha spinto il team di prodotto a indagare quali specifici punti di attrito impediscano l'uso quotidiano.
+Un'app digitale per la gestione del diabete ha 10.000 utenti attivi mensili in un dato mese, definiti come qualsiasi utente che completa almeno un'azione idonea (una registrazione della glicemia, un pasto o la spunta di un farmaco) in quel mese. Mediando i conteggi giornalieri degli utenti attivi nei 30 giorni di quel mese si ottiene un DAU medio di 2.200. Il rapporto di stickiness DAU/MAU è 2.200 / 10.000 × 100 = 22%, il che indica che in un giorno tipico circa il 22% della base mensile di utenti dell'app la utilizza: una cifra ragionevole per uno strumento per condizioni croniche basato su un'abitudine quotidiana, anche se il team di prodotto vorrebbe vederla crescere nel tempo man mano che il comportamento ideale (la registrazione quotidiana) diventa più abituale per i pazienti arruolati.
 
 ## Fonti dei dati e avvertenze
 
-Il rapporto DAU/MAU è facile da calcolare da dati di analisi del prodotto standard, ma il suo benchmark appropriato varia enormemente in base al tipo di prodotto — un'app che crea abitudini quotidiane dovrebbe mirare a un rapporto molto più alto rispetto a un prodotto progettato per un uso occasionale, come uno per prenotare rare visite specialistiche. Confrontare un rapporto DAU/MAU tra prodotti con frequenze di utilizzo previste fondamentalmente diverse è quindi insignificante senza tenere conto di questo contesto.
+DAU, WAU e MAU sono tutti calcolati dagli stessi registri di eventi sottostanti, usando un'unica definizione coerente di evento "attivo idoneo" in ogni finestra; cambiare tale definizione tra il calcolo del numeratore e del denominatore (ad esempio contando qualsiasi apertura dell'app per i DAU ma solo un'azione completata per i MAU) produrrà un rapporto distorto che non riflette la reale intensità del coinvolgimento. Il parametro di riferimento appropriato per la stickiness dipende molto dal modello d'uso previsto del prodotto: uno strumento pensato per essere usato una volta a settimana (un controllo settimanale dei sintomi) avrà e dovrà avere un rapporto DAU/MAU inferiore rispetto a uno strumento pensato per l'uso quotidiano (un'app compagna di un monitor continuo del glucosio), per cui la stickiness va sempre interpretata rispetto alla cadenza d'uso prevista dal prodotto stesso, non a un unico obiettivo universale.
 
-## Errori comuni
+## Insidie
 
-- **Confrontare DAU/MAU tra prodotti con diverse frequenze di utilizzo previste**: un prodotto progettato per un uso raro avrà naturalmente un rapporto più basso di uno progettato per un uso quotidiano, senza che questo indichi prestazioni peggiori.
-- **Trattare un rapporto più alto come sempre migliore**: per alcuni tipi di prodotto, una frequenza di utilizzo molto alta può indicare un problema (ad esempio dipendenza eccessiva) piuttosto che un coinvolgimento sano.
-- **Ignorare la tendenza MAU sottostante**: un rapporto di stickiness stabile o in miglioramento con un numero MAU aggregato in calo può comunque indicare un prodotto in contrazione.
-- **Usare questa metrica isolatamente dalla fidelizzazione**: la stickiness misura l'intensità del coinvolgimento tra gli utenti attuali, non se i nuovi utenti continuino a iscriversi; entrambe le metriche sono necessarie per un quadro completo.
+- **Confrontare i rapporti di stickiness tra prodotti con diversa frequenza d'uso prevista**: uno strumento a uso settimanale mostrerà strutturalmente un rapporto DAU/MAU più basso di uno a uso quotidiano anche se entrambi funzionano esattamente come previsto per i rispettivi casi d'uso; confrontare con la cadenza prevista del prodotto stesso, non con un unico obiettivo universale.
+- **Usare definizioni di attività incoerenti tra numeratore e denominatore**: ciò può produrre un rapporto di stickiness che non riflette un coinvolgimento genuino e che non può essere confrontato in modo significativo nel tempo o con altri prodotti.
+- **Trattare un rapporto di stickiness in crescita come inequivocabilmente positivo senza verificare l'andamento complessivo dei MAU**: un rapporto in crescita dovuto a una base di utenti centrale più abituale ma in contrazione mentre i MAU complessivi calano è una situazione molto diversa, e più preoccupante, di una dovuta a un coinvolgimento quotidiano realmente crescente in una base di utenti stabile o in crescita.
+- **Ignorare gli effetti del giorno della settimana e stagionali sui DAU**: i DAU possono variare sensibilmente per giorno della settimana (giorni feriali rispetto al fine settimana) o stagione per molti prodotti di salute; mediare i DAU su un periodo che copra un ciclo naturale completo anziché su una finestra breve che potrebbe risultare distorta.
 
 ## Fonti
 
-- Standard del settore delle app mobili e dell'analisi di prodotto per la misurazione del coinvolgimento
-- Letteratura peer-reviewed e di settore sul coinvolgimento nella salute digitale, ad esempio analisi pubblicate da Rock Health e organizzazioni di ricerca sulla salute digitale simili
+- Letteratura di settore e sottoposta a revisione paritaria sulle metriche di coinvolgimento dei prodotti mobili e digitali, quadri di benchmarking largamente utilizzati dalle piattaforme di analisi mobile
+- Digital Therapeutics Alliance, linee guida di buone pratiche sulla misurazione del coinvolgimento per le terapie digitali
+- Letteratura sottoposta a revisione paritaria sulla misurazione del coinvolgimento nella salute digitale, ad esempio studi pubblicati sul Journal of Medical Internet Research (JMIR mHealth and uHealth)
 
-Vedi anche: [tasso di fidelizzazione degli utenti](../tasso-di-fidelizzazione-degli-utenti/), la metrica strettamente correlata se un paziente rimane iscritto, a differenza di quanto costantemente sia coinvolto mentre è iscritto.
+Vedere anche: [tasso di fidelizzazione degli utenti](../tasso-di-fidelizzazione-degli-utenti/) e [tasso di costanza del coinvolgimento del paziente](../tasso-di-costanza-del-coinvolgimento-del-paziente/), le due metriche di coinvolgimento correlate con cui questo rapporto viene più spesso confuso.

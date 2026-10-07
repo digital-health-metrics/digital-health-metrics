@@ -1,49 +1,49 @@
 # Ravimite Manustamise Järgimise Määr
 
-Ravimite manustamise järgimise määr mõõdab, mil määral patsient võtab väljakirjutatud ravimit ettenähtud viisil, tavaliselt väljendatuna kui nende päevade osakaal määratletud perioodis, mil patsiendil oli juurdepääs ravimile vastavalt väljakirjutusele. See on üks mõjukamaid digitaalse tervise mõõdikuid, kuna ravimite mittejärgimine on laialt levinud, suures osas ennetatav õige toega ning otseselt seotud halvemate kliiniliste tulemuste ja kõrgemate allavoolu kuludega — täpselt see lünk, mille täitmiseks on loodud ravimite meeldetuletusrakendused, nutikad pillikarbid ja apteegi kordustellimuste teatised.
+Ravimite manustamise järgimise määr mõõdab, mil määral patsient võtab ettenähtud ravimit nii, nagu on ette nähtud, kõige sagedamini väljendatuna nende päevade osakaaluna määratletud perioodil, mil patsiendil oli juurdepääs oma ravimile nii, nagu see oli välja kirjutatud. See on üks kõige tähtsamaid digitaaltervise mõõdikuid, kuna järgimatus on tavaline, suuresti õige toe abil välditav ning otseselt seotud halvemate kliiniliste tulemuste ja suuremate allavoolu kuludega – ning just seda lünka on ravimimeeldetuletuse rakendused, nutikad pillipudelid ja apteegi täiendusmeeldetuletused mõeldud sulgema.
 
 ## Miks see on oluline
 
-Ravimite mittejärgimine on seotud olulise osaga ennetatavatest haiglaravidest ja halvenenud krooniliste seisunditega, muutes selle üheks kõige mõõdetavamaks ja tegevusele suunatumaks digitaalse tervise sekkumise eesmärgiks. Erinevalt paljudest teistest digitaalse tervise tulemustest, mis nõuavad hindamiseks pikaajalist jälgimist, saab järgimist mõõta peaaegu reaalajas ühendatud pillikarpide, apteegi kordustellimuste andmete või elektrooniliste jälgimissüsteemide kaudu, võimaldades programmil tuvastada vähenevat järgimist ja sekkuda enne, kui see põhjustab kliinilise tulemuse. Kuna järgimine on nii tihedalt seotud allavoolu kuludega — patsient, kes ei võta oma vererõhuravimit, on suurendanud kalli erakorralise visiidi riski — on see ka üks kergemini kommunikeeritavaid ärijuhtumeid digitaalse tervise investeeringu jaoks rahastaja või tervishoiusüsteemi ees.
+Rahvatervise organisatsioonid hindavad, et krooniliste haiguste ravimite järgimatus võib mõne seisundi puhul ulatuda kuni 50%-ni ning see on välditavate hospitaliseerimiste, haiguse progresseerumise ja ravi ebaõnnestumise juhtiv välditav põhjus, mis omistatakse ekslikult ravimile endale, mitte ebaühtlasele kasutamisele. Digitaalsed järgimise tööriistad eksisteerivad spetsiaalselt selle lünga sulgemiseks, mistõttu on iga programmi puhul, mis sisaldab ravimikomponenti, järgimise määr tavaliselt kõige otsustussuhtelisem mõõdik: see asub põhjuslikult ülesvoolu biomeetrilisest paranemisest, taastuvastuvõtmisest ja enamikust teistest kliinilistest tulemusmõõdikutest, mida programm muidu esitada võiks. Programm, mis parandab kaasatust või rahulolu ilma järgimist liigutamata, ei ole tõenäoliselt veel näidanud usutavat mehhanismi kliiniliseks kasuks.
 
 ## Kuidas seda arvutatakse
 
 ```
-Ravimite manustamise järgimise määr = päevad, mil oli juurdepääs
-                                      ravimile vastavalt
-                                      väljakirjutusele / päevad
-                                      kokku mõõdetud perioodis
-                                      × 100
+Kaetud päevade osakaal (Proportion of Days Covered, PDC) = mõõteperioodi
+                                    päevad, mil ravim oli käepärast
+                                    (põhineb väljastuste päevavarul) /
+                                    mõõteperioodi päevad × 100
 
-Kõige levinum konkreetne arvutus on kaetud päevade osakaal (PDC):
-  PDC = päevad, mis on kaetud uuesti telliatud ravimiga / päevad
-        mõõtmisperioodis × 100
+Ravimi omamise suhe (Medication Possession Ratio, MPR) = perioodi
+                                    jooksul saadud päevavaru kokku /
+                                    perioodi päevad × 100 (võib
+                                    varajaste täienduste korral ületada
+                                    100%; PDC-d eelistatakse üldiselt
+                                    just selle tõttu)
 
-PDC 80% või rohkem on laialdaselt kasutusel kui kliiniliselt
-aktsepteeritud lävi "piisava järgimise" jaoks enamike krooniliste
-ravimitüüpide puhul, ehkki sobiv lävi varieerub seisundi ja
-ravimiklassi järgi.
+Patsient liigitatakse tavaliselt "järgijaks" PDC lävendi ≥ 80% korral,
+järgides laialdaselt kasutatavat kvaliteedimõõdiku tava.
 ```
 
 ## Läbitöötatud näide
 
-Patsiendile määratakse vererõhku alandav ravim igapäevaseks võtmiseks 90-päevases mõõtmisperioodis. Apteegi kordustellimuste andmed näitavad, et patsient sai piisavalt ravimit, et katta 72 päeva 90-st, andes PDC-ks 80% — täpselt üldlevinud piisavuse läve juures. Digitaalne meeldetuletusprogramm sekkub igapäevaste SMS-meeldetuletustega patsientidele, kelle kordustellimuste muster viitab eelseisvatele lünkadele, ja järgmises mõõtmisperioodis tõuseb patsiendi PDC 94%-ni. Selle paranemise esitamine nõuab sama patsiendi PDC võrdlemist aja jooksul või sekkumisrühma võrdlemist sobitatud kontrollrühmaga, mitte lihtsalt hetkeseisu mõõtmist.
+Patsiendile on määratud igapäevane krooniline ravim 90-päevase mõõteperioodi jooksul. Apteegi väljastuskirjed näitavad, et patsient sai piisavalt ravimit, et katta 76 neist 90 päevast, kahe lüngaga: 9-päevane lünk pärast ravimi otsasaamist enne täiendamist ja 5-päevane lünk haiglasse vastuvõtu ümber. PDC on 76 / 90 × 100 = 84%, mis ületab tavapärase 80% järgimise lävendi. Kui samu lünki mõõdetaks MPR-iga, mis põhineb väljastatud päevavaru, mitte tegelikult kaetud päevadel, võiks varajane täiendus mujal perioodis suruda suhte üle 100%, mis illustreerib, miks PDC on konservatiivsem ja üldiselt eelistatud mõõt.
 
 ## Andmeallikad ja hoiatused
 
-Apteegi kordustellimuste andmed (kaetud päevade osakaal) on kõige levinum ja skaleeritav allikas, kuid see mõõdab ainult seda, kas patsient sai ravimi kätte, mitte seda, kas ta tegelikult võttis seda ettenähtud viisil — patsient võib saada kordustellimuse ja siiski vahele jätta annuseid. Ühendatud pillikarbid ja elektroonilised jälgimissüsteemid annavad täpsemaid andmeid tegeliku manustamise kohta, kuid on kallimad juurutada ja nõuavad patsiendi aktiivset osalust jälgimissüsteemis, mis võib tekitada oma valikumoonutuse rohkem kaasatud patsientide suunas.
+Apteegi nõude- või väljastusandmed (kas apteegihüvitiste haldurilt või ühendatud apteegisüsteemist) on standardallikas, kuna need peegeldavad seda, mida patsient tegelikult sai, mitte seda, mis talle välja kirjutati; ainult retseptiandmed ülehindavad järgimist, kuna need ei kinnita, et patsient on ravimi kunagi kätte saanud. Digitaalsed järgimise tööriistad – nutikad pillipudelid, neelatavad sensorid, ühendatud nutikad inhalaatorid, mis logivad iga aktiveerimise hingamisteede seisundite, nagu astma ja KOK, korral, ning rakenduspõhised kontrollid – pakuvad kõrgema eraldusvõimega andmeid selle kohta, kas annus tegelikult võeti, mitte ainult ei saadud, kuid neid kasutab väike, potentsiaalselt mitteesinduslik vähemus patsientidest, mistõttu seadmega kinnitatud järgimise ja nõudepõhise PDC segamine populatsiooni lõikes nõuab tõlgendamisel ettevaatust. Järgimist tuleks mõõta perioodi jooksul, mis on piisavalt pikk, et silub üksikud vahele jäänud annused, kuid piisavalt lühike, et tuvastada märkimisväärne langus enne kliinilise kahju tekkimist – 90-päevased libisevad aknad on krooniliste ravimite puhul tavalised.
 
 ## Lõksud
 
-- **Kordustellimuse segiajamine tegeliku manustamisega**: apteegi kordustellimuste andmed tõestavad ainult seda, et patsient sai ravimi, mitte et ta võttis seda ettenähtud viisil; olge selge selle suhtes, millist tüüpi järgimist mõõdetakse.
-- **Ühe universaalse läve kasutamine kõigi ravimitüüpide puhul**: kliiniliselt oluline järgimise lävi varieerub oluliselt ravimiklassi ja seisundi järgi; statiini jaoks sobiv 80%-line lävi ei pruugi sobida antibiootikumi jaoks.
-- **Esmase mittejärgimise ignoreerimine**: patsient, kes ei lunasta kunagi uut retsepti, ei ilmu kordustellimusel põhinevates järgimisandmetes, mis tähendab, et need mõõdikud võivad süstemaatiliselt ülehinnata populatsiooni tegelikku järgimist.
-- **Järgimise paranemise esitamine ilma võrdlusrühmata**: järgimine kõigub loomulikult aja jooksul põhjustel, mis pole seotud sekkumisega; enne-pärast võrdlus ilma kontrollrühmata võib omistada sekkumisele juhuslikku varieeruvust.
+- **MPR-i kasutamine ilma avalikustamata, et see võib ületada 100%**: selgitamata suhted üle 100% varajastest täiendustest või varumisest muudavad patsientidevahelise ja perioodidevahelise võrdluse ebausaldusväärseks, kui ei kasutata PDC-d või kui suhet ei piirata selgesõnaliselt.
+- **Retsepti- või tellimusandmete käsitlemine järgimise tõendina**: apteeki kirjutatud või saadetud retsept ei ütle midagi selle kohta, kas patsient ravimi kätte sai või võttis; seda lünka sulgevad ainult väljastus- või seadmeandmed.
+- **Ühe järgimise lävendi rakendamine kõigile seisunditele valimatult**: 20% annuste vahelejätmise kliiniline tagajärg varieerub ravimiklassi järgi tohutult (nt antikoagulandid versus statiinid), mistõttu üks 80% lävend, mida kasutatakse universaalselt, võib mõnede ravimite kliinilist riski alla- või ülehinnata.
+- **Ravimivahetuste ja katkestamiste tähelepanuta jätmine**: patsient, kes on kliiniliselt ja asjakohaselt teisele ravimile üle viidud, võib paista algse ravimi järgimise suure languse, kui üleminekut arvutuses ei arvestata.
 
 ## Allikad
 
-- Pharmacy Quality Alliance (PQA), kaetud päevade osakaalu standardsed määratlused ja metoodikad
-- World Health Organization, aruanne pikaajalise ravi järgimise kohta
-- Eelretsenseeritud kirjandus digitaalsete sekkumiste mõju kohta ravimite järgimisele, näiteks uuringud, mis on avaldatud ajakirjades Journal of Medical Internet Research (JMIR) ja npj Digital Medicine
+- Pharmacy Quality Alliance (PQA), kaetud päevade osakaalu (Proportion of Days Covered) mõõdiku spetsifikatsioonid
+- Centers for Medicare & Medicaid Services (CMS), Star Ratings ravimite järgimise mõõdikud
+- Eelretsenseeritud kirjandus ravimite järgimise mõõtmise ja digitaalsete järgimise sekkumiste kohta, näiteks ajakirjas Journal of Managed Care & Specialty Pharmacy avaldatud uuringud
 
-Vaata ka: [biomeetrilise paranemise määr](../biomeetrilise-paranemise-määr/), mille jaoks ravimite järgimine krooniliste haiguste puhul on oluline mõjutegur.
+Vaata ka: [biomeetrilise paranemise määr](../biomeetrilise-paranemise-määr/), mille peamine tõukejõud on krooniliste haiguste ravimite järgimine.

@@ -1,43 +1,44 @@
 # Tegelik Kliendi Hankimise Kulu
 
-Tegelik kliendi hankimise kulu (CAC) on täielikult koormatud kulu ühe uue patsiendi hankimiseks, mis hõlmab mitte ainult otseseid reklaamikulusid, vaid ka turundusmeeskonna palku, tööriistade ja tarkvara kulusid, sisuloome kulusid ning müügimeeskonna aega, mis kulub konversioonile. See eksisteerib, kuna organisatsiooni teatatud "hankimiskulu" loeb sageli ainult otseseid meediaoste, mis tavaliselt alahindab tegelikke kulusid 30-50% võrra, jättes välja olulised fikseeritud ja pool-fikseeritud kulud, mis on vajalikud hankimismehhanismi üldse käitamiseks.
+Tegelik kliendi hankimise kulu (tegelik CAC) on ühe uue maksva kliendi või kaasatud patsiendi hankimise täielikult koormatud kulu, mis hõlmab mitte ainult tasulise reklaami kulutusi, vaid iga muud kulu, mis hankimisele olulisel määral kaasa aitas: agentuuri- ja loometasud, turundustehnoloogia ja analüütika infrastruktuur ning – digitaaltervisele spetsiifiliselt – vastuvõtu, õigustatuse kontrolli ja sisseelamise kliiniline või operatiivne tööjõukulu. See eksisteerib eraldi mõõdikuna, kuna reklaamiplatvormide esitatud hankimiskulu näitajad alahindavad järjekindlalt ja märkimisväärselt organisatsiooni tegelikku kulu hangitud kliendi kohta.
 
 ## Miks see on oluline
 
-Organisatsioon, kes jälgib ainult otseseid reklaamikulusid kui oma hankimiskulu, alahindab süstemaatiliselt seda, kui palju tegelikult maksab uue patsiendi võitmine, mis viib halvasti informeeritud otsusteni selle kohta, kui palju investeerida kasvu ja kas antud hankimiskanal on tegelikult kasumlik. Kuna tegelik CAC on üks kahest sisendist, mis on vajalikud LTV-CAC suhte arvutamiseks — kõige põhilisem mõõdupuu selle kohta, kas ärimudel on tegelikult jätkusuutlik — tähendab alahinnatud CAC, et kogu järgnev kasumlikkuse analüüs on ehitatud vigasele alusele. See on eriti mõjukas digitaalses tervises, kus hankimiskulud võivad hõlmata olulisi regulatiivseid vastavuse ja kliinilise valideerimise kulusid, millel pole ilmset paralleeli teistes tarbijatööstustes ning mida on lihtne tähelepanuta jätta, kui neid selgesõnaliselt ei kaasata.
+Digitaaltervise organisatsioonid, kes juhivad kasvu ainult reklaamiplatvormide esitatud hankimiskulu näitajate põhjal, teevad ressursside jaotamise otsuseid regulaarselt arvudele toetudes, mis jätavad välja 30–50% hankimise tegelikest kuludest, kuna need platvormi näitajad hõlmavad ainult meediakulutusi ja jätavad välja agentuuritasud, turundustehnoloogia litsentsid ning – tervishoiu jaoks otsustavalt – töömahuka vastuvõtu- ja õigustatuse kontrolli töö, mida kliiniline või operatiivne meeskond iga uue patsiendi jaoks teeb, enne kui teda saab hangituks lugeda. See lünk on digitaaltervises olulisem kui enamikus teistes sektorites just seetõttu, et kliiniline vastuvõtutöö on kallis ja kohustuslik, erinevalt e-kaubandusest, kus "müük" ei nõua sisuliselt mingit võrreldavat tagatoa tööjõudu. Meeskond, kes optimeerib turunduskulutusi kunstlikult madala CAC-näitaja järgi, investeerib süstemaatiliselt üle kanalitesse, mis näivad platvormi armatuurlaual odavad, kuid on kallid, kui tegelik CAC on arvutatud.
 
 ## Kuidas seda arvutatakse
 
 ```
-Tegelik CAC = (otsesed reklaamikulud kokku + turundusmeeskonna palgad
-              ja üldkulud + turundustööriistad ja -tarkvara +
-              sisuloome kulud + müügimeeskonna aeg, mis kulub
-              konversioonile, allokeeritud hankimisele) / samal
-              perioodil hangitud uute patsientide arv
+Tegelik CAC = (tasulise meedia kulutused + agentuuri- ja loometasud +
+               turundustehnoloogia ja analüütika kulud + kliinilise/
+               operatiivse vastuvõtu tööjõukulu) / perioodil hangitud
+               uued kliendid või patsiendid
 
-Iga kulukategooria tuleks allokeerida konkreetselt hankimisele, mitte
-teistele tegevustele (nt püsimus või tugi), kus meeskond täidab mitut
-funktsiooni.
+Kliinilise/operatiivse vastuvõtu tööjõukulu tuleks hinnata koormatud
+tööjõukulu (palk, soodustused, üldkulud) × hangitud patsiendi kohta
+vastuvõtule, õigustatuse kontrollile ja sisseelamisele kulunud
+keskmine tundide arv põhjal.
 ```
 
 ## Läbitöötatud näide
 
-Digitaalne terviseettevõte esitab sisemiselt kliendi hankimise kulu 80 dollarit, mis põhineb ainult otsestel reklaamikuludel jagatuna uute patsientidega. Kuid täielik arvestus hõlmab ka 15 000 dollarit kuus turundusmeeskonna palku, 3000 dollarit turundustarkvara tellimusi ja 5000 dollarit sisuloome kulusid, jaotatuna samade 500 selle kuu hangitud uue patsiendi vahel, mis lisab veel 46 dollarit patsiendi kohta ja toob tegeliku CAC-i 126 dollarini — 57% suurenemine võrreldes algselt teatatud arvuga. See korrektsioon muudab oluliselt ettevõtte LTV-CAC suhte arvutust ja tõstatab küsimusi selle kohta, kas praegune hankimisstrateegia on tegelikult kasumlik juhtkonna eeldatud ajaraamis.
+Digitaaltervise ettevõte hangib kuu jooksul 500 uut patsienti. Reklaamiplatvormide armatuurlauad esitavad segatud hankimiskulu 120 dollarit, mis põhineb 60 000 dollari suurusel tasulise meedia kulutusel. Agentuuritasude 9000 dollari, turundustehnoloogia kulude 6000 dollari ja hinnangulise vastuvõtu tööjõukulu 45 minutit patsiendi kohta täielikult koormatud personalikuluga 40 dollarit tunnis (500 × 0,75 × 40 dollarit = 15 000 dollarit) lisamine toob hankimise kogukuluks 60 000 + 9000 + 6000 + 15 000 = 90 000 dollarit. Tegelik CAC on 90 000 / 500 = 180 dollarit – 50% kõrgem kui ainult reklaamiplatvormi esitatud 120 dollarit ning see on näitaja, mis peaks tegelikult kanalite eelarve jaotamist ja ühikumajanduse otsuseid suunama.
 
 ## Andmeallikad ja hoiatused
 
-Täpse tegeliku CAC-i näitaja loomine nõuab koostööd finants-, turundus- ja müügimeeskondade vahel, et koguda kõik asjakohased kulukategooriad, mis tähendab, et see arvutus on harva saadaval ühe aruande numbrina ning tuleb sageli manuaalselt kokku panna vähemalt kord kvartalis. Jagatud personaliaja (nt turundusmeeskonna liige, kes töötab nii hankimise kui ka püsimuse kampaaniatel) allokeerimine nõuab mõistlikku hinnangut või ajaarvestuse andmeid, ning organisatsioonid peaksid oma allokatsioonimetoodikas aja jooksul järjepidevad olema, et hoida CAC trendid tähendusrikkana.
+Tasulise meedia kulutused ja platvormi esitatud hankimiskulu pärinevad otse reklaamiplatvormidelt endilt (otsing, sotsiaalmeedia, programmaatiline); agentuuritasud ja turundustehnoloogia kulud pärinevad rahandus- või võlgnevuste arvestuse kirjetest; vastuvõtu tööjõukulu on kõige raskemini täpselt hangitav komponent ja nõuab tavaliselt kas aja- ja liikumisuuringut või operatiivjuhtkonnaga kokku lepitud mõistlikku hinnangut, kuna enamik organisatsioone ei jälgi personali aega hankimise kohta algselt. Tegelik CAC tuleks arvutada hankimiskanali kaupa, kui maht seda lubab, kuna vastuvõtu tööjõukulu patsiendi kohta on sageli kanalite lõikes sarnane, samas kui meediakulu varieerub tohutult, mis tähendab, et vahe platvormi esitatud ja tegeliku CAC vahel on proportsionaalselt suurim kõige odavamana paistvate kanalite puhul.
 
 ## Lõksud
 
-- **Ainult otseste reklaamikulude kaasamine**: see on kõige levinum põhjus, miks teatatud CAC alahindab tegelikke kulusid 30-50% või rohkem.
-- **Regulatiivsete ja kliiniliste valideerimise kulude väljajätmine**: digitaalses tervises võivad need kulud olla olulised ja tööstusspetsiifilised, ning nende väljajätmine õõnestab võrreldavust generiliste CAC võrdlusalustega teistest tööstusharudest.
-- **Ebajärjekindel allokatsioonimetoodika aja jooksul**: jagatud kulude allokeerimise viisi muutmine perioodide vahel muudab CAC trendid otsuste tegemiseks ebausaldusväärseks.
-- **Tegeliku CAC-i kasutamine eraldi LTV-st**: CAC üksi ei ütle teile, kas hankimine on kasumlik; seda tuleb alati võrrelda eluaegse väärtusega LTV-CAC suhte kaudu.
+- **Ainult reklaamiplatvormide armatuurlaudadele toetumine**: platvormi esitatud hankimiskulu jätab struktuurselt välja agentuuritasud, turundustehnoloogia kulud ja vastuvõtu tööjõu ning ei asenda tegeliku CAC arvutust.
+- **Kliinilise või operatiivse vastuvõtu tööjõu väljajätmine**: see on just digitaaltervises järjekindlalt kõige sagedamini märkamata jääv kulukomponent ja sageli ainus suurim panustaja vahe platvormi esitatud kulu ja tegeliku CAC vahel.
+- **Tegeliku CAC keskmistamine kõigi kanalite lõikes**: segatud tegeliku CAC näitaja võib varjata, et üks kanal on koormatud kulude arvestamisel dramaatiliselt kallim, kuigi see paistis ainult reklaamiplatvormil odavaim.
+- **Tööjõukulu hinnangute mitteuuendamine vastuvõtuprotsesside muutudes**: vastuvõtuprotsessi ümberkujundamine (näiteks õigustatuse kontrolli automatiseerimine) võib tegelikku CAC-i oluliselt muuta ning aegunud tööjõuhinnang annab praegusest näitajast moonutatud pildi.
 
 ## Allikad
 
-- SaaS- ja tarbijainterneti tööstusstandardid täielikult koormatud hankimiskulu arvutamiseks
-- Eelretsenseeritud ja tööstuskirjandus digitaalse tervise kasvumajanduse kohta, näiteks analüüsid, mis on avaldatud Rock Health'i ja sarnaste digitaalse tervise uurimisorganisatsioonide poolt
+- Association of National Advertisers (ANA), turunduskulude mõõtmise ja meedia läbipaistvuse juhised
+- Eelretsenseeritud ja tööstuskirjandus digitaaltervise ühikumajanduse ja turuletuleku kulustruktuuride kohta, näiteks Rock Healthi ja sarnaste digitaaltervise uurimisorganisatsioonide avaldatud analüüsid
+- Healthcare Financial Management Association (HFMA), täielikult koormatud kuluarvestuse juhised tervishoiu tegevuses
 
-Vaata ka: [LTV-CAC suhe](../ltv-cac-suhe/), mille jaoks tegelik CAC on üks kahest vajalikust sisendist.
+Vaata ka: [LTV-CAC suhe](../ltv-cac-suhe/), mille üks kahest sisendist on tegelik CAC.

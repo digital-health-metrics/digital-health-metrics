@@ -1,49 +1,46 @@
 # Hospitalsgenindlæggelsesrate
 
-Hospitalsgenindlæggelsesraten måler andelen af patienter, der genindlægges på et hospital inden for et defineret tidsvindue — oftest 30 dage — efter udskrivelse fra en indledende indlæggelse. For digitale sundhedsprogrammer, der sigter mod at understøtte overgangen fra hospital til hjem (virtuelle afdelinger, fjernovervågning efter udskrivelse, digitale opfølgningsprogrammer), er det metrikken, der er mest direkte knyttet til betalerøkonomi og værdibaserede plejekontrakter.
+Hospitalsgenindlæggelsesraten er andelen af udskrevne patienter, der uplanlagt genindlægges på hospitalet inden for et defineret vindue efter udskrivelsen, oftest 30 dage. For digital sundhed er det den metrik, der er mest direkte knyttet til betalernes økonomi og kontrakter om værdibaseret pleje: et program for fjernovervågning, opfølgning efter udskrivelse eller digital overgang mellem plejeniveauer, der ikke kan vise en troværdig effekt på genindlæggelser, vil næppe opnå fortsat støtte i form af refusion, uanset hvor gode dets engagementstal ser ud.
 
-## Hvorfor det betyder noget
+## Hvorfor dette er vigtigt
 
-Genindlæggelser inden for 30 dage anses bredt for at være delvist forebyggelige, og mange betalere pålægger finansielle sanktioner for hospitaler med højere end forventede genindlæggelsesrater, hvilket gør denne metrik til en direkte linje til ægte økonomisk værdi for enhver digital intervention, der sigter mod at reducere den. Et digitalt program, der kan demonstrere en statistisk signifikant reduktion i genindlæggelser sammenlignet med en passende kontrolgruppe, har en af de stærkeste mulige forretningscases i hele digital sundhed, fordi omkostningsbesparelsen ved at undgå en enkelt genindlæggelse ofte er stor nok til at retfærdiggøre betydelig programinvestering. Men fordi genindlæggelsesrater er stærkt påvirket af patientens underliggende sygdomsbyrde, skal enhver rapporteret reduktion sammenlignes med en passende matchet eller risikojusteret kontrolgruppe for at være troværdig.
+En uplanlagt genindlæggelse er dyr, forstyrrende for patienten og i mange sundhedssystemer nu direkte sanktioneret: ordninger som det amerikanske Hospital Readmissions Reduction Program nedsætter betalingen til hospitaler med højere end forventede genindlæggelsesrater for bestemte tilstande, og derfor bestiller hospitaler aktivt digitale programmer til opfølgning efter udskrivelse og fjernovervågning, der skal reducere dem. En betydelig andel af genindlæggelserne anses for potentielt forebyggelige, drevet af utilstrækkelig udskrivningsvejledning, aflyste opfølgningsaftaler, misforståelser om medicin eller uopdaget forværring af symptomer, som et veldesignet digitalt kontaktpunkt kan opfange tidligere, og det er netop det hul, digitale værktøjer til overgang mellem plejeniveauer retter sig mod. Genindlæggelsesraten bør altid læses sammen med case mix: et program, der betjener en sygere og mere kompleks population, vil have en strukturelt højere baselinerate end et, der betjener en sundere population, uafhængigt af programmets kvalitet.
 
 ## Hvordan det beregnes
 
 ```
-Hospitalsgenindlæggelsesrate = patienter genindlagt inden for
-                               tidsvinduet (typisk 30 dage) /
-                               samlet antal udskrevne patienter
-                               × 100
+30-dages genindlæggelsesrate = uplanlagte genindlæggelser inden for 30
+                               dage efter udskrivelsen / samlede
+                               indeksudskrivelser × 100
 
-For at vurdere en digital interventions effekt:
-  Reduktion i genindlæggelsesrate = (kontrolgruppens rate −
-                                     interventionsgruppens rate) /
-                                     kontrolgruppens rate × 100
+Udeluk fra tælleren: planlagte genindlæggelser (fx en planlagt
+opfølgende procedure) og overflytninger, der er en fortsættelse af
+det samme plejeforløb og ikke en ny indlæggelse.
 
-Risikojustering (ved brug af etablerede værktøjer som LACE-indekset
-eller HOSPITAL-score) bør anvendes, når interventions- og
-kontrolgrupper ikke er tilfældigt tildelt, for at tage højde for
-forskelle i underliggende patientrisiko.
+Risikojustér, hvor det er muligt, med et anerkendt case mix- eller
+komorbiditetsindeks, før raterne sammenlignes på tværs af forskellige
+patientpopulationer eller tidsperioder.
 ```
 
-## Et gennemarbejdet eksempel
+## Gennemarbejdet eksempel
 
-Et hospital implementerer et digitalt fjernovervågningsprogram for patienter udskrevet efter hjertesvigtsbehandling. Blandt 400 patienter tilmeldt programmet er 30-dages genindlæggelsesraten 12%, sammenlignet med 18% for en matchet historisk kontrolgruppe af lignende patienter, der ikke modtog programmet — en relativ reduktion på 33%. Fordi grupperne ikke blev tilfældigt tildelt, anvender evalueringsteamet en risikojusteringsscore for at bekræfte, at de tilmeldte patienter ikke i forvejen var lavere risiko end kontrolgruppen, hvilket ville have forklaret forskellen uden nogen reel programeffekt. Efter justering forbliver en statistisk signifikant reduktion på cirka 25%, hvilket giver programmet en troværdig, forsvarlig forretningscase over for hospitalets ledelse.
+Et hospital udskriver 1.200 patienter med hjertesvigt i et kvartal. Af disse genindlægges 210 inden for 30 dage, hvoraf 15 er planlagte genindlæggelser til en planlagt procedure og udelades. Den uplanlagte 30-dages genindlæggelsesrate er (210 − 15) / 1.200 × 100 = 16,25 %. Der indføres et program for fjernovervågning for en delmængde på 400 af disse patienter (udvalgt efter klinisk risiko og ikke tilfældigt), og deres uplanlagte genindlæggelsesrate er 14 % sammenlignet med 18 % for de 800 patienter, der ikke er indskrevet. Fordi indskrivningen byggede på klinisk risiko og ikke på tilfældig fordeling, er denne forskel et fingerpeg og ikke et endeligt bevis på programmets effekt og bør fortolkes sammen med en risikojusteringsanalyse i stedet for at tages for pålydende.
 
 ## Datakilder og forbehold
 
-Genindlæggelsesdata kræver typisk adgang til data fra flere hospitaler eller en regional sundhedsinformationsudveksling, da en patient genindlagt på et andet hospital end det, der oprindeligt udskrev dem, ikke vil blive registreret, hvis dataene kun kommer fra et enkelt systems egne journaler — hvilket betyder, at en genindlæggelsesrate beregnet udelukkende fra et systems interne data sandsynligvis undervurderer den sande rate. Valget af kontrolgruppe er den enkeltfaktor, der er mest afgørende for troværdigheden af enhver rapporteret reduktion; en dårligt matchet eller ikke-risikojusteret sammenligning kan producere et dramatisk, men meningsløst resultat.
+Genindlæggelsesdata hentes typisk fra hospitalets eget ADT-feed (indlæggelse, udskrivning og overflytning) for genindlæggelser på samme institution, men en patient, der genindlægges på et andet hospital, vil slet ikke fremgå af dette feed, så sporing af genindlæggelser på ét hospital undervurderer systematisk de reelle genindlæggelsesrater, medmindre den suppleres med data fra en regional sundhedsinformationsudveksling, betalernes hævedata eller delstatsdækkende databaser over alle betalere. Tilskrivning til et digitalt program kræver omhu: patienter, der vælger at deltage i et frivilligt program for fjernovervågning, er sjældent en tilfældig stikprøve af de udskrevne patienter, så en naiv sammenligning af genindlæggelsesrater mellem indskrevne og ikke-indskrevne vil have tendens til at blive forvansket af netop de udvælgelseseffekter, der fik nogle patienter til at have større sandsynlighed for at melde sig til i første omgang.
 
 ## Faldgruber
 
-- **Rapportering af en reduktion uden en passende kontrolgruppe**: genindlæggelsesrater varierer enormt efter patientpopulation; en reduktion uden en matchet eller risikojusteret sammenligning beviser intet om programmets effektivitet.
-- **Afhængighed udelukkende af interne data fra ét system**: en patient genindlagt på et andet hospital vil ikke blive opdaget, hvilket fører til en kunstigt lav målt genindlæggelsesrate.
-- **Ignorering af forskellige tidsvinduer ved sammenligning af programmer**: 30-dages, 60-dages og 90-dages genindlæggelsesrater er ikke direkte sammenlignelige metrikker.
-- **Behandling af alle genindlæggelser som forebyggelige**: ikke alle genindlæggelser skyldes fejl i overgangspleje; nogle er uundgåelige progressioner af den underliggende tilstand, og det at sigte mod nul genindlæggelser kan utilsigtet afskrække passende, nødvendig pleje.
+- **At sammenligne rå, ikke-risikojusterede rater på tværs af populationer**: et program, der betjener en sygere population, vil vise en højere rå genindlæggelsesrate end et, der betjener en sundere population, selv om programmet i sig selv er mere effektivt; risikojustér altid, før der sammenlignes.
+- **At undertælle genindlæggelser på andre institutioner**: hvis man kun støtter sig til ét hospitals egne ADT-data, går genindlæggelser andre steder tabt, og den reelle rate undervurderes, især i områder med flere konkurrerende hospitalssystemer.
+- **Selektionsbias ved frivillig indskrivning i programmet**: patienter, der vælger at melde sig til et digitalt opfølgningsprogram, adskiller sig ofte systematisk (i sundhedskompetence, social støtte eller motivation) fra dem, der ikke gør, og det forvansker enhver naiv sammenligning før/efter eller mellem indskrevne og ikke-indskrevne.
+- **At tælle enhver tilbagevenden til samme institution som en genindlæggelse**: en planlagt genindlæggelse (for eksempel en planlagt anden fase af en procedure) er ikke et tegn på en mislykket udskrivelse og bør udelades fra tælleren og ikke blandes sammen med reelt uplanlagte tilbagevendinger.
 
 ## Kilder
 
-- Centers for Medicare & Medicaid Services (CMS), Hospital Readmissions Reduction Program (HRRP)
-- Agency for Healthcare Research and Quality (AHRQ), retningslinjer for risikojusteringsmetodologi
-- Collegialt bedømt litteratur om digitale interventioner efter udskrivelse, f.eks. undersøgelser offentliggjort i Journal of the American Medical Association (JAMA) og Circulation: Heart Failure
+- Centers for Medicare & Medicaid Services (CMS), specifikationer for Hospital Readmissions Reduction Program og målet for genindlæggelser på hospitalet generelt
+- Institute for Healthcare Improvement (IHI), vejledning om at reducere undgåelige genindlæggelser
+- Peer reviewet litteratur om digital fjernovervågning og interventioner til overgang mellem plejeniveauer for at reducere genindlæggelser, for eksempel undersøgelser offentliggjort i JAMA Network Open og npj Digital Medicine
 
-Se også: [reduktion af sengedage](../reduktion-af-sengedage/), sikkerhedsmetrikken, der altid bør rapporteres sammen med enhver påstand om reduktion af sengedage for den samme patientpopulation.
+Se også: [nøjagtighed af triage-henvisning](../nøjagtighed-af-triage-henvisning/), da en uhensigtsmæssig første henvisning i sig selv kan være en nedstrøms drivkraft for undgåelige indlæggelser.

@@ -1,46 +1,47 @@
 # Digital Adgangsrate
 
-Digital adgangsrate måler andelen af en patientpopulation, der har de grundlæggende forudsætninger, der kræves for at bruge et digitalt sundhedsværktøj overhovedet — pålidelig internetadgang, en kompatibel enhed og en grundlæggende konto eller portaladgang — til forskel fra om de rent faktisk bruger værktøjet effektivt. Den er forudsætningsmetrikken for hver anden digital sundhedsmetrik i denne bog: ingen anden metrik betyder noget for en patient, der aldrig har adgang til værktøjet overhovedet.
+Den digitale adgangsrate måler andelen af en berettiget patientpopulation, der overhovedet har de praktiske midler til at bruge et digitalt sundhedsprodukt: en bredbåndsforbindelse eller pålidelig mobildata, en enhed med internetadgang og en aktiv konto på den relevante patientportal eller app. Det er forudsætningsmetrikken for alle andre digitale sundhedsmål i denne bog: en population kan ikke registrere sig til, engagere sig i eller få gavn af noget digitalt sundhedsprodukt, som den strukturelt ikke kan nå, uanset hvor godt produktet er designet.
 
-## Hvorfor det betyder noget
+## Hvorfor dette er vigtigt
 
-Digitale sundhedsprogrammer evalueres ofte udelukkende baseret på resultater blandt patienter, der rent faktisk bruger dem, hvilket systematisk ekskluderer de patienter, der aldrig fik adgang til værktøjet i første omgang — og disse ekskluderede patienter er ofte uforholdsmæssigt lavindkomst, ældre eller fra marginaliserede samfund, der allerede står over for sundhedsmæssige uligheder. En virksomhed, der rapporterer imponerende resultater udelukkende blandt sine digitalt forbundne brugere, mens den er tavs om, hvor stor en andel af sin målpopulation der aldrig fik adgang til værktøjet, maler et ufuldstændigt og potentielt vildledende billede af programmets samlede retfærdighedseffekt. At spore digital adgangsrate eksplicit tvinger organisationer til at konfrontere, hvem deres digitale værktøj rent faktisk tjener, versus hvem det ikke når, hvilket er særligt vigtigt, da sundhedssystemer i stigende grad er afhængige af digitale værktøjer som en primær plejeleveringskanal.
+Metrikker for adoption og engagement inden for digital sundhed forudsætter implicit en population, der allerede har digital adgang. Hvis man rapporterer adoptions- eller engagementsrater uden først at fastslå den underliggende adgangsrate, risikerer man i det stille at udelukke de patienter, der er mindst tilbøjelige til at have den adgang, og som ofte også er dem med det største sundhedsbehov. HIMSS' Digital Health Equity Measurement Framework (DHEMF) og lignende rammeværker behandler digital adgang som en grundlæggende ligheds-metrik af første orden, netop fordi indsatser, der er bygget uden hensyn til adgangsforskelle, har tendens til at forstærke i stedet for at udligne eksisterende sundhedsforskelle: en telehealth-først-strategi kan utilsigtet mindske adgangen til pleje for patienter uden en pålidelig forbindelse eller enhed, selv om den målbart forbedrer oplevelsen for patienter, der allerede havde begge dele. Den digitale adgangsrate bør følges og rapporteres opdelt på demografiske og geografiske segmenter, da landsdækkende gennemsnit eller gennemsnit for hele organisationen rutinemæssigt skjuler store forskelle for bestemte populationer.
 
 ## Hvordan det beregnes
 
 ```
-Digital adgangsrate = patienter med pålidelig internetadgang,
-                      kompatibel enhed og aktiv kontoadgang /
-                      samlet antal patienter i målpopulationen
-                      × 100
+Digital adgangsrate = patienter med bredbånds-/mobilforbindelse OG en enhed
+                      med internetadgang OG en aktiv konto på patientportal
+                      eller app / samlet berettiget patientpopulation × 100
 
-Rapporter altid segmenteret efter demografiske faktorer kendt for
-at korrelere med digital udelukkelse:
-  Adgangsrate efter aldersgruppe
-  Adgangsrate efter indkomstniveau eller forsikringstype
-  Adgangsrate efter geografisk område (by/landdistrikt)
-  Adgangsrate efter foretrukket sprog
+Rapportér hver delkomponent separat ud over den samlede rate:
+  Forbindelsesrate    = patienter med en pålidelig internetforbindelse /
+                        berettiget population × 100
+  Enhedsejerskabsrate = patienter med en enhed med internetadgang /
+                        berettiget population × 100
+  Portalaktiveringsrate = patienter med en aktiv portal-/appkonto /
+                        berettiget population × 100 (se patientportal-
+                        adoptionsraten for den fulde adoptionstragt)
 ```
 
-## Et gennemarbejdet eksempel
+## Gennemarbejdet eksempel
 
-Et sundhedssystem lancerer et digitalt kronisk sygdomsstyringsprogram for sin samlede diabetespatientpopulation på 10.000 patienter. En digital adgangsundersøgelse finder, at 7.500 patienter (75%) har pålidelig internetadgang og en kompatibel enhed. Men segmentering efter alder afslører, at adgangsraten blandt patienter over 65 år er kun 50%, sammenlignet med 90% blandt patienter under 50, og segmentering efter foretrukket sprog viser en adgangsrate på 60% blandt spansktalende patienter sammenlignet med 82% blandt engelsktalende patienter. Disse huller fik sundhedssystemet til at udvikle et supplerende telefonbaseret program specifikt for patienter uden digital adgang, i stedet for blot at rapportere sine kliniske resultater baseret på den digitalt forbundne delmængde af sin population.
+Et sundhedssystem betjener en berettiget population på 40.000 patienter. En patientundersøgelse og infrastrukturdata viser, at 34.000 (85 %) har en pålidelig bredbånds- eller mobilforbindelse, at 33.000 (82,5 %) har en enhed med internetadgang, og at 27.000 af de patienter, der opfylder begge betingelser (67,5 % af hele den berettigede population), har en aktiv konto på patientportalen. Opdeles der efter alder, har patienter på 65 år og derover en samlet digital adgangsrate på kun 48 % sammenlignet med 78 % for patienter under 65 år. Det er en forskel, som gennemsnittet på 67,5 % for hele organisationen helt skjuler, og som direkte bør afgøre, om en given tjeneste trygt kan tilbydes udelukkende digitalt til denne population.
 
 ## Datakilder og forbehold
 
-At måle digital adgangsrate pålideligt kræver aktivt at undersøge eller på anden måde verificere adgang på tværs af hele målpopulationen, ikke blot blandt patienter, der allerede har tilmeldt sig det digitale program — en organisation, der kun måler adgang blandt tilmeldte brugere, lærer intet om den delmængde af sin population, der aldrig tilmeldte sig i første omgang, netop den gruppe, denne metrik er designet til at afsløre. Digital adgang er også en bevægelig målstreg, da enhedsejerskab og internetadgang ændrer sig over tid, hvilket betyder, at adgangsrater bør genvurderes periodisk snarere end målt én gang og antaget stabile.
+Data om forbindelse og enhedsejerskab stammer typisk fra en kombination af patienternes egne oplysninger (via undersøgelse eller indskrivningsspørgeskema), nationale kortlægningsdata om bredbåndsdækning, fx fra Federal Communications Commission (FCC) eller tilsvarende, for patientens geografiske område, og data om portalaktivering fra organisationens egne systemer. Bredbåndsdækning på områdeniveau (om en udbyder tilbyder service i et givent postnummer) er en svagere stedfortræder end forbindelse på husstandsniveau, da data om områdedækning intet siger om, hvorvidt en bestemt patient faktisk har råd til eller har valgt at abonnere på tjenesten. Adgangsrater på områdeniveau og på husstandsniveau bør ikke blandes sammen. Adgang til enheder og forbindelse kan også deles i en husstand (fx én smartphone, som flere familiemedlemmer bruger), hvilket spørgeskemadata på husstandsniveau fanger bedre end data om portallogin på individniveau alene.
 
 ## Faldgruber
 
-- **Måling af adgang kun blandt allerede tilmeldte brugere**: dette ekskluderer netop den population, metrikken er designet til at afsløre — dem, der aldrig fik adgang overhovedet.
-- **Rapportering af et samlet adgangstal uden demografisk segmentering**: digital udelukkelse er sjældent tilfældigt fordelt; segmentering efter alder, indkomst, geografi og sprog afslører, hvilke specifikke populationer der er udelukket.
-- **Antagelse af, at enhedsejerskab svarer til funktionel adgang**: en patient kan eje en smartphone, men mangle tilstrækkelig dataplan, digital kompetence eller tillid til at bruge den til sundhedsformål.
-- **Behandling af digital adgang som en statisk egenskab**: adgang ændrer sig over tid med enhedsejerskab, finansielle omstændigheder og teknologisk kompetence; genvurder periodisk snarere end at antage stabilitet.
+- **At rapportere kun et gennemsnit for hele organisationen**: det skjuler pålideligt store adgangsforskelle for ældre, lavindkomst-, landdistrikts- eller på anden måde digitalt marginaliserede patientsegmenter; opdel altid efter demografiske og geografiske segmenter.
+- **At forveksle bredbåndsdækning på områdeniveau med faktisk adgang i husstanden**: at et postnummer "betjenes" af en bredbåndsudbyder betyder ikke, at hver husstand i området abonnerer på eller har råd til tjenesten.
+- **At behandle enhedsejerskab som et engangsfaktum, der ikke ændrer sig**: adgang til en enhed kan være midlertidig (en aldrende enhed, en mistet eller beskadiget telefon, en delt familieenhed, der er givet til en anden), så adgangsraten bør måles løbende og ikke antages at være stabil, når den først er vurderet.
+- **At designe et udelukkende digitalt forløb, før adgangsraten for den berørte population er fastlagt**: at flytte en tjeneste til udelukkende digital uden først at bekræfte målpopulationens faktiske digitale adgangsrate risikerer i det stille at udelukke netop de patienter, der har sværest ved at nå en alternativ kanal.
 
 ## Kilder
 
-- Pew Research Center, forskning i internet- og enhedsadgang på tværs af demografiske grupper
-- Office of the National Coordinator for Health Information Technology (ONC), rapporter om digital sundhedsrelateret ulighed
-- Collegialt bedømt litteratur om digital sundhedsrelateret ulighed, f.eks. undersøgelser offentliggjort i Journal of Medical Internet Research (JMIR) og Health Affairs
+- HIMSS, Digital Health Equity Measurement Framework (DHEMF)
+- Federal Communications Commission (FCC), nationale data om bredbåndsdækning og digital ligestilling
+- Pew Research Center, forskning i adgang til internet, bredbånd og enheder og i tendenser i den digitale kløft på tværs af demografiske grupper
 
-Se også: [digital sundhedskompetencerate](../digital-sundhedskompetencerate/), den nært beslægtede metrik for, om patienter, der har adgang, rent faktisk kan bruge den uden hjælp.
+Se også: [digital sundhedskompetencerate](../digital-sundhedskompetencerate/), den nært beslægtede metrik for, om patienter, der har adgang, faktisk kan bruge den uden hjælp.

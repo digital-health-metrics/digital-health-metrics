@@ -1,48 +1,46 @@
 # Voodipäevade Vähenemine
 
-Voodipäevade vähenemine mõõdab haigla voodipäevade arvu, mis säästetakse patsiendi taastumise või jälgimise viimisel füüsilisest haiglavoodist virtuaalosakonda või kaugjälgimisprogrammi. See on üks otsesemaid võimsuse- ja kulumõõdikuid digitaalses tervises, kuna haiglavoodid on üks napimaid ja kulukamaid ressursse tervishoiusüsteemis, ning iga päev, mil patsienti saab turvaliselt ravida kodus haigla asemel, esindab nii kulude kokkuhoidu kui ka vabanenud võimsust teisele patsiendile, kes füüsilist voodit vajab.
+Voodipäevade vähenemine mõõdab statsionaarse haigla voodipäevade koguarvu, mida on õnnestunud vältida, viies kindlaks määratud ravijuhtumi – kõige sagedamini operatsioonijärgse taastumise või ägeda seisundi ravi – traditsiooniliselt statsionaarselt ravilt üle digitaalselt toetatud alternatiivile, näiteks virtuaalosakonnale või haiglaravile kodus. See on virtuaalosakondade ja kodus osutatava haiglaravi algatuste peamine mahutavusmõõdik, mis tõlgib kliinilise raviviisi muutuse otse valuutasse (voodimahutavus), mille alusel haiglate tegevusjuhid ja süsteemi planeerijad tegelikult tegutsevad.
 
 ## Miks see on oluline
 
-Haiglad töötavad sageli väga väikese varuvõimsusega, mis tähendab, et isegi tagasihoidlikud vähenemised voodipäevade vajaduses võivad tuua ebaproportsionaalselt suuri tegevuslikke kasusid — ülekoormuse leevendamine, vajaduse vähendamine kuluka võimsuse laiendamise järele või võimsuse vabastamine kiireloomulisemate juhtumite jaoks. Rahastajate ja tervishoiusüsteemide jaoks, kes hindavad virtuaalosakonda või kaugjälgimisprogrammi, on voodipäevade vähenemine sageli üksik kõige veenvam ärijuhtumi näitaja, kuna see tõlgib suhteliselt otse dollarinäitajaks standardsete kulu-voodipäeva-kohta arvutuste kaudu. Kuid kuna patsiendi üleviimine füüsilisest voodist virtuaalsesse on väärtuslik ainult siis, kui see on kliiniliselt ohutu, tuleb voodipäevade vähenemist alati esitada koos ohutusmõõdikuga, mis kinnitab, et virtuaalselt ravitud patsiendid ei koge halvemaid tulemusi kui need, kes jäävad haiglasse.
+Statsionaarsete voodikohtade mahutavus on iga haiglasüsteemi üks kõige piiratumaid ja kallimaid ressursse ning virtuaalosakonna või kodus osutatava haiglaravi programmi põhiline väärtuspakkumine on see, et see suudab ohutult pakkuda kindlaksmääratud taset kliinilist ravi ilma füüsilist voodikohta hõivamata, vabastades selle mahutavuse patsientidele, keda ei saa muul viisil ravida. Voodipäevade vähenemine muudab sageli abstraktse väite ("see programm parandab ravi") konkreetseks operatiivnäitajaks, mille alusel haiglate mahutavuse planeerijad, rahandusmeeskonnad ja tellijad saavad otse tegutseda: seda saab kasutada modelleerimaks, kas investeering seireprogrammi tasub end vältitud voodikulude kaudu ära ja kui palju. Kuna voodipäevade vähenemisel on väärtus ainult siis, kui patsiendiohutus säilib, tuleks seda alati esitada koos – mitte selle asemel – sama populatsiooni ohutustulemuse mõõdikuga (näiteks haiglasse taastuvastuvõtmise või statsionaarsele ravile eskaleerimise määr).
 
 ## Kuidas seda arvutatakse
 
 ```
-Voodipäevade vähenemine = (oodatavad voodipäevad, mis põhinevad
-                          sarnaste patsientide ajaloolisel
-                          ravimustril − tegelikud kasutatud haigla
-                          voodipäevad) summeeritud kõigi
-                          virtuaalosakonna programmi patsientide
-                          lõikes
+Voodipäevade vähenemine = oodatavad voodipäevad tavapärase
+                          statsionaarse ravi korral (põhinevad sobitatud
+                          patsiendikohordi ajaloolistel
+                          haiglaravi kestuse andmetel) − virtuaalsel/
+                          digitaalsel ravirajal olevate patsientide
+                          tegelikult kasutatud voodipäevad
 
-Esitage alati koos:
-  Ohutuse taastuvastuvõtmise määr = virtuaalselt ravitud patsiendid,
-                                    kes vajavad planeerimata
-                                    haiglaravi määratletud akna
-                                    jooksul / virtuaalselt ravitud
-                                    patsiendid kokku × 100
+Esitage iga kliinilise ravitee kohta eraldi (nt operatsioonijärgne
+taastumine, ägedad hingamisteede ägenemised), kuna oodatav haiglaravi
+kestus varieerub seisundiga suuresti ja omavahel mitteseotud raviteede
+koondnäitaja ei ole sisukas.
 ```
 
 ## Läbitöötatud näide
 
-Virtuaalosakonna programm kopsupõletikuga patsientidele ravib 200 patsienti, kes ajalooliselt oleksid vajanud keskmiselt 5-päevast haiglaravi, lähtudes sobitatud ajaloolistest andmetest. Nende 200 patsiendi tegelikud kasutatud haigla voodipäevad (selle alamhulga jaoks, kes vajas mingisugust füüsilist haiglaravi enne või pärast virtuaalset ravi) summeeruvad kokku vaid 150 voodipäevani, võrreldes oodatava 1000 voodipäevaga (200 patsienti × 5 päeva), andes voodipäevade vähenemiseks 850 päeva. Koos selle näitajaga esitab programm ohutuse taastuvastuvõtmise määra 4%, mis võrdub soodsalt ajaloolise taastuvastuvõtmise määraga 6% sarnastel patsientidel, keda raviti ainult haiglas — andes kindlustunde, et voodipäevade kokkuhoid ei tulnud patsiendi ohutuse arvelt.
+Haigla ajaloolised andmed näitavad, et teatud plaanilisest kirurgilisest protseduurist taastuvate patsientide keskmine statsionaarse ravi kestus on 4 päeva. Virtuaalosakonna programm kaasab 150 samast protseduurist taastuvat patsienti ja kirjutab nad välja keskmiselt 1,5 statsionaarse ravipäeva järel, jälgides ülejäänud taastumist kaugjälgimise teel. Voodipäevade vähenemine on (4 − 1,5) × 150 = 375 voodipäeva mõõteperioodi jooksul. Seda näitajat tuleks esitada koos virtuaalosakonna kohordi 30-päevase statsionaarsele ravile eskaleerimise määra ja haiglasse taastuvastuvõtmise määraga samade 150 patsiendi kohta, kuna voodipäevade kokkuhoid, mis tuleb märkimisväärselt kõrgema eskaleerimise või taastuvastuvõtmise määra hinnaga, ei ole kliiniline võit, nagu pealkirjanäitaja muidu viitaks.
 
 ## Andmeallikad ja hoiatused
 
-"Oodatavate voodipäevade" hindamine nõuab usutavat ajaloolist võrdlusrühma sarnastest patsientidest, keda raviti traditsioonilise ravimustri alusel, ning selle võrdluse kvaliteet on otsustav iga teatatud vähenemise usutavuse jaoks — halvasti sobitatud võrdlusrühm (nt üks, mis süstemaatiliselt hõlmab raskemini haigeid patsiente kui need, kes valiti virtuaalprogrammi) võib tekitada kunstlikult paisutatud vähenemisnäitaja. Kulu-voodipäeva-kohta arvutused varieeruvad oluliselt tervishoiusüsteemide ja piirkondade vahel, seega voodipäevade vähenemise konverteerimine dollarinäitajaks nõuab konkreetse organisatsiooni enda kuluarvestuse metoodika kasutamist.
+Oodatavad voodipäevad nõuavad usaldusväärset ajaloolist lähtejoont, ideaaljuhul sobitatud patsiendikohorti, keda raviti tavapärase statsionaarse ravi korral ning kelle kliinilised omadused (vanus, kaasuvad haigused, protseduuri tüüp, raskusaste) on sarnased virtuaalosakonna populatsiooniga, kuna võrdlemine sobitamata ajaloolise keskmisega riskib tegeliku vähenemise üle- või alahindamisega, kui digitaalselt juhitud kohort on ajaloolisest võrdlusrühmast süstemaatiliselt tervem või haigem. Digitaalsel ravirajal tegelikult kasutatud voodipäevad pärinevad haigla enda vastuvõtu-väljakirjutamise-ülekande (ADT) süsteemist; igasugune eskaleerimine tagasi statsionaarsele ravile jälgitava taastumisperioodi jooksul tuleks ausalt programmi arvele lugeda (kasutatud voodipäevadena, mitte välja jättes), kuna eskaleerimiste väljajätmine arvutusest suurendaks näilist vähenemist kunstlikult.
 
 ## Lõksud
 
-- **Voodipäevade vähenemise esitamine ilma ohutusmõõdikuta**: voodipäevade kokkuhoid, mis saavutatakse patsientide väljakirjutamisega, kes tegelikult vajasid haiglaravi, ei esinda tegelikku väärtust ja võib patsiente kahjustada.
-- **Halvasti sobitatud ajaloolise võrdlusrühma kasutamine**: kui virtuaalprogrammi jaoks valitud patsiendid on süstemaatiliselt vähem haiged kui ajalooline võrdlusrühm, liialdab teatatud vähenemine programmi tegeliku mõjuga.
-- **Patsientide ignoreerimine, kes vajavad üleminekut tagasi haiglasse**: voodipäevad, mida kasutavad patsiendid, kes alustavad virtuaalselt, kuid hiljem vajavad füüsilist haiglaravi, tuleb lisada tegelikku voodipäevade arvestusse, mitte välja jätta.
-- **Üldise kulu-voodipäeva-kohta näitaja rakendamine**: kulud voodipäeva kohta varieeruvad oluliselt osakonna tüübi, piirkonna ja tervishoiusüsteemi järgi; kasutage konkreetse organisatsiooni enda kuluandmeid usaldusväärsete finantsarvutuste jaoks.
+- **Voodipäevade vähenemise esitamine ilma sobitatud ohutusvõrdluseta**: virtuaalosakond, mis säästab voodipäevi, kuid mille eskaleerimise või taastuvastuvõtmise määr on tavapärasest ravist märkimisväärselt halvem, ei ole tõelist paranemist näidanud; esitage alati mõlemad koos.
+- **Sobitamata või aegunud ajaloolise lähtejoone kasutamine**: võrdlemine ajaloolise kohordiga, kellel on erinev haigusjuhtude struktuur, kaasuvate haiguste koormus või kliinilise tava ajastu, võib tegelikku voodipäevade kokkuhoidu oluliselt üle- või alahinnata.
+- **Statsionaarsele ravile tagasi eskaleerimiste väljajätmine arvutusest**: patsiendi, keda jälgitakse virtuaalselt, kuid kes taastumise keskel statsionaarsele voodile eskaleeritakse, need voodipäevad tuleks lugeda programmi kahjuks, mitte vaikides analüüsist välja jätta.
+- **Väga erineva oodatava haiglaravi kestusega ravimarsruutide koondamine**: voodipäevade vähenemise liitmine kliiniliselt mitteseotud ravimarsruutide (näiteks operatsioonijärgne taastumine ja krooniline hingamisteede ravi) üle üheks näitajaks varjab, milline konkreetne ravitee tegelikult kokkuhoidu tekitab.
 
 ## Allikad
 
-- NHS England, virtuaalosakonna ja haiglast-koju programmide juhised
-- Agency for Healthcare Research and Quality (AHRQ), haigla võimsuse ja voodikasutuse uuringud
-- Eelretsenseeritud kirjandus virtuaalosakonna tulemuste kohta, näiteks uuringud, mis on avaldatud ajakirjades BMJ Open ja Journal of the American Medical Association (JAMA)
+- NHS England, virtuaalosakondade ja kodus osutatava haiglaravi programmi juhised ning voodipäevade mõju aruandluse standardid
+- Eelretsenseeritud kirjandus kodus osutatava haiglaravi ja virtuaalosakondade mudelite kohta, näiteks ajakirjades JAMA Internal Medicine ja npj Digital Medicine avaldatud uuringud
+- Institute for Healthcare Improvement (IHI), mahutavuse juhtimise ja alternatiivsete raviviiside juhised
 
-Vaata ka: [haiglasse taastuvastuvõtmise määr](../haiglasse-taastuvastuvõtmise-määr/), ohutusmõõdik, mis tuleks alati esitada koos iga voodipäevade vähenemise väitega sama patsiendipopulatsiooni jaoks.
+Vaata ka: [haiglasse taastuvastuvõtmise määr](../haiglasse-taastuvastuvõtmise-määr/), ohutusmõõdik, mida tuleks alati esitada koos mis tahes voodipäevade vähenemise väitega sama patsiendipopulatsiooni kohta.

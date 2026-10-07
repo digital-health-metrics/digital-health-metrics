@@ -1,41 +1,48 @@
 # Seadme Tööaja Määr
 
-Seadme tööaja määr mõõdab aega, mil kaugjälgimisseade on võrgus ja tegelikult edastab andmeid, osana ajast, mil eeldatakse, et see seda teeb. See on aluseks olev infrastruktuuri mõõdik iga kaugjälgimisprogrammi all: ükski teine kliiniline ega tegevuslik mõõdik sellises programmis ei saa olla usaldusväärne, kui andmeid genereerivad aluseks olevad seadmed ei ole järjepidevalt võrgus.
+Seadme tööaja määr mõõdab planeeritud seireajast seda osa, mil ühendatud terviseseade – patsiendi kaugjälgimise andur, kantav seade või koduse telemeditsiini üksus – on tegelikult võrgus, edastab andmeid ja töötab õigesti, mitte ei ole võrguväline, lahti ühendatud või rike. See on iga kaugjälgimise või ühendatud seadmete programmi aluseks olev infrastruktuuri alusmõõdik: kliiniline hoiatus, biomeetriline trend või kaasatuse näitaja, mis on arvutatud sageli võrguväliselt olnud seadmest, on usaldusväärne ainult niivõrd, kuivõrd on usaldusväärne selle taga olev ühenduvus.
 
 ## Miks see on oluline
 
-Kaugjälgimisprogramm võib esitada muljetavaldavaid kliinilisi tulemusi, mis põhinevad ainult patsientidel, kelle seadmed tegelikult jäävad võrku ja edastavad andmeid, samal ajal vaikimisi välistades või ignoreerides patsiendi alamhulka, kelle seadmed kogevad sagedasi katkestusi — ning need katkestused korreleeruvad sageli konkreetsete tehniliste või keskkonnateguritega (halb juhtmeta leviala, vananenud seadme püsivara, patsiendi tehniline segadus taaslaadimise osas), mis võivad olla ebaproportsionaalselt koondunud teatud patsiendipopulatsioonidesse. Madal või ebaühtlaselt jaotunud seadme tööaja määr ei õõnesta mitte ainult andmekvaliteeti, vaid loob ka tõelise kliinilise ohutuslünga: patsient, kelle jälgimisseade on võrguühenduseta, ei saa ühtegi ohutuseelist, mille jaoks programm on loodud pakkuma, olenemata sellest, kui hästi aluseks olev kliiniline algoritm oleks töötanud, kui see oleks andmeid saanud.
+Patsiendi kaugjälgimise programmi kogu kliiniline väärtuspakkumine sõltub pidevast või peaaegu pidevast andmete hõivamisest; halva tööajaga seade tekitab patsiendi kliinilisse pilti vaiksed lüngad, mida võidakse ekslikult pidada stabiilsuseks (hoiatust pole, sest andmeid pole, mitte sellepärast, et midagi poleks muutunud), mitte õigesti seirerikkena tuvastada. Seadme tööaeg on ka programmi kulude ja patsiendikogemuse eelnäitaja: seade, mis sageli ühenduse kaotab, tekitab tugikõnesid, patsiendi frustratsiooni ja potentsiaalselt tarbetut kliinilist kontakteerumist, et kontrollida, kas andmelünk peegeldab tegelikku kliinilist sündmust või lihtsalt tehnilist viga. Kuna seadme tööaja tõrked on sageli omistatavad infrastruktuurile, mida organisatsioon kontrollib (halvasti seadistatud mobiilsidelüüs, nõrk Wi-Fi leviala patsiendi kodus, halvasti hooldatud seadmepark), mitte patsiendile, kuulub see mõõdik täielikult tarnija ja tehnilise operatsioonimeeskonna alla, mitte ei tohiks seda valimatult patsiendi kaasatuse mõõdikute hulka segada.
 
 ## Kuidas seda arvutatakse
 
 ```
-Seadme tööaja määr = aeg, mil seade tegelikult edastab kehtivaid
-                     andmeid / oodatav jälgimisaeg kokku × 100
+Seadme tööaja määr = aeg, mil seade oli võrgus ja edastas kehtivaid
+                     andmeid / planeeritud seireaeg kokku × 100
 
-Esitage alati jaotatuna:
-  Tööaja määr seadme tüübi või mudeli järgi
-  Tööaja määr patsiendi demograafia järgi (et paljastada, kas
-  seisakuaeg on koondunud teatud populatsioonidesse)
+Jagage seisakuaja algpõhjused, kus andmed seda võimaldavad:
+  Seadmepoolne tõrge   (aku, riistvararike, püsivara kokkujooks)
+  Ühenduvuse tõrge     (mobiilside/Wi-Fi/VPN katkestus)
+  Patsiendipoolsed tegurid (seade välja lülitatud, kantud levialast
+                            välja)
+
+Tööaja kõrval jälgitavad toetavad tehnilised parameetrid:
+  Keskmine protsessori kasutus, mälukasutus ja akutase seadme kohta
+  Ühenduvuse tõrgete vaheline keskmine aeg
+  Keskmine taasühendumise aeg pärast katkestust
 ```
 
 ## Läbitöötatud näide
 
-Südamepuudulikkuse kaugjälgimise programm esitab muljetavaldava kliinilise tulemuse paranemise, mis põhineb 85% oma 500 registreeritud patsiendi andmetel, kelle seadmed säilitasid vähemalt 90% tööaega programmi esimese kolme kuu jooksul. Kuid ülejäänud 15% patsientide ülevaatus, kelle seadmetel oli oluliselt madalam tööaeg, paljastab, et see rühm hõlmas ebaproportsionaalselt maapiirkonna patsiente halva mobiililevialaga ja eakaid patsiente, kes teatasid segadusest selle kohta, millal ja kuidas seadet taaslaadida. See leid sundis programmi uurima paremat seadme disaini nõrga ühendusega keskkondade jaoks ja lihtsustatud patsiendihariduse seadme hoolduse kohta, selle asemel et lihtsalt esitada oma tulemusi, mis põhinevad patsientide alamhulgal, kelle seadmed juhtumisi usaldusväärselt võrgus püsisid.
+Südame kaugjälgimise programm võtab kasutusele 1000 ühendatud seadet, millelt oodatakse pidevat edastamist. 30-päevase kuu jooksul (720 planeeritud seiretundi seadme kohta) logib seadmepark kokku 705 600 tegelikku võrgusolekutundi planeeritud 720 000 tunni vastu, mis annab kogu seadmepargi tööaja määraks 705 600 / 720 000 × 100 = 98%. 14 400 seisakutunni algpõhjuste analüüs näitab, et 60% on seotud mobiilsideühenduse katkestustega, mis on koondunud konkreetsesse maapiirkonna teenindusregiooni, 25% vananevate akudega seadmetega, mis on märgitud asendamiseks, ja 15% patsientidega, kes lülitavad oma seadme ajutiselt välja. See jaotus osutab kahele selgele, erinevale sekkumisele – ühenduvuse parandus mõjutatud regioonile ja ennetav akude asendamise programm –, mida üks koondtööaja näitaja poleks eristanud.
 
 ## Andmeallikad ja hoiatused
 
-Tööaja andmed pärinevad tavaliselt otse seadme enda telemeetriast või jälgimisplatvormi serveripoolsest vastuvõetud andmeedastuste logist, muutes selle mõõdiku arvutamise suhteliselt lihtsaks, kuid tõlgendamine nõuab eristamist seadme rikke (tehniline probleem seadmega endaga), ühenduvuse rikke (halb juhtmeta või mobiilside levi) ja patsiendiga seotud tegurite (unustatud taaslaadimine, vale kasutus) vahel, kuna igaüks vajab erinevat sekkumist. Tööaja määrasid tuleks esitada patsiendi kohta aja jooksul, mitte ainult koondorganisatsiooni näitajana, kuna koondkeskmine võib varjata patsiendi alamhulka, kellel on püsivad, tõsised tööaja probleemid.
+Tööaja andmed pärinevad seadme tootja või platvormi tarnija enda seadmehalduse ja telemeetria süsteemist, mis logib seadme kohta ühenduse ja pulsisündmusi; organisatsioon peaks kinnitama, mida täpselt tarnija "võrgusolekuks" loeb (seade võib end teatada võrguga ühendatuna, kuid mitte edastada kehtivaid kliinilisi andmeid, mida tuleks kliinilistel eesmärkidel seisakuna lugeda isegi siis, kui tarnija enda armatuurlaud teatab seda ühendatuna). Tööaega tuleks esitada seadmekohordi või geograafia kaupa, kui maht seda lubab, kuna ühenduvuse kvaliteet on sageli geograafiliselt koondunud (maapiirkondade mobiilsidekate, vanemate hoonete Wi-Fi) ega ole patsiendipopulatsioonis ühtlaselt jaotunud, ning kogu seadmepargi koondnäitaja võib varjata tõsist, lahendatavat piirkondlikku probleemi.
 
 ## Lõksud
 
-- **Kliiniliste tulemuste esitamine ainult patsientidelt, kellel on kõrge seadme tööaeg**: see välistab vaikimisi patsiendi alamhulga, kes võib kõige rohkem vajada usaldusväärset jälgimist ja kellel võivad olla süstemaatiliselt erinevad tulemused.
-- **Kõigi seisakuaegade käsitlemine ühtmoodi**: seadme rikked, ühenduvusprobleemid ja patsiendiga seotud tegurid vajavad väga erinevaid lahendusi; nende koondamine varjab, millist sekkumist tegelikult vaja on.
-- **Seisakuaja demograafilise kontsentratsiooni ignoreerimine**: kui madal tööaeg on koondunud teatud patsiendipopulatsioonidesse, võib aluseks olev jälgimisprogramm tahtmatult süvendada terviseebavõrdsust.
-- **Tööaja mõõtmine koondorganisatsiooni keskmisena**: see varjab üksikuid patsiente, kellel on püsivad, tõsised tööaja probleemid, mis vajavad spetsiifilist tähelepanu.
+- **Võrguühenduse segamine kehtiva andmeedastusega**: seade võib tarnija armatuurlaual paista "ühendatuna", kuid mitte edastada kasutatavaid kliinilisi andmeid; defineerige ja mõõtke tööaega tegeliku kehtiva andmete vastuvõtu, mitte ainult toore võrguühenduvuse alusel.
+- **Ainult kogu seadmepargi keskmise esitamine**: see võib varjata tõsist, geograafiliselt või seadmekohordi spetsiifilist seisakuprobleemi, mille sihitud keskmine paljastaks ja millel on konkreetne, lahendatav parandus.
+- **Seisaku algpõhjuse mitteeristamine**: seadmepoolne, ühenduvuse ja patsiendipoolne seisak nõuavad igaüks täiesti erinevat sekkumist; üht seisakuprotsenti ilma algpõhjuse segmenteerimiseta ei saa rakendada.
+- **Andmelünga käsitlemine vaikimisi kliinilise stabiilsusena**: võrguvälise seadme puuduv andmevoog peaks käivitama tehnilise ühenduvuse kontrolli, mitte olema vaikides tõlgendatud kui "uudiste puudumine on hea uudis" patsiendi kliinilise seisundi kohta.
 
 ## Allikad
 
-- U.S. Food and Drug Administration (FDA), meditsiiniseadmete kaugjälgimisseadmete usaldusväärsuse juhised
-- Eelretsenseeritud kirjandus kaugjälgimise usaldusväärsuse kohta, näiteks uuringud, mis on avaldatud ajakirjades Journal of the American College of Cardiology ja npj Digital Medicine
+- Continua Design Guidelines / Personal Connected Health Alliance, ühendatud terviseseadmete tehnilise koostalitlusvõime standardid
+- ONC / HealthIT.gov, patsiendi kaugjälgimise programmi rakendamise ja tehniliste nõuete juhised
+- Eelretsenseeritud kirjandus patsiendi kaugjälgimise seadmete töökindluse ja andmete täielikkuse kohta, näiteks ajakirjas npj Digital Medicine avaldatud uuringud
 
-Vaata ka: [sekkumiseni kuluv aeg](../sekkumiseni-kuluv-aeg/), kuna see sõltub täielike, usaldusväärsete seadmeandmete saamisest, et üldse teha õige triaažiotsus.
+Vaata ka: [triaaži suunamise täpsus](../triaaži-suunamise-täpsus/), mis sõltub täielike ja usaldusväärsete seadmeandmete saamisest, et üldse õiget triaažiotsust teha.

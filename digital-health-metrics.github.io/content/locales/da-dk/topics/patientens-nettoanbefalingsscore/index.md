@@ -1,44 +1,44 @@
 # Patientens nettoanbefalingsscore
 
-Patient Net Promoter Score (NPS) er den bredt anvendte, og bredt kritiserede, enkeltspørgsmål-tilfredshedsmetrik, der spørger patienter, hvor sandsynligt det er, at de vil anbefale et digitalt sundhedsprodukt eller en service til en ven eller kollega, på en skala fra 0 til 10. Svar grupperes i detraktorer (0-6), passive (7-8) og promotorer (9-10), og scoren beregnes som procentdelen af promotorer minus procentdelen af detraktorer.
+Patientens nettoanbefalingsscore (Net Promoter Score, NPS) måler patienters villighed til at anbefale et digitalt sundhedsprodukt eller en telehealth-tjeneste til andre ud fra ét enkelt spørgsmål i en undersøgelse, "Hvor sandsynligt er det, at du vil anbefale denne tjeneste til en ven eller kollega?", scoret fra 0 til 10. Respondenter, der scorer 9-10, er "promotorer", 7-8 er "passive", og 0-6 er "detraktorer"; NPS er procentdelen af promotorer minus procentdelen af detraktorer. Det er den mest udbredte og mest kritiserede metrik for patienttilfredshed inden for digital sundhed, værdsat for sin enkelhed, men begrænset i, hvad den i sig selv kan diagnosticere.
 
-## Hvorfor det betyder noget
+## Hvorfor dette er vigtigt
 
-NPS er attraktiv, fordi den er enkel at administrere, hurtig for patienter at besvare og giver et enkelt sammenligneligt tal, der kan spores over tid og benchmarkes mod andre organisationer og brancher. Den giver en bred, letfattelig puls på den samlede patientsentiment, der er nyttig til at spotte store tendenser og kommunikere med ledelse, der ønsker et enkelt tal frem for et komplekst dashboard. Men dens enkelhed er også dens svaghed: fordi den er baseret på et enkelt hypotetisk spørgsmål om fremtidig adfærd (anbefaling) snarere end faktisk oplevet kvalitet, korrelerer den ikke altid pålideligt med kliniske resultater eller endda faktisk fortsat brug, hvilket betyder, at den bør behandles som ét signal blandt flere, ikke den eneste målestok for et produkts succes.
+NPS giver digitale sundhedsteams et enkelt, standardiseret og sammenligneligt tilfredshedssignal, som er billigt at indsamle og let for ikke-specialister (ledere, bestyrelser, bestillere) at fortolke ved et enkelt blik, og det er grunden til, at den forbliver populær trods veldokumenterede metodiske begrænsninger. For telehealth og digitale hoveddør-produkter i særdeleshed er NPS ofte den ledende indikator for, om patienterne fortsat vil vælge den digitale kanal frem for et alternativ ansigt til ansigt, når begge er til rådighed, hvilket har direkte konsekvenser for planlægningen af kanalmix og kapacitet. NPS er dog et enkelt, overordnet sammenfattende tal: en faldende NPS fortæller et team, at noget er galt, men ikke hvad, så den bør altid kombineres med fritekstkommentarer eller et mere detaljeret brugervenlighedsinstrument for at kunne handles på og ikke blot være et tal på et scorekort.
 
 ## Hvordan det beregnes
 
 ```
-Patient NPS = (% promotorer [score 9-10] − % detraktorer
-              [score 0-6]) × 100
+NPS = % promotorer (score 9-10) − % detraktorer (score 0-6)
 
-Resultatet er et tal mellem -100 og +100, ikke en procentdel,
-selvom det nogle gange fejlagtigt rapporteres som en.
+Resultatet er et tal fra −100 til +100 og ikke en procentdel, selv om
+det udledes af procenter: tilføj aldrig et "%"-tegn til et NPS-tal.
 
-Rapporter altid sammen med:
-  Svarrate = besvarede NPS-undersøgelser / samlet antal
-            udsendte NPS-undersøgelser × 100
+Rapportér sammen med:
+  svarprocent (% af de adspurgte patienter, der svarede)
+  stikprøvestørrelse
+  den præcise formulering af det anvendte spørgsmål
 ```
 
-## Et gennemarbejdet eksempel
+## Gennemarbejdet eksempel
 
-Et telemedicinprogram udsender en NPS-undersøgelse til 1.000 patienter efter deres konsultation, og 400 svarer (en svarrate på 40%). Af disse 400 svar er 220 promotorer (55%), 120 er passive (30%), og 60 er detraktorer (15%), hvilket giver en NPS på 55 − 15 = 40. Dette ser ud til at være en stærk score, men programteamet bemærker, at svarraten på 40% betyder, at de ikke hører fra 60% af patienterne, og en opfølgende analyse af en prøve af ikke-respondenter via telefon afslører en noget mindre positiv sentiment blandt dem — en påmindelse om, at NPS kun måler sentimentet hos dem, der vælger at svare, ikke nødvendigvis hele patientpopulationen.
+En telehealth-platform adspørger 1.000 patienter efter en videokonsultation og modtager 400 svar (svarprocent 40 %). Af disse 400 respondenter scorer 220 9-10 (promotorer, 55 %), 100 scorer 7-8 (passive, 25 %), og 80 scorer 0-6 (detraktorer, 20 %). NPS er 55 − 20 = 35. Tallet har kun betydning i en sammenhæng: en NPS på 35 kan være et stærkt resultat sammenlignet med den bredere telehealth-branche eller et bekymrende fald sammenlignet med den samme platforms egen score på 48 kvartalet før. NPS er langt mere anvendelig som en tendens over tid for ét produkt end som et absolut engangsbenchmark mod et andet.
 
 ## Datakilder og forbehold
 
-NPS-data indsamles typisk via en kort undersøgelse sendt elektronisk efter en interaktion, og svarraten er en kritisk, men ofte underrapporteret kontekstuel faktor — en NPS beregnet fra en svarrate på 10% er meget mindre pålidelig som en repræsentation af den samlede patientpopulations sentiment end en beregnet fra en svarrate på 60%. NPS bør aldrig anvendes som den eneste målestok for produktsucces, da den ikke direkte måler kliniske resultater, faktisk fortsat brug eller specifikke brugbarhedsproblemer, der kan drive utilfredshed.
+NPS indsamles gennem en undersøgelse efter interaktionen, typisk udløst umiddelbart efter et videobesøg, en appsession eller et plejeforløb, og svarprocenten har enorm betydning: en lav svarprocent (langt under de ca. 40 %, der ses i det gennemarbejdede eksempel) risikerer en skævhed på grund af manglende svar, hvor kun stærkt tilfredse eller stærkt utilfredse patienter gider svare, hvilket trækker scoren mod ekstremerne og væk fra populationens reelle stemning. En sammenligning af NPS på tværs af organisationer eller selv på tværs af en enkelt organisations forskellige kanaler (for eksempel telehealth mod ansigt til ansigt) er kun gyldig, hvis spørgsmålets formulering, tidspunktet og undersøgelsespopulationen reelt er sammenlignelige; små ændringer i formuleringen er kendt for at flytte scorer målbart. NPS bør behandles som et udfald, der skal forklares, og ikke som et mål i sig selv: de fritekstkommentarer, der typisk følger med en NPS-undersøgelse, er normalt mere handlingsorienterede end selve scoren.
 
 ## Faldgruber
 
-- **Rapportering af NPS uden svarrate**: en score baseret på en lav svarrate kan være stærkt skævvredet og bør fortolkes med betydelig forsigtighed.
-- **Behandling af NPS som en procentdel**: NPS er et tal mellem -100 og +100, ikke en procentdel, og bør ikke sammenlignes direkte med procentbaserede metrikker.
-- **Brug af NPS som den eneste succesmetrik**: NPS måler hypotetisk anbefalingssandsynlighed, ikke kliniske resultater eller faktisk brugsadfærd; kombiner med andre metrikker for et fuldstændigt billede.
-- **Sammenligning af NPS på tværs af brancher uden kontekst**: patientforventninger og benchmarks for sundhedsvæsenet adskiller sig fra forbrugerteknologi eller detailhandel; sammenlign kun med passende sundhedsvæsensbenchmarks.
+- **At sammenligne NPS-tal indsamlet med forskellig spørgsmålsformulering eller timing**: selv mindre forskelle i undersøgelsesdesignet kan flytte scorer med flere point, hvilket gør benchmarking af NPS på tværs af organisationer langt mindre pålidelig, end det ser ud til.
+- **At ignorere svarprocenten**: en overskrifts-NPS beregnet ud fra en svarprocent på 10 % er langt mindre troværdig end en beregnet ud fra en svarprocent på 60 %, da lave svarprocenter har tendens til skævhed på grund af manglende svar mod de mest ekstreme meninger.
+- **At behandle NPS som et diagnostisk værktøj i stedet for en sammenfattende metrik**: en faldende NPS siger, at noget er galt, men aldrig hvad; den bør altid kombineres med kvalitativ feedback eller et mere detaljeret instrument for tilfredshed eller brugervenlighed for at finde årsagen.
+- **At jagte NPS som et mål i sig selv**: at optimere snævert for NPS-tallet (for eksempel ved kun at adspørge patienter efter usædvanligt positive interaktioner) kan forbedre den rapporterede score, mens den underliggende patientoplevelse ikke bliver bedre, eller endda bliver aktivt dårligere.
 
 ## Kilder
 
-- Bain & Company, oprindelig udvikling og metodologi for Net Promoter Score
-- Press Ganey og lignende sundhedsvæsenspatientoplevelsesmålingsorganisationer, benchmarkdata specifikt for sundhedsvæsenet
-- Collegialt bedømt litteratur, der kritiserer og kontekstualiserer NPS i sundhedsvæsensindstillinger, f.eks. undersøgelser offentliggjort i Journal of Medical Internet Research (JMIR)
+- Bain & Company, den oprindelige metodik for Net Promoter System og vejledning i benchmarking
+- Agency for Healthcare Research and Quality (AHRQ), CAHPS-programmet (Consumer Assessment of Healthcare Providers and Systems) for undersøgelser af patientoplevelser, som et supplerende og mere detaljeret alternativ
+- Peer reviewet litteratur om brugen og begrænsningerne af Net Promoter Score i sundhedsvæsenet, for eksempel undersøgelser offentliggjort i Journal of Medical Internet Research (JMIR)
 
-Se også: [score på systemets brugervenlighedsskala](../score-på-systemets-brugervenlighedsskala/), en relateret men adskilt patientrapporteret metrik, der måler specifik softwarebrugbarhed snarere end generel tilfredshed og loyalitet.
+Se også: [brugerfastholdelsesrate](../brugerfastholdelsesrate/), da patientrapporteret tilfredshed og faktisk fortsat brug af et produkt ofte afviger og er værd at følge som separate signaler.

@@ -1,46 +1,48 @@
 # Arstide Läbipõlemise Määr
 
-Arstide läbipõlemise määr mõõdab klinitsistide osakaalu, kes teatavad emotsionaalse kurnatuse, depersonaliseerumise või vähenenud isikliku saavutustunde sümptomitest, tavaliselt hinnatuna valideeritud küsimustiku, näiteks Maslach Burnout Inventory abil. Seda jälgitakse selles raamatus koos koormusega, mida klinitsistile suunatud digitaalsed tööriistad tekitavad, kuna halvasti disainitud tarkvara on dokumenteeritud ja tegutsemisvõimeline mõjutaja klinitsistide läbipõlemisele, erinevalt paljudest teistest mõjutajatest (töökoormus, administratiivne koormus, organisatsioonikultuur), mida digitaalse tööriista meeskonnal on raskem otseselt mõjutada.
+Arstide läbipõlemise määr mõõdab nende kliinikute osakaalu, kes teatavad märkimisväärsetest läbipõlemise sümptomitest – tavaliselt hinnatakse seda emotsionaalse kurnatuse, depersonalisatsiooni või madala isikliku saavutustunde kaudu valideeritud küsitlusinstrumendi abil – ja digitaaltervise puhul jälgitakse seda koos kliinikutele suunatud digitaalsete tööriistade koormuse mõõdikutega, näiteks paberitööle või elektroonilise terviseandmete süsteemi (EHR) dokumenteerimisele kuluv aeg. See kuulub digitaaltervise mõõdikute raamistikku, kuna halvasti kavandatud kliiniline tarkvara on hästi dokumenteeritud, mõõdetav läbipõlemise põhjustaja ning digitaaltervise tööriista edu ei tohiks kunagi hinnata ainult patsiendile suunatud mõõdikute põhjal, jättes tähelepanuta selle mõju kliinikutele, kes peavad seda kasutama.
 
 ## Miks see on oluline
 
-Klinitsistide läbipõlemine on seotud kõrgemate meditsiiniliste vigade määradega, halvema patsiendirahuloluga ja kõrge personali voolavusega, muutes selle iseenesest oluliseks kvaliteedi- ja tegevusmõõdikuks, mitte ainult personali heaolu küsimuseks. Digitaalsed terviise tööriistad, mis on spetsiaalselt loodud klinitsisti koormuse vähendamiseks — ümbritsev dokumenteerimine, lihtsustatud sõnumite käsitlemine, paremini optimeeritud kliinilised töövood — saavad oma väärtust osaliselt demonstreerida, näidates mõõdetavat paranemist klinitsistide läbipõlemise skoorides, andes tugeva täiendava argumendi puhaste tõhususe mõõdikute, näiteks dokumenteerimisaja, kõrval. Vastupidi, digitaalne tööriist, mis tehniliselt parandab protsessi tõhususe mõõdikut, halvendades samal ajal klinitsisti läbipõlemist (nt lisades veel ühe ekraani jälgimiseks või veel ühe süsteemi sisselogimiseks), võib esindada netonegatiivset mõju, mida kitsas tõhususe mõõdupuu üksi ei tabaks.
+Digitaaltervise tööriistu võetakse sageli kasutusele selge eesmärgiga vähendada kliinikute halduskoormust, kuid halvasti kavandatud elektroonilise terviseandmete süsteemi töövoog, liigne hulk väikese väärtusega kliinilisi hoiatusi (vt kliiniliste hoiatuste tühistamise määr) või kohmakas telemeditsiini liides võivad läbipõlemist sama lihtsalt suurendada kui vähendada – ning tööriist, mis parandab patsiendile suunatud kaasatuse mõõdikut, suurendades vaikselt kliinikute dokumenteerimiskoormust, ei ole andnud kogu raviüsteemi jaoks netopositiivset tulemust. Läbipõlemine on kliinilises kirjanduses tugevalt seotud meditsiiniliste vigade, kliinikute voolavuse ja ravikvaliteedi languse, mistõttu toimib see allavoolu ohutus- ja tööjõu jätkusuutlikkuse probleemide eelnäitajana, mitte pelgalt töörahulolu meeldiva lisana. Iga digitaaltervise programm, mis väidab kliinilist koormust vähendavat, peaks suutma seda väidet näidata mõõdetud lähtejoone suhtes, mitte esitama seda kavandatud kavatsusena.
 
 ## Kuidas seda arvutatakse
 
 ```
-Arstide läbipõlemise määr = klinitsistid, kes saavad üle
-                            väljakujunenud läbipõlemise läve
-                            valideeritud vahendis (nt Maslach
-                            Burnout Inventory) / uuritud
-                            klinitsistid kokku × 100
+Arstide läbipõlemise määr = kliinikud, kelle skoor ületab valideeritud
+                            instrumendi läbipõlemise lävendi / küsitletud
+                            kliinikud kokku × 100
 
-Esitage alati koos konkreetse digitaalse tööriista koormuse
-uuringumõõdikuga, nt:
-  Dokumenteerimisaeg väljaspool tööaega klinitsisti kohta nädalas
-  Elektroonilise terviseloo klõpsude arv, mis on vajalik
-  standardse kliinilise töövoo jaoks
+Levinud valideeritud instrumendid: Maslach Burnout Inventory (MBI),
+Professional Fulfillment Index või ühe küsimusega läbipõlemise
+sõeluuring, mis on valideeritud täielikuma instrumendi vastu.
+
+Esitage koos digitaalse koormuse asendusnäitajaga, kui see on
+olemas:
+  EHR-is veedetud aeg ühe patsiendikontakti kohta
+  Dokumenteerimisaeg väljaspool planeeritud kliinilist tööaega
+  ("pidžaamaaeg")
 ```
 
 ## Läbitöötatud näide
 
-Tervishoiusüsteem rakendab ümbritseva dokumenteerimise tööriista, mis genereerib automaatselt kliinilised märkmed kõne-teksti teisendusest patsiendikonsultatsioonide ajal, eesmärgiga vähendada klinitsisti administratiivset koormust. Enne rakendamist teatab 45% klinitsistidest mõjutatud osakonnas läbipõlemise sümptomitest, mis ületavad läve Maslach Burnout Inventory uuringus, ning klinitsistid kulutavad keskmiselt 6 tundi nädalas dokumenteerimisele väljaspool tööaega. Kuus kuud pärast ümbritseva dokumenteerimise tööriista rakendamist langeb läbipõlemise määr 32%-ni ning dokumenteerimisaeg väljaspool tööaega langeb 2,5 tunnini nädalas — seos, mis annab veenva, ehkki mitte täielikult lõpliku (kuna ka teised tegurid võisid samal perioodil muutuda), argumendi tööriista positiivse mõju kohta klinitsistide heaolule.
+Haiglasüsteem küsitleb enne ümbritseva kliinilise dokumenteerimise tööriista kasutuselevõttu, mis peaks vähendama märkmete kirjutamise aega, 300 arsti Maslach Burnout Inventory abil. Lähteolukorras ületab läbipõlemise lävendi 135 arsti (45%) ning EHR-i auditilogi andmed näitavad keskmiselt 58 minutit dokumenteerimisaega arsti kohta päevas väljaspool planeeritud kliinilist tööaega. Kuus kuud pärast tööriista kasutuselevõttu näitab samade arstide korduvküsitlus, et läbipõlemise lävendi ületab 108 (36%), koos väljaspool tööaega toimuva dokumenteerimisaja vähenemisega 34 minutini päevas. Läbipõlemise määra ja objektiivse EHR-ist tuletatud asendusnäitaja koos liikumine tugevdab argumenti, et tööriist aitab paranemisele kaasa, kuid ametlik enne/pärast võrdlus peaks siiski arvestama muid samal perioodil toimunud töökoormuse muutusi.
 
 ## Andmeallikad ja hoiatused
 
-Läbipõlemise mõõtmine nõuab valideeritud küsimustiku instrumenti, mida manustatakse järjepidevalt aja jooksul esinduslikule klinitsistide valimile, ning selliste uuringute vastamise määr on sageli madal, mis võib tulemusi moonutada, kui kõige tõsisemat läbipõlemist kogevad klinitsistid on ka kõige vähem tõenäolised, et neil on aega või energiat vastamiseks. Kuna läbipõlemisel on palju kaasaaitavaid põhjuseid peale digitaalsete tööriistade (töökoormus, organisatsioonikultuur, personalitase), ei saa korrelatsioon digitaalse tööriista kasutuselevõtu ja läbipõlemise määra muutuse vahel üksi tõestada põhjuslikkust, ilma neid teisi tegureid kontrollimata.
+Läbipõlemise küsitluse andmed pärinevad valideeritud instrumendist, mida korraldatakse korduvalt (igal aastal või sagedamini), ning vastamismäär on oluline: madal vastamismäär riskib vastamata jätmise nihkega, kus kõige rohkem läbipõlenud kliinikud (kellel on kõige vähem võimekust täiendavat küsitlust täita) on süstemaatiliselt alaesindatud, alahinnates tegelikku määra. EHR-ist tuletatud digitaalse koormuse asendusnäitajad – süsteemis veedetud aeg, väljaspool tööaega dokumenteerimisele kuluv aeg, klikkide arv kontakti kohta – on kasulikud objektiivsete, pidevalt kättesaadavate täiendustena perioodilistele küsitlusandmetele, kuid neid tuleks enne usaldusväärse iseseisva läbipõlemise näitajana käsitlemist konkreetses organisatsioonis valideerida küsitluses teatatud läbipõlemise vastu, kuna süsteemis veedetud aja ja tegeliku läbipõlemise seos võib erialati ja üksikisiku töösuunitluse järgi varieeruda.
 
 ## Lõksud
 
-- **Kogu läbipõlemise muutuse omistamine ühele digitaalsele tööriistale**: läbipõlemisel on palju kaasaaitavaid põhjuseid; korrelatsioon pärast tööriista kasutuselevõttu ei tõesta üksi põhjuslikkust.
-- **Madala uuringu vastamise määra rakendamine ilma kohandamata**: klinitsistid kõige tõsisema läbipõlemisega võivad olla kõige vähem tõenäolised vastama, moonutades teatatud määra kunstlikult madalaks.
-- **Läbipõlemise mõõtmine ilma konkreetse digitaalse tööriista koormuse mõõdikuta**: ilma läbipõlemise sidumata konkreetse tööriistaga seotud meetmega (dokumenteerimisaeg, klõpsude arv) on raske tuvastada, milline konkreetne sekkumine tegelikult aitas.
-- **Alamrühma varieeruvuse ignoreerimine**: läbipõlemine võib oluliselt varieeruda eriala, teenistusaja või osakonna järgi; koondorganisatsiooni määr võib varjata tõsiseid probleeme konkreetsetes alamrühmades.
+- **Ainult EHR-ist tuletatud asendusnäitajatele toetumine**: süsteemis veedetud aeg ja klikkide arv korreleeruvad läbipõlemisega koondtasandil, kuid ei ole sama mis läbipõlemine ise ning võivad olla eksitavad üksikute kliinikute või erialade puhul, kellel on tegelikult erinevad dokumenteerimisvajadused.
+- **Madal küsitluse vastamismäär, mis varjab tegelikku määra**: läbipõlemisest enim mõjutatud kliinikutel on sageli kõige vähem võimekust vabatahtlikule küsitlusele vastata, mis kallutab madala vastamismääraga tulemuse kunstlikult tervema väljanägemisega näitaja suunas.
+- **Läbipõlemise muutuse omistamine ühele tööriistale ilma segavaid tegureid arvestamata**: läbipõlemist mõjutavad paljud samaaegsed tegurid (personali tase, patsientide maht, organisatsioonilised muutused); ühe tööriista kasutuselevõtu ümber tehtud enne/pärast võrdlus peaks neid võimaluse korral kontrollima, mitte eeldama ühte põhjust.
+- **Läbipõlemise käsitlemine ainult üksikisiku vastupidavuse küsimusena**: läbipõlemise uuringud leiavad järjekindlalt, et töökoormus, süsteemi disain ja organisatsioonilised tegurid on peamised tõukejõud; selle esitamine ainult üksiku kliiniku probleemina suunab sekkumise eemale digitaalsetest tööriistadest ja töövoogudest, mis on sageli tegelik algpõhjus.
 
 ## Allikad
 
-- Maslach, C., ja Jackson, S.E., Maslach Burnout Inventory, esialgu välja töötatud ja kõige laialdasemalt kasutatud hindamisvahend
-- American Medical Association, uuring klinitsistide läbipõlemise ja elektroonilise terviseloo koormuse kohta
-- Eelretsenseeritud kirjandus digitaalsete tööriistade mõju kohta klinitsistide läbipõlemisele, näiteks uuringud, mis on avaldatud ajakirjades Journal of the American Medical Informatics Association (JAMIA) ja Mayo Clinic Proceedings
+- Maslach Burnout Inventory (MBI), valideeritud küsitlusinstrument ja hindamisjuhised
+- American Medical Association (AMA), arstide läbipõlemise uuringud ja STEPS Forward praktika parandamise programm
+- Eelretsenseeritud kirjandus EHR-i kasutatavuse, dokumenteerimiskoormuse ja kliinikute läbipõlemise kohta, näiteks ajakirjades JAMIA ja Annals of Internal Medicine avaldatud uuringud
 
-Vaata ka: [kliiniliste hoiatuste tühistamise määr](../kliiniliste-hoiatuste-tühistamise-määr/), kus hoiatusväsimus on üks konkreetsemaid, mõõdetavaid mõjutajaid klinitsistide läbipõlemisele, mida digitaalsed tööriistad saavad otseselt käsitleda.
+Vaata ka: [kliiniliste hoiatuste tühistamise määr](../kliiniliste-hoiatuste-tühistamise-määr/), kuna hoiatusväsimus on üks täpsemaid, mõõdetavaid kliinikute läbipõlemise põhjustajaid, millele digitaalsed tööriistad saavad otseselt lahendust pakkuda.

@@ -1,47 +1,53 @@
 # Tasso di Stabilizzazione Biometrica
 
-Il tasso di stabilizzazione biometrica misura la quota di pazienti che mantiene un parametro biometrico monitorato all'interno di un intervallo target clinico per un periodo sostenuto, a differenza del tasso di miglioramento biometrico, che misura un cambiamento una tantum rispetto al basale. Esiste perché una singola misurazione migliorata non dimostra un controllo duraturo — un paziente può mostrare un buon valore a una visita di follow-up e poi tornare indietro, ed è la stabilizzazione sostenuta nel tempo che effettivamente predice esiti clinici migliori a lungo termine.
+Il tasso di stabilizzazione biometrica è la quota di pazienti arruolati che raggiungono e mantengono un intervallo target clinicamente definito per una misura biometrica (più comunemente la pressione arteriosa al di sotto di una soglia come 130/80 mmHg) tramite un dispositivo di monitoraggio connesso, per un periodo prolungato anziché in un singolo momento. Si distingue dal tasso di miglioramento biometrico (vedere quell'argomento): il miglioramento misura l'entità di una variazione rispetto alla base di partenza, mentre la stabilizzazione misura se un paziente viene mantenuto in modo affidabile entro un intervallo sicuro una volta avviati il trattamento o il monitoraggio, che è l'esito più importante per i pazienti già vicini al target o già in trattamento.
 
 ## Perché è importante
 
-Condizioni croniche come il diabete e l'ipertensione richiedono un controllo sostenuto, non una singola buona misurazione, per ridurre il rischio di complicanze, il che significa che un programma di salute digitale che riporta il miglioramento solo in un singolo punto temporale di follow-up può dipingere un quadro incompleto o persino fuorviante del suo impatto clinico. Il tasso di stabilizzazione biometrica costringe la valutazione a guardare l'intero percorso dei dati di un paziente piuttosto che un singolo istante, rendendolo un test più rigoroso e clinicamente più significativo di se un programma fornisca un valore duraturo. È particolarmente importante per i programmi che giustificano commissioni di abbonamento o adesione continue, poiché la proposta di valore per un coinvolgimento sostenuto dipende dalla dimostrazione di un beneficio duraturo, non solo iniziale.
+Per una larga parte dei pazienti dei programmi per malattie croniche, in particolare l'ipertensione, dove gli obiettivi pressori delle linee guida sono ben stabiliti e direttamente collegati al rischio cardiovascolare, l'obiettivo clinico non è un miglioramento una tantum ma un controllo sostenuto, e un paziente che oscilla dentro e fuori dall'intervallo target presenta un rischio sostanzialmente diverso da uno che migliora una volta e rimane lì. I dispositivi connessi (bracciali per la pressione con connessione cellulare, monitor continui del glucosio) permettono di misurare la stabilizzazione in modo continuo anziché solo durante le visite in ambulatorio, facendo emergere i pazienti le cui letture in ambulatorio sembrano controllate ma le cui letture a domicilio sono instabili, uno schema noto come ipertensione mascherata che la sola misurazione periodica di persona non può rilevare. Riportare il tasso di stabilizzazione anziché solo un'istantanea "a target" costringe un programma a confrontarsi con la costanza, e non solo con la frequenza, con cui mantiene i pazienti nell'intervallo.
 
 ## Come si calcola
 
 ```
-Tasso di stabilizzazione biometrica = pazienti che mantengono il
-                                      valore biometrico
-                                      nell'intervallo target a
-                                      tutte le misurazioni
-                                      programmate in un periodo
-                                      definito / totale pazienti
-                                      con misurazioni programmate
-                                      complete × 100
+Tasso di stabilizzazione biometrica = pazienti con ≥ 80% delle letture
+                                      entro l'intervallo target nel
+                                      periodo di misurazione / pazienti
+                                      con un numero minimo di letture
+                                      valide in quel periodo × 100
 
-Questo richiede più punti dati per paziente nel tempo, non solo il
-basale e un follow-up — tipicamente un minimo di tre misurazioni
-su un periodo da sei a dodici mesi, a seconda della condizione.
+Esempi di soglie:
+  Pressione arteriosa — target < 130/80 mmHg (o la soglia applicabile
+                        delle linee guida cliniche per il profilo di
+                        rischio del paziente)
+  Glucosio            — intervallo target secondo le indicazioni sul
+                        monitoraggio continuo del glucosio, riportato
+                        come "tempo nell'intervallo"
+
+Prima di includere un paziente nel denominatore va fissata una soglia
+minima di frequenza delle letture (ad es. almeno 3 letture a settimana),
+per evitare che i pazienti che misurano di rado appaiano
+artificialmente stabili.
 ```
 
 ## Esempio pratico
 
-Un programma di gestione dell'ipertensione monitora la pressione arteriosa di 300 pazienti su un periodo di dodici mesi con misurazioni trimestrali (quattro punti dati per paziente). Di questi, 180 pazienti hanno tutte e quattro le misurazioni nell'intervallo target clinico, dando un tasso di stabilizzazione biometrica del 60%. Un'analisi separata mostra che altri 90 pazienti hanno raggiunto una buona misurazione in almeno un punto temporale ma sono scesi fuori dall'intervallo in almeno un altro punto temporale — questi pazienti conterebbero come "migliorati" secondo una semplice misurazione basale-follow-up, ma rivelano una storia notevolmente meno convincente quando si considera l'intero loro percorso, mostrando esattamente il tipo di variabilità nascosta che la metrica di stabilizzazione è progettata per catturare.
+Un programma di telemonitoraggio dell'ipertensione arruola 600 pazienti con bracciali per la pressione con connessione cellulare, da cui ci si aspetta almeno 3 letture a settimana. Di questi, 540 raggiungono la soglia minima di frequenza delle letture nell'arco di 3 mesi di misurazione e sono inclusi nel denominatore. Dei 540, 350 hanno almeno l'80% delle letture sotto 130/80 mmHg, il che dà un tasso di stabilizzazione biometrica di 350 / 540 × 100 = 65%. I 60 pazienti esclusi per letture insufficienti sono riportati separatamente come lacuna di completezza dei dati, non inclusi né nel numeratore né nel gruppo dei "non stabilizzati", perché il loro reale stato di controllo è realmente sconosciuto, non scarso.
 
 ## Fonti dei dati e avvertenze
 
-Misurare la stabilizzazione richiede misurazioni coerenti e regolarmente programmate per ogni paziente nel tempo, il che significa che i programmi con una programmazione delle misurazioni irregolare o avviata dal paziente avranno più difficoltà a calcolare questa metrica in modo affidabile, e le misurazioni mancanti devono essere gestite esplicitamente (escluse dal denominatore o trattate come un fallimento) piuttosto che ignorate silenziosamente. L'intervallo target clinico e il numero richiesto di misurazioni coerenti dovrebbero essere stabiliti in base a linee guida cliniche consolidate per la specifica condizione, non scelti retroattivamente per produrre un numero favorevole.
+Le letture provengono direttamente dal flusso di dati del dispositivo connesso, che è più oggettivo e molto più frequente della misurazione in ambulatorio, ma errori di posizionamento e di tecnica (un bracciale di misura errata o posizionato in modo scorretto) possono introdurre una distorsione sistematica che una singola lettura di validazione in ambulatorio non necessariamente coglie. La scelta dell'intervallo target dovrebbe seguire la linea guida clinica attuale applicabile al profilo di rischio e alle comorbilità specifici del paziente, anziché un'unica soglia universale, perché gli obiettivi delle linee guida differiscono per età, funzione renale e rischio cardiovascolare del paziente. Un paziente con bassa frequenza di letture non dovrebbe mai essere contato in silenzio come "stabile" per impostazione predefinita; escluderlo dal denominatore con una segnalazione trasparente dell'esclusione è più onesto che contarlo come controllato o non controllato sulla base di dati troppo scarsi.
 
-## Errori comuni
+## Insidie
 
-- **Riportare solo il miglioramento senza la stabilizzazione**: un miglioramento una tantum rispetto al basale non dimostra un controllo sostenuto; entrambe le metriche dovrebbero essere riportate insieme per un quadro completo.
-- **Escludere silenziosamente i pazienti con misurazioni mancanti**: escludere dal denominatore i pazienti che hanno saltato una misurazione programmata può aumentare artificialmente il tasso di stabilizzazione se le misurazioni mancanti provengono in modo sproporzionato da pazienti che se la cavano peggio.
-- **Usare un periodo di misurazione troppo breve**: richiedere solo due punti dati per dichiarare "stabilizzazione" non cattura la variabilità che un periodo più lungo rivelerebbe.
-- **Applicare un intervallo target generico anziché uno clinicamente stabilito**: l'intervallo di stabilizzazione appropriato varia per condizione, età del paziente e comorbidità; un intervallo generico può sia sovrastimare sia sottostimare il vero controllo clinico.
+- **Trattare una singola lettura nell'intervallo come stabilizzazione**: la stabilizzazione riguarda un controllo sostenuto in un periodo definito, non un'istantanea; richiedere sempre una proporzione minima di letture nell'intervallo nel periodo, non una singola misurazione idonea.
+- **Escludere in silenzio i pazienti che misurano di rado senza segnalarlo**: i pazienti che effettuano raramente le letture non sono automaticamente stabili né instabili; escluderli in modo trasparente dal denominatore e riportare il tasso di esclusione come metrica separata di completezza dei dati.
+- **Ignorare gli errori di calibrazione e di tecnica del dispositivo**: un bracciale mal posizionato o un dispositivo non calibrato può falsare sistematicamente le letture in una direzione, cosa che un tasso di stabilizzazione calcolato ingenuamente dai dati grezzi del dispositivo non coglie senza una validazione periodica.
+- **Usare un unico intervallo target universale per tutti i pazienti**: gli obiettivi delle linee guida cliniche variano in base al profilo di rischio e alle comorbilità del paziente; applicare un'unica soglia generalizzata a una popolazione clinicamente eterogenea classificherà in modo errato alcuni pazienti come stabilizzati o non stabilizzati rispetto al loro effettivo target individualizzato.
 
 ## Fonti
 
-- American Heart Association, linee guida per il controllo sostenuto della pressione arteriosa
-- American Diabetes Association, standard per il controllo glicemico a lungo termine
-- Letteratura peer-reviewed sugli esiti sostenuti della gestione digitale delle malattie croniche, ad esempio studi pubblicati su Diabetes Care e Hypertension
+- American Heart Association (AHA) / American College of Cardiology (ACC), obiettivi pressori delle linee guida e indicazioni sul monitoraggio domiciliare della pressione arteriosa
+- International Diabetes Federation e American Diabetes Association (ADA), indicazioni di consenso sul "tempo nell'intervallo" del monitoraggio continuo del glucosio
+- Letteratura sottoposta a revisione paritaria sul monitoraggio biometrico a distanza e sul controllo sostenuto delle condizioni, ad esempio studi pubblicati su npj Digital Medicine
 
-Vedi anche: [tasso di miglioramento biometrico](../tasso-di-miglioramento-biometrico/), la metrica correlata per l'entità del cambiamento rispetto al basale, a differenza del controllo sostenuto dopo il raggiungimento di un obiettivo.
+Vedere anche: [tasso di miglioramento biometrico](../tasso-di-miglioramento-biometrico/), la metrica correlata dell'entità della variazione rispetto alla base di partenza, distinta dal controllo sostenuto una volta raggiunto un target.

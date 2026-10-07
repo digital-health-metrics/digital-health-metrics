@@ -1,45 +1,47 @@
 # Rapporto di Efficienza del Marketing
 
-Il rapporto di efficienza del marketing (MER) è il ricavo totale diviso per la spesa totale di marketing in un periodo definito, fornendo un controllo indipendente rispetto al ritorno sulla spesa pubblicitaria (ROAS) riportato dalla piattaforma. Poiché utilizza il ricavo e la spesa totali dell'azienda piuttosto che affidarsi al modello di attribuzione interno di una singola piattaforma pubblicitaria, il MER evita il doppio conteggio dell'attribuzione che si verifica quando più piattaforme (ricerca, social, display) si attribuiscono ciascuna la stessa conversione.
+Il rapporto di efficienza del marketing (MER) è il ricavo totale diviso per la spesa di marketing totale su tutti i canali, per un periodo definito. Esiste come controllo di realtà indipendente e deliberato rispetto al ritorno sulla spesa pubblicitaria (ROAS) riportato dalle piattaforme, che misura il contributo ai ricavi rivendicato da ciascun canale ed è strutturalmente incline ad attribuirsi troppo merito: il MER guarda invece al ricavo totale rispetto alla spesa totale, una cifra che nessuna piattaforma pubblicitaria può distorcere.
 
 ## Perché è importante
 
-Il marketing moderno avviene tipicamente su più piattaforme contemporaneamente, e ogni piattaforma tende a riportare un ROAS favorevole basato sul proprio modello di attribuzione interno, il che significa che la somma di tutte le cifre ROAS riportate dalle singole piattaforme spesso esagera drammaticamente l'efficienza complessiva del marketing perché più piattaforme si attribuiscono la stessa conversione del paziente. Il MER aggira completamente questo problema guardando all'intera azienda: il ricavo totale generato diviso per la spesa totale di marketing sostenuta, indipendentemente da quale piattaforma rivendichi l'attribuzione. Questo lo rende un importante controllo di buon senso indipendente per qualsiasi team marketing che riporti prestazioni solide basate su cifre ROAS specifiche per piattaforma, ed è particolarmente prezioso per i dirigenti e le parti interessate finanziarie che desiderano un'unica cifra affidabile sul contributo complessivo del marketing all'azienda.
+Ogni piattaforma pubblicitaria riporta il ROAS usando il proprio modello di attribuzione e, poiché la maggior parte delle organizzazioni gestisce più canali contemporaneamente, lo stesso cliente che converte viene spesso accreditato da più di una piattaforma, per cui la somma del ROAS auto-dichiarato di ciascuna piattaforma sovrastima regolarmente il contributo totale del marketing rispetto ai ricavi totali effettivi. Il MER aggira del tutto questo problema confrontando il ricavo totale con la spesa totale a livello di organizzazione, il che lo rende molto più difficile da distorcere tramite manipolazione dell'attribuzione o reportistica favorevole alle piattaforme, ed è esattamente per questo che i team finanziari e dirigenziali lo trattano sempre più come il controllo di efficienza complessivo attendibile rispetto al quale calibrare le singole cifre riportate dalle piattaforme. Un team di marketing che riporta un ROAS elevato su ogni singolo canale mentre il MER complessivo cala ha un reale problema di efficienza o di sovrapposizione dell'attribuzione che la sola reportistica a livello di canale non farà emergere.
 
 ## Come si calcola
 
 ```
-Rapporto di efficienza del marketing (MER) = ricavo totale in un
-                                             periodo / spesa totale
-                                             di marketing nello
-                                             stesso periodo
+MER = ricavo totale / spesa di marketing totale (tutti i canali, stesso
+      periodo)
 
-Questo differisce dal ROAS, che viene tipicamente calcolato per
-canale o campagna e dipende dal modello di attribuzione interno di
-quella piattaforma:
-  ROAS (per piattaforma) = ricavo attribuito dalla piattaforma /
-                           spesa su quella piattaforma
+A differenza del ROAS, il MER non si calcola per canale: è una cifra
+unica a livello di organizzazione proprio perché il suo valore deriva
+dall'essere immune alle rivendicazioni di attribuzione di una singola
+piattaforma.
+
+Un MER in crescita nel tempo, a spesa stabile o in crescita, indica un
+miglioramento dell'efficienza complessiva del marketing; un MER stabile
+a ricavi in crescita può indicare che la crescita proviene da fonti non
+guidate dal marketing (ad es. segnalazioni, ricerca organica, passaparola).
 ```
 
 ## Esempio pratico
 
-Un'azienda di salute digitale esegue campagne di marketing su annunci di ricerca, social media e pubblicità display che insieme rivendicano un ROAS combinato di 8:1 basato sulla reportistica di attribuzione interna di ciascuna piattaforma. Ma guardando all'intera azienda — 2.000.000 di dollari di ricavo totale generato nel trimestre diviso per 400.000 dollari di spesa totale di marketing su tutti i canali — il MER effettivo è solo 5:1, rivelando che i report di attribuzione individuali delle piattaforme duplicavano una parte sostanziale delle conversioni. Questa differenza ha spinto il team marketing a indagare sulla sovrapposizione di attribuzione tra piattaforme e ad adeguare l'allocazione del mix di canali in base alla cifra MER più affidabile piuttosto che ai report ROAS gonfiati specifici per piattaforma.
+Un'azienda di salute digitale genera 2.400.000 USD di ricavi in un trimestre, con una spesa di marketing totale su tutti i canali a pagamento di 480.000 USD. Il MER è 2.400.000 USD / 480.000 USD = 5,0. Singolarmente, la piattaforma di ricerca a pagamento riporta un ROAS di 6,0, la piattaforma di social a pagamento riporta un ROAS di 5,5 e una piattaforma di display programmatica riporta un ROAS di 4,0: se queste cifre venissero semplicemente sommate come rivendicazione del contributo ai ricavi totali, implicherebbero più ricavi totali attribuiti di quanti l'azienda ne abbia effettivamente generati, perché una quota significativa dei clienti che hanno convertito è stata esposta a più di un canale e viene contata due o tre volte. Il MER di 5,0 dell'intera organizzazione è il numero che concilia il tutto: non può essere gonfiato dalla sovrapposizione dell'attribuzione nel modo in cui possono strutturalmente esserlo le cifre di ROAS a livello di piattaforma.
 
 ## Fonti dei dati e avvertenze
 
-Il MER richiede solo due numeri — il ricavo totale dell'azienda e la spesa totale di marketing — rendendo il suo calcolo relativamente semplice rispetto all'analisi di attribuzione specifica per piattaforma, ma questa semplicità è anche un limite: il MER non dice quali canali o campagne specifiche stiano guidando i risultati, solo se lo sforzo di marketing complessivo sia efficiente. Il MER può anche essere influenzato da variazioni di ricavo non guidate dal marketing (ad esempio domanda stagionale o un cambio di prezzo), quindi è importante considerare se le variazioni di ricavo siano effettivamente dovute all'attività di marketing.
+Il ricavo totale proviene dal sistema finanziario o di fatturazione dell'organizzazione, e la spesa di marketing totale proviene dai costi di marketing effettivamente fatturati e pagati su tutti i canali; entrambi vanno reperiti indipendentemente dal cruscotto di qualsiasi piattaforma pubblicitaria. Il MER va monitorato nel tempo come andamento anziché giudicato rispetto a un unico parametro universale, perché un MER "buono" varia enormemente in base al modello di business, alla struttura dei margini e alla fase di crescita: un'azienda in fase iniziale che investe molto nella crescita può deliberatamente accettare un MER inferiore rispetto a un'azienda matura che ottimizza per la redditività. Il MER non diagnostica quale canale sia responsabile di una variazione dell'efficienza: quel lavoro diagnostico richiede ancora un'analisi a livello di canale, idealmente integrata da test di incrementalità (gruppi di controllo che non ricevono alcuna esposizione al marketing) anziché dalla sola attribuzione riportata dalle piattaforme.
 
-## Errori comuni
+## Insidie
 
-- **Affidarsi esclusivamente al ROAS riportato dalla piattaforma**: più piattaforme che si attribuiscono ciascuna la stessa conversione possono produrre un ROAS aggregato che esagera drammaticamente la vera efficienza del marketing.
-- **Usare il MER per ottimizzare canali individuali**: il MER è una metrica aggregata a livello aziendale e non fornisce la granularità necessaria per prendere decisioni su canali o campagne specifici.
-- **Ignorare i fattori di ricavo non guidati dal marketing**: un MER stabile o in miglioramento con ricavi in crescita può riflettere una crescita organica (referenze, ricerca organica, passaparola) piuttosto che l'efficienza del marketing; disaggregare il ricavo per fonte di acquisizione dove possibile per evitare di attribuire eccessivo merito al marketing.
-- **Confrontare il MER tra periodi con mix di marketing diversi**: un periodo dominato dalla spesa di branding (con effetto sul ricavo ritardato) rispetto alla spesa di risposta diretta (con effetto sul ricavo immediato) produrrà cifre MER diverse senza che questo rifletta necessariamente un cambiamento reale nell'efficienza.
+- **Trattare il ROAS riportato dalle piattaforme come additivo tra i canali**: sommare il ROAS auto-dichiarato di ciascuna piattaforma sovrastima il contributo totale del marketing ogni volta che un cliente è esposto a più di un canale e da questo accreditato, il che è comune; il MER lo evita per costruzione.
+- **Confrontare il MER con un parametro universale fisso**: un MER appropriato varia con il modello di business, il margine e la fase di crescita; usarlo come andamento per una singola organizzazione nel tempo anziché come soglia fissa di superamento/non superamento.
+- **Usare il MER come diagnostica a livello di canale**: il MER è deliberatamente una cifra dell'intera organizzazione e da solo non può individuare quale canale stia determinando una variazione di efficienza; abbinarlo all'analisi a livello di canale e ai test di incrementalità a tale scopo.
+- **Ignorare i fattori di ricavo non legati al marketing**: un MER stabile o in miglioramento a ricavi in crescita può riflettere una crescita organica (segnalazioni, passaparola, copertura guadagnata) anziché l'efficienza del marketing; disaggregare dove possibile i ricavi per fonte di acquisizione per evitare di attribuire troppo merito al marketing.
 
 ## Fonti
 
-- Marketing Attribution Institute e organizzazioni di settore simili, linee guida sulla metodologia di attribuzione cross-canale
-- Standard del settore SaaS e internet di consumo per la misurazione dell'efficienza del marketing
-- Letteratura peer-reviewed e di settore sull'economia del marketing della salute digitale, ad esempio analisi pubblicate da Rock Health
+- Association of National Advertisers (ANA), linee guida sulla misurazione del marketing, l'attribuzione e la trasparenza dei media
+- Marketing Accountability Standards Board (MASB), linee guida sulle definizioni delle metriche di marketing e sugli standard di misurazione
+- Letteratura di settore e sottoposta a revisione paritaria sulla modellazione del marketing mix e sui test di incrementalità come complementi all'attribuzione riportata dalle piattaforme
 
-Vedi anche: [costo reale di acquisizione del cliente](../costo-reale-di-acquisizione-del-cliente/) e [rapporto LTV-CAC](../rapporto-ltv-cac/), le altre due metriche fondamentali dell'economia di crescita con cui questo rapporto viene tipicamente riportato insieme.
+Vedere anche: [costo reale di acquisizione del cliente](../costo-reale-di-acquisizione-del-cliente/) e [rapporto LTV-CAC](../rapporto-ltv-cac/), le altre due metriche centrali di economia della crescita insieme alle quali questo rapporto viene tipicamente riportato.

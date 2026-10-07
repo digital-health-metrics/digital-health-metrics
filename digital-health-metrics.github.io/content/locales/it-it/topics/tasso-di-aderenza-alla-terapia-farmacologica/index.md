@@ -1,49 +1,51 @@
 # Tasso di Aderenza alla Terapia Farmacologica
 
-Il tasso di aderenza alla terapia farmacologica misura in che misura un paziente assume un farmaco prescritto come indicato, tipicamente espresso come la quota di giorni in un periodo definito in cui il paziente ha avuto accesso al farmaco come prescritto. È una delle metriche di salute digitale più impattanti, perché la non aderenza è diffusa, in gran parte prevenibile con il giusto supporto, e direttamente collegata a esiti clinici peggiori e costi a valle più elevati — esattamente il divario che le app di promemoria farmacologico, i portapillole intelligenti e le notifiche di riordino in farmacia sono costruiti per colmare.
+Il tasso di aderenza alla terapia farmacologica misura in che misura un paziente assume un farmaco prescritto come indicato, espresso più comunemente come la proporzione di giorni in un periodo definito in cui il paziente ha avuto accesso al proprio farmaco come prescritto. È una delle metriche di salute digitale più rilevanti perché la mancata aderenza è frequente, in gran parte prevenibile con il giusto supporto e direttamente collegata a esiti clinici peggiori e a costi a valle più alti: proprio la lacuna che app di promemoria per i farmaci, flaconi di pillole intelligenti e solleciti di rinnovo delle farmacie sono costruiti per colmare.
 
 ## Perché è importante
 
-La non aderenza alla terapia farmacologica è associata a una quota significativa di ricoveri ospedalieri evitabili e condizioni croniche peggiorate, rendendola uno degli obiettivi di intervento di salute digitale più misurabili e attuabili. A differenza di molti altri esiti di salute digitale che richiedono un follow-up a lungo termine per essere valutati, l'aderenza può essere misurata quasi in tempo reale attraverso portapillole connessi, dati di riordino in farmacia o sistemi di monitoraggio elettronico, consentendo a un programma di identificare e intervenire su un'aderenza in calo prima che porti a un esito clinico. Poiché l'aderenza è così strettamente legata ai costi a valle — un paziente che non assume il farmaco per la pressione arteriosa ha un rischio elevato di una costosa visita di emergenza — è anche uno dei casi aziendali più facilmente comunicabili per l'investimento in salute digitale a un finanziatore o sistema sanitario.
+Gli organismi di sanità pubblica stimano che la mancata aderenza ai farmaci per le malattie croniche possa raggiungere il 50% per alcune condizioni, ed è una delle principali cause prevenibili di ricoveri evitabili, progressione della malattia e fallimento del trattamento, attribuito erroneamente al farmaco stesso anziché a un uso incostante. Gli strumenti digitali per l'aderenza esistono specificamente per colmare questa lacuna, per cui in qualsiasi programma che includa una componente farmacologica il tasso di aderenza è di solito la singola metrica più rilevante per le decisioni: si trova causalmente a monte del miglioramento biometrico, della riammissione e della maggior parte delle altre metriche di esito clinico che un programma potrebbe altrimenti riportare. Un programma che migliora il coinvolgimento o la soddisfazione senza spostare l'aderenza probabilmente non ha ancora dimostrato un meccanismo plausibile di beneficio clinico.
 
 ## Come si calcola
 
 ```
-Tasso di aderenza alla terapia farmacologica = giorni con accesso
-                                               al farmaco come
-                                               prescritto / totale
-                                               giorni nel periodo
-                                               misurato × 100
+Proporzione di giorni coperti (Proportion of Days Covered, PDC) = giorni
+                                    del periodo con il farmaco a
+                                    disposizione (in base ai giorni di
+                                    fornitura delle erogazioni) / giorni
+                                    del periodo di misurazione × 100
 
-Il calcolo concreto più comune è la Proportion of Days Covered (PDC):
-  PDC = giorni coperti da farmaco riordinato / giorni nel periodo
-        di misurazione × 100
+Rapporto di possesso del farmaco (Medication Possession Ratio, MPR) =
+                                    totale dei giorni di fornitura
+                                    ottenuti nel periodo / giorni del
+                                    periodo × 100 (può superare il 100%
+                                    con rinnovi anticipati; per questo
+                                    motivo si preferisce in genere il
+                                    PDC)
 
-Un PDC dell'80% o superiore è ampiamente utilizzato come soglia
-clinicamente accettata per "aderenza adeguata" per la maggior parte
-dei tipi di farmaci cronici, sebbene la soglia appropriata vari per
-condizione e classe farmacologica.
+Un paziente è in genere classificato come "aderente" a una soglia PDC di
+≥ 80%, seguendo la convenzione largamente usata nelle misure di qualità.
 ```
 
 ## Esempio pratico
 
-A un paziente viene prescritto un farmaco per abbassare la pressione arteriosa da assumere quotidianamente in un periodo di misurazione di 90 giorni. I dati di riordino in farmacia mostrano che il paziente ha ritirato abbastanza farmaco da coprire 72 dei 90 giorni, dando un PDC dell'80% — proprio alla soglia di adeguatezza comunemente utilizzata. Un programma digitale di promemoria interviene con promemoria SMS giornalieri ai pazienti il cui schema di riordino suggerisce lacune imminenti, e nel periodo di misurazione successivo il PDC del paziente sale al 94%. Riportare questo miglioramento richiede il confronto del PDC dello stesso paziente nel tempo o il confronto di un gruppo di intervento con un gruppo di controllo abbinato, non semplicemente una misurazione istantanea.
+A un paziente viene prescritto un farmaco cronico giornaliero per un periodo di misurazione di 90 giorni. I registri di erogazione della farmacia mostrano che il paziente ha ottenuto farmaco sufficiente a coprire 76 di quei 90 giorni, con due interruzioni: una di 9 giorni dopo aver finito la scorta prima del rinnovo e una di 5 giorni in occasione di un ricovero ospedaliero. Il PDC è 76 / 90 × 100 = 84%, che supera la soglia convenzionale di aderenza dell'80%. Se le stesse interruzioni fossero misurate con l'MPR basato sui giorni di fornitura erogati anziché sui giorni effettivamente coperti, un rinnovo anticipato altrove nel periodo potrebbe spingere il rapporto oltre il 100%, il che illustra perché il PDC è la misura più prudente e in genere preferita.
 
 ## Fonti dei dati e avvertenze
 
-I dati di riordino in farmacia (Proportion of Days Covered) sono la fonte più comunemente utilizzata e scalabile, ma misurano solo se il paziente ha ritirato il farmaco, non se lo ha effettivamente assunto come prescritto — un paziente può ritirare un riordino e comunque saltare delle dosi. I portapillole connessi e i sistemi di monitoraggio elettronico forniscono dati più precisi sull'assunzione effettiva, ma sono più costosi da implementare e richiedono la partecipazione attiva del paziente al sistema di monitoraggio, il che può introdurre un proprio bias di selezione verso pazienti più coinvolti.
+I dati di rimborso o di erogazione delle farmacie (provenienti da un gestore dei benefici farmaceutici o da un sistema di farmacia connesso) sono la fonte standard, perché riflettono ciò che un paziente ha effettivamente ottenuto e non ciò che gli è stato prescritto; i soli dati di prescrizione sovrastimano l'aderenza perché non confermano che il paziente abbia mai ritirato il farmaco. Gli strumenti digitali per l'aderenza (flaconi di pillole intelligenti, sensori ingeribili, inalatori intelligenti connessi che registrano ogni azionamento nelle condizioni respiratorie come l'asma e la BPCO e controlli basati su app) offrono dati a più alta risoluzione sul fatto che una dose sia stata effettivamente assunta, e non solo ottenuta, ma sono usati da una piccola minoranza di pazienti potenzialmente non rappresentativa, per cui fondere l'aderenza confermata dal dispositivo con il PDC basato sui rimborsi su una popolazione richiede cautela nell'interpretazione. L'aderenza va misurata su un periodo abbastanza lungo da smussare le singole dosi saltate ma abbastanza breve da rilevare un calo significativo prima che causi un danno clinico; le finestre mobili di 90 giorni sono comuni per i farmaci cronici.
 
-## Errori comuni
+## Insidie
 
-- **Confondere il riordino con l'assunzione effettiva**: i dati di riordino in farmacia dimostrano solo che il paziente ha ottenuto il farmaco, non che lo ha assunto come prescritto; essere espliciti su quale tipo di aderenza si sta misurando.
-- **Usare un'unica soglia universale per tutti i tipi di farmaci**: la soglia di aderenza clinicamente significativa varia notevolmente per classe farmacologica e condizione; una soglia dell'80% appropriata per una statina potrebbe non essere appropriata per un antibiotico.
-- **Ignorare la non aderenza primaria**: un paziente che non ritira mai una nuova prescrizione non compare nei dati di aderenza basati sul riordino, il che significa che queste metriche possono sovrastimare sistematicamente la vera aderenza di una popolazione.
-- **Riportare il miglioramento dell'aderenza senza un gruppo di confronto**: l'aderenza fluttua naturalmente nel tempo per ragioni non correlate a un intervento; un confronto prima-dopo senza gruppo di controllo può attribuire a un intervento una variazione casuale.
+- **Usare l'MPR senza dichiarare che può superare il 100%**: rapporti oltre il 100% non spiegati, dovuti a rinnovi anticipati o accaparramento, rendono inaffidabile il confronto tra pazienti e tra periodi, a meno che non si usi il PDC o il rapporto non sia esplicitamente limitato.
+- **Trattare i dati di prescrizione o di ordine come prova di aderenza**: una prescrizione redatta o inviata a una farmacia non dice nulla sul fatto che il paziente abbia ritirato o assunto il farmaco; solo i dati di erogazione o del dispositivo colmano quella lacuna.
+- **Applicare una sola soglia di aderenza a tutte le condizioni indiscriminatamente**: la conseguenza clinica del saltare il 20% delle dosi varia enormemente per classe di farmaco (ad es. anticoagulanti rispetto a statine), per cui un'unica soglia dell'80% usata universalmente può sottostimare o sovrastimare il rischio clinico per alcuni farmaci.
+- **Ignorare i cambi di farmaco e le sospensioni**: un paziente che viene clinicamente e appropriatamente passato a un farmaco diverso può apparire come un forte calo di aderenza al farmaco originale se il cambio non viene considerato nel calcolo.
 
 ## Fonti
 
-- Pharmacy Quality Alliance (PQA), definizioni e metodologie standard per la Proportion of Days Covered
-- World Health Organization, rapporto sull'aderenza alle terapie a lungo termine
-- Letteratura peer-reviewed sull'impatto degli interventi digitali sull'aderenza alla terapia farmacologica, ad esempio studi pubblicati su Journal of Medical Internet Research (JMIR) e npj Digital Medicine
+- Pharmacy Quality Alliance (PQA), specifiche della misura Proportion of Days Covered
+- Centers for Medicare & Medicaid Services (CMS), misure di aderenza ai farmaci delle Star Ratings
+- Letteratura sottoposta a revisione paritaria sulla misurazione dell'aderenza ai farmaci e sugli interventi digitali per l'aderenza, ad esempio studi pubblicati sul Journal of Managed Care & Specialty Pharmacy
 
-Vedi anche: [tasso di miglioramento biometrico](../tasso-di-miglioramento-biometrico/), per il quale l'aderenza alla terapia farmacologica nelle malattie croniche è un driver importante.
+Vedere anche: [tasso di miglioramento biometrico](../tasso-di-miglioramento-biometrico/), di cui l'aderenza ai farmaci per le malattie croniche è un fattore determinante.

@@ -1,44 +1,48 @@
 # ePROM-Fuldførelsesrate
 
-ePROM-fuldførelsesraten måler andelen af planlagte elektroniske patientrapporterede resultatmål (ePROM), som patienter rent faktisk udfylder, inden for et defineret indsamlingsvindue. ePROM'er er strukturerede spørgeskemaer, der indfanger en patients egen vurdering af deres symptomer, funktion eller livskvalitet, og fordi hele værdien af et ePROM-program afhænger af, at patienter rent faktisk svarer, er fuldførelsesraten den grundlæggende metrik, der bestemmer, om de indsamlede data overhovedet kan stoles på.
+ePROM-fuldførelsesraten måler andelen af planlagte elektroniske patientrapporterede udfaldsmål (ePROM'er), altså standardiserede, validerede spørgeskemaer, der fanger patientens egen beskrivelse af sine symptomer, sin funktion eller sin livskvalitet og leveres digitalt i stedet for på papir, der rent faktisk bliver gennemført. Det er lige så meget en datakvalitetsmetrik som en engagementsmetrik: et PROM-programs kliniske og forskningsmæssige værdi afhænger helt af en fuldførelsesrate, der er høj nok til, at de indsamlede besvarelser er repræsentative for hele den indskrevne population og ikke kun for den mest engagerede eller mindst symptomtunge del.
 
-## Hvorfor det betyder noget
+## Hvorfor dette er vigtigt
 
-En lav ePROM-fuldførelsesrate underminerer ikke kun datakvaliteten statistisk, men introducerer også en specifik klinisk bekymring: patienter, der har det dårligst, er ofte dem, der er mindst tilbøjelige til at udfylde et spørgeskema, hvilket betyder, at en faldende fuldførelsesrate i sig selv kan være et klinisk signal snarere end blot et databehandlingsproblem. Et sundhedssystem, der bygger kliniske beslutninger eller kvalitetsrapportering på ePROM-data med en lav eller faldende fuldførelsesrate, risikerer at basere disse beslutninger på en ikke-repræsentativ delmængde af sin patientpopulation, typisk skævvredet mod patienter, der har det relativt bedre. Fordi ePROM'er i stigende grad bruges til at drive kliniske beslutninger i realtid (f.eks. at udløse en klinisk gennemgang, når en patients rapporterede symptomscore forværres), er fuldførelsesraten også en direkte afgørende faktor for, hvor pålideligt disse automatiserede kliniske arbejdsgange fungerer.
+Patientrapporterede udfald er det direkte, af patienten bekræftede supplement til data, som klinikere registrerer, eller som enheder måler. De fanger sundhedsdimensioner som smerte, funktion og livskvalitet, som en gennemgang af journalen eller en biometrisk måling ikke kan fange. Digitalisering af PROM-indsamlingen findes netop for at gøre disse data billigere og lettere at indsamle i stor skala, end papirbaseret administration nogensinde kunne. Men et PROM-program med lav fuldførelsesrate risikerer en bestemt og alvorlig skævhed: patienter, der har det dårligere, har ofte mindre tilbøjelighed til at gennemføre et langt spørgeskema, så en faldende fuldførelsesrate kan i sig selv være et tidligt varselstegn på en forværret sundhedstilstand i populationen, og en lav samlet fuldførelsesrate kan få de indsamlede besvarelser til at se bedre ud end populationens reelle oplevelse, blot fordi de mest symptomtunge patienter er underrepræsenteret i det, der bliver gennemført. Det er derfor, fuldførelsesraten altid bør rapporteres sammen med selve PROM-scorerne og ikke behandles som en sekundær driftsdetalje.
 
 ## Hvordan det beregnes
 
 ```
-ePROM-fuldførelsesrate = udfyldte ePROM-besvarelser / samlet
-                         antal planlagte ePROM-anmodninger i
-                         indsamlingsvinduet × 100
+ePROM-fuldførelsesrate = fuldt gennemførte ePROM'er / sendte eller
+                         planlagte ePROM'er × 100
 
-Rapporter altid sammen med:
-  Fuldførelsesrate efter patientundergruppe (alder, sygdomsalvor,
-  tid siden diagnose) for at afsløre, om manglende besvarelser er
-  tilfældigt fordelt eller koncentreret blandt bestemte
-  patientgrupper
+Rapportér separat for:
+  Indledende fuldførelsesrate  (det første spørgeskema i en
+                                overvågningsserie)
+  Longitudinel fuldførelsesrate (efterfølgende spørgeskemaer i en
+                                løbende overvågningsserie, som typisk
+                                falder over tid og bør følges som en
+                                tendens og ikke som ét enkelt tal)
+
+Et "delvist gennemført" spørgeskema bør defineres og rapporteres
+separat fra både "fuldt gennemført" og "ikke påbegyndt".
 ```
 
-## Et gennemarbejdet eksempel
+## Gennemarbejdet eksempel
 
-Et onkologiafdeling implementerer ugentlige ePROM-spørgeskemaer for at spore symptombyrde hos patienter i aktiv behandling. I den første måned er den samlede fuldførelsesrate 75%, hvilket lyder rimeligt, men segmentering efter sygdomsalvor afslører, at fuldførelsesraten blandt patienter med den højeste rapporterede symptombyrde ved deres seneste besvarelse er kun 55%, sammenlignet med 85% blandt patienter med lav symptombyrde. Dette mønster antyder, at de patienter, der har mest brug for at blive overvåget tæt, er netop dem, der er mindst tilbøjelige til at svare — en kritisk indsigt, der ville have været fuldstændig skjult af det samlede fuldførelsestal på 75%, og som fik afdelingen til at tilføje et telefonopfølgningsprotokol for patienter, der går glip af en ePROM-anmodning.
+En onkologisk klinik sender et valideret ePROM om symptombyrde til 400 patienter før hvert månedlige opfølgningsbesøg. I den første måned gennemfører 340 patienter spørgeskemaet fuldt ud (fuldførelsesrate 85 %), 30 gennemfører det delvist, og 30 påbegynder det ikke. I den sjette måned af samme overvågningsserie er antallet af fuldstændige besvarelser faldet til 260 ud af den samme kohorte på 400 patienter (65 %), et betydeligt longitudinelt fald, som ville være gået helt upåagtet hen, hvis kun den første måneds tal på 85 % var blevet rapporteret som en statisk samlet metrik. En undersøgelse af, hvilke patienter der falder fra (efter symptomernes sværhedsgrad, sygdomsstadium eller alder), kan afsløre, om faldet afspejler undersøgelsestræthed, forværrede symptomer, der gør spørgeskemaet sværere at gennemføre, eller en teknisk adgangsbarriere.
 
 ## Datakilder og forbehold
 
-ePROM-fuldførelsesdata kommer typisk direkte fra den digitale platform, der leverer spørgeskemaerne, hvilket gør denne metrik relativt ligetil at beregne sammenlignet med mange andre i denne bog, men fortolkningen kræver omhyggelig opmærksomhed på, hvorfor besvarelser mangler. En faldende fuldførelsesrate kan skyldes spørgeskematræthed (for hyppige eller for lange spørgeskemaer), teknisk adgangsbesvær (patienter uden pålidelig internetadgang) eller et reelt klinisk signal (patienter, der har det for dårligt til at svare), og disse tre årsager kræver meget forskellige interventioner.
+Fuldførelsesdata stammer fra ePROM-platformens egne leverings- og svarlogge, som kan skelne mellem tilstandene "ikke påbegyndt", "delvist gennemført" og "fuldt gennemført". Det er et skel, der altid bør bevares og rapporteres og ikke slås sammen til et binært tal for gennemført/ikke gennemført, da delvis fuldførelse ofte peger på et bestemt sted i spørgeskemaet, hvor patienter har svært ved det eller mister interessen. Fuldførelsesraten bør fortolkes sammen med, hvordan spørgeskemaet leveres (et link i en sms, en appnotifikation eller en leveringsmetode, der kræver login til en portal), da friktion i leveringen i sig selv påvirker fuldførelsen uafhængigt af spørgeskemaets indhold eller patientens underliggende tilstand. Der bør altid bruges et valideret instrument (og ikke et ad hoc-sæt spørgsmål) til selve PROM'et, da fuldførelsesraten for et ikke-valideret instrument intet pålideligt siger om de resulterende datas kliniske anvendelighed, selv om fuldførelsen er høj.
 
 ## Faldgruber
 
-- **Rapportering af et samlet fuldførelsestal uden segmentering**: dette kan skjule, at manglende besvarelser er koncentreret blandt de patienter, hvis data er mest klinisk vigtige at indsamle.
-- **Antagelse af, at en faldende fuldførelsesrate udelukkende er et teknisk problem**: en faldende rate kan være et klinisk signal om forværrende patienttilstand snarere end blot brugeroplevelsesfriktion.
-- **Ignorering af spørgeskematræthed som en årsag**: for hyppige eller for lange ePROM-anmodninger reducerer fuldførelsesraten over tid uafhængigt af patienternes kliniske tilstand.
-- **Behandling af ufuldstændige data, som om de var tilfældigt manglende**: at analysere kun fuldførte ePROM'er uden at overveje, hvorfor de resterende mangler, kan føre til systematisk skæve kliniske konklusioner.
+- **At behandle en faldende fuldførelsesrate som udelukkende et leveringsproblem**: et longitudinelt fald i fuldførelsen kan afspejle, at patienternes symptomer reelt forværres (patienter, der er for syge til at besvare undersøgelsen), og ikke undersøgelsestræthed eller et teknisk problem, og den skelnen er afgørende for den kliniske fortolkning.
+- **At slå delvis og fuld fuldførelse sammen i én kategori**: et delvist gennemført spørgeskema har en væsentligt anden datakvalitet end et fuldt gennemført; rapportér dem separat, og undersøg, hvor i spørgeskemaets forløb patienterne har tendens til at opgive det.
+- **At rapportere fuldførelsesraten uden at rapportere risikoen for svarskævhed**: en moderat fuldførelsesrate bør give anledning til at undersøge, om de, der svarer, adskiller sig systematisk (i symptomernes sværhedsgrad, alder, digitale kompetencer) fra dem, der ikke svarer, da PROM-scorer, der kun er beregnet ud fra dem, der har svaret, kan give et skævt billede af hele populationen.
+- **At bruge et ikke-valideret eller hjemmelavet spørgeskema**: fuldførelsesraten er meningsløs som signal om datakvalitet, hvis det instrument, der gennemføres, ikke selv er klinisk valideret til den tilstand og population, der måles.
 
 ## Kilder
 
-- International Society for Quality of Life Research (ISOQOL), retningslinjer for implementering af elektroniske patientrapporterede resultater
-- U.S. Food and Drug Administration (FDA), retningslinjer for patientrapporterede resultatmål til klinisk brug
-- Collegialt bedømt litteratur om ePROM-fuldførelse og manglende data, f.eks. undersøgelser offentliggjort i Journal of Clinical Oncology og Quality of Life Research
+- International Consortium for Health Outcomes Measurement (ICHOM), udvikling af standardsæt og vejledning i implementering af PROM'er
+- U.S. Food and Drug Administration (FDA), vejledning om patientrapporterede udfaldsmål i kliniske forsøg og regulatoriske indsendelser
+- Peer reviewet litteratur om implementering og fuldførelsesrater for elektroniske PROM'er, for eksempel undersøgelser offentliggjort i Quality of Life Research og Journal of Medical Internet Research (JMIR)
 
-Se også: [patientens nettoanbefalingsscore](../patientens-nettoanbefalingsscore/), en relateret men adskilt patientrapporteret metrik, der måler tilfredshed snarere end klinisk resultat.
+Se også: [patientens nettoanbefalingsscore](../patientens-nettoanbefalingsscore/), en beslægtet, men særskilt patientrapporteret metrik, der måler tilfredshed og ikke et klinisk udfald.

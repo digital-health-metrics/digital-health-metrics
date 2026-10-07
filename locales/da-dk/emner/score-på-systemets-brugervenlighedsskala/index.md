@@ -1,50 +1,45 @@
 # Score på systemets brugervenlighedsskala
 
-System Usability Scale (SUS) er et standardiseret 10-spørgsmåls spørgeskema, der kvantificerer, hvor brugbart et stykke software rent faktisk er, med svar givet på en 5-punkts enighedsskala, der kombineres til en enkelt score fra 0 til 100. I modsætning til Net Promoter Score, som måler generel tilfredshed og anbefalingssandsynlighed, er SUS specifikt designet til at måle brugbarhed — hvor let og effektivt en bruger rent faktisk kan udføre opgaver med et stykke software.
+Scoren på systemets brugervenlighedsskala (System Usability Scale, SUS) er et standardiseret spørgeskema med 10 punkter, der bruges til at kvantificere, hvor brugervenligt et stykke software er, og som giver én enkelt score fra 0 til 100, der kan benchmarkes mod veletablerede branchenormer. I modsætning til Net Promoter Score, som måler villigheden til at anbefale, eller patientrapporterede udfaldsmål, som måler klinisk eller funktionel status, måler SUS én specifik ting: hvor let selve softwaren er at lære og bruge, for enten patienter eller klinisk personale.
 
-## Hvorfor det betyder noget
+## Hvorfor dette er vigtigt
 
-Brugbarhedsproblemer er en af de mest almindelige og rettelige årsager til, at digitale sundhedsprodukter mislykkes med at opnå den tilsigtede kliniske effekt: en teknisk fejlfri app, der er forvirrende at navigere, vil ikke opnå den brugsadfærd, dens kliniske model antager, uanset hvor god den underliggende sundhedsintervention er. SUS giver et valideret, standardiseret, let administreret værktøj til at kvantificere brugbarhed, hvilket gør det muligt for produktteams at spore brugbarhedsforbedringer over tid og benchmarke mod bredt publicerede industristandarder snarere end at stole på subjektive interne vurderinger. Fordi SUS er blevet brugt på tværs af tusindvis af softwareprodukter over flere årtier, har det en af de rigeste tilgængelige benchmark-datasæt af enhver brugbarhedsmetrik, hvilket gør scoren meningsfuld i en bredere kontekst snarere end kun sammenlignelig med sig selv over tid.
+Et digitalt sundhedsværktøj kan have stærk klinisk evidens og et overbevisende business case og alligevel svigte i praksis, fordi patienter eller klinikere finder grænsefladen forvirrende, langsom eller frustrerende at bruge. Og fordi SUS er et valideret, udbredt instrument med årtiers offentliggjorte benchmarkingdata på tværs af brancher, giver det et digitalt sundhedsteam mulighed for at sammenligne deres eget produkts brugervenlighed med en kendt fordeling i stedet for at støtte sig til uformelle indtryk eller anekdotiske klager. SUS er bevidst teknologiuafhængig og hurtig at administrere (typisk under fem minutter), hvilket gør den praktisk at gentage gennem designiterationer, i modsætning til en fuld brugervenlighedsundersøgelse eller et formelt klinisk forsøg. Fordi brugervenlighedssvigt, der vender mod klinikere, er en dokumenteret medvirkende faktor til udbrændthed (se lægeudbrændthedsraten), og brugervenlighedssvigt, der vender mod patienter, er en dokumenteret medvirkende faktor til frafald og dårlige udfald for digital kompetence (se den digitale kompetencerate), fungerer SUS som et tidligt og billigt advarselssignal om brugervenlighed, der kan fange et designproblem, før det viser sig i de mere vidtrækkende nedstrøms metrikker.
 
 ## Hvordan det beregnes
 
 ```
-SUS-score beregnes fra 10 standardiserede spørgsmål, der skiftevis
-er positivt og negativt formulerede, hver besvaret på en 5-punkts
-enighedsskala (stærkt uenig til stærkt enig):
+SUS-score = ((sum af scorerne for de ulige nummererede punkter − 5) +
+             (25 − sum af scorerne for de lige nummererede punkter)) × 2,5
 
-For ulige nummererede spørgsmål (positivt formulerede):
-  score-bidrag = (brugersvar − 1)
-For lige nummererede spørgsmål (negativt formulerede):
-  score-bidrag = (5 − brugersvar)
+Resultatet er én score fra 0 til 100 (ikke en procentdel, trods
+skalaen, da den ikke repræsenterer "procent rigtige" eller lignende).
 
-Summen af alle 10 score-bidrag ganges med 2,5 for at producere en
-score fra 0 til 100.
-
-En SUS-score over 68 anses bredt for at være over gennemsnittet
-baseret på det akkumulerede industribenchmark-datasæt, selvom det
-passende mål kan variere efter produkttype.
+Offentliggjort fortolkning af benchmark (Bangor et al.):
+  Over 80  — fremragende brugervenlighed
+  68       — gennemsnitlig, ud fra den brede branchenorm
+  Under 51 — dårlig brugervenlighed, der kræver undersøgelse
 ```
 
-## Et gennemarbejdet eksempel
+## Gennemarbejdet eksempel
 
-Et sundhedssystem tester en ny patientportal-grænseflade med 50 patienter, der hver udfylder SUS-spørgeskemaet efter at have udført en standardiseret sæt opgaver (booking af en aftale, visning af laboratorieresultater, afsendelse af en besked til deres kliniker). Den gennemsnitlige SUS-score på tværs af de 50 patienter er 72, som ligger over det bredt citerede gennemsnit på 68, hvilket giver teamet tillid til, at grænsefladen er rimeligt brugbar. Men opdeling af scoren efter opgavetype afslører, at patienter, der kæmpede specifikt med beskedfunktionen, gav betydeligt lavere individuelle scorer, hvilket peger teamet mod en specifik del af grænsefladen, der skal forbedres, snarere end blot at rapportere det samlede gennemsnitstal.
+En telehealth-platform administrerer det standardiserede SUS-spørgeskema med 10 punkter til 150 patienter efter deres første videobesøg. Den beregnede gennemsnitlige SUS-score på tværs af alle respondenter er 74. Sammenlignet med det udbredt citerede branchegennemsnit på 68 tyder det på en brugervenlighed over gennemsnittet for denne specifikke patientpopulation og brug, selv om den stadig ligger væsentligt under tærsklen "fremragende" på 80, som ville antyde, at der kun er få brugervenlighedsbarrierer tilbage. En opdeling af de samme 150 svar efter alder viser en gennemsnitlig score på 81 for patienter under 50 og 62 for patienter på 65 år og derover, en forskel, der peger mod et specifikt brugervenlighedsproblem, man kan gøre noget ved, for ældre patienter og ikke mod et generelt problem med produktets brugervenlighed, og som et enkelt blandet gennemsnit ville have skjult.
 
 ## Datakilder og forbehold
 
-SUS-data indsamles via det standardiserede 10-spørgsmåls spørgeskema administreret straks efter, at en bruger har udført en repræsentativ opgave eller sæt opgaver med softwaren, og scoringsmetodologien er fast og veletableret, hvilket gør den sammenlignelig på tværs af undersøgelser og organisationer, forudsat at det samme standardiserede spørgeskema anvendes. Fordi SUS giver en enkelt samlet score, kan den skjule, hvilke specifikke opgaver eller grænsefladeelementer der driver en lav score; en kvalitativ opfølgning eller opgavespecifik analyse er ofte nødvendig for at gøre resultatet handlingsorienteret.
+SUS-data kommer direkte fra patienter eller klinikere, der udfylder det standardiserede spørgeskema med 10 punkter, og instrumentet skal administreres præcis som valideret (de samme 10 punkter, den samme 5-punkts enighedsskala, den samme scoringsformel), for at den resulterende score kan sammenlignes med offentliggjorte benchmarks; en ændret eller forkortet version af spørgeskemaet, uanset hvor velment, giver en score, der ikke pålideligt kan fortolkes mod den standardiserede benchmarkfordeling. SUS måler opfattet brugervenlighed, som hænger sammen med, men ikke er identisk med, objektiv succes med at gennemføre opgaver (se den digitale kompetencerate for et mål baseret på opgavegennemførelse); et produkt kan få en god SUS-score fra patienter, der ikke har prøvet de mere komplekse funktioner, så en kombination af SUS med objektive data om opgavegennemførelse giver et mere fuldstændigt billede end nogen af dem alene. Tidspunktet for besvarelsen har betydning: hvis SUS administreres umiddelbart efter en frustrerende enkelt hændelse (en mislykket forbindelse, et forvirrende trin) mod efter en smidig session, kan det flytte scorerne uafhængigt af produktets samlede brugervenlighed.
 
 ## Faldgruber
 
-- **Ændring af spørgeskemaets ordlyd**: SUS's validitet og sammenlignelighed med branchebenchmarks afhænger af brugen af den standardiserede spørgeformulering; tilpasning af spørgsmålene underminerer sammenlignelighed.
-- **Behandling af en enkelt samlet score som fuldt diagnostisk**: en SUS-score fortæller dig, om der er et brugbarhedsproblem, men ikke hvor; opgavespecifik eller kvalitativ opfølgning er nødvendig for at identificere den specifikke årsag.
-- **Sammenligning af SUS-score på tværs af meget forskellige brugeropgaver**: en score opnået fra en kompleks multi-trins opgave er ikke direkte sammenlignelig med en opnået fra en enkel enkelt-trins opgave.
-- **Ignorering af stikprøvestørrelse og -sammensætning**: en SUS-score baseret på en lille eller ikke-repræsentativ brugerstikprøve kan ikke generaliseres pålideligt til hele brugerpopulationen.
+- **At ændre det standardiserede spørgeskemas punkter eller scoring**: selv små ændringer i formulering eller skala ugyldiggør sammenligningen med den veletablerede, offentliggjorte benchmarkfordeling; brug det standardiserede instrument med 10 punkter præcis som valideret.
+- **Kun at rapportere gennemsnitsscoren uden opdeling**: brugervenligheden varierer ofte betydeligt efter brugerens alder, digitale kompetence eller rolle (patient mod kliniker); opdel rapporteringen for at finde specifikke brugervenlighedsgab, som et enkelt gennemsnit skjuler.
+- **At behandle SUS som et mål for klinisk effektivitet**: SUS måler specifikt brugervenlighed og ikke klinisk udfald eller tilfredshed med plejen; et meget brugervenligt værktøj kan stadig undlade at forbedre kliniske udfald, og de to bør aldrig forveksles eller erstatte hinanden.
+- **Kun at administrere undersøgelsen efter usædvanligt smidige eller usædvanligt frustrerende sessioner**: tidspunktet og konteksten for administrationen kan skævvride scoren; administrér den konsekvent på tværs af en repræsentativ stikprøve af virkelige sessioner og ikke kun bekvemme eller selektivt udvalgte.
 
 ## Kilder
 
-- Brooke, J., "SUS: A quick and dirty usability scale", den oprindelige udvikling af metoden
-- Sauro, J., "A Practical Guide to the System Usability Scale", akkumulerede industribenchmark-data
-- Collegialt bedømt litteratur om SUS-anvendelse i sundhedsvæsenets softwareevaluering, f.eks. undersøgelser offentliggjort i Journal of Medical Internet Research (JMIR) og JMIR Human Factors
+- Brooke, J., "SUS: A Quick and Dirty Usability Scale", det oprindelige offentliggjorte instrument
+- Bangor, Kortum og Miller, offentliggjort benchmarkingforskning i SUS, der fastlagde de udbredt citerede bånd for fortolkning af scoren
+- Peer reviewet litteratur om brugen af SUS i digital sundhed og evaluering af telehealths brugervenlighed, for eksempel undersøgelser offentliggjort i JMIR Human Factors
 
-Se også: [patientens nettoanbefalingsscore](../patientens-nettoanbefalingsscore/), en relateret men adskilt patientrapporteret metrik, der måler tilfredshed og loyalitet snarere end specifik softwarebrugbarhed.
+Se også: [patientens nettoanbefalingsscore](../patientens-nettoanbefalingsscore/), en beslægtet, men særskilt patientrapporteret metrik, der måler tilfredshed og loyalitet og ikke specifikt softwarens brugervenlighed.

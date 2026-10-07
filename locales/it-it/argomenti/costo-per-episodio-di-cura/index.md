@@ -1,46 +1,48 @@
 # Costo per Episodio di Cura
 
-Il costo per episodio di cura misura il costo totale per curare un paziente attraverso un episodio completo e definito di una specifica condizione o procedura — ad esempio una sostituzione dell'anca dalla consultazione iniziale fino alla riabilitazione, o un episodio di gestione del diabete nell'arco di un anno — invece di misurare il costo per singolo servizio o visita isolatamente. È l'unità di confronto standard nei contratti di assistenza basata sul valore, perché costringe tutti i costi associati al trattamento di una condizione in un'unica cifra confrontabile.
+Il costo per episodio di cura è il costo totale sostenuto per trattare un episodio clinico definito (ad esempio una protesi d'anca e il relativo recupero, oppure un periodo di gestione del diabete), confrontato con una coorte storica di riferimento trattata senza l'intervento digitale in valutazione. È l'unità standard di confronto finanziario nell'assistenza basata sul valore, perché coglie il quadro economico completo di un episodio anziché una singola voce di costo isolata, ed è la metrica che pagatori e sistemi sanitari richiedono più spesso prima di accettare di finanziare un programma di salute digitale su larga scala.
 
 ## Perché è importante
 
-Il pagamento tradizionale a tariffa per servizio premia il volume di servizi individuali senza considerare se tali servizi insieme producano un buon esito a un costo totale ragionevole, mentre l'assistenza basata sul valore cerca esplicitamente di premiare le organizzazioni per fornire buoni esiti a costi totali più bassi per episodio. Per un programma di salute digitale che mira a ridurre i costi — prevenendo le riammissioni, riducendo le visite di pronto soccorso non necessarie, o semplificando il coordinamento dell'assistenza — il costo per episodio di cura è la metrica che effettivamente cattura se questi singoli miglioramenti producano insieme un risparmio significativo sul costo totale. È anche la metrica che i finanziatori e i contraenti dell'assistenza basata sul valore più probabilmente useranno per decidere se un programma digitale meriti un investimento continuo o pagamenti di risparmio condiviso.
+I contratti di assistenza basata sul valore pagano sempre più gli esiti e gli episodi anziché le singole prestazioni, il che significa che l'argomentazione finanziaria di un programma di salute digitale deve essere presentata nella stessa valuta: il costo totale per episodio confrontato con quanto costava lo stesso tipo di episodio prima che l'intervento esistesse. Un programma che riduce una categoria di costo (ad esempio meno visite di controllo di persona) aumentandone un'altra (più costi per dispositivi, più tempo del personale clinico di monitoraggio) non ha necessariamente ridotto il costo totale per episodio, e solo una contabilizzazione completa dei costi a livello di episodio coglie questo compromesso; guardare a una singola voce di costo isolata rischia una conclusione fuorviante in entrambe le direzioni. Poiché le definizioni di episodio e i periodi di riferimento possono essere costruiti in modi che favoriscono una particolare conclusione, questa metrica richiede più trasparenza metodologica della maggior parte delle altre di questo libro per essere credibile agli occhi di un pagatore o di un ufficio finanziario scettici.
 
 ## Come si calcola
 
 ```
-Costo per episodio di cura = costi totali in tutte le strutture e
-                             i servizi di cura erogati nel periodo
-                             dell'episodio definito / numero di
-                             episodi
+Costo per episodio di cura = costo totale di tutta l'assistenza erogata
+                             entro una finestra di episodio definita
+                             (tutti i contesti di cura, tutte le categorie
+                             di costo) / numero di episodi
 
-Un "episodio" deve essere definito esplicitamente con chiari
-confini di inizio e fine (ad esempio 90 giorni dopo un intervento
-chirurgico, o un intero anno solare per una condizione cronica), e
-deve includere tutte le categorie di costo rilevanti: assistenza
-ospedaliera, assistenza ambulatoriale, farmaci, costi del programma
-digitale e qualsiasi riammissione o complicanza correlata.
+Confrontare con il costo per episodio di una coorte storica di riferimento
+per lo stesso tipo di episodio clinicamente definito, aggiustato per la
+casistica (età, comorbilità, gravità) tra le due coorti.
+
+Includere, oltre ai costi clinici diretti: costi della piattaforma
+tecnologica e dei dispositivi, tempo aggiuntivo del personale clinico e
+qualsiasi assistenza che ha cambiato contesto (ad es. dal ricovero al
+domicilio) anziché scomparire del tutto.
 ```
 
 ## Esempio pratico
 
-Un sistema sanitario confronta il costo per episodio di cura per i pazienti con sostituzione dell'anca con e senza un programma digitale di monitoraggio della riabilitazione. L'episodio è definito come 90 giorni dalla data dell'intervento, includendo la procedura chirurgica, la degenza ospedaliera, tutta la fisioterapia ambulatoriale e qualsiasi riammissione correlata alla procedura. I pazienti senza il programma digitale hanno un costo medio per episodio di 28.000 dollari, mentre i pazienti con il programma digitale di riabilitazione hanno un costo medio di 25.500 dollari — un risparmio di 2.500 dollari per episodio, guidato principalmente da un tasso di riammissione inferiore e da una ridotta necessità di visite di fisioterapia in presenza. Questo confronto a livello di episodio, piuttosto che guardare isolatamente al costo dell'abbonamento del programma digitale stesso, fornisce il caso aziendale completo richiesto da una negoziazione di contratto basato sul valore.
+Il costo storico di riferimento di un sistema sanitario per un episodio di protesi totale d'anca (dall'intervento fino a 90 giorni di recupero) è di 28.000 USD per episodio, sulla base di 200 episodi storici. Viene introdotto un nuovo programma digitale di monitoraggio post-chirurgico e 150 nuovi episodi che lo utilizzano mostrano un costo medio di 24.500 USD per episodio, una riduzione di 3.500 USD per episodio dovuta principalmente a meno visite al pronto soccorso durante il recupero e a una degenza media più breve. Dopo l'aggiustamento per il rischio, a causa di una casistica leggermente più giovane e con minori comorbilità nella coorte monitorata digitalmente rispetto alla base storica, il risparmio aggiustato si riduce a 2.100 USD per episodio: ancora un miglioramento reale, ma sensibilmente inferiore a quello suggerito dal confronto grezzo non aggiustato.
 
 ## Fonti dei dati e avvertenze
 
-Calcolare accuratamente il costo per episodio di cura richiede l'accesso a dati di costo completi in tutte le strutture coinvolte nell'episodio, il che spesso significa integrare dati da più sistemi (costi ospedalieri, sistemi di fatturazione ambulatoriale, dati farmaceutici e i costi del programma digitale stesso) — una sfida infrastrutturale dei dati sostanziale che molte organizzazioni sottostimano. La definizione dell'episodio ha un impatto significativo sulla cifra risultante, quindi confrontare il costo per episodio tra organizzazioni o studi richiede la conferma che siano stati applicati gli stessi confini dell'episodio e le stesse categorie di costo incluse.
+Il costo totale dell'episodio viene in genere ricostruito dal sistema di contabilità dei costi o dal sistema finanziario del sistema sanitario, combinando dati di rimborso, allocazione interna dei costi e, quando è coinvolta una piattaforma digitale, i suoi costi di licenza e hardware: ricostruire questo dato con precisione è di solito la parte più difficile e più dispendiosa in termini di risorse di qualsiasi analisi del valore della salute digitale, perché i costi sono spesso registrati in sistemi separati che non sono mai stati progettati per essere combinati a livello di episodio. L'aggiustamento per la casistica è essenziale ogni volta che la coorte gestita digitalmente e la coorte storica di riferimento non sono state assegnate tramite vera randomizzazione, perché i programmi digitali vengono spesso offerti per primi ai pazienti più coinvolti, generalmente più sani o più motivati, il che può produrre un apparente risparmio di costi che in realtà è un effetto di selezione e non un vero effetto del programma.
 
-## Errori comuni
+## Insidie
 
-- **Confrontare il costo per episodio tra definizioni di episodio diverse**: un episodio di 30 giorni e un episodio di 90 giorni per la stessa condizione non sono cifre direttamente confrontabili.
-- **Omettere il costo del programma digitale stesso dal calcolo**: per mostrare un vero risparmio netto, il costo del programma digitale stesso deve essere incluso nel costo totale dell'episodio del gruppo di intervento, non trattato come un "investimento" separato distinto dal risultato.
-- **Ignorare la variabilità del costo tra i livelli di rischio del paziente**: i pazienti con un carico di malattia sottostante più elevato avranno naturalmente costi per episodio più elevati; confrontare senza correzione per il rischio può produrre conclusioni fuorvianti.
-- **Usare dati di costo incompleti**: omettere una categoria di costo (ad esempio farmaci o terapia ambulatoriale) dal calcolo dell'episodio fornisce un quadro incompleto e potenzialmente fuorviante del vero costo totale.
+- **Confrontare costi non aggiustati tra coorti con casistica diversa**: una coorte gestita digitalmente che risulta più sana o a rischio più basso rispetto alla base storica mostrerà un costo per episodio più basso per ragioni estranee all'intervento digitale stesso; aggiustare sempre per il rischio prima di confrontare.
+- **Omettere i costi di tecnologia e di personale dal lato "digitale" del confronto**: un'analisi dei costi che segue solo la ridotta utilizzazione clinica ignorando i costi di piattaforma, dispositivi e personale per far funzionare il programma digitale sovrastimerà i risparmi netti.
+- **Definire in modo incoerente la finestra dell'episodio tra le coorti**: confrontare una finestra di episodio di 90 giorni per una coorte con una di 60 giorni per un'altra produrrà un confronto di costi che in realtà non misura la stessa cosa.
+- **Trattare uno spostamento di costo come una riduzione di costo**: il costo spostato da un contesto di cura a un altro (ad esempio dal ricovero a un contesto domiciliare monitorato) è un risultato reale e prezioso, ma analiticamente diverso da un costo eliminato del tutto, e i due vanno riportati separatamente.
 
 ## Fonti
 
-- Centers for Medicare & Medicaid Services (CMS), linee guida sul pagamento basato sull'episodio nei modelli di assistenza basata sul valore
-- Healthcare Financial Management Association (HFMA), standard di contabilità dei costi in sanità
-- Letteratura peer-reviewed sull'analisi dei costi basata sull'episodio, ad esempio studi pubblicati su Health Affairs e Journal of the American Medical Association (JAMA)
+- Centers for Medicare & Medicaid Services (CMS), linee guida sui Bundled Payments for Care Improvement (BPCI) e sui modelli di pagamento basati sull'episodio
+- Healthcare Financial Management Association (HFMA), linee guida sulla metodologia di calcolo dei costi per episodio di cura
+- Letteratura sottoposta a revisione paritaria sull'analisi dei costi dell'assistenza basata sul valore nella salute digitale, ad esempio studi pubblicati su Health Affairs e sull'American Journal of Managed Care
 
-Vedi anche: [ritorno sull'investimento (ROI) e valore dell'investimento (VOI)](../roi-e-voi/), che utilizza il costo per episodio di cura come uno dei suoi input principali.
+Vedere anche: [ritorno sull'investimento (ROI) e valore dell'investimento (VOI)](../roi-e-voi/), che utilizza il costo per episodio di cura come uno dei suoi input principali.

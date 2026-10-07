@@ -1,48 +1,45 @@
 # Kasutajate Püsimuse Määr
 
-Kasutajate püsimuse määr mõõdab nende kasutajate osakaalu, kes jäävad aktiivselt registreerituks või jätkavad digitaalse terviseprodukti kasutamist järjestikustel ajaperioodidel pärast esialgset registreerimist, tavaliselt visualiseerituna kohordipõhise püsimuse kõverana. See on mõõdik, mis eristab toodet, millel on jätkusuutlik kasutusmuster, tootest, mis sõidab uudsuse laineharjal ja kaotab seejärel kasutajaid ettearvatavas langevas mustris.
+Kasutajate püsimuse määr on algperioodil aktiivsete kasutajate osakaal, kes jäävad aktiivseks hilisemal perioodil, ning selle pöördväärtus, väljalangemise määr (churn), on nende osakaal, kes lõpetavad toote kasutamise täielikult. Kus patsiendiportaali kasutuselevõtu määr (vt see teema) mõõdab, kas patsient üldse digitaaltervise toote sisuliselt aktiveerib, mõõdab püsimus seda, kas ta jätkab selle kasutamist – ning iga tellimuspõhise või jätkuva ravi digitaaltervise toote puhul on püsimus tavaliselt üks mõõdik, mis on kõige tihedamalt seotud nii kliinilise mõju kui ka kaubandusliku jätkusuutlikkusega.
 
 ## Miks see on oluline
 
-Peaaegu iga digitaalne terviseprodukt kogeb teatud väljalangemist pärast esialgset registreerumist, kuid püsimuse kõvera kuju paljastab, kas see väljalangemine stabiliseerub jätkusuutlikuks tuumikkasutajaskonnaks või jätkab langemist nulli poole. Toode, mille püsimuse kõver tasandub pärast esimest paari nädalat, on leidnud tuumikgrupi kasutajaid, kellele toode pakub püsivat väärtust, samas kui toode, mille kõver kunagi ei tasandu, tõenäoliselt ei paku püsivat väärtust, olenemata sellest, kui tugev on selle esialgne registreerumisnäitaja. Investorid, tervishoiusüsteemi partnerid ja toodemeeskonnad kõik toetuvad püsimuse kõveratele kui ühele kõige usaldusväärsemale varajasele signaalile pikaajalise toote elujõulisuse kohta, kuna erinevalt paljudest teistest selle raamatu mõõdikutest saab seda arvutada suhteliselt varakult toote eluea jooksul ja see on siiski tugevalt ennustav pikaajalise edu jaoks.
+Digitaaltervise toode, mis ei suuda kasutajaid hoida, ei suuda pakkuda püsivat kliinilist kasu, olenemata sellest, kui tugevad on selle algsed kasutuselevõtu või aktiveerimise näitajad: kaks nädalat kasutatud ja seejärel hüljatud kroonilise seisundi juhtimise tööriist ei muuda tõenäoliselt biomeetrilist tulemust, mis sõltub kuude pikkusest püsivast käitumise muutusest. Püsimus on ka üks kaubanduslikult olulisemaid mõõdikuid, mida digitaaltervise ettevõte investoritele ja maksjatele esitab, kuna püsimuskõverad (väljalangemise kuju aja jooksul, mitte ainult üksik püsimusprotsent) paljastavad, kas toode on leidnud tõeliselt jätkusuutliku kasutusmustri või püüab lihtsalt uudsusest tingitud esialgset huvi, mis ennustatavalt hääbub. Püsimuskõver, mis tasandub pärast algset langust (patsiendid, kes jõuavad üle esimese kuu, kipuvad jääma), on väga erinev ja palju tervislikum signaal kui kõver, mis jätkab püsivat langust ilma põhjata.
 
 ## Kuidas seda arvutatakse
 
 ```
-Kasutajate püsimuse määr (päev/nädal/kuu N) = esialgsest
-                                              registreerumise
-                                              kohordist pärit
-                                              kasutajad, kes on
-                                              endiselt aktiivsed
-                                              ajapunktil N /
-                                              esialgse registreerumise
-                                              kohordi kasutajad kokku
-                                              × 100
+Püsimuse määr (periood N) = perioodil N aktiivsed kasutajad, kes olid
+                            aktiivsed ka algkohordi perioodil /
+                            algkohordi perioodi kasutajad × 100
 
-Seda arvutatakse tavaliselt mitme ajapunkti jaoks (päev 1, päev 7,
-päev 30, päev 90), et konstrueerida täielik püsimuse kõver, mitte
-esitada ühe arvuna.
+Väljalangemise määr = 1 − püsimuse määr (sama perioodi kohta)
+
+Esitage kohordi püsimuskõverana (püsimus päeval/nädalal/kuul 1, 2,
+3…), mitte ühe ajahetke näitajana, kuna üksik hetktõmmis segab
+hiljuti liitunud kasutajad (kellel pole veel olnud võimalust
+välja langeda) pikaajaliste kasutajatega.
 ```
 
 ## Läbitöötatud näide
 
-Digitaalne füsioteraapia rakendus registreerib jaanuaris 1000-kasutajalise kohordi. Päeval 7 on 600 endiselt aktiivsed (60% püsimus), päeval 30 on 350 endiselt aktiivsed (35% püsimus), ning päeval 90 on 320 endiselt aktiivsed (32% püsimus). Asjaolu, et kõver langeb järsult päevast 7 päevani 30, kuid seejärel suures osas tasandub päevast 30 päevani 90, on tugev positiivne signaal — see viitab, et toode on leidnud umbes 32%-lise tuumikkasutajaskonna, kellele see pakub püsivat väärtust, selle asemel et jätkuvalt piiramatult kasutajaid kaotada. Ainult ühe "aktiivsed kasutajad pärast 90 päeva" näitaja esitamine ilma kogu kõverata oleks varjanud selle olulise kujuinfo.
+Digitaaltervise rakendus kaasab jaanuaris 1 000 uue kasutaja kohordi. Kuu 1 lõpuks on neist algsest 1 000-st endiselt aktiivsed 640 (kuu 1 püsimus 64%). Kuu 3 lõpuks jääb aktiivseks 410 (kuu 3 püsimus 41%). Kuuks 6 jääb aktiivseks 380 (kuu 6 püsimus 38%). Selle kõvera kuju – järsk algne langus, millele järgneb tasandumine kuu 3 ja kuu 6 vahel – viitab sellele, et toode hoiab stabiilset kasutajate tuumikut, kui nad on ületanud algse kasutuselevõtu tõkke, mis on oluliselt erinev ja julgustavam signaal, kui langus kuult 3 kuule 6 oleks jätkunud samas tempos kui kuudel 1 kuni 3.
 
 ## Andmeallikad ja hoiatused
 
-Püsimuse arvutamine nõuab üksikute kasutajate jälgimist nende esialgsest registreerumise kuupäevast kõigi järgnevate ajapunktide läbi, mis tähendab, et "aktiivse" määratlus peab olema fikseeritud järjepidevalt (nt vähemalt üks seanss eelneval nädalal) ja rakendatud ühtlaselt kogu kohordi ulatuses. Püsimuse kõverate võrdlemine erinevate kohortide vahel (nt kasutajad, kes registreerusid erinevatel kuudel) nõuab tähelepanu hooajalistele või välistele teguritele, mis võisid mõjutada konkreetse kohordi käitumist sõltumatult tootest endast.
+Püsimus arvutatakse toote enda sisselogimis- või tegevussündmuste logidest, määratledes "aktiivse" järjepidevalt (näiteks vähemalt üks kvalifitseeruv seanss perioodil) kõigi võrreldavate kohortide puhul. Kohorte tuleks võrrelda võrdsel alusel – sama "aktiivse" algdefinitsioon, sama pikkusega vaatlusaken –, kuna isegi väikesed definitsioonilised erinevused (30-päevased versus 28-päevased kuud või rangem versus leebem "aktiivse" lävend) võivad nihutada esitatud püsimusprotsenti mitme punkti võrra ilma kasutajate käitumises tegeliku erinevuseta. Hooajalised mõjud on tavalised tervise rakendustes, mis on seotud uusaasta lubaduste või konkreetsete tervisealase teadlikkuse perioodidega, mistõttu on aastate vaheline kohortide võrdlus tavaliselt informatiivsem kui eri aastaaegadest pärit kõrvuti kohortide võrdlemine.
 
 ## Lõksud
 
-- **Ühe püsimuse näitaja esitamine terve kõvera asemel**: püsimuse kõvera kuju (kas see tasandub või jätkab langemist) on sageli informatiivsem kui ükski üksik ajapunkt.
-- **"Aktiivse" ebajärjekindel määratlemine**: aktiivse kasutuse määratluse muutmine kohortide või ajaperioodide vahel muudab püsimuse võrdlused mõttetuks.
-- **Kohordiefektide ignoreerimine**: kasutajatel, kes registreerusid erinevate kanalite kaudu või erinevatel perioodidel, võivad olla süstemaatiliselt erinevad püsimuse mustrid sõltumatult tootemuudatustest.
-- **Püsimuse segiajamine kaasatuse kvaliteediga**: kasutaja võib jääda "aktiivseks" minimaalse kasutuse läve all ilma reaalset kasu saamata; kombineerige patsiendi kaasatuse järjepidevuse määraga, et saada täielik pilt.
+- **Ühe püsimuse hetktõmmise esitamine kõvera asemel**: üksik "X% kasutajatest on endiselt aktiivsed" näitaja ilma väljalangemise kujuta aja jooksul ei suuda eristada toodet, mis tasandub (tervislik), tootest, mis on pidevas languses (ebatervislik).
+- **"Aktiivse" definitsiooni muutmine aruandlusperioodide vahel**: aktiivse kasutaja definitsiooni leevendamine (näiteks passiivse rakenduse avamise lugemine lõpetatud toimingu asemel) võib panna püsimuse paranema paistma, kui tegelik kasutus pole üldse muutunud.
+- **Kohordi hooajalisuse tähelepanuta jätmine**: jaanuarikohordi püsimuse võrdlemine (mida sageli täidab uusaasta lubaduste tõttu kaasamine, mis toob keskmiselt vähem motiveeritud kohordi) teisel aastaajal hangitud kohordiga võib anda eksitavaid trendijäreldusi.
+- **Orgaaniliste ja tasulise hankimise kohortide segamine**: erinevate kanalite kaudu hangitud kasutajad püsivad sageli väga erinevalt; nende segamine üheks koondnäitajaks võib varjata kanalispetsiifilist püsimusprobleemi.
 
 ## Allikad
 
-- Mobiilirakenduste tööstusstandardid kohordipõhise püsimuse analüüsi kohta
-- Eelretsenseeritud kirjandus digitaalse tervise püsimuse ja väljalangemise kohta, näiteks uuringud, mis on avaldatud ajakirjas Journal of Medical Internet Research (JMIR)
-- Rock Health, tööstusanalüüsid digitaalse tervise kaasatuse mustrite kohta
+- Eelretsenseeritud kirjandus digitaaltervise rakenduste kaasatuse ja väljalangemise kohta, näiteks ajakirjas Journal of Medical Internet Research (JMIR mHealth and uHealth) avaldatud uuringud
+- Digital Therapeutics Alliance, parimate tavade juhised digitaalsete terapeutikumide kaasatuse ja püsimuse mõõtmiseks
+- Mobiilse tervise rakenduste püsimuse tööstuse võrdlusaruanded analüütikaplatvormidelt ja digitaaltervise turu-uuringute organisatsioonidelt
 
-Vaata ka: [DAU/MAU-kleepuvuse suhe](../dau-mau-kleepuvuse-suhe/), täiendav mõõdik kaasatuse intensiivsuse kohta registreerituna püsivate kasutajate seas.
+Vaata ka: [patsiendi kaasatuse järjepidevuse määr](../patsiendi-kaasatuse-järjepidevuse-määr/), mis mõõdab kaasatuse kvaliteeti püsivate kasutajate seas, erinevalt sellest, kas nad üldse kaasatuks jäävad.

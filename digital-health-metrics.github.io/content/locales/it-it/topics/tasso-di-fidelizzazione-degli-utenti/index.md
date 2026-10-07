@@ -1,46 +1,47 @@
 # Tasso di Fidelizzazione degli Utenti
 
-Il tasso di fidelizzazione degli utenti misura la quota di utenti che rimane attivamente iscritta o continua a usare un prodotto di salute digitale nei periodi successivi dopo l'iscrizione iniziale, tipicamente visualizzata come una curva di fidelizzazione per coorte. È la metrica che distingue un prodotto con uno schema di utilizzo sostenibile da uno che cavalca un'onda di novità e poi perde utenti in uno schema di declino prevedibile.
+Il tasso di fidelizzazione degli utenti è la quota di utenti attivi in un periodo iniziale che rimangono attivi in un periodo successivo, e il suo inverso, il tasso di abbandono (churn), è la quota di chi smette del tutto di usare il prodotto. Mentre il tasso di adozione del portale pazienti (vedere quell'argomento) misura se un paziente attiva mai in modo significativo un prodotto di salute digitale, la fidelizzazione misura se continua a usarlo; per qualsiasi prodotto di salute digitale ad abbonamento o di assistenza continuativa, la fidelizzazione è in genere la singola metrica più strettamente collegata sia all'impatto clinico sia alla sostenibilità commerciale.
 
 ## Perché è importante
 
-Quasi ogni prodotto di salute digitale sperimenta un certo abbandono dopo l'iscrizione iniziale, ma la forma della curva di fidelizzazione rivela se quell'abbandono si stabilizza su una base di utenti principale sostenibile o se continua a scendere verso lo zero. Un prodotto con una curva di fidelizzazione che si appiattisce dopo le prime settimane ha trovato un nucleo di utenti per i quali il prodotto fornisce un valore duraturo, mentre un prodotto con una curva che non si appiattisce mai probabilmente non fornisce un valore duraturo, indipendentemente da quanto sia forte la sua cifra di iscrizione iniziale. Investitori, partner di sistemi sanitari e team di prodotto fanno tutti affidamento sulle curve di fidelizzazione come uno dei segnali precoci più affidabili della vitalità a lungo termine del prodotto, perché a differenza di molte altre metriche in questo libro può essere calcolata relativamente presto nella vita di un prodotto ed essere comunque fortemente predittiva del successo a lungo termine.
+Un prodotto di salute digitale che non riesce a fidelizzare gli utenti non può offrire un beneficio clinico duraturo, per quanto solidi siano i suoi numeri iniziali di adozione o attivazione: uno strumento per la gestione di una condizione cronica usato per due settimane e poi abbandonato difficilmente modificherà un esito biometrico che dipende da mesi di cambiamento comportamentale sostenuto. La fidelizzazione è anche una delle metriche commercialmente più rilevanti che un'azienda di salute digitale riporta a investitori e pagatori, perché le curve di fidelizzazione (la forma del calo nel tempo, non solo una singola percentuale di fidelizzazione) rivelano se il prodotto ha trovato un modello d'uso davvero sostenibile o si limita a catturare un interesse iniziale guidato dalla novità che svanisce in modo prevedibile. Una curva di fidelizzazione che si appiattisce dopo un calo iniziale (i pazienti che superano il primo mese tendono a restare) è un segnale molto diverso, e molto più sano, di una che continua a calare costantemente senza un minimo.
 
 ## Come si calcola
 
 ```
-Tasso di fidelizzazione degli utenti (giorno/settimana/mese N) =
-                                   utenti della coorte di iscrizione
-                                   iniziale ancora attivi al
-                                   momento N / totale utenti della
-                                   coorte di iscrizione iniziale
-                                   × 100
+Tasso di fidelizzazione (periodo N) = utenti attivi nel periodo N che
+                                      erano attivi anche nel periodo
+                                      della coorte iniziale / utenti
+                                      della coorte iniziale × 100
 
-Questo viene tipicamente calcolato per più punti temporali (giorno
-1, giorno 7, giorno 30, giorno 90) per costruire una curva di
-fidelizzazione completa, piuttosto che riportato come un unico
-numero.
+Tasso di abbandono = 1 − tasso di fidelizzazione (per lo stesso periodo)
+
+Riportare come curva di fidelizzazione per coorte (fidelizzazione al
+giorno/settimana/mese 1, 2, 3…), non come valore puntuale singolo,
+perché un'unica istantanea confonde gli utenti iscritti di recente
+(che non hanno ancora avuto occasione di abbandonare) con quelli di
+lunga data.
 ```
 
 ## Esempio pratico
 
-Un'app digitale di fisioterapia iscrive una coorte di 1.000 utenti a gennaio. Al giorno 7, 600 sono ancora attivi (fidelizzazione 60%), al giorno 30, 350 sono ancora attivi (fidelizzazione 35%), e al giorno 90, 320 sono ancora attivi (fidelizzazione 32%). Il fatto che la curva scenda bruscamente dal giorno 7 al giorno 30 ma poi si appiattisca in gran parte dal giorno 30 al giorno 90 è un segnale positivo forte — suggerisce che il prodotto ha trovato una base di utenti principale di circa il 32% per i quali fornisce un valore duraturo, piuttosto che continuare a perdere utenti indefinitamente. Riportare solo una cifra di "utenti attivi dopo 90 giorni" senza l'intera curva avrebbe nascosto questa importante informazione sulla forma.
+Un'app di salute digitale arruola a gennaio una coorte di 1.000 nuovi utenti. Alla fine del mese 1, 640 di quei 1.000 iniziali sono ancora attivi (fidelizzazione al mese 1: 64%). Alla fine del mese 3, 410 restano attivi (fidelizzazione al mese 3: 41%). Al mese 6, 380 restano attivi (fidelizzazione al mese 6: 38%). La forma di questa curva, un forte calo iniziale seguito da un appiattimento tra il mese 3 e il mese 6, suggerisce che il prodotto mantiene un nucleo stabile di utenti una volta superato un ostacolo iniziale di adozione, un segnale sostanzialmente diverso e più incoraggiante rispetto a quello che si avrebbe se il calo dal mese 3 al mese 6 fosse proseguito allo stesso ritmo dei mesi da 1 a 3.
 
 ## Fonti dei dati e avvertenze
 
-Il calcolo della fidelizzazione richiede il tracciamento dei singoli utenti dalla loro data di iscrizione iniziale attraverso tutti i punti temporali successivi, il che significa che la definizione di "attivo" deve essere fissata in modo coerente (ad esempio almeno una sessione nella settimana precedente) e applicata uniformemente in tutta la coorte. Il confronto delle curve di fidelizzazione tra coorti diverse (ad esempio utenti iscritti in mesi diversi) richiede attenzione a fattori stagionali o esterni che potrebbero aver influenzato il comportamento di una particolare coorte indipendentemente dal prodotto stesso.
+La fidelizzazione viene calcolata dai registri di accesso o degli eventi di attività del prodotto, definendo "attivo" in modo coerente (ad esempio almeno una sessione idonea nel periodo) per ogni coorte confrontata. Le coorti vanno confrontate a parità di condizioni, con la stessa definizione iniziale di "attivo" e la stessa lunghezza della finestra di osservazione, perché anche piccole differenze di definizione (mesi di 30 giorni rispetto a 28 giorni, o una soglia di "attivo" più rigida rispetto a una più permissiva) possono spostare di diversi punti una percentuale di fidelizzazione riportata senza alcuna reale differenza nel comportamento degli utenti. Gli effetti stagionali sono comuni nelle app per la salute legate ai buoni propositi di inizio anno o a specifici periodi di sensibilizzazione sulla salute, per cui il confronto di coorti anno su anno è in genere più informativo del confronto tra coorti adiacenti di periodi diversi dell'anno.
 
-## Errori comuni
+## Insidie
 
-- **Riportare un singolo numero di fidelizzazione invece dell'intera curva**: la forma della curva di fidelizzazione (se si appiattisce o continua a scendere) è spesso più informativa di qualsiasi singolo punto temporale.
-- **Definire "attivo" in modo incoerente**: cambiare la definizione di utilizzo attivo tra coorti o periodi di tempo rende insignificanti i confronti di fidelizzazione.
-- **Ignorare gli effetti di coorte**: gli utenti iscritti tramite canali diversi o in periodi diversi possono avere schemi di fidelizzazione sistematicamente diversi indipendentemente dai cambiamenti del prodotto.
-- **Confondere la fidelizzazione con la qualità del coinvolgimento**: un utente può rimanere "attivo" al di sotto di una soglia di utilizzo minima senza ottenere alcun beneficio reale; combinare con il tasso di costanza del coinvolgimento del paziente per un quadro completo.
+- **Riportare un'unica istantanea della fidelizzazione anziché una curva**: una singola cifra del tipo "X% degli utenti è ancora attivo" senza la forma del calo nel tempo non può distinguere un prodotto che si stabilizza (sano) da uno in calo continuo (non sano).
+- **Cambiare la definizione di "attivo" tra periodi di rendicontazione**: allentare la definizione di utente attivo (ad esempio contando un'apertura passiva dell'app anziché un'azione completata) può far sembrare migliorata la fidelizzazione quando l'uso effettivo non è cambiato affatto.
+- **Ignorare la stagionalità delle coorti**: confrontare la fidelizzazione di una coorte di gennaio (spesso gonfiata dalle iscrizioni dei buoni propositi di inizio anno, che in media portano una coorte meno motivata) con una coorte acquisita in un altro periodo dell'anno può produrre conclusioni fuorvianti sull'andamento.
+- **Mescolare coorti organiche e coorti acquisite a pagamento**: gli utenti acquisiti tramite canali diversi si fidelizzano spesso in modo molto diverso; accorparli in un'unica cifra aggregata di fidelizzazione può nascondere un problema di fidelizzazione specifico di un canale.
 
 ## Fonti
 
-- Standard del settore delle app mobili per l'analisi della fidelizzazione per coorte
-- Letteratura peer-reviewed sulla fidelizzazione e l'abbandono nella salute digitale, ad esempio studi pubblicati su Journal of Medical Internet Research (JMIR)
-- Rock Health, analisi del settore sugli schemi di coinvolgimento nella salute digitale
+- Letteratura sottoposta a revisione paritaria sul coinvolgimento e sull'abbandono delle app di salute digitale, ad esempio studi pubblicati sul Journal of Medical Internet Research (JMIR mHealth and uHealth)
+- Digital Therapeutics Alliance, linee guida di buone pratiche sulla misurazione di coinvolgimento e fidelizzazione per le terapie digitali
+- Rapporti di benchmarking di settore sulla fidelizzazione delle app di salute mobile, provenienti da piattaforme di analisi e organizzazioni di ricerca di mercato sulla salute digitale
 
-Vedi anche: [rapporto di stickiness DAU/MAU](../rapporto-di-stickiness-dau-mau/), la metrica complementare per l'intensità del coinvolgimento tra gli utenti che rimangono iscritti.
+Vedere anche: [tasso di costanza del coinvolgimento del paziente](../tasso-di-costanza-del-coinvolgimento-del-paziente/), che misura la qualità del coinvolgimento tra gli utenti fidelizzati, distinta dal fatto che restino o meno arruolati.

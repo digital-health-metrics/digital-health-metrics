@@ -1,50 +1,47 @@
 # Haiglasse Taastuvastuvõtmise Määr
 
-Haiglasse taastuvastuvõtmise määr mõõdab nende patsientide osakaalu, kes võetakse uuesti haiglasse määratletud ajavahemiku jooksul — enamasti 30 päeva — pärast väljakirjutamist esialgselt haiglaravilt. Digitaalsete terviseprogrammide jaoks, mille eesmärk on toetada üleminekut haiglast koju (virtuaalosakonnad, kaugjälgimine pärast väljakirjutamist, digitaalsed järelkontrolli programmid), on see mõõdik, mis on kõige otsesemalt seotud rahastaja majandusega ja väärtuspõhiste lepingutega.
+Haiglasse taastuvastuvõtmise määr on väljakirjutatud patsientide osakaal, kes võetakse haiglasse planeerimata kujul uuesti vastu pärast väljakirjutamist määratletud perioodi jooksul – kõige sagedamini 30 päeva. Digitaaltervise jaoks on see mõõdik, mis on kõige otsesemalt seotud maksjate majanduse ja väärtuspõhise ravi lepingutega: kaugjälgimise, väljakirjutamisjärgse jälgimise või digitaalse raviülemineku programm, mis ei suuda näidata usaldusväärset mõju taastuvastuvõtmistele, ei pälvi tõenäoliselt jätkuvat hüvitamistuge, olenemata sellest, kui head on selle kaasatuse arvud.
 
 ## Miks see on oluline
 
-30-päevaseid taastuvastuvõtte peetakse laialdaselt osaliselt ennetatavateks, ning paljud rahastajad kehtestavad rahalisi karistusi haiglatele, kelle taastuvastuvõtmise määrad on oodatust kõrgemad, muutes selle mõõdiku otseseks seoseks tõelise majandusliku väärtusega iga digitaalse sekkumise jaoks, mille eesmärk on seda vähendada. Digitaalne programm, mis suudab näidata statistiliselt olulist taastuvastuvõttude vähenemist võrreldes sobiva kontrollrühmaga, omab üht tugevamat võimalikku ärijuhtumit kogu digitaalses tervises, kuna ühe taastuvastuvõtu vältimise kulude kokkuhoid on sageli piisavalt suur, et õigustada olulist programmiinvesteeringut. Kuid kuna taastuvastuvõtmise määrad on tugevalt mõjutatud patsiendi aluseks olevast haiguskoormusest, tuleb iga teatatud vähenemist võrrelda sobiva sobitatud või riskikohandatud kontrollrühmaga, et see oleks usutav.
+Planeerimata taastuvastuvõtmine on kallis, patsiendile häiriv ja paljudes tervishoiusüsteemides nüüd otseselt karistatav: skeemid nagu USA Hospital Readmissions Reduction Program vähendavad maksete suurust haiglatele, kelle taastuvastuvõtmise määrad teatud seisundite puhul on oodatust kõrgemad, mistõttu haiglad tellivad aktiivselt digitaalseid väljakirjutamisjärgseid ja kaugjälgimisprogramme, mille eesmärk on neid vähendada. Märkimisväärset osa taastuvastuvõtmistest peetakse potentsiaalselt välditavaks – neid põhjustavad ebapiisavad väljakirjutamisjuhised, vahelejäänud järelvisiidid, ravimite valesti mõistmine või märkamata jäänud sümptomite halvenemine, mida hästi kavandatud digitaalne kontaktpunkt saab varem tabada – ja just seda lünka digitaalsed raviülemineku tööriistad sihivad. Taastuvastuvõtmise määra tuleks alati lugeda koos haigusjuhtude struktuuriga: haigemat, keerulisemat populatsiooni teenindaval programmil on struktuurselt kõrgem lähtemäär kui tervemat populatsiooni teenindaval, sõltumata programmi kvaliteedist.
 
 ## Kuidas seda arvutatakse
 
 ```
-Haiglasse taastuvastuvõtmise määr = patsiendid, kes võeti uuesti
-                                    vastu ajavahemiku jooksul
-                                    (tavaliselt 30 päeva) /
-                                    väljakirjutatud patsiendid
-                                    kokku × 100
+30-päevane taastuvastuvõtmise määr = planeerimata taastuvastuvõtmised
+                                     30 päeva jooksul pärast
+                                     väljakirjutamist / indeksväljakirjutamised
+                                     kokku × 100
 
-Digitaalse sekkumise mõju hindamiseks:
-  Taastuvastuvõtmise määra vähenemine = (kontrollrühma määr −
-                                        sekkumisrühma määr) /
-                                        kontrollrühma määr × 100
+Jätke lugejast välja: planeeritud taastuvastuvõtmised (nt
+planeeritud järeltoiming) ja üleviimised, mis on sama ravijuhtumi
+jätk, mitte uus vastuvõtt.
 
-Riskikohandust (kasutades väljakujunenud vahendeid nagu LACE-indeks
-või HOSPITAL-skoor) tuleks rakendada, kui sekkumis- ja kontrollrühmad
-ei ole juhuslikult jaotatud, et arvestada erinevusi aluseks olevas
-patsiendiriskis.
+Kohandage võimaluse korral riskiga, kasutades tunnustatud haigusjuhtude
+struktuuri või kaasuvate haiguste indeksit, enne kui võrdlete määrasid
+erinevate patsiendipopulatsioonide või ajaperioodide vahel.
 ```
 
 ## Läbitöötatud näide
 
-Haigla rakendab digitaalse kaugjälgimise programmi patsientidele, kes kirjutatakse välja pärast südamepuudulikkuse ravi. 400 programmi registreeritud patsiendi seas on 30-päevane taastuvastuvõtmise määr 12%, võrreldes 18%-ga sobitatud ajaloolise kontrollrühma puhul, kes programmi ei saanud — suhteline vähenemine 33%. Kuna rühmad ei olnud juhuslikult jaotatud, kasutab hindamismeeskond riskikohandusskoori, et kinnitada, et registreeritud patsiendid ei olnud juba ette madalama riskiga kui kontrollrühm, mis oleks selgitanud erinevust ilma tegeliku programmi mõjuta. Pärast kohandamist jääb alles statistiliselt oluline umbes 25%-line vähenemine, andes programmile usutava, kaitstava ärijuhtumi haigla juhtkonna ees.
+Haigla kirjutab kvartalis välja 1200 südamepuudulikkusega patsienti. Neist võetakse 30 päeva jooksul uuesti vastu 210, millest 15 on planeeritud taastuvastuvõtmised planeeritud toimingu jaoks ja jäetakse välja. Planeerimata 30-päevane taastuvastuvõtmise määr on (210 − 15) / 1200 × 100 = 16,25%. Kaugjälgimise programm võetakse kasutusele 400 patsiendi alamhulgale (valitud kliinilise riski, mitte juhuslikult) ja nende planeerimata taastuvastuvõtmise määr on 14%, võrreldes 18%-ga 800 mittekaasatud patsiendi puhul. Kuna kaasamine põhines kliinilisel riskil, mitte juhuslikul määramisel, on see erinevus viitav, mitte lõplik tõend programmi mõjust, ning seda tuleks tõlgendada koos riskikohandamise analüüsiga, mitte võtta nominaalväärtuselt.
 
 ## Andmeallikad ja hoiatused
 
-Taastuvastuvõtmise andmed nõuavad tavaliselt juurdepääsu mitme haigla andmetele või piirkondlikule terviseinfo vahetussüsteemile, kuna patsienti, kes võetakse uuesti vastu teises haiglas kui see, mis ta algselt välja kirjutas, ei registreerita, kui andmed pärinevad ainult ühe süsteemi enda andmetest — mis tähendab, et taastuvastuvõtmise määr, mis on arvutatud ainult ühe süsteemi siseandmetest, alahindab tõenäoliselt tõelist määra. Kontrollrühma valik on üksiktegur, mis on kõige otsustavam iga teatatud vähenemise usutavuse jaoks; halvasti sobitatud või riskikohandamata võrdlus võib tekitada dramaatilise, kuid tähendusetu tulemuse.
+Taastuvastuvõtmise andmed pärinevad tavaliselt haigla enda vastuvõtu-väljakirjutamise-ülekande (ADT) andmevoost sama asutuse taastuvastuvõtmiste puhul, kuid teise haiglasse taastuvastuvõetud patsient ei ilmu sellesse andmevoogu üldse, mistõttu ühe haigla taastuvastuvõtmiste jälgimine alahindab süstemaatiliselt tegelikke taastuvastuvõtmise määrasid, kui seda ei täiendata piirkondliku terviseteabe vahetuse andmete, maksjate nõudeandmete või osariigi tasandi kõigi maksjate andmebaasidega. Digitaalprogrammile omistamine nõuab hoolikust: patsiendid, kes valivad vabatahtlikus kaugjälgimise programmis osalemise, ei ole harva väljakirjutatud populatsiooni juhuslik valim, mistõttu kaasatud ja mittekaasatud patsientide taastuvastuvõtmise määrade naiivne võrdlus kipub olema segatud täpselt nende valikuefektidega, mis tegid mõned patsiendid esiteks kaasamiseks tõenäolisemaks.
 
 ## Lõksud
 
-- **Vähenemise esitamine ilma sobiva kontrollrühmata**: taastuvastuvõtmise määrad varieeruvad tohutult patsiendipopulatsiooni järgi; vähenemine ilma sobitatud või riskikohandatud võrdluseta ei tõesta midagi programmi tõhususe kohta.
-- **Sõltuvus ainult ühe süsteemi siseandmetest**: patsienti, kes võetakse uuesti vastu teises haiglas, ei avastata, mis viib kunstlikult madalale mõõdetud taastuvastuvõtmise määrale.
-- **Erinevate ajavahemike ignoreerimine programmide võrdlemisel**: 30-päevased, 60-päevased ja 90-päevased taastuvastuvõtmise määrad ei ole otseselt võrreldavad mõõdikud.
-- **Kõigi taastuvastuvõttude käsitlemine ennetatavana**: mitte kõik taastuvastuvõtud ei ole põhjustatud üleminekuravi vigadest; mõned on aluseks oleva seisundi vältimatud progressioonid ning nulli taastuvastuvõtte eesmärgiks seadmine võib tahtmatult pärssida sobivat, vajalikku ravi.
+- **Toorete, riskiga kohandamata määrade võrdlemine populatsioonide vahel**: haigemat populatsiooni teenindav programm näitab kõrgemat toorest taastuvastuvõtmise määra kui tervemat populatsiooni teenindav, isegi kui programm ise on tõhusam; kohandage riski alati enne võrdlemist.
+- **Teistesse asutustesse taastuvastuvõtmiste alaloendamine**: ainult ühe haigla enda ADT-andmetele toetumine jätab kahe silma vahele mujal toimunud taastuvastuvõtmised, alahinnates tegelikku määra, eriti piirkondades, kus on mitu konkureerivat haiglasüsteemi.
+- **Valikunihe vabatahtlikus programmis osalemises**: patsiendid, kes otsustavad digitaalses jälgimisprogrammis osaleda, erinevad sageli süstemaatiliselt (tervisekirjaoskuses, sotsiaalses toes või motivatsioonis) neist, kes seda ei tee, segades mis tahes naiivset enne/pärast või kaasatud/mittekaasatud võrdlust.
+- **Iga sama asutusse naasmise lugemine taastuvastuvõtmiseks**: planeeritud taastuvastuvõtmine (näiteks planeeritud teise etapi toiming) ei ole ebaõnnestunud väljakirjutamise märk ja see tuleks lugejast välja jätta, mitte segada tõeliselt planeerimata naasmistega.
 
 ## Allikad
 
-- Centers for Medicare & Medicaid Services (CMS), Hospital Readmissions Reduction Program (HRRP)
-- Agency for Healthcare Research and Quality (AHRQ), riskikohandamise metoodika juhised
-- Eelretsenseeritud kirjandus digitaalsete sekkumiste kohta pärast väljakirjutamist, näiteks uuringud, mis on avaldatud ajakirjades Journal of the American Medical Association (JAMA) ja Circulation: Heart Failure
+- Centers for Medicare & Medicaid Services (CMS), Hospital Readmissions Reduction Program ja Hospital-Wide Readmission mõõdiku spetsifikatsioonid
+- Institute for Healthcare Improvement (IHI), välditavate taastuvastuvõtmiste vähendamise juhised
+- Eelretsenseeritud kirjandus digitaalse kaugjälgimise ja raviülemineku sekkumiste kohta taastuvastuvõtmiste vähendamiseks, näiteks ajakirjades JAMA Network Open ja npj Digital Medicine avaldatud uuringud
 
-Vaata ka: [voodipäevade vähenemine](../voodipäevade-vähenemine/), ohutusmõõdik, mis tuleks alati esitada koos iga voodipäevade vähenemise väitega sama patsiendipopulatsiooni jaoks.
+Vaata ka: [triaaži suunamise täpsus](../triaaži-suunamise-täpsus/), kuna sobimatu esialgne suunamine võib ise olla allavoolu tõukejõuks välditavatele hospitaliseerimistele.

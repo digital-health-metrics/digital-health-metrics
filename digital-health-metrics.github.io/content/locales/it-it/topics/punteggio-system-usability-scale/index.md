@@ -1,52 +1,46 @@
 # Punteggio System Usability Scale
 
-Il System Usability Scale (SUS) è un questionario standardizzato di 10 domande che quantifica quanto sia effettivamente utilizzabile un software, con risposte fornite su una scala di accordo a 5 punti che vengono combinate in un unico punteggio da 0 a 100. A differenza del Net Promoter Score, che misura la soddisfazione generale e la probabilità di raccomandazione, il SUS è specificamente progettato per misurare l'usabilità — quanto facilmente ed efficacemente un utente possa effettivamente svolgere compiti con un software.
+Il punteggio System Usability Scale (SUS) è un questionario standardizzato di 10 voci utilizzato per quantificare quanto sia usabile un software, che produce un unico punteggio da 0 a 100 confrontabile con norme di settore ben consolidate. A differenza del Net Promoter Score, che misura la disponibilità a raccomandare, o delle misure di esito riferite dal paziente, che misurano lo stato clinico o funzionale, il SUS misura una cosa specifica: quanto sia facile imparare e usare il software stesso, per i pazienti o per il personale clinico.
 
 ## Perché è importante
 
-I problemi di usabilità sono una delle cause più comuni e correggibili per cui i prodotti di salute digitale non raggiungono l'impatto clinico previsto: un'app tecnicamente impeccabile ma confusa da navigare non raggiungerà il comportamento di utilizzo che il suo modello clinico presuppone, indipendentemente da quanto sia buono l'intervento sanitario sottostante. Il SUS fornisce uno strumento validato, standardizzato e facile da somministrare per quantificare l'usabilità, consentendo ai team di prodotto di monitorare i miglioramenti di usabilità nel tempo e confrontarsi con benchmark di settore ampiamente pubblicati piuttosto che affidarsi a valutazioni interne soggettive. Poiché il SUS è stato utilizzato su migliaia di prodotti software nel corso di diversi decenni, ha uno dei set di dati di benchmark disponibili più ricchi tra qualsiasi metrica di usabilità, rendendo il punteggio significativo in un contesto più ampio piuttosto che solo confrontabile con se stesso nel tempo.
+Uno strumento di salute digitale può avere solide evidenze cliniche e un business case convincente e fallire comunque nella pratica perché pazienti o clinici trovano l'interfaccia confusa, lenta o frustrante da usare, e poiché il SUS è uno strumento validato e ampiamente utilizzato con decenni di dati di benchmarking pubblicati tra settori diversi, consente a un team di salute digitale di confrontare l'usabilità del proprio prodotto con una distribuzione nota anziché affidarsi a impressioni informali o a lamentele aneddotiche. Il SUS è deliberatamente indipendente dalla tecnologia e rapido da somministrare (in genere meno di cinque minuti), il che lo rende pratico da ripetere nelle iterazioni di progettazione, a differenza di uno studio completo di usabilità o di una sperimentazione clinica formale. Poiché i difetti di usabilità rivolti ai clinici sono un fattore documentato del burnout (vedere il tasso di burnout dei medici) e quelli rivolti ai pazienti sono un fattore documentato di abbandono e di scarsi esiti di alfabetizzazione digitale (vedere il tasso di alfabetizzazione sanitaria digitale), il SUS funziona come segnale di usabilità di allerta precoce a basso costo, in grado di individuare un problema di progettazione prima che emerga in quelle metriche a valle più gravose.
 
 ## Come si calcola
 
 ```
-Il punteggio SUS viene calcolato da 10 domande standardizzate,
-formulate alternativamente in modo positivo e negativo, ciascuna
-risposta su una scala di accordo a 5 punti (fortemente in
-disaccordo a fortemente d'accordo):
+Punteggio SUS = ((somma dei punteggi delle voci dispari − 5) +
+                 (25 − somma dei punteggi delle voci pari)) × 2,5
 
-Per le domande con numero dispari (formulate positivamente):
-  contributo al punteggio = (risposta dell'utente − 1)
-Per le domande con numero pari (formulate negativamente):
-  contributo al punteggio = (5 − risposta dell'utente)
+Il risultato è un unico punteggio da 0 a 100 (non una percentuale,
+nonostante la scala, poiché non rappresenta una "percentuale di risposte
+corrette" o simile).
 
-La somma di tutti i 10 contributi al punteggio viene moltiplicata
-per 2,5 per produrre un punteggio da 0 a 100.
-
-Un punteggio SUS superiore a 68 è ampiamente considerato superiore
-alla media in base al set di dati di benchmark di settore
-accumulato, sebbene l'obiettivo appropriato possa variare in base
-al tipo di prodotto.
+Interpretazione pubblicata dei parametri di riferimento (Bangor et al.):
+  Sopra 80  — usabilità eccellente
+  68        — media, in base alla norma generale del settore
+  Sotto 51  — usabilità scarsa, che richiede approfondimento
 ```
 
 ## Esempio pratico
 
-Un sistema sanitario testa una nuova interfaccia del portale pazienti con 50 pazienti che completano ciascuno il questionario SUS dopo aver svolto un insieme standardizzato di compiti (prenotare un appuntamento, visualizzare i risultati di laboratorio, inviare un messaggio al proprio medico curante). Il punteggio SUS medio tra i 50 pazienti è 72, che è superiore alla media ampiamente citata di 68, dando al team fiducia che l'interfaccia sia ragionevolmente utilizzabile. Ma la scomposizione del punteggio per tipo di compito rivela che i pazienti che hanno faticato specificamente con la funzione di messaggistica hanno dato punteggi individuali significativamente più bassi, indirizzando il team verso una parte specifica dell'interfaccia da migliorare piuttosto che semplicemente riportare il numero medio aggregato.
+Una piattaforma di telemedicina somministra il questionario SUS standard di 10 voci a 150 pazienti dopo la loro prima videovisita. Il punteggio SUS medio calcolato su tutti i rispondenti è 74. Confrontato con la media di settore largamente citata di 68, indica un'usabilità superiore alla media per questa specifica popolazione di pazienti e questo caso d'uso, pur restando sensibilmente al di sotto della soglia di "eccellente" di 80 che suggerirebbe poche barriere di usabilità residue. Segmentando per età le stesse 150 risposte, il punteggio medio è 81 per i pazienti sotto i 50 anni e 62 per i pazienti di 65 anni e più, un divario che indica un problema di usabilità specifico e risolvibile per i pazienti più anziani anziché un problema generale di usabilità del prodotto, e che una singola media complessiva avrebbe nascosto.
 
 ## Fonti dei dati e avvertenze
 
-I dati SUS vengono raccolti tramite il questionario standardizzato di 10 domande somministrato immediatamente dopo che un utente ha svolto un compito o un insieme di compiti rappresentativi con il software, e la metodologia di punteggio è fissa e ben consolidata, rendendola confrontabile tra studi e organizzazioni, a condizione che venga utilizzato lo stesso questionario standardizzato. Poiché il SUS fornisce un unico punteggio aggregato, può nascondere quali compiti specifici o elementi dell'interfaccia stiano causando un punteggio basso; un follow-up qualitativo o un'analisi specifica per compito sono spesso necessari per rendere il risultato utilizzabile.
+I dati SUS provengono direttamente da pazienti o clinici che compilano il questionario standardizzato di 10 voci, e lo strumento deve essere somministrato esattamente come validato (le stesse 10 voci, la stessa scala di accordo a 5 punti, la stessa formula di punteggio) perché il punteggio ottenuto sia confrontabile con i parametri pubblicati; una versione modificata o abbreviata del questionario, per quanto ben intenzionata, produce un punteggio che non può essere interpretato in modo affidabile rispetto alla distribuzione standard di riferimento. Il SUS misura l'usabilità percepita, che è correlata a, ma non identica al, successo oggettivo nel completamento dei compiti (vedere il tasso di alfabetizzazione sanitaria digitale per una misura basata sul completamento dei compiti); un prodotto può ottenere un buon punteggio SUS da pazienti che non hanno provato le funzioni più complesse, per cui abbinare il SUS a dati oggettivi di completamento dei compiti dà un quadro più completo di ciascuno dei due da solo. I tempi di risposta contano: somministrare il SUS subito dopo un episodio specifico frustrante (una connessione fallita, un passaggio confuso) o dopo una sessione fluida può spostare i punteggi indipendentemente dall'usabilità complessiva del prodotto.
 
-## Errori comuni
+## Insidie
 
-- **Modificare la formulazione del questionario**: la validità e la confrontabilità del SUS con i benchmark di settore dipendono dall'uso della formulazione standardizzata delle domande; personalizzare le domande compromette la confrontabilità.
-- **Trattare un unico punteggio aggregato come completamente diagnostico**: un punteggio SUS indica se esiste un problema di usabilità, ma non dove; è necessario un follow-up specifico per compito o qualitativo per identificare la causa specifica.
-- **Confrontare punteggi SUS tra compiti utente molto diversi**: un punteggio ottenuto da un compito complesso multi-fase non è direttamente confrontabile con uno ottenuto da un compito semplice a fase unica.
-- **Ignorare la dimensione e la composizione del campione**: un punteggio SUS basato su un campione di utenti piccolo o non rappresentativo non può essere generalizzato in modo affidabile all'intera popolazione di utenti.
+- **Modificare le voci o il punteggio del questionario standard**: anche piccole modifiche di formulazione o di scala invalidano il confronto con la distribuzione di riferimento pubblicata e ben consolidata; usare lo strumento standard di 10 voci esattamente come validato.
+- **Riportare solo il punteggio medio senza segmentazione**: l'usabilità varia spesso sensibilmente per età dell'utente, alfabetizzazione digitale o ruolo (paziente rispetto a clinico); segmentare la reportistica per individuare lacune specifiche e risolvibili di usabilità che una singola media nasconde.
+- **Trattare il SUS come misura di efficacia clinica**: il SUS misura specificamente l'usabilità, non l'esito clinico né la soddisfazione per le cure; uno strumento molto usabile può comunque non migliorare gli esiti clinici, e le due cose non vanno mai confuse né sostituite l'una all'altra.
+- **Somministrare l'indagine solo dopo sessioni insolitamente fluide o insolitamente frustranti**: i tempi e il contesto della somministrazione possono distorcere il punteggio; somministrare in modo coerente su un campione rappresentativo di sessioni reali, non solo comode o scelte selettivamente.
 
 ## Fonti
 
-- Brooke, J., "SUS: A quick and dirty usability scale", lo sviluppo originale del metodo
-- Sauro, J., "A Practical Guide to the System Usability Scale", dati di benchmark di settore accumulati
-- Letteratura peer-reviewed sull'applicazione del SUS nella valutazione del software sanitario, ad esempio studi pubblicati su Journal of Medical Internet Research (JMIR) e JMIR Human Factors
+- Brooke, J., "SUS: A Quick and Dirty Usability Scale", lo strumento originale pubblicato
+- Bangor, Kortum e Miller, ricerca di benchmarking sul SUS pubblicata che ha stabilito le fasce di interpretazione del punteggio largamente citate
+- Letteratura sottoposta a revisione paritaria sull'uso del SUS nella salute digitale e nella valutazione dell'usabilità della telemedicina, ad esempio studi pubblicati su JMIR Human Factors
 
-Vedi anche: [punteggio Net Promoter del paziente](../punteggio-net-promoter-del-paziente/), una metrica correlata ma distinta riportata dal paziente che misura la soddisfazione e la fedeltà piuttosto che l'usabilità specifica del software.
+Vedere anche: [punteggio net promoter del paziente](../punteggio-net-promoter-del-paziente/), una metrica correlata ma distinta riferita dal paziente, che misura soddisfazione e fedeltà e non specificamente l'usabilità del software.

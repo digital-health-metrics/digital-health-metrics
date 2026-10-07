@@ -1,51 +1,45 @@
 # System Usability Scale-skoor
 
-System Usability Scale (SUS) on standardiseeritud 10-küsimusega küsimustik, mis kvantifitseerib, kui kasutatav tarkvara tegelikult on, vastustega 5-punktisel nõustumisskaalal, mis kombineeritakse üheks skooriks vahemikus 0 kuni 100. Erinevalt Net Promoter Score'ist, mis mõõdab üldist rahulolu ja soovitamise tõenäosust, on SUS spetsiaalselt loodud kasutatavuse mõõtmiseks — kui lihtsalt ja tõhusalt kasutaja tegelikult saab tarkvaraga ülesandeid täita.
+System Usability Scale (SUS) skoor on standardiseeritud 10-küsimuseline küsimustik, mida kasutatakse tarkvara kasutatavuse kvantifitseerimiseks, andes ühe skoori vahemikus 0 kuni 100, mida saab võrrelda väljakujunenud tööstusharu normidega. Erinevalt Net Promoter Score'ist, mis mõõdab soovitamise valmisolekut, või patsiendi esitatud tulemusmõõdikutest, mis mõõdavad kliinilist või funktsionaalset seisundit, mõõdab SUS üht konkreetset asja: kui lihtne on tarkvara ise õppida ja kasutada, kas patsientidele või kliinilisele personalile.
 
 ## Miks see on oluline
 
-Kasutatavuse probleemid on üks levinumaid ja parandatavamaid põhjuseid, miks digitaalsed terviseprodused ei saavuta kavandatud kliinilist mõju: tehniliselt veatu rakendus, mis on segadusttekitav navigeerida, ei saavuta kasutuskäitumist, mida tema kliiniline mudel eeldab, olenemata sellest, kui hea on aluseks olev terviseekkumine. SUS annab valideeritud, standardiseeritud, kergesti manustatava vahendi kasutatavuse kvantifitseerimiseks, võimaldades toodemeeskondadel jälgida kasutatavuse paranemist aja jooksul ja võrrelda laialdaselt avaldatud tööstusstandarditega, selle asemel et toetuda subjektiivsetele sisemistele hinnangutele. Kuna SUS-i on kasutatud tuhandete tarkvaraproduktide puhul mitme aastakümne jooksul, on sellel üks rikkalikumaid kättesaadavaid võrdlusandmestikke mis tahes kasutatavuse mõõdiku seas, muutes skoori tähendusrikkaks laiemas kontekstis, mitte ainult võrreldavaks iseendaga aja jooksul.
+Digitaaltervise tööriistal võivad olla tugevad kliinilised tõendid ja veenev ärijuhtum, kuid see võib praktikas siiski ebaõnnestuda, kuna patsiendid või kliinikud leiavad liidese segadusttekitava, aeglase või frustreeriva – ja kuna SUS on valideeritud, laialdaselt kasutatav instrument aastakümnete pikkuste avaldatud võrdlusandmetega erinevates tööstusharudes, võimaldab see digitaaltervise meeskonnal võrrelda oma toote kasutatavust teadaoleva jaotusega, mitte toetuda mitteametlikele muljetele või anekdootlikele kaebustele. SUS on tahtlikult tehnoloogiaagnostiline ja kiire korraldada (tavaliselt alla viie minuti), mis teeb selle praktiliseks korduvaks läbiviimiseks disainiiteratsioonide jooksul, erinevalt täielikust kasutatavuse uuringust või ametlikust kliinilisest uuringust. Kuna kliinikutele suunatud kasutatavuse tõrked on dokumenteeritud läbipõlemise põhjustaja (vt arstide läbipõlemise määr) ja patsientidele suunatud kasutatavuse tõrked on dokumenteeritud hülgamise ja halbade digitaalse kirjaoskuse tulemuste põhjustaja (vt digitaalse tervisekirjaoskuse määr), toimib SUS varajase hoiatuse, madala kuluga kasutatavuse signaalina, mis suudab tabada disainiprobleemi enne, kui see ilmneb nendes tagajärgi rohkem kandvates allavoolu mõõdikutes.
 
 ## Kuidas seda arvutatakse
 
 ```
-SUS-skoor arvutatakse 10 standardiseeritud küsimusest, mis on
-kordamööda positiivselt ja negatiivselt sõnastatud, igaüks vastatud
-5-punktisel nõustumisskaalal (täiesti ei nõustu kuni täiesti
-nõustun):
+SUS skoor = ((paaritute numbritega küsimuste skooride summa − 5) +
+             (25 − paaris numbritega küsimuste skooride summa)) × 2,5
 
-Paaritute numbritega küsimuste jaoks (positiivselt sõnastatud):
-  skoori panus = (kasutaja vastus − 1)
-Paaris numbritega küsimuste jaoks (negatiivselt sõnastatud):
-  skoori panus = (5 − kasutaja vastus)
+Tulemus on üks skoor vahemikus 0 kuni 100 (mitte protsent, hoolimata
+skaalast, kuna see ei esinda "protsenti õigeid" või sarnast).
 
-Kõigi 10 skoori panuse summa korrutatakse 2,5-ga, et saada skoor
-vahemikus 0 kuni 100.
-
-SUS-skoori üle 68 peetakse laialdaselt keskmisest kõrgemaks, lähtudes
-kogunenud tööstuse võrdlusandmestikust, ehkki sobiv eesmärk võib
-varieeruda tootetüübi järgi.
+Avaldatud võrdlusaluse tõlgendus (Bangor et al.):
+  Üle 80  — suurepärane kasutatavus
+  68      — keskmine, laiaulatusliku tööstusharu normi alusel
+  Alla 51 — halb kasutatavus, mis nõuab uurimist
 ```
 
 ## Läbitöötatud näide
 
-Tervishoiusüsteem testib uut patsiendiportaali liidest 50 patsiendiga, kes igaüks täidavad SUS-küsimustiku pärast standardiseeritud ülesannete komplekti sooritamist (vastuvõtu broneerimine, laboritulemuste vaatamine, sõnumi saatmine oma klinitsistile). Keskmine SUS-skoor 50 patsiendi lõikes on 72, mis on üle laialdaselt tsiteeritud keskmise 68, andes meeskonnale kindlustunde, et liides on mõistlikult kasutatav. Kuid skoori jaotamine ülesandetüübi järgi paljastab, et patsiendid, kes võitlesid spetsiifiliselt sõnumifunktsiooniga, andsid oluliselt madalamaid individuaalseid skoore, suunates meeskonda konkreetsele liidese osale, mida tuleb parandada, selle asemel et lihtsalt esitada koondkeskmist.
+Telemeditsiini platvorm korraldab standardse 10-küsimuselise SUS-küsimustiku 150 patsiendile pärast nende esimest videovisiiti. Arvutatud keskmine SUS skoor kõigi vastajate lõikes on 74. Võrreldes laialdaselt viidatud tööstusharu keskmisega 68, viitab see selle konkreetse patsiendipopulatsiooni ja kasutusjuhtumi keskmisest paremale kasutatavusele, kuigi see on endiselt märkimisväärselt allpool "suurepärase" lävendit 80, mis viitaks väheste allesjäänud kasutatavuse tõketele. Samade 150 vastuse segmenteerimine vanuse järgi näitab keskmist skoori 81 alla 50-aastaste patsientide puhul ja 62 65-aastaste ja vanemate patsientide puhul – lõhe, mis osutab konkreetsele, lahendatavale kasutatavuse probleemile vanemate patsientide jaoks, mitte üldisele toote kasutatavuse probleemile, ja mida üks segatud keskmine oleks varjanud.
 
 ## Andmeallikad ja hoiatused
 
-SUS-andmed kogutakse standardiseeritud 10-küsimusega küsimustiku kaudu, mis manustatakse kohe pärast seda, kui kasutaja on tarkvaraga sooritanud esindusliku ülesande või ülesannete komplekti, ning skoorimismetoodika on fikseeritud ja hästi väljakujunenud, muutes selle võrreldavaks uuringute ja organisatsioonide vahel, eeldusel, et kasutatakse sama standardiseeritud küsimustikku. Kuna SUS annab ühe koondskoori, võib see varjata, millised konkreetsed ülesanded või liideselemendid madalat skoori põhjustavad; kvalitatiivne järelkontroll või ülesandepõhine analüüs on sageli vajalik tulemuse tegutsemisvõimeliseks muutmiseks.
+SUS-i andmed pärinevad otse patsientidelt või kliinikutelt, kes täidavad standardiseeritud 10-küsimuselise küsimustiku, ning instrumenti tuleb korraldada täpselt nii, nagu see on valideeritud (samad 10 küsimust, sama 5-punktiline nõustumise skaala, sama hindamisvalem), et saadud skoor oleks avaldatud võrdlusalustega võrreldav; küsimustiku muudetud või lühendatud versioon, kuigi hea mõttega, annab skoori, mida ei saa standardse võrdlusaluse jaotuse suhtes usaldusväärselt tõlgendada. SUS mõõdab tajutud kasutatavust, mis korreleerub, kuid ei ole identne objektiivse ülesande täitmise edukusega (ülesande täitmisel põhineva mõõdiku kohta vt digitaalse tervisekirjaoskuse määr); tootel võib olla hea SUS skoor patsientidelt, kes ei proovinud keerulisemaid funktsioone, mistõttu SUS-i sidumine objektiivsete ülesande täitmise andmetega annab täielikuma pildi kui kumbki üksi. Vastamise ajastus on oluline: SUS-i korraldamine vahetult pärast frustreerivat konkreetset vahejuhtumit (ebaõnnestunud ühendus, segadusttekitav samm) versus pärast sujuvat seanssi võib skoore nihutada sõltumata toote üldisest kasutatavusest.
 
 ## Lõksud
 
-- **Küsimustiku sõnastuse muutmine**: SUS-i kehtivus ja võrreldavus tööstusharu võrdlusalustega sõltub standardiseeritud küsimuste sõnastuse kasutamisest; küsimuste kohandamine õõnestab võrreldavust.
-- **Ühe koondskoori käsitlemine täielikult diagnostilisena**: SUS-skoor ütleb, kas esineb kasutatavuse probleem, kuid mitte kus; konkreetse probleemi tuvastamiseks on vaja ülesandepõhist või kvalitatiivset järelkontrolli.
-- **SUS-skooride võrdlemine väga erinevate kasutajaülesannete vahel**: keerulisest mitmeastmelisest ülesandest saadud skoor ei ole otseselt võrreldav lihtsast ühe-astmelisest ülesandest saadud skooriga.
-- **Valimi suuruse ja koosseisu ignoreerimine**: väikesel või mitte-esinduslikul kasutajavalimil põhinevat SUS-skoori ei saa usaldusväärselt üldistada kogu kasutajapopulatsioonile.
+- **Standardse küsimustiku küsimuste või hindamise muutmine**: isegi väikesed sõnastuse või skaala muudatused muudavad kehtetuks võrdluse väljakujunenud avaldatud võrdlusaluse jaotusega; kasutage standardset 10-küsimuselist instrumenti täpselt nii, nagu see on valideeritud.
+- **Ainult keskmise skoori esitamine ilma segmenteerimiseta**: kasutatavus varieerub sageli oluliselt kasutaja vanuse, digitaalse kirjaoskuse või rolli (patsient versus kliinik) järgi; segmenteerige aruandlus, et leida konkreetsed, lahendatavad kasutatavuse lüngad, mida üks keskmine varjab.
+- **SUS-i käsitlemine kliinilise tõhususe mõõdikuna**: SUS mõõdab spetsiifiliselt kasutatavust, mitte kliinilist tulemust ega rahulolu raviga; väga kasutatav tööriist ei pruugi siiski kliinilisi tulemusi parandada ning neid ei tohiks kunagi segi ajada ega üksteisega asendada.
+- **Küsitluse korraldamine ainult ebatavaliselt sujuvate või ebatavaliselt frustreerivate seansside järel**: korraldamise ajastus ja kontekst võivad skoori kallutada; korraldage järjepidevalt reaalsete seansside esindusliku valimi lõikes, mitte ainult mugavate või selektiivselt valitud seansside puhul.
 
 ## Allikad
 
-- Brooke, J., "SUS: A quick and dirty usability scale", meetodi esialgne arendus
-- Sauro, J., "A Practical Guide to the System Usability Scale", kogunenud tööstuse võrdlusandmed
-- Eelretsenseeritud kirjandus SUS-i rakendamise kohta tervishoiu tarkvara hindamisel, näiteks uuringud, mis on avaldatud ajakirjades Journal of Medical Internet Research (JMIR) ja JMIR Human Factors
+- Brooke, J., "SUS: A Quick and Dirty Usability Scale", algne avaldatud instrument
+- Bangor, Kortum ja Miller, avaldatud SUS-i võrdlusanalüüsi uuringud, mis kehtestasid laialdaselt viidatud skoori tõlgendamise vahemikud
+- Eelretsenseeritud kirjandus SUS-i kasutamise kohta digitaaltervises ja telemeditsiini kasutatavuse hindamises, näiteks ajakirjas JMIR Human Factors avaldatud uuringud
 
-Vaata ka: [patsiendi Net Promoter Score](../patsiendi-net-promoter-score/), seotud, kuid eraldiseisev patsiendi teatatud mõõdik, mis mõõdab rahulolu ja lojaalsust, mitte konkreetset tarkvara kasutatavust.
+Vaata ka: [patsiendi net promoter score](../patsiendi-net-promoter-score/), seotud, kuid eraldiseisev patsiendi esitatud mõõdik, mis mõõdab rahulolu ja lojaalsust, mitte spetsiifiliselt tarkvara kasutatavust.

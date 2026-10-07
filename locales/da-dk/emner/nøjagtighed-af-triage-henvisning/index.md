@@ -1,47 +1,46 @@
 # Nøjagtighed af Triage-henvisning
 
-Nøjagtighed af triage-henvisning er andelen af patientkontakter, hvor et automatiseret eller AI-understøttet triageværktøj korrekt henviser en patient til det rette plejeniveau og -sted — f.eks. selvpleje, almen praksis, skadestue for ikke-livstruende tilstande eller akutbehandling — vurderet mod en klinisk valideret referencestandard. Det er sikkerheds- og effektivitetsmetrikken for enhver digital adgangsportal, symptomtjekker eller AI-triagesystem: hele værktøjets værdiforslag hviler på korrekt, hurtig og konsistent henvisning af patienter.
+Nøjagtigheden af triage-henvisning er andelen af patientforløb, hvor et automatiseret eller AI-understøttet triageværktøj henviser patienten korrekt til det rette niveau og sted for pleje (for eksempel egenomsorg, primær sundhedspleje, akut pleje eller skadestue), vurderet i forhold til en klinisk valideret referencestandard. Det er sikkerheds- og effektivitetsmetrikken for enhver digital hoveddør, symptomtjekker eller AI-triagesystem: værktøjets hele værdiløfte hviler på at henvise patienter korrekt, hurtigt og konsekvent.
 
-## Hvorfor det betyder noget
+## Hvorfor dette er vigtigt
 
-Et unøjagtigt triageværktøj forårsager skade i begge retninger: undertriage (henvisning af en patient til et lavere plejeniveau end nødvendigt) kan forsinke behandling af en reel nødsituation, mens overtriage (henvisning af en patient til et højere plejeniveau end nødvendigt) spilder knap akut- og behandlingskapacitet og øger omkostninger og patientangst uden klinisk fordel. Fordi disse to fejltilstande har så forskellige konsekvenser, skal nøjagtighed af triage-henvisning altid rapporteres sammen med retningen af fejlene, ikke som et enkelt samlet nøjagtighedstal, der skjuler, om værktøjet fejler sikkert eller farligt. Tilsynsmyndigheder og sundhedssystemer, der evaluerer et AI-triageværktøj til implementering, kræver i stigende grad denne form for lagdelt nøjagtighedsrapportering som en betingelse for klinisk godkendelse, især for værktøjer, der opererer med en vis grad af autonomi fra en kliniker.
+Et upræcist triageværktøj gør skade i begge retninger: undertriage (at henvise en patient til et lavere plejeniveau, end vedkommende har brug for) kan forsinke behandlingen af en ægte nødsituation, mens overtriage (at henvise en patient til et højere plejeniveau, end vedkommende har brug for) spilder knap kapacitet på skadestuer og akutte tilbud og øger omkostninger og patientens angst uden nogen klinisk gevinst. Fordi de to fejltyper har så forskellige konsekvenser, bør nøjagtigheden af triage-henvisning altid rapporteres sammen med fejlenes retning og ikke som ét samlet nøjagtighedstal, der skjuler, om værktøjet fejler på den sikre eller den farlige side. Tilsynsmyndigheder og sundhedssystemer, der vurderer et AI-triageværktøj til udrulning, kræver i stigende grad den slags opdelt nøjagtighedsrapportering som betingelse for klinisk godkendelse, især for værktøjer, der arbejder med en vis grad af uafhængighed fra en kliniker.
 
 ## Hvordan det beregnes
 
 ```
-Nøjagtighed af triage-henvisning = korrekt henviste patientkontakter
-                                   / samlet antal patientkontakter
-                                   vurderet mod referencestandard
-                                   × 100
+Nøjagtighed af triage-henvisning = korrekt henviste forløb / samlede
+                                   triagerede forløb × 100
 
-Rapporter altid fejlretning separat:
-  Undertriage-rate = patientkontakter henvist til et lavere
-                     plejeniveau end referencestandarden angiver /
-                     samlet antal patientkontakter × 100
-  Overtriage-rate  = patientkontakter henvist til et højere
-                     plejeniveau end referencestandarden angiver /
-                     samlet antal patientkontakter × 100
+Rapportér undertriage og overtriage hver for sig:
+  Undertriagerate = forløb henvist til et lavere akutniveau end
+                    referencestandarden / samlede triagerede forløb × 100
+  Overtriagerate  = forløb henvist til et højere akutniveau end
+                    referencestandarden / samlede triagerede forløb × 100
+
+Referencestandarden er typisk en retrospektiv klinikergennemgang af
+den samme sag, hvor klinikeren om muligt ikke kender værktøjets output.
 ```
 
-## Et gennemarbejdet eksempel
+## Gennemarbejdet eksempel
 
-En AI-drevet symptomtjekker vurderer 2.000 patientkontakter i en valideringsundersøgelse mod en klinikerbedømt referencestandard. Af disse henviser værktøjet 1.800 korrekt (90% samlet nøjagtighed), men segmentering af de 200 fejl afslører, at 150 var undertriage (patienten burde være henvist til et højere plejeniveau, men blev sendt til et lavere) og kun 50 var overtriage. De 150 undertriage-tilfælde — 7,5% af den samlede population — repræsenterer den klinisk mere bekymrende fejltilstand, og en klinisk gennemgang afslører, at de uforholdsmæssigt rammer patienter med atypiske symptompræsentationer, en vigtig sikkerhedsbegrænsning, som det samlede nøjagtighedstal på 90% fuldstændig skjulte.
+Et AI-symptomtjekværktøj triagerer 5.000 patientforløb på en måned. En blindet klinikergennemgang af en tilfældig stikprøve på 500 af disse forløb finder, at 430 blev henvist til det korrekte akutniveau (nøjagtighed 86 %), 45 blev undertriageret (9 %), og 25 blev overtriageret (5 %). Undertriageraten på 9 % er det tal, der mest presserende skal undersøges, da den repræsenterer forløb, hvor en patient muligvis blev henvist til mindre akut pleje, end vedkommende faktisk havde brug for; overtriageraten på 5 % er et problem for kapacitet og omkostninger, men ikke et direkte sikkerhedsproblem.
 
 ## Datakilder og forbehold
 
-At bygge en pålidelig referencestandard kræver typisk klinikerbedømt gennemgang af en repræsentativ prøve af faktiske patientkontakter, enten prospektivt eller retrospektivt, og kvaliteten af denne referencestandard er den afgørende faktor for, hvor meningsfuld nøjagtighedsmetrikken overhovedet er. Et triageværktøj valideret udelukkende på et syntetisk eller kurateret testsæt vil ofte vise en højere nøjagtighed, end det opnår på reelle, tvetydige patientpræsentationer, så valideringsmetodologien skal rapporteres sammen med nøjagtighedstallet for at kunne vurderes korrekt.
+Den referencestandard, som triagenøjagtigheden måles mod, har enorm betydning: en gennemgang foretaget af én enkelt kliniker bringer denne klinikers egen variation i skøn med ind, så et troværdigt nøjagtighedstal kræver normalt enten flere uafhængige bedømmere med dokumenteret enighed mellem bedømmerne eller en sammenligning med et efterfølgende, bekræftet klinisk udfald (hvilken pleje patienten faktisk havde brug for, fastslået bagefter). Stikprøven har også betydning: hvis man kun gennemgår en bekvemmelighedsstikprøve af forløb eller kun dem, der er markeret som usædvanlige, får man ikke et tal, der kan generaliseres til værktøjets samlede præstation. Nøjagtighedstal bør rapporteres separat for den præsenterede symptom- eller klagekategori, hvor det underliggende antal sager tillader det, da triageværktøjer sjældent præsterer ens på tværs af alle tilstande.
 
 ## Faldgruber
 
-- **Validering kun på retrospektive, nemme data**: et værktøjs reelle henvisningsnøjagtighed på levende, tvetydige patientinput adskiller sig ofte væsentligt fra nøjagtigheden på et kurateret valideringssæt opbygget under udviklingen.
-- **Rapportering af et enkelt samlet nøjagtighedstal uden fejlretning**: dette skjuler, om værktøjet fejler mod sikkerhed (overtriage) eller mod fare (undertriage), hvilket er den vigtigste sondring for patientsikkerhed.
-- **Brug af en referencestandard af lav kvalitet**: hvis referencestandarden selv er upålidelig eller inkonsistent, måler nøjagtighedsmetrikken i bedste fald enighed med en fejlbehæftet standard, ikke sand klinisk korrekthed.
-- **Ignorering af undergruppeydeevne**: et værktøj kan opnå god samlet nøjagtighed, mens det systematisk fejler for bestemte patientpopulationer eller symptompræsentationer; segmentering efter demografi og præsentationstype afslører skjulte sikkerhedshuller.
+- **At rapportere ét blandet nøjagtighedstal**: at slå undertriage og overtriage sammen til ét tal skjuler, om værktøjets fejl hælder mod den farligste fejltype; rapportér dem altid hver for sig.
+- **At bruge én enkelt bedømmer, der kender værktøjets output, som referencestandard**: det kan i det skjulte skubbe nøjagtighedstallet mod det, bedømmeren selv ville have gjort, i stedet for en uafhængig klinisk standard.
+- **Kun at validere på retrospektive, bekvemme data**: et værktøjs nøjagtighed i den virkelige verden med levende, tvetydigt patientinput afviger ofte væsentligt fra dets nøjagtighed på et kurateret valideringssæt, der blev sammensat under udviklingen.
+- **At ignorere præstationsdrift efter udrulning**: et AI-triagemodels nøjagtighed kan forringes over tid, efterhånden som patientpopulationer, præsenterede symptomer eller tilgængelighed af plejeforløb ændrer sig; nøjagtigheden bør måles igen løbende og ikke valideres én gang og antages at være stabil.
 
 ## Kilder
 
-- Agency for Healthcare Research and Quality (AHRQ), forskning i diagnostisk nøjagtighed og triagesikkerhed
-- FDA's rammer for software som medicinsk udstyr (SaMD), retningslinjer for klinisk validering af AI-triageværktøjer
-- Collegialt bedømt litteratur om AI-triagenøjagtighed, f.eks. undersøgelser offentliggjort i npj Digital Medicine og BMJ Health & Care Informatics
+- ONC / HealthIT.gov, vejledning om sikkerhed og kvalitetssikring af klinisk beslutningsstøtte og AI-baserede værktøjer
+- Peer reviewet litteratur om nøjagtigheden af symptomtjekkere og AI-triageværktøjer, for eksempel undersøgelser offentliggjort i JAMIA, npj Digital Medicine og BMJ Health & Care Informatics
+- NHS England, vejledning om klinisk sikkerhed ved digitale triage- og fjernkonsultationsværktøjer (standarder for klinisk risikostyring DCB0129/DCB0160)
 
-Se også: [behandlingstid for digital henvisning](../behandlingstid-for-digital-henvisning/), procesmetrikken, der ligger mest direkte nedstrøms for en triagebeslutning.
+Se også: [behandlingstid for digital henvisning](../behandlingstid-for-digital-henvisning/), den procesmetrik, der kommer allernærmest efter en triagebeslutning.

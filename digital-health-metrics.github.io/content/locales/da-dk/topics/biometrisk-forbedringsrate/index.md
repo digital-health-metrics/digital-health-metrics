@@ -1,49 +1,47 @@
 # Biometrisk Forbedringsrate
 
-Biometrisk forbedringsrate er andelen af patienter, der opnår en klinisk meningsfuld ændring i en sporet biometrisk værdi — såsom HbA1c, blodtryk eller BMI — mellem baseline og et defineret opfølgningstidspunkt, efter at have brugt et digitalt sundhedsprogram. Den eksisterer for at adskille et program, der rent faktisk flytter kliniske resultater, fra et, der blot genererer engagement eller tilfredshedsdata, hvilket gør den til en af de mest direkte linjer mellem digital sundhedsaktivitet og klinisk værdi.
+Den biometriske forbedringsrate er andelen af indskrevne patienter i et digitalt sundhedsprogram, der opnår en klinisk meningsfuld forbedring i en fulgt biometrisk måling over en defineret indskrivningsperiode. Oftest er det glykeret hæmoglobin (HbA1c) i diabetes- og kardiometaboliske programmer eller kropsmasseindeks (BMI) i vægtstyringsprogrammer. Det er den udfaldsmetrik, der i sidste ende begrunder et digitalt sundhedsprodukts kliniske påstande: tal for engagement og adoption beskriver, hvordan et produkt bruges, men biometrisk forbedring er tættere på at være et bevis for, at det virker.
 
-## Hvorfor det betyder noget
+## Hvorfor dette er vigtigt
 
-Mange digitale sundhedsprogrammer rapporterer engagementsmetrikker — logins, beskeder sendt, dage aktive — som proxyer for effektivitet, men engagement i sig selv beviser ikke, at en patients helbred er forbedret; en patient kan logge ind dagligt uden nogen ændring i deres underliggende tilstand. Biometrisk forbedringsrate tvinger evalueringen tilbage til det resultat, der rent faktisk betyder noget for patienten og for betaleren, og den er særligt vigtig i værdibaserede plejekontrakter, hvor betaling i stigende grad er knyttet til demonstrerede kliniske resultater snarere end blot leveret service. Fordi den kræver en konsistent baseline-måling og et defineret opfølgningsvindue for hver patient, afslører den også, hvor meget af et programs tilsyneladende effekt faktisk skyldes selektiv rapportering af kun de patienter, der blev i programmet og blev målt igen.
+Digitale sundhedsprogrammer sælges og bestilles ofte på løftet om bedre sundhedsudfald, og den biometriske forbedringsrate er den mest direkte, kvantificerbare måde at prøve det løfte af over for en bestemt, klinisk anerkendt tærskel i stedet for en vag påstand om "bedre sundhed". Betalere, arbejdsgivere og sundhedssystemer knytter i stigende grad refusion eller fornyelse af kontrakter til påvist biometrisk forandring, så et program, der ikke troværdigt kan rapportere denne rate, står svagere både kommercielt og klinisk. Metrikken er også en disciplinerende kontrol af programdesignet: det er langt lettere at rapportere engagement (logins, sendte beskeder) end udfald, og et team bør være mistænksomt over for ethvert program, der rapporterer det første begejstret, men er vagt om det sidste.
 
 ## Hvordan det beregnes
 
 ```
-Biometrisk forbedringsrate = patienter med klinisk meningsfuld
-                             forbedring i den sporede biometriske
-                             værdi / samlet antal patienter med
-                             gyldig baseline- og opfølgningsmåling
-                             × 100
+Biometrisk forbedringsrate = patienter, der opnår en defineret klinisk
+                             meningsfuld forbedring / patienter med en
+                             gyldig baseline- og opfølgningsmåling × 100
 
-"Klinisk meningsfuld" skal defineres på forhånd ud fra etablerede
-kliniske tærskler for den specifikke biometriske værdi (f.eks. et
-fald på ≥0,5 procentpoint i HbA1c), ikke valgt efter at have set
-dataene.
+Almindelige klinisk meningsfulde tærskler:
+  HbA1c   — et fald på ≥ 0,5 procentpoint, eller at nå et defineret
+            mål (fx < 7,0 %) fra en baseline uden for normalområdet
+  BMI     — et fald på ≥ 5 % af kropsvægten ved baseline, opretholdt
+            frem til opfølgningstidspunktet
 
-Rapporter altid sammen med:
-  Målevalueringsrate = patienter med gyldig opfølgningsmåling /
-                       samlet antal tilmeldte patienter × 100
+Rapportér separat for hver fulgt biometrisk måling; slå aldrig
+forbedring i HbA1c og BMI sammen til én samlet "forbedrings"-procent.
 ```
 
-## Et gennemarbejdet eksempel
+## Gennemarbejdet eksempel
 
-Et digitalt diabetesstyringsprogram tilmelder 500 patienter med en baseline HbA1c-måling. Ved seks måneder har 350 af disse patienter en gyldig opfølgningsmåling (en målevalueringsrate på 70%), og af disse 350 opnår 210 et fald på mindst 0,5 procentpoint i HbA1c, hvilket giver en biometrisk forbedringsrate på 60%. Men hvis programmet kun rapporterer "60% af patienterne forbedrede deres HbA1c" uden at nævne, at 30% af de oprindeligt tilmeldte patienter aldrig fik en opfølgningsmåling, skjuler dette muligheden for, at de patienter, der faldt fra uden måling, klarede sig dårligere end dem, der blev — hvilket er grunden til, at målevalueringsraten altid skal rapporteres sammen med forbedringsraten.
+Et kardiometabolisk digitalt sundhedsprogram indskriver 800 patienter med en HbA1c ved baseline uden for normalområdet. Af disse har 620 både en gyldig baseline- og en opfølgningsmåling efter 6 måneder (180 er faldet fra under opfølgningen og udelades af nævneren i stedet for at blive talt som fiaskoer). Af de 620 med parrede målinger opnår 340 et fald på mindst 0,5 procentpoint. Den biometriske forbedringsrate er 340 / 620 × 100 = 55 %. Hvis tallet blev rapporteret mod alle 800 indskrevne (340 / 800 = 42,5 %), ville det blande frafald under opfølgningen sammen med behandlingssvigt og undervurdere raten for de patienter, der faktisk fuldførte målingerne.
 
 ## Datakilder og forbehold
 
-Biometriske data kommer typisk fra tilsluttede enheder (kontinuerlige glukosemonitorer, blodtryksmanchetter), laboratorieresultater integreret fra den elektroniske patientjournal, eller patientrapporterede målinger indtastet manuelt — og hver kilde har en anden pålidelighedsprofil, hvor manuelt indtastede data er mest modtagelige for fejl eller selektiv rapportering. Opfølgningsvinduet skal være konsistent på tværs af den rapporterede population, da det at tillade et variabelt vindue (nogle patienter målt ved 3 måneder, andre ved 12) gør det muligt at skjule svag langsigtet effektivitet bag stærke kortsigtede resultater.
+Biometriske værdier ved baseline og opfølgning stammer typisk fra en tilsluttet enhed (et Bluetooth-glukometer eller en smart vægt), et laboratorieresultat importeret fra den elektroniske patientjournal eller en værdi, patienten selv har indtastet, og disse tre kilder har meget forskellig pålidelighed, så kilden bør rapporteres sammen med raten. Frafald under opfølgningen er sjældent tilfældigt: patienter, der mister engagementet i et program, er ofte også dem, der har mindst tilbøjelighed til at være blevet bedre, så en høj forbedringsrate, der kun er beregnet ud fra patienter, der fuldførte opfølgningen, kan overvurdere programmets reelle effekt på populationsniveau. Sæsonudsving og regression mod gennemsnittet er reelle for både HbA1c og vægt, så et program bør om muligt sammenligne med en samtidig eller historisk kontrolgruppe i stedet for at betragte enhver forbedring som bevis på programmets effekt.
 
 ## Faldgruber
 
-- **Rapportering af forbedringsrate uden målevalueringsrate**: en høj forbedringsrate blandt kun de patienter, der blev målt igen, kan skjule et betydeligt frafald, der sandsynligvis skævvrider resultatet positivt.
-- **Definition af "klinisk meningsfuld" efter at have set dataene**: at vælge en tærskel, der tilfældigvis matcher, hvad dataene viser, i stedet for en etableret klinisk standard, underminerer hele formålet med maskinen.
-- **Sammenligning af forbedringsrater på tværs af programmer med forskellige opfølgningsvinduer**: et program, der måler ved 3 måneder, vil typisk vise en højere forbedringsrate end et, der måler ved 12 måneder, uanset underliggende effektivitet.
-- **Ignorering af regression til middelværdien**: patienter tilmeldt på grund af en dårligt kontrolleret baseline-værdi vil ofte vise en vis forbedring blot af statistiske årsager, uanset interventionens effektivitet; sammenligning med en kontrolgruppe eller historisk baseline hjælper med at korrigere for dette.
+- **At udelade frafald under opfølgningen i stedet for at rapportere det**: i det stille at fjerne patienter uden en opfølgningsmåling fra nævneren kan blæse den tilsyneladende forbedringsrate betydeligt op; rapportér altid fuldførelsesraten for opfølgningsmålingen sammen med selve forbedringsraten.
+- **At blande selvrapporterede målinger og enhedsmålinger uden at markere dem**: en selvrapporteret vægt er systematisk mindre pålidelig end en aflæsning fra en tilsluttet smart vægt, og en sammenblanding af de to kilder skjuler, hvor meget af en tilsyneladende forbedring der blot er målestøj.
+- **Ingen kontrol eller kontrafaktisk sammenligning**: mange kroniske biometriske mål svinger eller regredierer mod gennemsnittet af sig selv; en forbedringsrate fra en enkelt arm uden nogen sammenligningsgruppe er et fingerpeg, men ikke et endeligt bevis på programmets effekt.
+- **At behandle en beskeden gennemsnitlig forskydning som bevis på bred forbedring**: en lille gennemsnitlig forbedring på populationsniveau kan skyldes nogle få patienter med stor respons, mens de fleste patienter ikke ser nogen forandring; rapportér fordelingen (fx andelen, der krydser den klinisk meningsfulde tærskel) og ikke kun den gennemsnitlige forskydning.
 
 ## Kilder
 
-- American Diabetes Association, standarder for klinisk meningsfulde tærskler i glykæmisk kontrol
-- Collegialt bedømt litteratur om digitale sundhedsinterventioner for kroniske sygdomme, f.eks. undersøgelser offentliggjort i Diabetes Care og Journal of Medical Internet Research (JMIR)
-- Centers for Medicare & Medicaid Services (CMS), retningslinjer for kvalitetsmålinger i værdibaserede plejekontrakter
+- American Diabetes Association (ADA), Standards of Care in Diabetes, vejledning om HbA1c-mål og klinisk meningsfuld forandring
+- Centers for Disease Control and Prevention (CDC), Division of Diabetes Translation, vejledning om programevaluering
+- Peer reviewet litteratur om udfald af digitale programmer for diabetes og vægtstyring, for eksempel undersøgelser offentliggjort i npj Digital Medicine og Diabetes Care
 
-Se også: [biometrisk stabiliseringsrate](../biometrisk-stabiliseringsrate/), den relaterede metrik for vedvarende kontrol efter opnåelse af et mål, i modsætning til den indledende ændring fra baseline.
+Se også: [medicinefterlevelsesrate](../medicinefterlevelsesrate/), en hyppig forudgående drivkraft for biometrisk forbedring i programmer for kroniske tilstande.

@@ -1,52 +1,46 @@
 # Tasso di Riammissione Ospedaliera
 
-Il tasso di riammissione ospedaliera misura la quota di pazienti riammessi in ospedale entro una finestra temporale definita — più comunemente 30 giorni — dopo la dimissione da un ricovero iniziale. Per i programmi di salute digitale che mirano a supportare la transizione dall'ospedale a casa (reparti virtuali, monitoraggio remoto post-dimissione, programmi di follow-up digitali), è la metrica più direttamente legata all'economia del finanziatore e ai contratti di assistenza basata sul valore.
+Il tasso di riammissione ospedaliera è la quota di pazienti dimessi che vengono riammessi in ospedale in modo non pianificato entro una finestra definita dopo la dimissione, più comunemente 30 giorni. Per la salute digitale è la metrica più direttamente legata all'economia dei pagatori e ai contratti di assistenza basata sul valore: un programma di monitoraggio a distanza, di follow-up post-dimissione o di transizione digitale tra setting di cura che non riesca a mostrare un effetto credibile sulle riammissioni difficilmente otterrà un sostegno continuativo in termini di rimborso, per quanto buoni appaiano i suoi numeri di coinvolgimento.
 
 ## Perché è importante
 
-Le riammissioni entro 30 giorni sono ampiamente considerate parzialmente prevenibili, e molti finanziatori impongono sanzioni finanziarie agli ospedali con tassi di riammissione superiori al previsto, rendendo questa metrica una linea diretta verso un vero valore economico per qualsiasi intervento digitale volto a ridurla. Un programma digitale in grado di dimostrare una riduzione statisticamente significativa delle riammissioni rispetto a un gruppo di controllo appropriato possiede uno dei casi aziendali più solidi in tutta la salute digitale, perché il risparmio sui costi derivante dall'evitare una singola riammissione è spesso abbastanza grande da giustificare un investimento significativo nel programma. Ma poiché i tassi di riammissione sono fortemente influenzati dal carico di malattia sottostante del paziente, qualsiasi riduzione riportata deve essere confrontata con un gruppo di controllo appropriatamente abbinato o corretto per il rischio per essere credibile.
+Una riammissione non pianificata è costosa, destabilizzante per il paziente e in molti sistemi sanitari ormai direttamente penalizzata: schemi come l'Hospital Readmissions Reduction Program statunitense riducono i pagamenti agli ospedali con tassi di riammissione superiori al previsto per specifiche condizioni, ed è per questo che gli ospedali commissionano attivamente programmi digitali di post-dimissione e di monitoraggio a distanza mirati a ridurle. Una quota significativa delle riammissioni è considerata potenzialmente prevenibile, determinata da istruzioni di dimissione inadeguate, appuntamenti di follow-up mancati, fraintendimenti sui farmaci o peggioramenti dei sintomi non affrontati che un punto di contatto digitale ben progettato può cogliere prima, ed è proprio la lacuna che gli strumenti digitali di transizione assistenziale si propongono di colmare. Il tasso di riammissione va sempre letto insieme alla casistica: un programma che serve una popolazione più malata e complessa avrà un tasso di base strutturalmente più alto di uno che serve una popolazione più sana, indipendentemente dalla qualità del programma.
 
 ## Come si calcola
 
 ```
-Tasso di riammissione ospedaliera = pazienti riammessi entro la
-                                    finestra temporale
-                                    (tipicamente 30 giorni) /
-                                    totale pazienti dimessi × 100
+Tasso di riammissione a 30 giorni = riammissioni non pianificate entro
+                                    30 giorni dalla dimissione / totale
+                                    delle dimissioni indice × 100
 
-Per valutare l'effetto di un intervento digitale:
-  Riduzione del tasso di riammissione = (tasso del gruppo di
-                                        controllo − tasso del
-                                        gruppo di intervento) /
-                                        tasso del gruppo di
-                                        controllo × 100
+Escludere dal numeratore: le riammissioni pianificate (ad es. una
+procedura di follow-up programmata) e i trasferimenti che costituiscono
+la continuazione dello stesso episodio di cura anziché un nuovo ricovero.
 
-La correzione per il rischio (usando strumenti consolidati come
-l'indice LACE o il punteggio HOSPITAL) dovrebbe essere applicata
-quando i gruppi di intervento e controllo non sono assegnati
-casualmente, per tenere conto delle differenze nel rischio
-sottostante dei pazienti.
+Aggiustare per il rischio, ove possibile, usando un indice di casistica
+o di comorbilità accettato, prima di confrontare i tassi tra popolazioni
+di pazienti o periodi diversi.
 ```
 
 ## Esempio pratico
 
-Un ospedale implementa un programma digitale di monitoraggio remoto per i pazienti dimessi dopo il trattamento per insufficienza cardiaca. Tra 400 pazienti arruolati nel programma, il tasso di riammissione a 30 giorni è del 12%, rispetto al 18% per un gruppo di controllo storico abbinato di pazienti simili che non hanno ricevuto il programma — una riduzione relativa del 33%. Poiché i gruppi non sono stati assegnati casualmente, il team di valutazione applica un punteggio di correzione per il rischio per confermare che i pazienti arruolati non fossero già a rischio inferiore rispetto al gruppo di controllo, il che avrebbe spiegato la differenza senza alcun effetto reale del programma. Dopo la correzione, rimane una riduzione statisticamente significativa di circa il 25%, dando al programma un caso aziendale credibile e difendibile di fronte alla direzione ospedaliera.
+Un ospedale dimette 1.200 pazienti con scompenso cardiaco in un trimestre. Di questi, 210 vengono riammessi entro 30 giorni, di cui 15 sono riammissioni pianificate per una procedura programmata e sono escluse. Il tasso di riammissione non pianificata a 30 giorni è (210 − 15) / 1.200 × 100 = 16,25%. Viene introdotto un programma di monitoraggio a distanza per un sottoinsieme di 400 di questi pazienti (selezionati in base al rischio clinico, non a caso) e il loro tasso di riammissione non pianificata è del 14%, rispetto al 18% degli 800 pazienti non arruolati. Poiché l'arruolamento si è basato sul rischio clinico e non su un'assegnazione casuale, questa differenza è indicativa e non una prova conclusiva dell'effetto del programma, e va interpretata insieme a un'analisi di aggiustamento per il rischio anziché presa per buona.
 
 ## Fonti dei dati e avvertenze
 
-I dati sulla riammissione richiedono tipicamente l'accesso ai dati di più ospedali o a uno scambio regionale di informazioni sanitarie, poiché un paziente riammesso in un ospedale diverso da quello che lo ha dimesso inizialmente non verrà registrato se i dati provengono solo dai registri interni di un unico sistema — il che significa che un tasso di riammissione calcolato esclusivamente dai dati interni di un sistema probabilmente sottostima il tasso reale. La scelta del gruppo di controllo è il singolo fattore più decisivo per la credibilità di qualsiasi riduzione riportata; un confronto scarsamente abbinato o non corretto per il rischio può produrre un risultato drammatico ma privo di significato.
+I dati sulle riammissioni sono in genere tratti dal flusso ammissioni-dimissioni-trasferimenti (ADT) dell'ospedale stesso per le riammissioni nella stessa struttura, ma un paziente riammesso in un altro ospedale non comparirà affatto in quel flusso, per cui il monitoraggio delle riammissioni di un solo ospedale sottostima sistematicamente i veri tassi di riammissione, a meno che non sia integrato con dati di uno scambio regionale di informazioni sanitarie, dati sui rimborsi dei pagatori o banche dati statali di tutti i pagatori. L'attribuzione a un programma digitale richiede cautela: i pazienti che scelgono di aderire a un programma volontario di monitoraggio a distanza sono raramente un campione casuale della popolazione dimessa, per cui un confronto ingenuo dei tassi di riammissione tra arruolati e non arruolati tenderà a essere confuso proprio dagli effetti di selezione che hanno reso alcuni pazienti più propensi ad aderire in primo luogo.
 
-## Errori comuni
+## Insidie
 
-- **Riportare una riduzione senza un gruppo di controllo appropriato**: i tassi di riammissione variano enormemente in base alla popolazione di pazienti; una riduzione senza un confronto abbinato o corretto per il rischio non dimostra nulla sull'efficacia del programma.
-- **Affidarsi esclusivamente ai dati interni di un unico sistema**: un paziente riammesso in un ospedale diverso non verrà rilevato, portando a un tasso di riammissione misurato artificialmente basso.
-- **Ignorare finestre temporali diverse nel confrontare programmi**: i tassi di riammissione a 30, 60 e 90 giorni non sono metriche direttamente confrontabili.
-- **Trattare tutte le riammissioni come prevenibili**: non tutte le riammissioni sono causate da errori nell'assistenza di transizione; alcune sono progressioni inevitabili della condizione sottostante, e mirare a zero riammissioni può inavvertitamente scoraggiare un'assistenza appropriata e necessaria.
+- **Confrontare tassi grezzi, non aggiustati per il rischio, tra popolazioni**: un programma che serve una popolazione più malata mostrerà un tasso grezzo di riammissione più alto di uno che serve una popolazione più sana anche se il programma stesso è più efficace; aggiustare sempre per il rischio prima di confrontare.
+- **Sottostimare le riammissioni in altre strutture**: affidarsi ai soli dati ADT di un singolo ospedale farà perdere le riammissioni altrove, sottostimando il tasso reale, in particolare nelle aree con più sistemi ospedalieri concorrenti.
+- **Distorsione da selezione nell'arruolamento volontario nel programma**: i pazienti che scelgono di aderire a un programma digitale di follow-up differiscono spesso in modo sistematico (per alfabetizzazione sanitaria, supporto sociale o motivazione) da quelli che non lo fanno, confondendo qualsiasi confronto ingenuo prima/dopo o tra arruolati e non arruolati.
+- **Contare ogni ritorno nella stessa struttura come riammissione**: una riammissione pianificata (ad esempio una seconda fase programmata di una procedura) non è un segnale di dimissione fallita e va esclusa dal numeratore, non mescolata con i ritorni realmente non pianificati.
 
 ## Fonti
 
-- Centers for Medicare & Medicaid Services (CMS), Hospital Readmissions Reduction Program (HRRP)
-- Agency for Healthcare Research and Quality (AHRQ), linee guida sulla metodologia di correzione per il rischio
-- Letteratura peer-reviewed sugli interventi digitali post-dimissione, ad esempio studi pubblicati su Journal of the American Medical Association (JAMA) e Circulation: Heart Failure
+- Centers for Medicare & Medicaid Services (CMS), specifiche delle misure dell'Hospital Readmissions Reduction Program e della riammissione ospedaliera complessiva
+- Institute for Healthcare Improvement (IHI), linee guida sulla riduzione delle riammissioni evitabili
+- Letteratura sottoposta a revisione paritaria sul monitoraggio digitale a distanza e sugli interventi di transizione assistenziale per ridurre le riammissioni, ad esempio studi pubblicati su JAMA Network Open e npj Digital Medicine
 
-Vedi anche: [riduzione dei giorni di degenza](../riduzione-dei-giorni-di-degenza/), la metrica di sicurezza che dovrebbe sempre essere riportata insieme a qualsiasi affermazione di riduzione dei giorni di degenza per la stessa popolazione di pazienti.
+Vedere anche: [accuratezza dell'instradamento del triage](../accuratezza-dellinstradamento-del-triage/), perché un instradamento iniziale inappropriato può essere di per sé un fattore a valle di ricoveri evitabili.

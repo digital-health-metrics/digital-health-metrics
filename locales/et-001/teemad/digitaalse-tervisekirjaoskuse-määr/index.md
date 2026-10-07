@@ -1,50 +1,48 @@
 # Digitaalse Tervisekirjaoskuse Määr
 
-Digitaalse tervisekirjaoskuse määr mõõdab, kas patsiendid, kellel on tehniline juurdepääs digitaalsele terviise tööriistale, saavad seda tegelikult tõhusalt ja ilma abita kasutada nende ülesannete täitmiseks, mille jaoks see on loodud — erinevalt digitaalse juurdepääsu määrast, mis mõõdab ainult seda, kas eeltingimused (internet, seade, konto) on olemas. Patsiendil võib olla nutitelefon ja aktiivne patsiendiportaali konto ning ta ei pruugi siiski olla võimeline seda iseseisvalt navigeerima, et broneerida vastuvõttu või tõlgendada laboritulemust.
+Digitaalse kirjaoskuse määr mõõdab patsiendipopulatsiooni osakaalu, kes suudab iseseisvalt ja edukalt täita digitaaltervise platvormil tavalisi ülesandeid – sisse logida, aega broneerida, videovisiidiga liituda või testitulemust lugeda – ilma teise inimese abita. See erineb digitaalse juurdepääsu määrast ja seda tuleks alati mõõta sellest eraldi: patsiendil võib olla nutitelefon ja lairibaühendus ning ta ei pruugi siiski suuta telemeditsiini platvormil ilma abita liikuda, ning nende kahe mõõdiku segamine varjab täpselt seda populatsiooni, mida see mõõdik on mõeldud esile tooma.
 
 ## Miks see on oluline
 
-Digitaalset juurdepääsu ja digitaalset kirjaoskust aetakse sageli segi, kuid need esindavad väga erinevaid takistusi väga erinevate lahendustega: juurdepääsulõhe lahendamine nõuab seadmete või internetiühenduse pakkumist, samas kui kirjaoskuse lõhe lahendamine nõuab haridust, lihtsustatud liidese disaini või pidevat abistavat tuge. Organisatsioon, mis jälgib ainult juurdepääsu määra, võib õigustatult väita, et on lahendanud oma "digitaalse lõhe", jättes samal ajal olulise osa patsientidest ikka veel võimetuks tegelikult digitaalsest tööriistast kasu saada, kuna neil puudub mugavus või oskused seda iseseisvalt kasutada. See eristus on eriti mõjukas eakate patsientide ja nende jaoks, kellel on piiratud varasem tehnoloogiakokkupuude, kes võivad teatada, et neil on tööriistale juurdepääs, kuid jäävad siiski iga suhtluse puhul sõltuma pereliikmest või hooldajast — sõltuvus, mis õõnestab suure osa digitaalse iseteeninduse väärtuspakkumisest.
+Digitaalne juurdepääs üksi ei taga, et patsient suudab digitaaltervise teenust tõhusalt kasutada: madalama tervisekirjaoskusega, piiratud üldise tehnoloogiakogemusega, kognitiivse või nägemispuudega või platvormi liidese keelebarjääridega patsientidel võib olla täielik tehniline juurdepääs ja nad ei pruugi siiski ülesannet iseseisvalt täita, ning see lõhe korreleerub süstemaatiliselt samade demograafiliste rühmadega, kes seisavad juba silmitsi muude tervise ebavõrdsustega. HIMSS-i digitaaltervise võrdsuse mõõtmise raamistik (Digital Health Equity Measurement Framework) käsitleb digitaalset kirjaoskust juurdepääsust eraldi sambana just selle tõttu: juurdepääsulõhe sulgemine ilma kirjaoskuse lõhega tegelemata võib jätta populatsiooni tehniliselt ühendatuks, kuid funktsionaalselt võimetuks kasu saama. Organisatsioonid, mis mõõdavad ülesande täitmist ja täitmiseks kuluvat aega tavaliste platvormi toimingute puhul, segmenteerituna keele ja sotsiaalmajanduslike näitajate järgi, suudavad tuvastada kirjaoskuse tõkkeid ja suunata tuge (lihtsustatud liidesed, abistatud sisseelamine, teise keele sisu) palju täpsemalt kui organisatsioonid, mis toetuvad ainult juurdepääsumõõdikutele või üldistele rahuloluskooridele.
 
 ## Kuidas seda arvutatakse
 
 ```
-Digitaalse tervisekirjaoskuse määr = patsiendid, kes täidavad
-                                     iseseisvalt määratletud
-                                     põhiülesannete komplekti (nt
-                                     vastuvõtu broneerimine,
-                                     laboritulemuse vaatamine,
-                                     sõnumi saatmine) ilma abita /
-                                     patsiendid kokku, kellel on
-                                     tehniline juurdepääs tööriistale
-                                     × 100
+Digitaalse kirjaoskuse määr = patsiendid, kes täidavad määratletud
+                              ülesande iseseisvalt ilma abita /
+                              patsiendid, kes seda ülesannet
+                              proovivad × 100
 
-Seda mõõdetakse tavaliselt otsese jälgitud ülesande täitmise või
-valideeritud digitaalse tervisekirjaoskuse küsimustiku kaudu, mitte
-ainult enesehinnangulise kindlustunde kaudu, kuna enesehinnanguline
-kindlustunne erineb sageli oluliselt tegelikult demonstreeritud
-võimest.
+Tavaliselt mõõdetavad ülesanded: konto sisselogimine, aja
+broneerimine, videovisiidiga liitumine, testitulemuse vaatamine,
+vastuvõtuvormi täitmine.
+
+Esitage ülesande kaupa, mitte ühe segatud skoorina, kuna kirjaoskus
+lihtsate ülesannete (sisselogimine) ja keeruliste ülesannete
+(mitmeastmelise vastuvõtuvormi täitmine) puhul erineb oluliselt ning
+nende segamine varjab, kus konkreetne tõke asub.
 ```
 
 ## Läbitöötatud näide
 
-Tervishoiusüsteem kinnitab, et 85% tema patsiendipopulatsioonist on digitaalne juurdepääs (internet, seade ja kontojuurdepääs) tema patsiendiportaalile. Kuid järeluuring, kus patsientide alamhulgal palutakse iseseisvalt sooritada kolm põhiülesannet portaalis, leiab, et ainult 60% juurdepääsuga patsientidest täidab tegelikult kõik kolm ülesannet ilma abita, andes digitaalse tervisekirjaoskuse määraks 60% juurdepääsuga populatsiooni seas — oluliselt madalam, kui juurdepääsu näitaja üksi viitaks. See avastus sundis tervishoiusüsteemi investeerima lihtsustatud liidese disaini ja pakkuma isiklikke digitaalse kirjaoskuse koolitusseansse, selle asemel et eeldada, et ainult juurdepääsu lahendamine lahendaks digitaalse lõhe.
+Tervishoiusüsteem jälgib videovisiidiga liitumist määratletud ülesandena kuu jooksul 5000 planeeritud telemeditsiini kohtumise lõikes. Neist 4100 patsienti liitub edukalt ilma tugikõneta või visiidi ajal tehnilise abita (digitaalse kirjaoskuse määr selle ülesande puhul: 82%). Esmase keele järgi segmenteerimine näitab määra 89% ingliskeelsete patsientide puhul versus 61% patsientide puhul, kelle esmane keel erineb platvormi vaikeliidese keelest – 28-punktine lõhe, mis oleks nähtamatu, kui esitataks ainult segatud 82%, ning mis viitab otse konkreetsele, lahendatavale sekkumisele (tõlgitud liides ja juhised), mitte ebamäärasele üldisele kirjaoskuse probleemile.
 
 ## Andmeallikad ja hoiatused
 
-Digitaalse tervisekirjaoskuse usaldusväärseks mõõtmiseks on vaja otsest vaatlust tegeliku ülesande täitmisest või valideeritud hindamisvahendit, kuna enesehinnanguline kindlustunne tehnoloogia kasutamisel on kurikuulsalt ebausaldusväärne asendusnäitaja tegelikult demonstreeritud võime jaoks — patsiendid nii ülehindavad kui alahindavad oma kirjaoskust erinevatel põhjustel. Konkreetne "põhiülesannete" komplekt, mida kasutatakse kirjaoskuse hindamiseks, peaks peegeldama tegelikke ülesandeid, mida patsiendid peavad tööriistaga praktikas täitma, mitte üldist või lihtsustatud testülesannet, mis ei esinda tegelikku kasutust.
+Ülesande täitmise andmed saadakse tavaliselt platvormi enda sündmuste logidest (kas patsient jõudis videovisiidile, kas aja broneerimise voog lõppes katkestamata), täiendatuna tugikõnede või abilaua kontaktandmetega, et tuvastada ülesanded, mis "täideti" tehniliselt ainult seetõttu, et patsient sai poolel teel otsest abi. Ülesanne, mis loetakse "täidetuks" ainult süsteemilogide põhjal, võib varjata, et patsient vajas sinna jõudmiseks pereliikme või tugipersonali telefonikõnet – tõeliselt kirjaoskusest sõltumatu täitmine tuleks määratleda ja jälgida eraldi abistatust, kus platvorm suudab need kaks eristada. Digitaalne kirjaoskus korreleerub tervisekirjaoskuse ja üldise kirjaoskusega, kuid on neist analüütiliselt erinev; kus on vaja ametlikku hindamist, tuleks kasutada valideeritud instrumenti (mitte ainult vanusel või demograafial põhinevat mitteametlikku eeldust).
 
 ## Lõksud
 
-- **Digitaalse juurdepääsu segiajamine digitaalse kirjaoskusega**: juurdepääsu lahendamine (seadmed, internet) ei lahenda tingimata kirjaoskust (võimet tööriista iseseisvalt kasutada), mis nõuab eraldi sekkumist.
-- **Sõltuvus enesehinnangulisest kindlustundest, mitte demonstreeritud võimest**: enesehinnanguline mugavus tehnoloogiaga korreleerub sageli halvasti tegeliku ülesande täitmise eduga.
-- **Ebarealistlikult lihtsustatud testülesande kasutamine**: kirjaoskuse hindamine, mis ei peegelda tegelikke ülesandeid, mida patsiendid peavad täitma, ei paljasta tegelikke kasutustakistusi.
-- **Pideva sõltuvuse ignoreerimine pereliikmest või hooldajast**: patsient, kes tehniliselt "täidab" ülesande pideva pereliikme abiga, ei demonstreeri tõelist iseseisvat digitaalset kirjaoskust.
+- **Digitaalse kirjaoskuse segamine digitaalse juurdepääsuga**: täieliku tehnilise juurdepääsuga patsiendil võib siiski puududa kirjaoskus seda tõhusalt kasutada; need on eraldi mõõdikud, mis nõuavad eraldi sekkumisi, ning neid ei tohiks kunagi esitada ühe koondnäitajana.
+- **Abistatud täitmiste lugemine iseseisvate õnnestumistena**: kui patsient täidab ülesande ainult tugikõne või pereliikme abiga, on see kirjaoskuse lõhe, mille platvorm on kinni katnud, mitte lahendanud; eristage abistatud ja iseseisvat täitmist, kus andmed seda võimaldavad.
+- **Ühe segatud ülesande täitmise skoori esitamine**: kirjaoskus lihtsa ülesande (sisselogimine) ja keerulise (üksikasjaliku vastuvõtuvormi täitmine) puhul erineb oluliselt; esitage ülesande kaupa, et tuvastada täpselt, kus tõke asub.
+- **Eeldamine, et ainult vanus ennustab digitaalset kirjaoskust**: kuigi vanus korreleerub koondtasandil madalama digitaalse kirjaoskusega, on platvormi liidese keele valdamine ja üldine tehnoloogiaga tuttavus sageli tugevamad individuaalsed ennustajad ning neid tuleks mõõta otse, mitte vanusest järeldada.
 
 ## Allikad
 
-- World Health Organization, digitaalse tervisekirjaoskuse ja võrdväärsuse juhised
-- National Institute on Aging, uuring tehnoloogia kasutuselevõtu ja kirjaoskuse kohta eakate täiskasvanute seas
-- Eelretsenseeritud kirjandus digitaalse tervisekirjaoskuse kohta, näiteks uuringud, mis on avaldatud ajakirjades Journal of Medical Internet Research (JMIR) ja Health Affairs
+- HIMSS, Digital Health Equity Measurement Framework (DHEMF)
+- Office of the National Coordinator for Health Information Technology (ONC), tervise infotehnoloogia kasutatavuse ja digitaalse tervisekirjaoskuse uuringud
+- Eelretsenseeritud kirjandus digitaalse tervisekirjaoskuse mõõtmise ja sekkumise kohta, näiteks ajakirjas Journal of Medical Internet Research (JMIR) avaldatud uuringud
 
-Vaata ka: [digitaalse juurdepääsu määr](../digitaalse-juurdepääsu-määr/), eeltingimuse mõõdik, millega seda kõige sagedamini, ja kõige sagedamini ekslikult, segi aetakse.
+Vaata ka: [digitaalse juurdepääsu määr](../digitaalse-juurdepääsu-määr/), eeltingimuse mõõdik, millega seda kõige sagedamini ja kõige sagedamini ekslikult segi aetakse.

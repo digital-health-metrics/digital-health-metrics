@@ -1,50 +1,49 @@
 # Biomeetrilise Paranemise Määr
 
-Biomeetrilise paranemise määr on nende patsientide osakaal, kes saavutavad kliiniliselt olulise muutuse jälgitavas biomeetrilises näitajas — näiteks HbA1c, vererõhk või KMI — algtaseme ja määratletud järelkontrolli ajapunkti vahel, pärast digitaalse terviseprogrammi kasutamist. See eksisteerib selleks, et eristada programmi, mis tegelikult liigutab kliinilisi tulemusi, programmist, mis lihtsalt genereerib kaasatust või rahulolu andmeid, muutes selle üheks kõige otsesemaks seoseks digitaalse terviseteenuse tegevuse ja kliinilise väärtuse vahel.
+Biomeetrilise paranemise määr on digitaaltervise programmis osalevate patsientide osakaal, kes saavutavad määratletud kaasamisperioodi jooksul jälgitava biomeetrilise näitaja kliiniliselt olulise paranemise – kõige sagedamini glükeeritud hemoglobiin (HbA1c) diabeedi- ja kardiometaboolsetes programmides või kehamassiindeks (KMI) kaalujuhtimisprogrammides. See on tulemusmõõdik, mis lõppkokkuvõttes õigustab digitaaltervise toote kliinilisi väiteid: kaasatuse ja kasutuselevõtu arvud kirjeldavad, kuidas toodet kasutatakse, kuid biomeetriline paranemine on lähemal tõendile, et see toimib.
 
 ## Miks see on oluline
 
-Paljud digitaalsed terviseprogrammid esitavad kaasatuse mõõdikuid — sisselogimisi, saadetud sõnumeid, aktiivseid päevi — tõhususe asendusnäitajatena, kuid kaasatus iseenesest ei tõesta, et patsiendi tervis on paranenud; patsient võib logida sisse iga päev ilma tema seisundi muutuseta. Biomeetrilise paranemise määr sunnib hindamise tagasi tulemuse juurde, mis tegelikult loeb patsiendi ja rahastaja jaoks, ning see on eriti oluline väärtuspõhistes lepingutes, kus maksmine on üha enam seotud tõendatud kliiniliste tulemustega, mitte lihtsalt osutatud teenusega. Kuna see nõuab iga patsiendi jaoks järjepidevat algtaseme mõõtmist ja määratletud järelkontrolli akent, paljastab see ka selle, kui suur osa programmi näilisest mõjust tuleneb tegelikult valikulisest aruandlusest, mis hõlmab ainult patsiente, kes jäid programmi ja keda mõõdeti uuesti.
+Digitaaltervise programme müüakse ja tellitakse sageli paranenud terviseulemuste lubaduse alusel ning biomeetrilise paranemise määr on kõige otsesem, kvantifitseeritavam viis seda lubadust konkreetse, kliiniliselt tunnustatud lävendi vastu proovile panna, mitte ebamäärase "parema tervise" väite vastu. Maksjad, tööandjad ja tervishoiusüsteemid seovad üha enam hüvitamise või lepingu pikendamise tõestatud biomeetrilise muutusega, mistõttu on programm, mis ei suuda seda määra usaldusväärselt esitada, nii kaubanduslikus kui ka kliinilises ebasoodsas olukorras. Mõõdik on ka programmi kujunduse distsipliini kontroll: kaasatusest (sisselogimised, saadetud sõnumid) on palju lihtsam aru anda kui tulemustest ning meeskond peaks olema kahtlustav iga programmi suhtes, mis esitab esimesed entusiastlikult, kuid on viimaste osas ebamäärane.
 
 ## Kuidas seda arvutatakse
 
 ```
-Biomeetrilise paranemise määr = patsiendid, kellel on kliiniliselt
-                                oluline paranemine jälgitavas
-                                biomeetrilises näitajas / patsiendid
-                                kokku, kellel on kehtiv algtaseme
-                                ja järelkontrolli mõõtmine × 100
+Biomeetrilise paranemise määr = patsiendid, kes saavutavad määratletud
+                                kliiniliselt olulise paranemise /
+                                patsiendid, kellel on kehtiv lähte- ja
+                                järelmõõtmine × 100
 
-"Kliiniliselt oluline" tuleb määratleda ette, kasutades väljakujunenud
-kliinilisi lävesid konkreetse biomeetrilise näitaja jaoks (nt
-vähemalt 0,5 protsendipunktiline langus HbA1c-s), mitte valida pärast
-andmete nägemist.
+Levinud kliiniliselt olulised lävendid:
+  HbA1c   — vähenemine ≥ 0,5 protsendipunkti või määratletud sihtväärtuse
+            (nt < 7,0%) saavutamine vahemikust väljas olevast lähtejoonest
+  KMI     — vähenemine ≥ 5% lähtekehakaalust, säilitatud järelmõõtmise
+            ajahetkeni
 
-Esitage alati koos:
-  Mõõtmise täitmise määr = patsiendid kehtiva järelkontrolli
-                           mõõtmisega / registreeritud patsiendid
-                           kokku × 100
+Esitage iga jälgitava biomeetrilise näitaja kohta eraldi; ärge
+kunagi segage HbA1c ja KMI paranemist üheks koondatud
+"paranemise" protsendiks.
 ```
 
 ## Läbitöötatud näide
 
-Digitaalne diabeedihalduse programm registreerib 500 patsienti, kellel on algtaseme HbA1c mõõtmine. Kuue kuu pärast on 350-l neist patsientidest kehtiv järelkontrolli mõõtmine (mõõtmise täitmise määr 70%), ning neist 350-st saavutab 210 vähemalt 0,5 protsendipunktilise HbA1c languse, andes biomeetrilise paranemise määraks 60%. Kuid kui programm esitab ainult "60% patsientidest parandasid oma HbA1c-d" ilma mainimata, et 30% algselt registreeritud patsientidest ei saanud kunagi järelkontrolli mõõtmist, varjab see võimalust, et ilma mõõtmiseta välja langenud patsiendid võisid olla halvemas seisus kui need, kes jäid — mistõttu mõõtmise täitmise määr tuleb alati esitada koos paranemise määraga.
+Kardiometaboolne digitaaltervise programm kaasab 800 patsienti, kelle lähte-HbA1c on vahemikust väljas. Neist 620-l on nii kehtiv lähtemõõtmine kui ka järelmõõtmine 6 kuu möödudes (180 jääb jälgimisest välja ja jäetakse nimetajast välja, mitte ei loeta ebaõnnestumisteks). 620-st paaritud mõõtmistega patsiendist saavutab 340 vähenemise vähemalt 0,5 protsendipunkti. Biomeetrilise paranemise määr on 340 / 620 × 100 = 55%. Selle esitamine kõigi 800 kaasatud patsiendi suhtes (340 / 800 = 42,5%) segaks jälgimisest väljajäämise ravi ebaõnnestumisega, alahinnates määra patsientide puhul, kes mõõtmise tegelikult lõpetasid.
 
 ## Andmeallikad ja hoiatused
 
-Biomeetrilised andmed pärinevad tavaliselt ühendatud seadmetest (pidevad glükoosimonitorid, vererõhumansetid), elektroonilisest terviseloost integreeritud laboritulemustest või käsitsi sisestatud patsiendi enda teatatud mõõtmistest — igal allikal on erinev usaldusväärsuse profiil, kusjuures käsitsi sisestatud andmed on kõige vastuvõtlikumad vigadele või valikulisele aruandlusele. Järelkontrolli aken peab olema järjepidev kogu esitatud populatsiooni ulatuses, kuna muutuva akna lubamine (mõned patsiendid mõõdetakse 3 kuu, teised 12 kuu pärast) võimaldab varjata nõrka pikaajalist tõhusust tugevate lühiajaliste tulemuste taga.
+Lähte- ja järelmõõtmise biomeetrilised väärtused pärinevad tavaliselt ühendatud seadmest (Bluetooth-glükomeeter või nutikaal), elektroonilisest terviseandmete süsteemist imporditud laborituleemusest või patsiendi enda sisestatud väärtusest – ja need kolm allikat on väga erineva usaldusväärsusega, mistõttu tuleks allikas määraga koos esitada. Jälgimisest väljajäämine on harva juhuslik: patsiendid, kes programmist eemalduvad, on sageli ka need, kellel on kõige väiksem tõenäosus paraneda, mistõttu võib ainult jälgimise lõpetanud patsientide põhjal arvutatud kõrge paranemise määr programmi tegelikku populatsioonitasandi mõju üle hinnata. Hooajalised mõjud ja keskmisele naasmise efekt on nii HbA1c kui ka kaalu puhul tegelikud, mistõttu peaks programm võimaluse korral võrdlema samaaegse või ajaloolise kontrollrühmaga, mitte käsitlema iga paranemist programmi mõju tõendina.
 
 ## Lõksud
 
-- **Paranemise määra esitamine ilma mõõtmise täitmise määrata**: kõrge paranemise määr ainult uuesti mõõdetud patsientide seas võib varjata olulist väljalangemist, mis tõenäoliselt moonutab tulemust positiivses suunas.
-- **"Kliiniliselt olulise" määratlemine pärast andmete nägemist**: läve valimine, mis juhtumisi vastab sellele, mida andmed näitavad, mitte väljakujunenud kliinilisele standardile, õõnestab kogu mehhanismi eesmärki.
-- **Paranemise määrade võrdlemine erineva järelkontrolli aknaga programmide vahel**: programm, mis mõõdab 3 kuu pärast, näitab tavaliselt kõrgemat paranemise määra kui see, mis mõõdab 12 kuu pärast, sõltumata aluseks olevast tõhususest.
-- **Keskmisele regressiooni ignoreerimine**: patsiendid, kes registreeruti halvasti kontrollitud algtaseme näitaja tõttu, näitavad sageli mõningast paranemist puhtalt statistilistel põhjustel, sõltumata sekkumise tõhususest; võrdlemine kontrollrühma või ajaloolise algtasemega aitab seda korrigeerida.
+- **Jälgimisest väljajäämise väljajätmine selle esitamise asemel**: patsientide, kellel puudub järelmõõtmine, vaikne nimetajast kõrvaldamine võib näilist paranemise määra märkimisväärselt täis puhuda; esitage alati järelmõõtmise lõpetamise määr koos paranemise määraga endaga.
+- **Patsiendi enda esitatud ja seadmepõhiste mõõtmiste segamine märgistamata**: patsiendi enda esitatud kaal on süstemaatiliselt vähem usaldusväärne kui ühendatud nutikaalu näit ning kahe allika segamine varjab, kui suur osa näilisest paranemisest on mõõtemüra.
+- **Kontrolli või kontrafaktuaali puudumine**: paljud kroonilised biomeetrilised mõõdikud kõiguvad või naasevad ise keskmise poole; ühe haruga paranemise määr ilma võrdlusrühmata on viitav, mitte lõplik tõend programmi mõjust.
+- **Tagasihoidliku keskmise nihke käsitlemine laia paranemise tõendina**: väikest populatsioonitasandi keskmist paranemist võivad põhjustada mõned suure vastusega patsiendid, samas kui enamik patsiente muutust ei näe; esitage jaotus (nt kliiniliselt olulise lävendi ületanute osakaal), mitte ainult keskmine nihe.
 
 ## Allikad
 
-- American Diabetes Association, kliiniliselt olulise glükeemilise kontrolli lävede standardid
-- Eelretsenseeritud kirjandus digitaalsete terviseprogrammide kohta krooniliste haiguste puhul, näiteks uuringud, mis on avaldatud ajakirjades Diabetes Care ja Journal of Medical Internet Research (JMIR)
-- Centers for Medicare & Medicaid Services (CMS), kvaliteedimõõdikute juhised väärtuspõhistes lepingutes
+- American Diabetes Association (ADA), Standards of Care in Diabetes, HbA1c sihtväärtuse ja kliiniliselt olulise muutuse juhised
+- Centers for Disease Control and Prevention (CDC), Division of Diabetes Translation, programmi hindamise juhised
+- Eelretsenseeritud kirjandus digitaalse diabeedi ja kaalujuhtimisprogrammide tulemuste kohta, näiteks ajakirjades npj Digital Medicine ja Diabetes Care avaldatud uuringud
 
-Vaata ka: [biomeetrilise stabiliseerumise määr](../biomeetrilise-stabiliseerumise-määr/), seotud mõõdik püsiva kontrolli kohta pärast eesmärgi saavutamist, erinevalt esialgsest muutusest algtasemest.
+Vaata ka: [ravimite manustamise järgimise määr](../ravimite-manustamise-järgimise-määr/), krooniliste seisundite programmides biomeetrilise paranemise sage ülesvoolu tõukejõud.

@@ -1,53 +1,52 @@
 # Tasso di Miglioramento Biometrico
 
-Il tasso di miglioramento biometrico è la quota di pazienti che raggiunge un cambiamento clinicamente significativo in un parametro biometrico monitorato — come l'HbA1c, la pressione arteriosa o il BMI — tra il basale e un punto temporale di follow-up definito, dopo aver utilizzato un programma di salute digitale. Esiste per distinguere un programma che effettivamente sposta gli esiti clinici da uno che genera semplicemente dati di coinvolgimento o soddisfazione, rendendolo uno dei collegamenti più diretti tra l'attività di salute digitale e il valore clinico.
+Il tasso di miglioramento biometrico è la quota di pazienti arruolati in un programma di salute digitale che ottiene un miglioramento clinicamente significativo in un parametro biometrico monitorato (più comunemente l'emoglobina glicata (HbA1c) nei programmi per il diabete e cardiometabolici, o l'indice di massa corporea (BMI) nei programmi di gestione del peso) nel corso di un periodo di arruolamento definito. È la metrica di esito che in ultima analisi giustifica le affermazioni cliniche di un prodotto di salute digitale: i numeri di coinvolgimento e adozione descrivono come viene usato un prodotto, ma il miglioramento biometrico è più vicino a una prova che funziona.
 
 ## Perché è importante
 
-Molti programmi di salute digitale riportano metriche di coinvolgimento — accessi, messaggi inviati, giorni attivi — come proxy dell'efficacia, ma il coinvolgimento da solo non dimostra che la salute di un paziente sia migliorata; un paziente può accedere quotidianamente senza alcun cambiamento nella sua condizione sottostante. Il tasso di miglioramento biometrico riporta la valutazione all'esito che conta davvero per il paziente e per il finanziatore, ed è particolarmente importante nei contratti di assistenza basata sul valore, dove il pagamento è sempre più legato a esiti clinici dimostrati piuttosto che al semplice servizio erogato. Poiché richiede una misurazione di base coerente e una finestra di follow-up definita per ogni paziente, rivela anche quanto dell'effetto apparente di un programma sia in realtà dovuto a una segnalazione selettiva che include solo i pazienti rimasti nel programma e misurati di nuovo.
+I programmi di salute digitale vengono spesso venduti e commissionati sulla promessa di migliori esiti di salute, e il tasso di miglioramento biometrico è il modo più diretto e quantificabile per verificare quella promessa rispetto a una soglia specifica e clinicamente riconosciuta anziché a un vago richiamo a una "salute migliore". Pagatori, datori di lavoro e sistemi sanitari legano sempre più il rimborso o il rinnovo del contratto a un cambiamento biometrico dimostrato, per cui un programma che non riesce a riportare in modo credibile questo tasso è in svantaggio sia commerciale sia clinico. La metrica è anche un controllo di disciplina sulla progettazione del programma: è molto più facile riportare il coinvolgimento (accessi, messaggi inviati) che gli esiti, e un team dovrebbe diffidare di qualsiasi programma che riporta con entusiasmo il primo restando vago sui secondi.
 
 ## Come si calcola
 
 ```
-Tasso di miglioramento biometrico = pazienti con miglioramento
-                                    clinicamente significativo nel
-                                    parametro biometrico monitorato
-                                    / totale pazienti con
-                                    misurazione valida di basale e
-                                    follow-up × 100
+Tasso di miglioramento biometrico = pazienti che raggiungono un
+                                    miglioramento clinicamente
+                                    significativo definito / pazienti
+                                    con una misurazione valida alla
+                                    base di partenza e al follow-up
+                                    × 100
 
-"Clinicamente significativo" deve essere definito in anticipo in
-base a soglie cliniche consolidate per lo specifico parametro
-biometrico (ad esempio una riduzione di ≥0,5 punti percentuali
-nell'HbA1c), non scelto dopo aver visto i dati.
+Soglie clinicamente significative comuni:
+  HbA1c — una riduzione di ≥ 0,5 punti percentuali, o il
+          raggiungimento di un target definito (ad es. < 7,0%) da una
+          base di partenza fuori intervallo
+  BMI   — una riduzione di ≥ 5% del peso corporeo di base, mantenuta
+          fino al punto di misurazione del follow-up
 
-Riportare sempre insieme a:
-  Tasso di completamento della misurazione = pazienti con
-                                             misurazione di
-                                             follow-up valida /
-                                             totale pazienti
-                                             arruolati × 100
+Riportare separatamente per ciascun parametro biometrico monitorato;
+non accorpare mai il miglioramento di HbA1c e BMI in un'unica
+percentuale combinata di "miglioramento".
 ```
 
 ## Esempio pratico
 
-Un programma digitale di gestione del diabete arruola 500 pazienti con una misurazione di basale dell'HbA1c. A sei mesi, 350 di questi pazienti hanno una misurazione di follow-up valida (tasso di completamento della misurazione 70%), e di questi 350, 210 raggiungono una riduzione di almeno 0,5 punti percentuali nell'HbA1c, dando un tasso di miglioramento biometrico del 60%. Ma se il programma riporta solo "il 60% dei pazienti ha migliorato il proprio HbA1c" senza menzionare che il 30% dei pazienti inizialmente arruolati non ha mai ottenuto una misurazione di follow-up, questo nasconde la possibilità che i pazienti persi senza misurazione possano essere stati peggio di quelli rimasti — motivo per cui il tasso di completamento della misurazione deve sempre essere riportato insieme al tasso di miglioramento.
+Un programma di salute digitale cardiometabolica arruola 800 pazienti con HbA1c di base fuori intervallo. Di questi, 620 hanno sia una misurazione di base valida sia una misurazione di follow-up a 6 mesi (180 sono persi al follow-up ed esclusi dal denominatore, non contati come fallimenti). Dei 620 con misurazioni appaiate, 340 ottengono una riduzione di almeno 0,5 punti percentuali. Il tasso di miglioramento biometrico è 340 / 620 × 100 = 55%. Riportare il dato rispetto a tutti gli 800 arruolati (340 / 800 = 42,5%) confonderebbe la perdita al follow-up con il fallimento del trattamento, sottostimando il tasso per i pazienti che hanno effettivamente completato la misurazione.
 
 ## Fonti dei dati e avvertenze
 
-I dati biometrici provengono tipicamente da dispositivi connessi (monitor continui del glucosio, bracciali per la pressione arteriosa), da risultati di laboratorio integrati dalla cartella clinica elettronica sottostante, o da misurazioni auto-riportate dal paziente inserite manualmente — e ciascuna fonte ha un diverso profilo di affidabilità, con i dati inseriti manualmente più soggetti a errori o a segnalazione selettiva. La finestra di follow-up deve essere coerente in tutta la popolazione riportata, poiché consentire una finestra variabile (alcuni pazienti misurati a 3 mesi, altri a 12) permette di nascondere una debole efficacia a lungo termine dietro forti risultati a breve termine.
+I valori biometrici di base e di follow-up provengono in genere da un dispositivo connesso (un glucometro Bluetooth o una bilancia smart), da un risultato di laboratorio importato dalla cartella clinica elettronica o da un valore autodichiarato inserito dal paziente, e queste tre fonti hanno un'affidabilità molto diversa, per cui la fonte va riportata insieme al tasso. La perdita al follow-up raramente è casuale: i pazienti che si disimpegnano da un programma sono spesso anche quelli con minori probabilità di essere migliorati, per cui un alto tasso di miglioramento calcolato solo sui pazienti che hanno completato il follow-up può sovrastimare il vero effetto del programma a livello di popolazione. Gli effetti stagionali e di regressione verso la media sono reali sia per l'HbA1c sia per il peso, quindi un programma dovrebbe confrontarsi dove possibile con un gruppo di controllo concomitante o storico anziché trattare qualsiasi miglioramento come prova dell'effetto del programma.
 
-## Errori comuni
+## Insidie
 
-- **Riportare il tasso di miglioramento senza il tasso di completamento della misurazione**: un alto tasso di miglioramento solo tra i pazienti rimisurati può nascondere un abbandono sostanziale che probabilmente distorce il risultato in modo positivo.
-- **Definire "clinicamente significativo" dopo aver visto i dati**: scegliere una soglia che per caso corrisponde a ciò che mostrano i dati, anziché uno standard clinico consolidato, mina l'intero scopo del meccanismo.
-- **Confrontare tassi di miglioramento tra programmi con finestre di follow-up diverse**: un programma che misura a 3 mesi mostrerà tipicamente un tasso di miglioramento più alto di uno che misura a 12 mesi, indipendentemente dall'efficacia sottostante.
-- **Ignorare la regressione verso la media**: i pazienti arruolati a causa di un valore di basale scarsamente controllato spesso mostreranno un certo miglioramento per puri motivi statistici, indipendentemente dall'efficacia dell'intervento; confrontare con un gruppo di controllo o un basale storico aiuta a correggere questo effetto.
+- **Escludere, anziché riportare, la perdita al follow-up**: eliminare in silenzio dal denominatore i pazienti senza misurazione di follow-up può gonfiare in modo sostanziale il tasso di miglioramento apparente; riportare sempre il tasso di completamento della misurazione di follow-up insieme al tasso di miglioramento stesso.
+- **Mescolare misurazioni autodichiarate e da dispositivo senza etichettarle**: un peso autodichiarato è sistematicamente meno affidabile della lettura di una bilancia smart connessa, e fondere le due fonti oscura quanto di un miglioramento apparente sia rumore di misura.
+- **Nessun controllo o controfattuale**: molte misure biometriche croniche fluttuano o regrediscono verso la media da sole; un tasso di miglioramento a braccio singolo senza alcun gruppo di confronto è un indizio, non una prova conclusiva dell'effetto del programma.
+- **Trattare un modesto spostamento medio come prova di un ampio miglioramento**: un piccolo miglioramento medio a livello di popolazione può essere trainato da pochi grandi responder mentre la maggior parte dei pazienti non vede cambiamenti; riportare la distribuzione (ad es. la quota che supera la soglia clinicamente significativa), non solo lo spostamento medio.
 
 ## Fonti
 
-- American Diabetes Association, standard per soglie clinicamente significative nel controllo glicemico
-- Letteratura peer-reviewed sugli interventi di salute digitale per malattie croniche, ad esempio studi pubblicati su Diabetes Care e Journal of Medical Internet Research (JMIR)
-- Centers for Medicare & Medicaid Services (CMS), linee guida sulle misure di qualità nei contratti di assistenza basata sul valore
+- American Diabetes Association (ADA), Standards of Care in Diabetes, indicazioni sul target di HbA1c e sulla variazione clinicamente significativa
+- Centers for Disease Control and Prevention (CDC), Division of Diabetes Translation, linee guida per la valutazione dei programmi
+- Letteratura sottoposta a revisione paritaria sugli esiti dei programmi digitali per il diabete e la gestione del peso, ad esempio studi pubblicati su npj Digital Medicine e Diabetes Care
 
-Vedi anche: [tasso di stabilizzazione biometrica](../tasso-di-stabilizzazione-biometrica/), la metrica correlata per il controllo sostenuto dopo il raggiungimento di un obiettivo, a differenza del cambiamento iniziale rispetto al basale.
+Vedere anche: [tasso di aderenza alla terapia farmacologica](../tasso-di-aderenza-alla-terapia-farmacologica/), un frequente fattore a monte del miglioramento biometrico nei programmi per condizioni croniche.
