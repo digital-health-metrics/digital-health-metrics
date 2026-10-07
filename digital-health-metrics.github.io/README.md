@@ -32,7 +32,7 @@ Run inside this directory (pnpm).
   directory back to `topics/` (and rewrites the links in each locale's `index.md`), so routes are
   always `/<locale>/topics/<slug>/`. Topics are matched across locales by `.locale-peer-id`
   (vendored as `peer-id.txt`), never by slug.
-- Locale labels, right-to-left locales, and the `-001` two-letter route aliases live in
+- Locale labels, right-to-left locales, and the `-001` browser-language mapping live in
   `src/lib/locales.js`; the interface strings for each locale live in `src/lib/i18n.js`.
 
 ## Adding a locale

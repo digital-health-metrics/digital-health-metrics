@@ -78,9 +78,8 @@ Thirty-eight locale directories under `locales/` — one internal authoring loca
 Every directory directly under `locales/` is named `<language>-<region>`: a lower-case ISO 639 language
 code, a hyphen, and a lower-case region, which is either an ISO 3166-1 alpha-2 country code (`gb`, `us`, `de`,
 `cn`, …) or `001` (UN M.49 "World") for an international locale (`en-001`, `es-001`, …). There are no bare
-two-letter language directories such as `locales/en/`: the two-letter URLs (`/en/`, `/de/`) are route aliases
-that the site generates for the `-001` locales (`LOCALE_ALIASES` in `src/lib/locales.js`), not content
-directories. The one exception is `en-gb-oxendict`, the internal authoring locale, which adds a spelling-variant
+two-letter language directories such as `locales/en/`: the two-letter URLs (`/en/`, `/de/`) do not exist and
+return 404. The one exception is `en-gb-oxendict`, the internal authoring locale, which adds a spelling-variant
 suffix. `bin/test` enforces the rule.
 
 ### Locale completeness

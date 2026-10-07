@@ -98,47 +98,16 @@ sitemap and `llms.json` are regenerated or updated together with the rename.
   alphabetical-by-label sort on its own (e.g. "España" < "Mundo") — it needs
   the explicit `-001` check.
 
-## Two-letter locale route aliases
+## Two-letter URLs are not routes
 
-`/<two-letter>/...` renders exactly the same content as `/<code>-001/...` for
-every locale whose code ends in `-001` (e.g. `/en/` renders `/en-001/`,
-`/ar/` renders `/ar-001/`, including `dir="rtl"`). `LOCALE_ALIASES` in
-`locales.js` derives the mapping from `LOCALE_LABELS` automatically — any
-future `-001` locale gets its alias for free, nothing to maintain by hand.
+Two-letter URLs such as `/en/`, `/de/` or `/ar/` do not exist and return 404 (an earlier version served them as
+aliases of the `-001` locales; that was removed). Only real locale codes are routable: `content.js`'s
+`routableLocales()` is exactly `locales()`, and every `[locale]` route seeds its `entries()` from it.
 
-- `canonicalLocale(code)` resolves an alias to its real code. Every
-  `+page.server.js`/`+layout.server.js` under `[locale]/` calls it on
-  `params.locale` before passing it to `book()`/`content.js`, and uses the
-  resolved value for everything thereafter, including what's returned as
-  `data.locale` — so the site's own links, UI chrome, and `<html lang>`
-  always come out identical to the real locale's own page, not the alias.
-  `book.js`/`content.js` never see an alias at all.
-- An alias URL does not forward anywhere on the server, and there is no
-  redirect from `/<language>-001/` to `/<language>/` (one was tried and
-  removed): every `-001` URL is served as is. An alias URL is also not rewritten
-  to its canonical one: `navigateToLocale` in `src/routes/+layout.svelte`
-  returns early when the requested locale is already the one being shown
-  (`next === locale`), because the locale picker would otherwise restore the
-  canonical code on load and change `/en/` to `/en-001/`. A visitor who opens
-  `/en/` stays on `/en/`.
-- This is a one-way, non-sticky alias: landing on `/en/` renders `en-001`'s
-  content, but every link on that page (nav, breadcrumbs, cross-references,
-  locale switcher) points at `/en-001/...`, same as any other page. Clicking
-  anything takes you off the alias and onto the real code — there's no
-  attempt to keep a visitor under the alias as they navigate further.
-- Each route under `[locale]/` must seed its own `entries()` over
-  `content.js`'s `routableLocales()` (real codes + their aliases), not just
-  `locales()`. Nothing the site generates ever links to an alias, so the
-  prerender crawler cannot discover an alias route by following links from
-  another page — each one has to be listed explicitly, the same reason
-  `topics/[slug]/+page.server.js` already enumerates `(locale, slug)` pairs
-  explicitly rather than relying on a crawl.
-- `scripts/build-search-index.mjs`'s own locale detection regex requires a
-  hyphenated subtag by design (so an unrelated two-letter route segment is
-  never mistaken for a locale) and therefore doesn't match a bare alias like
-  "en" — it checks `LOCALE_ALIASES` separately, so alias pages are correctly
-  excluded from the index as duplicates of their real locale, not
-  miscounted as locale-agnostic default-bucket pages.
+`LOCALE_ALIASES` in `locales.js` (derived from the `-001` entries of `LOCALE_LABELS`) survives only for
+`matchLocale`, which maps a browser language such as `en-AU` to `/en-001/`; it never produces a URL.
+`canonicalLocale(code)` is therefore the identity for every routable code and is kept only as a harmless
+indirection in the route loaders.
 
 ## Browser-language redirect at `/`
 

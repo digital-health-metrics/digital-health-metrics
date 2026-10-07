@@ -23,7 +23,7 @@ example, never replace it. A new topic needs a translated bullet in every locale
 ## Locale directory names
 
 Every directory under `locales/` is `<language>-<region>` (`en-gb`, `es-001`, `zh-cn`): never a bare language
-such as `locales/en/`. The two-letter URLs (`/en/`) are generated route aliases for the `-001` locales. The
+such as `locales/en/`. Two-letter URLs such as `/en/` do not exist (404). The
 only exception is `en-gb-oxendict`. `bin/test` checks this; the rule is in `spec/index.md`.
 
 ## Translated paths

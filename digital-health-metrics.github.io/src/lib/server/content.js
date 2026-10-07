@@ -4,7 +4,6 @@
 // $lib/server guarantees none of it can reach a browser bundle. Pages read it
 // from a `+page.server.js` load, which runs at build time under prerendering.
 
-import { LOCALE_ALIASES } from '#lib/locales.js';
 
 const markdownModules = import.meta.glob('/content/**/*.md', {
 	query: '?raw',
@@ -47,17 +46,12 @@ export function locales() {
 }
 
 /**
- * Every routable `[locale]` URL segment: each real locale from locales(),
- * plus each two-letter alias (e.g. "en" for "en-001" — see $lib/locales.js)
- * whose real locale actually has content here. Every route under
- * `[locale]/` uses this to seed its own entries(): nothing the site itself
- * links to ever uses an alias, so the prerender crawler would never
- * discover an alias route on its own.
+ * Every routable `[locale]` URL segment: exactly the real locales. Two-letter
+ * aliases such as "en" are deliberately not routable (they 404); they only
+ * map a browser language to a locale in matchLocale() ($lib/locales.js).
  */
 export function routableLocales() {
-	const real = locales();
-	const aliases = Object.keys(LOCALE_ALIASES).filter((alias) => real.includes(LOCALE_ALIASES[alias]));
-	return [...real, ...aliases];
+	return locales();
 }
 
 /** Every topic slug present in a locale's topics/, sorted A-Z. */
