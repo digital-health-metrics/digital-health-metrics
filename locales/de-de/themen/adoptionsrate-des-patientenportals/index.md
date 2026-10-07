@@ -8,6 +8,8 @@ Ein Portal schafft erst dann Wert, wenn es von den Patientinnen und Patienten ge
 
 ## Berechnung
 
+Berichten Sie alle drei Stufen, nicht nur die Registrierung, und geben Sie den Nenner stets ausdrücklich an:
+
 ```
 Registrierungsrate = Patient:innen mit erstelltem Portalkonto / anspruchsberechtigte Patientenpopulation × 100
 Aktivierungsrate   = Patient:innen, die eine erste sinnvolle Handlung abgeschlossen haben

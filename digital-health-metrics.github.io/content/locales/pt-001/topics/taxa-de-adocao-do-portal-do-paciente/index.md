@@ -8,6 +8,8 @@ Um portal só cria valor quando o paciente o utiliza, pelo que as organizações
 
 ## Como se calcula
 
+Comunique as três etapas, e não apenas o registo, e indique sempre explicitamente o denominador:
+
 ```
 Taxa de registo    = pacientes com conta de portal criada / população de pacientes elegíveis × 100
 Taxa de ativação   = pacientes que concluíram uma primeira ação significativa (ver um

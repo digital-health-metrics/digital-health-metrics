@@ -8,6 +8,8 @@ Un portal solo crea valor una vez que el paciente lo usa, por lo que las organiz
 
 ## Cómo se calcula
 
+Informe de las tres etapas, no solo del registro, e indique siempre el denominador de forma explícita:
+
 ```
 Tasa de registro = pacientes con cuenta de portal creada / población de pacientes elegibles × 100
 Tasa de activación = pacientes que completaron una primera acción significativa (ver un

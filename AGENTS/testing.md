@@ -10,6 +10,15 @@ script runs with `set -euf`, so globbing is disabled; use `find` for directory l
 
 When adding a topic or locale, update the lists at the top of `bin/test`.
 
+## `python3 tools/verify_locales.py` (repository root)
+
+The full locale audit, about a second. Errors are structural (a missing file or topic, an English slug, a home
+page that does not list every topic, a broken link, a variant that differs from its base). Warnings flag
+translations that drifted from the English source: a different number of headings, code fences, bullets or
+paragraphs (a dropped sentence), or more than 30% of the English figures missing (a rewritten worked example).
+`--strict` fails on warnings too; `--quiet` prints only problems. Run it after any translation change; the rules
+are in `spec/index.md`, "Locale completeness".
+
 ## Site (`digital-health-metrics.github.io/`)
 
 - `pnpm run check`: `svelte-kit sync` and `svelte-check`; expect 0 errors, 0 warnings.

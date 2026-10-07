@@ -8,6 +8,8 @@ Un portail ne crée de valeur que lorsque le patient l'utilise, donc les organis
 
 ## Comment le calculer
 
+Rapportez les trois étapes, et pas seulement l'inscription, et indiquez toujours explicitement le dénominateur :
+
 ```
 Taux d'inscription   = patients ayant créé un compte portail / population de patients éligibles × 100
 Taux d'activation     = patients ayant accompli une première action significative (consulter un

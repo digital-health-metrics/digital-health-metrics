@@ -56,6 +56,19 @@ test_locales_exist() {
     done
 }
 
+## Every locale directory is <language>-<region> (e.g. en-gb, es-001): no bare
+## two-letter language directories such as locales/en/ (those URLs are site
+## route aliases, not content). en-gb-oxendict, the internal authoring locale,
+## is the one allowed exception. See spec/index.md, "Locale directory names".
+test_locale_directory_names() {
+    find "$top/locales" -mindepth 1 -maxdepth 1 -type d | while read -r dir; do
+        name="$(basename "$dir")"
+        test "$name" = "en-gb-oxendict" && continue
+        printf %s "$name" | grep -Eq '^[a-z]{2,3}-([a-z]{2}|001)$' \
+            || err "Locale directory should be named <language>-<region>: locales/$name"
+    done
+}
+
 test_locale_root_files() {
     for locale in $locales; do
         dir="$top/locales/$locale"
@@ -112,6 +125,7 @@ test_localize_up_to_date() {
 
 main() {
     test_locales_exist
+    test_locale_directory_names
     test_locale_root_files
     test_locale_has_one_topics_dir
     test_topic_files

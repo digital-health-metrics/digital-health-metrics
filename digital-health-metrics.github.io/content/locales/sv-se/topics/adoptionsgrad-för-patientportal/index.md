@@ -8,6 +8,8 @@ En portal skapar bara värde när patienten faktiskt använder den, så organisa
 
 ## Hur det beräknas
 
+Redovisa alla tre stegen, inte bara registreringen, och ange alltid nämnaren uttryckligen:
+
 ```
 Registreringsgrad = patienter som skapat portalkonto / kvalificerad patientpopulation × 100
 Aktiveringsgrad   = patienter som fullföljt en första meningsfull handling

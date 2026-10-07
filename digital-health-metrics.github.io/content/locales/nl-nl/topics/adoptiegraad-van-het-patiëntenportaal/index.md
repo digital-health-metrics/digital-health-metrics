@@ -8,6 +8,8 @@ Een portaal creëert pas waarde zodra een patiënt het gebruikt, dus organisatie
 
 ## Hoe het wordt berekend
 
+Rapporteer alle drie de fasen, niet alleen de registratie, en vermeld altijd expliciet de noemer:
+
 ```
 Registratiepercentage = patiënten met aangemaakt portaalaccount / in aanmerking komende
                         patiëntenpopulatie × 100

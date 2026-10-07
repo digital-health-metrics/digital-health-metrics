@@ -13,6 +13,19 @@ Canonical rules: [`spec/index.md`](../spec/index.md) §4 and
 | `ar-eg`, `hi-in`, `es-es`, `pt-pt`, `ru-ru`, `fr-fr`, `cy-gb` | Byte-identical copies of their `-001` sibling, including directory names. |
 | `de-001` | Byte-identical copy of `de-de` (German has no separate `-001` source; edit `de-de`, then recopy). |
 
+## Verifying locales
+
+`python3 tools/verify_locales.py` before committing any `locales/` change. A translation is faithful only if
+it follows the English source paragraph for paragraph and keeps its worked-example figures: translate the
+example, never replace it. A new topic needs a translated bullet in every locale's home page `index.md`. See
+`spec/index.md`, "Locale completeness".
+
+## Locale directory names
+
+Every directory under `locales/` is `<language>-<region>` (`en-gb`, `es-001`, `zh-cn`): never a bare language
+such as `locales/en/`. The two-letter URLs (`/en/`) are generated route aliases for the `-001` locales. The
+only exception is `en-gb-oxendict`. `bin/test` checks this; the rule is in `spec/index.md`.
+
 ## Translated paths
 
 Non-English locales translate both the `topics` directory and every slug. Each has exactly one
