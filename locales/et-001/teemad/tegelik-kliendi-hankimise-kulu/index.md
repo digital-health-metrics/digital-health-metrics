@@ -22,7 +22,7 @@ keskmine tundide arv põhjal.
 
 ## Läbitöötatud näide
 
-Digitaaltervise ettevõte hangib kuu jooksul 500 uut patsienti. Reklaamiplatvormide armatuurlauad esitavad segatud hankimiskulu 120 dollarit, mis põhineb 60 000 dollari suurusel tasulise meedia kulutusel. Agentuuritasude 9000 dollari, turundustehnoloogia kulude 6000 dollari ja hinnangulise vastuvõtu tööjõukulu 45 minutit patsiendi kohta täielikult koormatud personalikuluga 40 dollarit tunnis (500 × 0,75 × 40 dollarit = 15 000 dollarit) lisamine toob hankimise kogukuluks 60 000 + 9000 + 6000 + 15 000 = 90 000 dollarit. Tegelik CAC on 90 000 / 500 = 180 dollarit – 50% kõrgem kui ainult reklaamiplatvormi esitatud 120 dollarit ning see on näitaja, mis peaks tegelikult kanalite eelarve jaotamist ja ühikumajanduse otsuseid suunama.
+Digitaaltervise ettevõte hangib kuu jooksul 500 uut patsienti. Reklaamiplatvormide armatuurlauad esitavad segatud hankimiskulu 120 dollarit, mis põhineb 60 000 dollari suurusel tasulise meedia kulutusel. Agentuuritasude 9 000 dollari, turundustehnoloogia kulude 6 000 dollari ja hinnangulise vastuvõtu tööjõukulu 45 minutit patsiendi kohta täielikult koormatud personalikuluga 40 dollarit tunnis (500 × 0,75 × 40 dollarit = 15 000 dollarit) lisamine toob hankimise kogukuluks 60 000 + 9 000 + 6 000 + 15 000 = 90 000 dollarit. Tegelik CAC on 90 000 / 500 = 180 dollarit – 50% kõrgem kui ainult reklaamiplatvormi esitatud 120 dollarit ning see on näitaja, mis peaks tegelikult kanalite eelarve jaotamist ja ühikumajanduse otsuseid suunama.
 
 ## Andmeallikad ja hoiatused
 

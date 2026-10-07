@@ -1,22 +1,15 @@
 import { render } from '#lib/markdown.js';
 import { book, localizeHtml, readmeSource } from '#lib/server/book.js';
 import { routableLocales } from '#lib/server/content.js';
-import { canonicalLocale } from '#lib/locales.js';
 
 // Every other route under [locale]/ (contents, topics, topics/[slug],
-// search) declares the same entries() pattern, each over routableLocales()
-// — real locales plus their aliases (see that function) — rather than
-// relying on the prerender crawler to discover them from this page's own
-// nav links, since those links always point at the real code (never an
-// alias), so an alias subtree's own pages would otherwise go undiscovered.
+// search) declares the same entries() pattern over routableLocales().
 export function entries() {
 	return routableLocales().map((locale) => ({ locale }));
 }
 
 export function load({ params }) {
-	// params.locale may be an alias; resolved once here so readmeSource/book
-	// below, and every href this load() builds, always use the real code.
-	const locale = canonicalLocale(params.locale);
+	const locale = params.locale;
 	// This locale's own translated locales/<locale>/index.md when it has one,
 	// else the canonical (English) README — so an untranslated locale still
 	// renders instead of crashing, rather than the page silently staying English.

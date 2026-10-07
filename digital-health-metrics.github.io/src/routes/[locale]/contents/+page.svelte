@@ -8,10 +8,9 @@
 		SectionHeading
 	} from '@lilydesignsystem/svelte-headless';
 	import { ui } from '#lib/i18n.js';
-	import { canonicalLocale } from '#lib/locales.js';
 
 	let { data } = $props();
-	const t = $derived(ui(canonicalLocale(page.params.locale)));
+	const t = $derived(ui(page.params.locale));
 
 	/** Anchor id for a part, so the sidebar and deep links can target it. */
 	function partId(title) {

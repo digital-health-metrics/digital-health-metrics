@@ -106,8 +106,7 @@ aliases of the `-001` locales; that was removed). Only real locale codes are rou
 
 `LOCALE_ALIASES` in `locales.js` (derived from the `-001` entries of `LOCALE_LABELS`) survives only for
 `matchLocale`, which maps a browser language such as `en-AU` to `/en-001/`; it never produces a URL.
-`canonicalLocale(code)` is therefore the identity for every routable code and is kept only as a harmless
-indirection in the route loaders.
+There is no alias-resolution step in the route loaders: `params.locale` is always a real code.
 
 ## Browser-language redirect at `/`
 

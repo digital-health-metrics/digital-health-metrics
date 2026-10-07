@@ -25,7 +25,7 @@ Esitage jaotusena, mitte ainult populatsiooni keskmisena:
 
 ## Läbitöötatud näide
 
-Toitumisnõustamise rakendus kaasab patsiendi 12 nädalaks. Patsient kannab 12 nädalast 9 puhul sisse vähemalt ühe kvalifitseeruva toidukanne, mis annab individuaalse kaasatuse järjepidevuse määraks 9 / 12 × 100 = 75%. Rakenduse kogu vähemalt 12 nädalat kaasatud 2000 patsiendi kohordis säilitab 600 patsienti (30%) ≥ 80% nädalase järjepidevuse, 900 (45%) jääb 50–79% vahemikku ja 500 (25%) jääb alla 50%. Ainult kohordi keskmise esitamine (mis võiks jõuda umbes 65% juurde) varjaks, et terve veerand patsientidest tegeleb vaevu üldse – segment, mida tasub eraldi uurida, mitte lahjendada üldkeskmisesse.
+Toitumisnõustamise rakendus kaasab patsiendi 12 nädalaks. Patsient kannab 12 nädalast 9 puhul sisse vähemalt ühe kvalifitseeruva toidukanne, mis annab individuaalse kaasatuse järjepidevuse määraks 9 / 12 × 100 = 75%. Rakenduse kogu vähemalt 12 nädalat kaasatud 2 000 patsiendi kohordis säilitab 600 patsienti (30%) ≥ 80% nädalase järjepidevuse, 900 (45%) jääb 50–79% vahemikku ja 500 (25%) jääb alla 50%. Ainult kohordi keskmise esitamine (mis võiks jõuda umbes 65% juurde) varjaks, et terve veerand patsientidest tegeleb vaevu üldse – segment, mida tasub eraldi uurida, mitte lahjendada üldkeskmisesse.
 
 ## Andmeallikad ja hoiatused
 

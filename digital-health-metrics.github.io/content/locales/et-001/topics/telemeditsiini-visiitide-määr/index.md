@@ -23,7 +23,7 @@ teenuse, eriala ja ajavahemiku jaoks.
 
 ## Läbitöötatud näide
 
-Kogukonna vaimse tervise teenus registreerib kvartalis 4000 lõpetatud ambulatoorset kontakti: 1200 näost näkku, 1600 video teel ja 1200 telefoni teel. Telemeditsiini visiitide määr on (1600 + 1200) / 4000 × 100 = 70%, video määraga 40% ja ainult-telefoni määraga 30%. Ainult kombineeritud 70% näitaja esitamine varjaks seda, et suur osa siinsest "telemeditsiinist" on ainult-heli, mis kannab tavaliselt erinevat kliinilist riskiprofiili ja patsiendikogemust kui video.
+Kogukonna vaimse tervise teenus registreerib kvartalis 4 000 lõpetatud ambulatoorset kontakti: 1 200 näost näkku, 1 600 video teel ja 1 200 telefoni teel. Telemeditsiini visiitide määr on (1 600 + 1 200) / 4 000 × 100 = 70%, video määraga 40% ja ainult-telefoni määraga 30%. Ainult kombineeritud 70% näitaja esitamine varjaks seda, et suur osa siinsest "telemeditsiinist" on ainult-heli, mis kannab tavaliselt erinevat kliinilist riskiprofiili ja patsiendikogemust kui video.
 
 ## Andmeallikad ja hoiatused
 

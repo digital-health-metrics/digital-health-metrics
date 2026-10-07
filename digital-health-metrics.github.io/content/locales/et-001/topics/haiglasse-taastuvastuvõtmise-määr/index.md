@@ -25,7 +25,7 @@ erinevate patsiendipopulatsioonide või ajaperioodide vahel.
 
 ## Läbitöötatud näide
 
-Haigla kirjutab kvartalis välja 1200 südamepuudulikkusega patsienti. Neist võetakse 30 päeva jooksul uuesti vastu 210, millest 15 on planeeritud taastuvastuvõtmised planeeritud toimingu jaoks ja jäetakse välja. Planeerimata 30-päevane taastuvastuvõtmise määr on (210 − 15) / 1200 × 100 = 16,25%. Kaugjälgimise programm võetakse kasutusele 400 patsiendi alamhulgale (valitud kliinilise riski, mitte juhuslikult) ja nende planeerimata taastuvastuvõtmise määr on 14%, võrreldes 18%-ga 800 mittekaasatud patsiendi puhul. Kuna kaasamine põhines kliinilisel riskil, mitte juhuslikul määramisel, on see erinevus viitav, mitte lõplik tõend programmi mõjust, ning seda tuleks tõlgendada koos riskikohandamise analüüsiga, mitte võtta nominaalväärtuselt.
+Haigla kirjutab kvartalis välja 1 200 südamepuudulikkusega patsienti. Neist võetakse 30 päeva jooksul uuesti vastu 210, millest 15 on planeeritud taastuvastuvõtmised planeeritud toimingu jaoks ja jäetakse välja. Planeerimata 30-päevane taastuvastuvõtmise määr on (210 − 15) / 1 200 × 100 = 16,25%. Kaugjälgimise programm võetakse kasutusele 400 patsiendi alamhulgale (valitud kliinilise riski, mitte juhuslikult) ja nende planeerimata taastuvastuvõtmise määr on 14%, võrreldes 18%-ga 800 mittekaasatud patsiendi puhul. Kuna kaasamine põhines kliinilisel riskil, mitte juhuslikul määramisel, on see erinevus viitav, mitte lõplik tõend programmi mõjust, ning seda tuleks tõlgendada koos riskikohandamise analüüsiga, mitte võtta nominaalväärtuselt.
 
 ## Andmeallikad ja hoiatused
 

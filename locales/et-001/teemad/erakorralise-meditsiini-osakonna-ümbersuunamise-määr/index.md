@@ -31,7 +31,7 @@ Esitage alati koos:
 
 ## Läbitöötatud näide
 
-Digitaalne triaažiteenus hindab kuu jooksul 3000 patsiendikontakti, mida kliiniline algoritm hindab potentsiaalselt EMO-suunduvateks ilma sekkumiseta. Neist suunatakse 1800 ümber madalama kiireloomulisuse rajale (ümbersuunamise määr 60%). Ümbersuunatud kohordi järelkontroll 72 tunni möödudes, kasutades seotud terviseloo andmeid, leiab, et 45 1800-st ümbersuunatud patsiendist läks tegelikult EMO-sse selle akna jooksul (mahajäetud hädaolukorra määr 45/1800 × 100 = 2,5%). 60% ümbersuunamise näitaja esitamine ilma 2,5% mahajäetud hädaolukorra määrata esitaks ainult poole ohutuse-tõhususe kompromissist, mis tegelikult määrab, kas tööriista ümbersuunamiskäitumine on hästi kalibreeritud.
+Digitaalne triaažiteenus hindab kuu jooksul 3 000 patsiendikontakti, mida kliiniline algoritm hindab potentsiaalselt EMO-suunduvateks ilma sekkumiseta. Neist suunatakse 1 800 ümber madalama kiireloomulisuse rajale (ümbersuunamise määr 60%). Ümbersuunatud kohordi järelkontroll 72 tunni möödudes, kasutades seotud terviseloo andmeid, leiab, et 45 1 800-st ümbersuunatud patsiendist läks tegelikult EMO-sse selle akna jooksul (mahajäetud hädaolukorra määr 45/1800 × 100 = 2,5%). 60% ümbersuunamise näitaja esitamine ilma 2,5% mahajäetud hädaolukorra määrata esitaks ainult poole ohutuse-tõhususe kompromissist, mis tegelikult määrab, kas tööriista ümbersuunamiskäitumine on hästi kalibreeritud.
 
 ## Andmeallikad ja hoiatused
 

@@ -26,7 +26,7 @@ nende segamine varjab, kus konkreetne tõke asub.
 
 ## Läbitöötatud näide
 
-Tervishoiusüsteem jälgib videovisiidiga liitumist määratletud ülesandena kuu jooksul 5000 planeeritud telemeditsiini kohtumise lõikes. Neist 4100 patsienti liitub edukalt ilma tugikõneta või visiidi ajal tehnilise abita (digitaalse kirjaoskuse määr selle ülesande puhul: 82%). Esmase keele järgi segmenteerimine näitab määra 89% ingliskeelsete patsientide puhul versus 61% patsientide puhul, kelle esmane keel erineb platvormi vaikeliidese keelest – 28-punktine lõhe, mis oleks nähtamatu, kui esitataks ainult segatud 82%, ning mis viitab otse konkreetsele, lahendatavale sekkumisele (tõlgitud liides ja juhised), mitte ebamäärasele üldisele kirjaoskuse probleemile.
+Tervishoiusüsteem jälgib videovisiidiga liitumist määratletud ülesandena kuu jooksul 5 000 planeeritud telemeditsiini kohtumise lõikes. Neist 4 100 patsienti liitub edukalt ilma tugikõneta või visiidi ajal tehnilise abita (digitaalse kirjaoskuse määr selle ülesande puhul: 82%). Esmase keele järgi segmenteerimine näitab määra 89% ingliskeelsete patsientide puhul versus 61% patsientide puhul, kelle esmane keel erineb platvormi vaikeliidese keelest – 28-punktine lõhe, mis oleks nähtamatu, kui esitataks ainult segatud 82%, ning mis viitab otse konkreetsele, lahendatavale sekkumisele (tõlgitud liides ja juhised), mitte ebamäärasele üldisele kirjaoskuse probleemile.
 
 ## Andmeallikad ja hoiatused
 

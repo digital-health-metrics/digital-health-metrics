@@ -24,7 +24,7 @@ lugejas kui ka nimetajas.
 
 ## Läbitöötatud näide
 
-Digitaalsel diabeedijuhtimise rakendusel on antud kuul 10 000 igakuist aktiivset kasutajat, mis on määratletud kui iga kasutaja, kes sooritab sel kuul vähemalt ühe kvalifitseeruva toimingu (glükoosi sissekanne, söögikorra sissekanne või ravimi tarvitamise märkimine). Selle kuu 30 päeva igapäevaste aktiivsete kasutajate arvude keskmistamine annab keskmiseks DAU-ks 2200. DAU/MAU kleepuvuse suhe on 2200 / 10 000 × 100 = 22%, mis näitab, et tüüpilisel päeval tegeleb rakendusega umbes 22% selle igakuisest kasutajaskonnast – mõistlik näitaja igapäevase harjumuse kroonilise seisundi tööriista jaoks, kuigi selline, mida tootemeeskond sooviks aja jooksul tõusutrendis näha, kui ideaalne käitumine (igapäevane sissekannete tegemine) muutub kaasatud patsientide jaoks harjumuspärasemaks.
+Digitaalsel diabeedijuhtimise rakendusel on antud kuul 10 000 igakuist aktiivset kasutajat, mis on määratletud kui iga kasutaja, kes sooritab sel kuul vähemalt ühe kvalifitseeruva toimingu (glükoosi sissekanne, söögikorra sissekanne või ravimi tarvitamise märkimine). Selle kuu 30 päeva igapäevaste aktiivsete kasutajate arvude keskmistamine annab keskmiseks DAU-ks 2200. DAU/MAU kleepuvuse suhe on 2 200 / 10 000 × 100 = 22%, mis näitab, et tüüpilisel päeval tegeleb rakendusega umbes 22% selle igakuisest kasutajaskonnast – mõistlik näitaja igapäevase harjumuse kroonilise seisundi tööriista jaoks, kuigi selline, mida tootemeeskond sooviks aja jooksul tõusutrendis näha, kui ideaalne käitumine (igapäevane sissekannete tegemine) muutub kaasatud patsientide jaoks harjumuspärasemaks.
 
 ## Andmeallikad ja hoiatused
 

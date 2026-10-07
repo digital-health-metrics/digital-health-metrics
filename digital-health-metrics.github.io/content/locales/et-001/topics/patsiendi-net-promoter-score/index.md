@@ -23,7 +23,7 @@ Esitage koos:
 
 ## Läbitöötatud näide
 
-Telemeditsiini platvorm küsitleb pärast videokonsultatsiooni 1000 patsienti ja saab 400 vastust (vastamismäär 40%). Nendest 400 vastajast annab 220 hinde 9–10 (soovitajad, 55%), 100 annab hinde 7–8 (neutraalsed, 25%) ja 80 annab hinde 0–6 (kriitikud, 20%). NPS on 55 − 20 = 35. See näitaja tähendab midagi ainult kontekstis: NPS 35 võib olla tugev tulemus võrreldes laiema telemeditsiinitööstusega või murettekitav langus võrreldes sama platvormi enda eelmise kvartali skooriga 48 – NPS on palju kasulikum ühe toote ajas muutuva trendina kui absoluutse ühekordse võrdlusalusena teise toote suhtes.
+Telemeditsiini platvorm küsitleb pärast videokonsultatsiooni 1 000 patsienti ja saab 400 vastust (vastamismäär 40%). Nendest 400 vastajast annab 220 hinde 9–10 (soovitajad, 55%), 100 annab hinde 7–8 (neutraalsed, 25%) ja 80 annab hinde 0–6 (kriitikud, 20%). NPS on 55 − 20 = 35. See näitaja tähendab midagi ainult kontekstis: NPS 35 võib olla tugev tulemus võrreldes laiema telemeditsiinitööstusega või murettekitav langus võrreldes sama platvormi enda eelmise kvartali skooriga 48 – NPS on palju kasulikum ühe toote ajas muutuva trendina kui absoluutse ühekordse võrdlusalusena teise toote suhtes.
 
 ## Andmeallikad ja hoiatused
 

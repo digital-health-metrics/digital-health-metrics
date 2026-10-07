@@ -6,9 +6,7 @@
 //
 // Included: each real locale's home, contents, topics A-Z, every topic page,
 // and /about/. Skipped: the 404 page, the root page (it redirects to the
-// default locale), the per-locale search pages (a utility, not content), and
-// the two-letter alias routes (/en/, /ar/, ... — duplicates of the real
-// `-001` locale, see $lib/locales.js).
+// default locale), the per-locale search pages (a utility, not content).
 //
 // Every locale page lists its translations as hreflang alternates. Topic
 // pages are matched across locales by `.locale-peer-id` (vendored as
@@ -17,13 +15,12 @@
 
 import { readdirSync, readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { join, sep } from 'node:path';
-import { LOCALE_LABELS, LOCALE_ALIASES } from '#lib/locales.js';
+import { LOCALE_LABELS } from '#lib/locales.js';
 
 const BUILD = process.argv[2] ?? 'build';
 const SITE = (process.env.SITE_URL ?? 'https://digital-health-metrics.github.io').replace(/\/$/, '');
 const CONTENT = 'content/locales';
 const LOCALES = new Set(Object.keys(LOCALE_LABELS));
-const ALIASES = new Set(Object.keys(LOCALE_ALIASES));
 
 /** `es-es` -> `es-ES`; an international `-001` locale -> its bare language (`es`). */
 function hreflang(code) {
@@ -68,7 +65,7 @@ for (const file of walk(BUILD)) {
 		continue;
 	}
 	const [locale, kind, slug] = segs;
-	if (ALIASES.has(locale) || !LOCALES.has(locale)) continue;
+	if (!LOCALES.has(locale)) continue;
 	if (kind === 'search') continue;
 	const path = `/${segs.join('/')}/`;
 	let alts = [];

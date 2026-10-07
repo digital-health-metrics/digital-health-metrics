@@ -5,7 +5,7 @@
 	import { page } from '$app/state';
 	import { Footer, Header, SkipLink } from '@lilydesignsystem/svelte-headless';
 	import PickerBar from '@lilydesignsystem/svelte-picker-bar';
-	import { DEFAULT_LOCALE, LOCALE_STORAGE_KEY, canonicalLocale, localeLabel } from '#lib/locales.js';
+	import { DEFAULT_LOCALE, LOCALE_STORAGE_KEY, localeLabel } from '#lib/locales.js';
 	import { ui } from '#lib/i18n.js';
 
 	let { data, children } = $props();
@@ -20,16 +20,12 @@
 	// gone wrong.
 	const bookTitle = $derived(page.data?.bookTitle ?? data?.bookTitle ?? 'Digital Health Metrics');
 	const locales = $derived(data?.locales ?? []);
-	// page.params.locale may be a two-letter alias (e.g. "en" for "en-001" —
-	// see $lib/locales.js) resolved here so every nav link, UI chrome string,
-	// and locale-switcher calculation below treats an alias route exactly
-	// like its real locale, not like an unrecognized one.
 	// Only a locale the site actually publishes counts: an unknown code in the
 	// URL (a stale or mistyped link such as /de-001/ — German here is de-de)
 	// is not a locale. Treating it as one made the picker write that code into
 	// <html lang> and into the visitor's saved locale, poisoning later visits.
 	const locale = $derived.by(() => {
-		const code = canonicalLocale(page.params.locale);
+		const code = page.params.locale;
 		return code && locales.includes(code) ? code : undefined;
 	});
 	const t = $derived(ui(locale ?? DEFAULT_LOCALE));
@@ -91,9 +87,7 @@
 	// locale's home.
 	/** @param {string} next */
 	function navigateToLocale(next) {
-		// Already showing this locale (the URL may be its two-letter alias, e.g.
-		// /en/ for en-001): navigating would only rewrite the alias to the
-		// canonical code, so an alias URL stays as it was opened.
+		// Already showing this locale: nothing to navigate to.
 		if (next === locale) return;
 		const links = page.data?.localeLinks;
 		if (links?.[next]) {

@@ -3,10 +3,9 @@
 	import { page } from '$app/state';
 	import { SectionList, SectionListItem } from '@lilydesignsystem/svelte-headless';
 	import { ui } from '#lib/i18n.js';
-	import { canonicalLocale } from '#lib/locales.js';
 
 	let { data } = $props();
-	const locale = $derived(canonicalLocale(page.params.locale));
+	const locale = $derived(page.params.locale);
 	const t = $derived(ui(locale));
 </script>
 

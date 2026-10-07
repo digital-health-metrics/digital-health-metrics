@@ -27,7 +27,7 @@ pimendatud.
 
 ## Läbitöötatud näide
 
-Tehisintellekti sümptomikontrolli tööriist triaažib kuu jooksul 5000 patsiendikontakti. Pimendatud kliiniku ülevaatus 500 sellisest kontaktist koosnevast juhuvalimist leiab, et 430 suunati õigele kiireloomulisuse tasemele (täpsus 86%), 45 alatriaažiti (9%) ja 25 ülitriaažiti (5%). 9% alatriaaži määr on näitaja, mis vajab kõige kiireloomulisemalt uurimist, kuna see esindab kontakte, kus patsient võidi suunata vähem kiireloomulisele ravile, kui ta tegelikult vajas; 5% ülitriaaži määr on võimekuse ja kulu mure, kuid mitte otsene ohutusmure.
+Tehisintellekti sümptomikontrolli tööriist triaažib kuu jooksul 5 000 patsiendikontakti. Pimendatud kliiniku ülevaatus 500 sellisest kontaktist koosnevast juhuvalimist leiab, et 430 suunati õigele kiireloomulisuse tasemele (täpsus 86%), 45 alatriaažiti (9%) ja 25 ülitriaažiti (5%). 9% alatriaaži määr on näitaja, mis vajab kõige kiireloomulisemalt uurimist, kuna see esindab kontakte, kus patsient võidi suunata vähem kiireloomulisele ravile, kui ta tegelikult vajas; 5% ülitriaaži määr on võimekuse ja kulu mure, kuid mitte otsene ohutusmure.
 
 ## Andmeallikad ja hoiatused
 

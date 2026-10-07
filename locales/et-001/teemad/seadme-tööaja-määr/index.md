@@ -26,7 +26,7 @@ Tööaja kõrval jälgitavad toetavad tehnilised parameetrid:
 
 ## Läbitöötatud näide
 
-Südame kaugjälgimise programm võtab kasutusele 1000 ühendatud seadet, millelt oodatakse pidevat edastamist. 30-päevase kuu jooksul (720 planeeritud seiretundi seadme kohta) logib seadmepark kokku 705 600 tegelikku võrgusolekutundi planeeritud 720 000 tunni vastu, mis annab kogu seadmepargi tööaja määraks 705 600 / 720 000 × 100 = 98%. 14 400 seisakutunni algpõhjuste analüüs näitab, et 60% on seotud mobiilsideühenduse katkestustega, mis on koondunud konkreetsesse maapiirkonna teenindusregiooni, 25% vananevate akudega seadmetega, mis on märgitud asendamiseks, ja 15% patsientidega, kes lülitavad oma seadme ajutiselt välja. See jaotus osutab kahele selgele, erinevale sekkumisele – ühenduvuse parandus mõjutatud regioonile ja ennetav akude asendamise programm –, mida üks koondtööaja näitaja poleks eristanud.
+Südame kaugjälgimise programm võtab kasutusele 1 000 ühendatud seadet, millelt oodatakse pidevat edastamist. 30-päevase kuu jooksul (720 planeeritud seiretundi seadme kohta) logib seadmepark kokku 705 600 tegelikku võrgusolekutundi planeeritud 720 000 tunni vastu, mis annab kogu seadmepargi tööaja määraks 705 600 / 720 000 × 100 = 98%. 14 400 seisakutunni algpõhjuste analüüs näitab, et 60% on seotud mobiilsideühenduse katkestustega, mis on koondunud konkreetsesse maapiirkonna teenindusregiooni, 25% vananevate akudega seadmetega, mis on märgitud asendamiseks, ja 15% patsientidega, kes lülitavad oma seadme ajutiselt välja. See jaotus osutab kahele selgele, erinevale sekkumisele – ühenduvuse parandus mõjutatud regioonile ja ennetav akude asendamise programm –, mida üks koondtööaja näitaja poleks eristanud.
 
 ## Andmeallikad ja hoiatused
 

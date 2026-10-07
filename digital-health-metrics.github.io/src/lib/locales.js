@@ -66,13 +66,10 @@ export function localeLabel(code) {
 }
 
 /**
- * Two-letter alias -> this site's "-001" (International/World) code for that
- * language, e.g. `'en' -> 'en-001'`, derived from LOCALE_LABELS so any future
- * "-001" locale gets one automatically. `/<alias>/...` renders exactly the
- * same content as `/<code>/...` (resolved in each route's own load(), see
- * `[locale]/+layout.server.js`) — every link the site itself generates still
- * uses the full code, so an alias is an additional way in, not a second copy
- * of the site's own navigation.
+ * Language -> this site's "-001" (International/World) code for that language,
+ * e.g. `'en' -> 'en-001'`, derived from LOCALE_LABELS so any future "-001"
+ * locale gets one automatically. Used only by matchLocale() to map a browser
+ * language to a locale; two-letter URLs such as `/en/` are not routes (404).
  */
 export const LOCALE_ALIASES = Object.fromEntries(
 	Object.keys(LOCALE_LABELS)
@@ -141,9 +138,4 @@ export function preferredLocale(available) {
 		// private mode or blocked storage: fall through to the default
 	}
 	return DEFAULT_LOCALE;
-}
-
-/** Resolve a URL locale segment (alias or already-real code) to its real code. */
-export function canonicalLocale(code) {
-	return LOCALE_ALIASES[code] ?? code;
 }

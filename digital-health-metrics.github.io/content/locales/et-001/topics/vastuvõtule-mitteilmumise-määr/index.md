@@ -17,7 +17,7 @@ Planeeritud vastuvõtt jäetakse tavaliselt nimetajast välja või viiakse erald
 
 ## Läbitöötatud näide
 
-Kogukonna kliinik planeerib kuus 2000 vastuvõttu. Neist 140 tühistatakse rohkem kui 24-tunnise etteteatamisega (broneeritakse uuesti ja jäetakse nimetajast välja), 60 tühistatakse hilja (alla 24 tunni) ja 180 registreeritakse tegeliku mitteilmumisena ilma igasuguse kontaktita. Mitteilmumise määr on 180 / 2000 × 100 = 9%. Kui need 60 hilist tühistamist liidetaks samasse kategooriasse tegelike mitteilmumistega, tõuseks esitatud määr 12%-ni, mistõttu kasutatav määratlus tuleb alati koos näitajaga esitada.
+Kogukonna kliinik planeerib kuus 2 000 vastuvõttu. Neist 140 tühistatakse rohkem kui 24-tunnise etteteatamisega (broneeritakse uuesti ja jäetakse nimetajast välja), 60 tühistatakse hilja (alla 24 tunni) ja 180 registreeritakse tegeliku mitteilmumisena ilma igasuguse kontaktita. Mitteilmumise määr on 180 / 2 000 × 100 = 9%. Kui need 60 hilist tühistamist liidetaks samasse kategooriasse tegelike mitteilmumistega, tõuseks esitatud määr 12%-ni, mistõttu kasutatav määratlus tuleb alati koos näitajaga esitada.
 
 ## Andmeallikad ja hoiatused
 

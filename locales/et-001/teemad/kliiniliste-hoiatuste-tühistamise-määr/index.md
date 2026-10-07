@@ -24,7 +24,7 @@ juhtimismõõdik.
 
 ## Läbitöötatud näide
 
-Haigla CPOE süsteem käivitab kuus 10 000 ravimite koostoime hoiatust, millest 8700 tühistatakse, andes üldiseks tühistamise määraks 87%. Raskusastme järgi jaotamine näitab, et 500 "vastunäidustatud" hoiatusest tühistatakse 60 (12%), samas kui 6000 "mõõdukast" hoiatusest tühistatakse 5700 (95%). Mõõduka taseme näitaja on üldiselt kooskõlas avaldatud võrdlusalustega ega ole iseenesest muret tekitav; vastunäidustatud taseme näitaja väärib individuaalset juhtumi ülevaatust, ning asjaolu, et ainult 340-l 500-st selle taseme tühistamisest on dokumenteeritud põhjus, on olulisem juhtimisleid.
+Haigla CPOE süsteem käivitab kuus 10 000 ravimite koostoime hoiatust, millest 8 700 tühistatakse, andes üldiseks tühistamise määraks 87%. Raskusastme järgi jaotamine näitab, et 500 "vastunäidustatud" hoiatusest tühistatakse 60 (12%), samas kui 6 000 "mõõdukast" hoiatusest tühistatakse 5 700 (95%). Mõõduka taseme näitaja on üldiselt kooskõlas avaldatud võrdlusalustega ega ole iseenesest muret tekitav; vastunäidustatud taseme näitaja väärib individuaalset juhtumi ülevaatust, ning asjaolu, et ainult 340-l 500-st selle taseme tühistamisest on dokumenteeritud põhjus, on olulisem juhtimisleid.
 
 ## Andmeallikad ja hoiatused
 
