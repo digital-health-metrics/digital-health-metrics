@@ -178,11 +178,54 @@ pre {
  * the share picker's link/button rows and status message to the theme.
  * ------------------------------------------------------------------------ */
 
+.search-picker,
 .theme-picker,
 .locale-picker,
 .text-size-picker,
 .share-picker {
 	position: relative;
+}
+
+/* Each picker also renders a small label tooltip that the component shows
+ * on hover and keyboard focus (and hides with `hidden`). Nothing in the theme
+ * stylesheet positions these `*-picker-tooltip` elements, so they were
+ * `position: static` — in normal flow, inside the header. Hovering a button
+ * therefore grew the header by the tooltip's height, pushed the whole page
+ * down, and moved the buttons out from under the pointer, which closed the
+ * tooltip again: the page lurched on every hover. Taking the tooltip out of
+ * flow, anchored below its button like the lists, removes the layout shift.
+ * It stays hoverable (no `pointer-events: none`): the component keeps it open
+ * while the pointer is over it, which WCAG 1.4.13 requires. */
+.search-picker-tooltip,
+.theme-picker-tooltip,
+.locale-picker-tooltip,
+.text-size-picker-tooltip,
+.share-picker-tooltip {
+	position: absolute;
+	inset-inline-start: auto;
+	inset-inline-end: 0;
+	top: calc(100% + 0.35rem);
+	z-index: 200;
+	width: max-content;
+	max-width: calc(100vw - 2 * var(--lily-space-md));
+	margin: 0;
+	padding: 0.2rem 0.5rem;
+	font-size: 0.8rem;
+	line-height: 1.3;
+	white-space: nowrap;
+	color: var(--lily-text);
+	background-color: var(--lily-surface);
+	border: 1px solid var(--lily-border);
+	border-radius: var(--lily-radius-sm);
+	box-shadow: var(--lily-shadow-lg);
+}
+
+.search-picker-tooltip[hidden],
+.theme-picker-tooltip[hidden],
+.locale-picker-tooltip[hidden],
+.text-size-picker-tooltip[hidden],
+.share-picker-tooltip[hidden] {
+	display: none;
 }
 
 .theme-picker-button,

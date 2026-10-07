@@ -51,3 +51,13 @@ After Lily updates:
 2. Commit, merge into main, delete old branches.
 3. Publish to GitHub Pages.
 4. Verify the public GitHub Pages site uses PickerBar, and has all Lily themes.
+
+## Regression: picker tooltips must not shift the layout
+
+Each picker renders a label tooltip (`.search-picker-tooltip`, `.theme-picker-tooltip`, `.locale-picker-tooltip`,
+`.text-size-picker-tooltip`, `.share-picker-tooltip`) shown on hover and keyboard focus. The Lily theme stylesheets
+do not position them, so they were `position: static` in the header: hovering a button grew the header by about
+22px, pushed the page down and moved the buttons from under the pointer, which closed the tooltip, and the page
+lurched on every hover. `static/assets/style.css` positions them `absolute` below their button (anchored to the
+inline end, like the lists) and keeps them hoverable (WCAG 1.4.13). After a Lily update, verify in a browser at
+desktop and phone width: hover each picker button and confirm the header, `main` and the buttons do not move.
