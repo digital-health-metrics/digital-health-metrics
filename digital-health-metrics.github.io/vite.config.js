@@ -27,7 +27,16 @@ export default defineConfig({
 				// /digital-health-metrics.github.io.
 				base: process.env.BASE_PATH ?? ''
 			},
-			prerender: { handleHttpError: 'fail', handleMissingId: 'fail' }
+			prerender: {
+				// Fail on any broken link, except /sitemap.xml: the link picker links to
+				// it, but scripts/build-sitemap.mjs writes it after the build, so the
+				// crawler cannot fetch it as a route.
+				handleHttpError: ({ path, message }) => {
+					if (path === '/sitemap.xml' || path === '/sitemap.xml/') return;
+					throw new Error(message);
+				},
+				handleMissingId: 'fail'
+			}
 		})
 	]
 });

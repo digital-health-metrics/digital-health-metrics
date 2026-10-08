@@ -47,6 +47,21 @@
 				]
 	);
 
+	// The link picker's list: this project's own pages and the places it lives
+	// and is published. Internal pages navigate client-side; the static files
+	// and external sites open in a new tab (they are not routes). Labels are
+	// translated where they are words (t.*) and left as-is where they are file
+	// names or proper nouns.
+	const projectLinks = $derived([
+		{ label: t.navHome, href: resolve(locale ? `${locale}/` : ''), current: page.url.pathname === (locale ? `/${locale}/` : '/') },
+		{ label: t.navAbout, href: resolve('about/'), current: page.url.pathname === '/about/' },
+		{ label: t.footerSourceLink, href: 'https://github.com/digital-health-metrics/digital-health-metrics', newTab: true },
+		{ label: 'llms.txt', href: '/llms.txt', newTab: true },
+		{ label: 'llms.json', href: '/llms.json', newTab: true },
+		{ label: 'sitemap.xml', href: '/sitemap.xml', newTab: true },
+		{ label: 'Lily Design System', href: 'https://lilydesignsystem.com/', newTab: true }
+	]);
+
 	/** @param {string} url @param {string} title */
 	const mailtoHref = (url, title) =>
 		`mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(url)}`;
@@ -153,7 +168,10 @@
 
 		<PickerBar
 			class="site-controls"
+			links={projectLinks}
+			linkProps={{ navigate: (/** @type {string} */ href) => goto(href) }}
 			labels={{
+				link: t.pickerLinks,
 				search: t.navSearch,
 				searchInput: t.searchInputLabel,
 				searchSubmit: t.navSearch,

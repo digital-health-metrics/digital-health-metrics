@@ -28,8 +28,10 @@ In Lily SharePicker use:
   - Share on Mastodon (link to mastodonshare.com)
 
 Dependency notes (see `digital-health-metrics.github.io/pnpm-workspace.yaml`):
-- `svelte-picker-bar` 0.2.0 depends on the five sub-pickers (search, theme, locale, text-size, share) at their fixed versions, so the `overrides` that the 0.1.x releases needed are gone. Do not reintroduce overrides pinning sub-pickers below 0.2.0 (picker-bar 0.1.0's sub-pickers rendered unstyled).
+- `svelte-picker-bar` 0.3.0 depends on the six sub-pickers (link, search, theme, locale, text-size, share) at their fixed versions, so the `overrides` that the 0.1.x releases needed are gone. Do not reintroduce overrides pinning sub-pickers below 0.2.0 (picker-bar 0.1.0's sub-pickers rendered unstyled).
 - `typescript` stays on 6.x: 7.x breaks the SvelteKit build and is outside the peer range of `@sveltejs/kit` and `svelte-check`.
+
+The picker-bar's link picker (a home icon, leftmost), fed by `projectLinks` in `src/routes/+layout.svelte`: Home and About (client-side navigation, `aria-current` on the current page), then, each opening in a new tab, the source repository on GitHub, `/llms.txt`, `/llms.json`, `/sitemap.xml` and the Lily Design System (`https://lilydesignsystem.com/`). Its accessible name is the translated `pickerLinks` string in `src/lib/i18n.js`; `Source`, `Home` and `About` reuse existing strings, and file names and the Lily name stay as-is. `/sitemap.xml` is written after the build, so `vite.config.js` exempts it from the prerender link check (every other broken link still fails the build)
 
 In Lily SearchPicker use:
 - the picker-bar's built-in search picker, whose form does a GET to `/` so a search for `foo` goes to `/?foo` (the route in `spec/search/`)

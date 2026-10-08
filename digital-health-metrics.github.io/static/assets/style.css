@@ -178,6 +178,7 @@ pre {
  * the share picker's link/button rows and status message to the theme.
  * ------------------------------------------------------------------------ */
 
+.link-picker,
 .search-picker,
 .theme-picker,
 .locale-picker,
@@ -196,6 +197,7 @@ pre {
  * flow, anchored below its button like the lists, removes the layout shift.
  * It stays hoverable (no `pointer-events: none`): the component keeps it open
  * while the pointer is over it, which WCAG 1.4.13 requires. */
+.link-picker-tooltip,
 .search-picker-tooltip,
 .theme-picker-tooltip,
 .locale-picker-tooltip,
@@ -220,6 +222,7 @@ pre {
 	box-shadow: var(--lily-shadow-lg);
 }
 
+.link-picker-tooltip[hidden],
 .search-picker-tooltip[hidden],
 .theme-picker-tooltip[hidden],
 .locale-picker-tooltip[hidden],
@@ -228,6 +231,7 @@ pre {
 	display: none;
 }
 
+.link-picker-button,
 .theme-picker-button,
 .locale-picker-button,
 .text-size-picker-button,
@@ -247,6 +251,7 @@ pre {
 	cursor: pointer;
 }
 
+.link-picker-button:hover,
 .theme-picker-button:hover,
 .locale-picker-button:hover,
 .text-size-picker-button:hover,
@@ -255,6 +260,7 @@ pre {
 	border-color: var(--lily-border-strong);
 }
 
+.link-picker-list,
 .theme-picker-list,
 .locale-picker-list,
 .text-size-picker-list,
@@ -309,6 +315,7 @@ pre {
 	box-shadow: var(--lily-shadow-lg);
 }
 
+.link-picker-list[hidden],
 .theme-picker-list[hidden],
 .locale-picker-list[hidden],
 .text-size-picker-list[hidden],
@@ -356,6 +363,32 @@ pre {
 
 .share-picker-target:hover {
 	color: var(--lily-text);
+}
+
+/* link-picker's entries are real <a> links too: same treatment as the share
+ * picker's targets, plus the same row spacing the listbox options get. The
+ * list is a <ul>, so drop its default bullets inset (the list rule above
+ * already removes the markers). */
+.link-picker-link {
+	display: block;
+	padding: 0.4rem 0.6rem;
+	border-radius: var(--lily-radius-sm);
+	color: var(--lily-text);
+	text-decoration: none;
+	font-size: 0.95em;
+	white-space: nowrap;
+}
+
+.link-picker-link:hover,
+.link-picker-link:focus-visible {
+	background-color: var(--lily-surface-alt);
+	color: var(--lily-text);
+}
+
+.link-picker-link[aria-current='page'] {
+	background-color: var(--color-primary);
+	color: var(--color-primary-content);
+	font-weight: 600;
 }
 
 /* The theme renders this as a normal in-flow paragraph (`margin-block-start`
@@ -949,6 +982,7 @@ pre {
  * gap between the button and that edge. Anchoring to the viewport instead of
  * the button removes the dependency on where the button happens to sit. */
 @media (max-width: 30rem) {
+	.link-picker-list,
 	.theme-picker-list,
 	.locale-picker-list,
 	.text-size-picker-list,
