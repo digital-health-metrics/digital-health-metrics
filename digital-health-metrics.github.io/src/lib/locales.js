@@ -3,7 +3,7 @@
 // the vendored content (`#lib/server/content.js` locales()) — this module
 // only supplies how to label/order codes that content already declared.
 //
-// Exactly 37 locales are published by this site. The content monorepo also
+// Exactly 53 locales are published by this site. The content monorepo also
 // authors in `en-gb-oxendict`, an internal, unpublished locale used to draft
 // content before it is translated out to the locales below — it is
 // deliberately absent here, from i18n.js, and from scripts/sync-content.mjs,
@@ -28,26 +28,42 @@ export const LOCALE_LABELS = {
 	'ar-eg': 'العربية - مصر',
 	'bn-bd': 'বাংলা - বাংলাদেশ',
 	'hi-in': 'हिन्दी - भारत',
-	'ko-kr': '한국어',
+	'ko-kr': '한국어 - 대한민국',
 	'es-es': 'Español - España',
 	'pt-pt': 'Português - Portugal',
-	'ja-jp': '日本語',
+	'ja-jp': '日本語 - 日本',
 	'ru-ru': 'Русский - Россия',
 	'fr-fr': 'Français - France',
-	'sv-se': 'Svenska',
-	'nl-nl': 'Nederlands',
+	'sv-se': 'Svenska - Sverige',
+	'nl-nl': 'Nederlands - Nederland',
 	'ur-pk': 'اردو - پاکستان',
-	'id-id': 'Bahasa Indonesia',
-	'it-it': 'Italiano',
+	'id-id': 'Bahasa Indonesia - Indonesia',
+	'it-it': 'Italiano - Italia',
 	'uk-ua': 'Українська',
-	'fi-fi': 'Suomi',
+	'fi-fi': 'Suomi - Suomi',
 	'no-no': 'Norsk',
-	'da-dk': 'Dansk',
+	'da-dk': 'Dansk - Danmark',
 	'pl-pl': 'Polski',
 	'vi-001': 'Tiếng Việt',
 	'et-001': 'Eesti',
 	'th-001': 'ไทย',
-	'tr-tr': 'Türkçe'
+	'tr-tr': 'Türkçe - Türkiye',
+	'bn-001': 'বাংলা',
+	'id-001': 'Bahasa Indonesia',
+	'ja-001': '日本語',
+	'ko-001': '한국어',
+	'zh-001': '中文',
+	'sv-001': 'Svenska',
+	'nl-001': 'Nederlands',
+	'ur-001': 'اردو',
+	'da-001': 'Dansk',
+	'fi-001': 'Suomi',
+	'it-001': 'Italiano',
+	'tr-001': 'Türkçe',
+	'is-is': 'Íslenska - Ísland',
+	'is-001': 'Íslenska',
+	'zh-tw': '中文 - 台灣',
+	'sw-001': 'Kiswahili'
 };
 
 export const DEFAULT_LOCALE = 'en-gb';
@@ -59,7 +75,7 @@ export const DEFAULT_LOCALE = 'en-gb';
  * padding-inline-start, etc.), so it flips correctly once `dir` is actually
  * set; nothing else needs to change per RTL locale.
  */
-export const RTL_LOCALES = new Set(['ar-001', 'ar-eg', 'ur-pk']);
+export const RTL_LOCALES = new Set(['ar-001', 'ar-eg', 'ur-pk', 'ur-001']);
 
 export function localeLabel(code) {
 	return LOCALE_LABELS[code] ?? code;

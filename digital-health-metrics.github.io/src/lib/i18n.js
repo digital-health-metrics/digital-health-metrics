@@ -8,7 +8,7 @@
 // localizedIndex: an untranslated locale still renders correctly in English
 // rather than crashing or showing blanks.
 //
-// Only 26 of the site's 37 public locales need an entry in TRANSLATIONS
+// Only 29 of the site's 37 public locales need an entry in TRANSLATIONS
 // below: the 3 English variants (en-us, en-gb, en-001) all share this same
 // base EN table with no per-variant overrides, same as they would for any
 // other English-only difference (spelling, not vocabulary) — and the 8
@@ -1512,6 +1512,173 @@ const tr = {
 	paginationNext: 'Sonraki'
 };
 
+/** @type {Messages} */
+const is = {
+	skipToContent: 'Fara beint í efnið',
+	navHome: 'Forsíða',
+	navContents: 'Efnisyfirlit',
+	navTopicsAZ: 'Efni A–Ö',
+	navSearch: 'Leit',
+	navAbout: 'Um bókina',
+	footerSourceLink: 'Frumkóði',
+	footerTaglineSuffix:
+		' — skilgreiningar, dæmi og rök fyrir mælikvarða stafrænnar heilbrigðisþjónustu, fyrir teymi sem smíða, meta og panta stafrænar heilbrigðisvörur.',
+	footerNote:
+		'Tölur í þessari bók úreldast hratt. Hvert efni tímasetur viðmið sín í textanum; staðfestu þau upp á nýtt áður en þú notar tölu í raunverulegum viðskiptarökum.',
+	pickerTheme: 'Þema',
+	pickerLanguage: 'Tungumál',
+	pickerTextSize: 'Textastærð',
+	pickerShare: 'Deila',
+	pickerLinks: 'Tenglar',
+	shareCopyLink: 'Afrita tengil',
+	shareCopied: 'Afritað',
+	shareCopyFailed: 'Afritun mistókst',
+	shareEmailLabel: 'Senda tengil í tölvupósti',
+	shareLinkedinLabel: 'Deila á LinkedIn',
+	shareRedditLabel: 'Deila á Reddit',
+	shareBlueskyLabel: 'Deila á Bluesky',
+	shareMastodonLabel: 'Deila á Mastodon',
+
+	startHere: 'Byrjaðu hér',
+	startHereSubtitle: 'Þrjár hugmyndir sem allt annað byggir á.',
+
+	contentsMetaDescription: (bookTitle) => `Allt efni í „${bookTitle}“, í lesröð.`,
+	contentsIntro: (count, parts) =>
+		`Öll ${count} efnin í lesröð, í ${parts} hlutum. Hvert efni fjallar um einn mælikvarða eða hugtak: skilgreiningu, hvers vegna það skiptir máli, hvernig það er reiknað, dæmi útreiknað, gagnalindir og fyrirvara, gildrur og heimildir.`,
+	topicsCountSubtitle: (n) => `${n} efni`,
+
+	topicsMetaDescription: (bookTitle) => `Allt efni í „${bookTitle}“, í stafrófsröð.`,
+	topicsIntroPrefix: (count) => `Öll ${count} efnin í stafrófsröð. Fyrir lesröð, sjá`,
+	contentsLinkText: 'efnisyfirlit',
+	jumpToLetter: 'Fara á staf',
+
+	searchMetaDescription: (bookTitle) => `Leitaðu í öllu efni í „${bookTitle}“.`,
+	searchIntro: (count) =>
+		`Leitaðu í öllum ${count} efnunum eftir titli, hluta, samantekt og kaflaheiti. Allt keyrir í vafranum þínum — ekkert sem þú skrifar yfirgefur þessa síðu.`,
+	searchInputLabel: 'Leita í efni',
+	searchPlaceholder: 'DAU, viðhald, útfylling PROM…',
+	searchHintEmptyHtml: 'Skrifaðu til að leita. Prófaðu <em>DAU</em>, <em>viðhald</em> eða <em>PROM</em>.',
+	noResultsPrefix: 'Ekkert efni passar við ',
+	noResultsMiddle: '. Prófaðu víðara hugtak, eða skoðaðu ',
+	resultsCountSingular: 'efni',
+	resultsCountPlural: 'efni',
+
+	topicPosition: (index, total) => `Efni ${index} af ${total}`,
+	onThisPage: 'Á þessari síðu',
+	paginationLabel: 'Bók',
+	paginationPrevious: 'Fyrra',
+	paginationNext: 'Næsta'
+};
+
+/** @type {Messages} */
+const sw = {
+	skipToContent: 'Ruka hadi maudhui',
+	navHome: 'Mwanzo',
+	navContents: 'Yaliyomo',
+	navTopicsAZ: 'Mada A–Z',
+	navSearch: 'Tafuta',
+	navAbout: 'Kuhusu',
+	footerSourceLink: 'Chanzo',
+	footerTaglineSuffix:
+		' — fasili, mifano, na hoja za vipimo vya afya ya kidijitali kwa timu zinazojenga, kutathmini, na kuagiza bidhaa za afya ya kidijitali.',
+	footerNote:
+		'Takwimu katika kitabu hiki hupitwa na wakati haraka. Kila mada hutaja tarehe ya vigezo vyake ndani ya maandishi; zithibitishe upya kabla ya kutumia namba yoyote katika hoja halisi ya biashara.',
+	pickerTheme: 'Mandhari',
+	pickerLanguage: 'Lugha',
+	pickerTextSize: 'Ukubwa wa maandishi',
+	pickerShare: 'Shiriki',
+	pickerLinks: 'Viungo',
+	shareCopyLink: 'Nakili kiungo',
+	shareCopied: 'Imenakiliwa',
+	shareCopyFailed: 'Kunakili kumeshindwa',
+	shareEmailLabel: 'Tuma kiungo kwa barua pepe',
+	shareLinkedinLabel: 'Shiriki kwenye LinkedIn',
+	shareRedditLabel: 'Shiriki kwenye Reddit',
+	shareBlueskyLabel: 'Shiriki kwenye Bluesky',
+	shareMastodonLabel: 'Shiriki kwenye Mastodon',
+
+	startHere: 'Anzia hapa',
+	startHereSubtitle: 'Mawazo matatu ambayo kila kitu kingine kinajengwa juu yake.',
+
+	contentsMetaDescription: (bookTitle) => `Mada zote katika ${bookTitle}, kwa mpangilio wa kusoma.`,
+	contentsIntro: (count, parts) =>
+		`Mada zote ${count} kwa mpangilio wa kusoma, katika sehemu ${parts}. Kila mada inahusu kipimo au dhana moja: fasili, kwa nini ni muhimu, jinsi kinavyokokotolewa, mfano uliokokotolewa, vyanzo vya data na tahadhari, mitego, na vyanzo.`,
+	topicsCountSubtitle: (n) => `Mada ${n}`,
+
+	topicsMetaDescription: (bookTitle) => `Mada zote katika ${bookTitle}, zikiorodheshwa A hadi Z.`,
+	topicsIntroPrefix: (count) => `Mada zote ${count} kwa mpangilio wa alfabeti. Kwa mpangilio wa kusoma, tazama`,
+	contentsLinkText: 'yaliyomo',
+	jumpToLetter: 'Ruka hadi herufi',
+
+	searchMetaDescription: (bookTitle) => `Tafuta mada zote katika ${bookTitle}.`,
+	searchIntro: (count) =>
+		`Tafuta mada zote ${count} kwa kichwa, sehemu, muhtasari, na kichwa cha sehemu ndogo. Kila kitu kinafanya kazi kwenye kivinjari chako — hakuna unachoandika kinachoondoka kwenye ukurasa huu.`,
+	searchInputLabel: 'Tafuta mada',
+	searchPlaceholder: 'DAU, kubaki, kukamilisha PROM…',
+	searchHintEmptyHtml: 'Andika kutafuta. Jaribu <em>DAU</em>, <em>kubaki</em>, au <em>PROM</em>.',
+	noResultsPrefix: 'Hakuna mada zinazolingana na ',
+	noResultsMiddle: '. Jaribu neno pana zaidi, au vinjari ',
+	resultsCountSingular: 'mada',
+	resultsCountPlural: 'mada',
+
+	topicPosition: (index, total) => `Mada ${index} kati ya ${total}`,
+	onThisPage: 'Kwenye ukurasa huu',
+	paginationLabel: 'Kitabu',
+	paginationPrevious: 'Iliyotangulia',
+	paginationNext: 'Inayofuata'
+};
+
+/** @type {Messages} */
+const zhTw = {
+	skipToContent: '跳到主要內容',
+	navHome: '首頁',
+	navContents: '目錄',
+	navTopicsAZ: '主題 A–Z',
+	navSearch: '搜尋',
+	navAbout: '關於',
+	footerSourceLink: '原始碼',
+	footerTaglineSuffix: ' —— 為構建、評估和採購數位健康產品的團隊提供的數位健康指標定義、案例與推理。',
+	footerNote: '本書中的數位更新很快。每個主題都在正文中標註了其基準資料的日期；在實際業務案例中使用任何數位之前，請重新核實。',
+	pickerTheme: '主題外觀',
+	pickerLanguage: '語言',
+	pickerTextSize: '字號',
+	pickerShare: '分享',
+	pickerLinks: '連結',
+	shareCopyLink: '複製連結',
+	shareCopied: '已複製',
+	shareCopyFailed: '複製失敗',
+	shareEmailLabel: '透過郵件傳送連結',
+	shareLinkedinLabel: '分享到 LinkedIn',
+	shareRedditLabel: '分享到 Reddit',
+	shareBlueskyLabel: '分享到 Bluesky',
+	shareMastodonLabel: '分享到 Mastodon',
+	startHere: '從這裡開始',
+	startHereSubtitle: '其餘一切都建立在這三個概念之上。',
+	contentsMetaDescription: (bookTitle) => `《${bookTitle}》的全部主題，按閱讀順序排列。`,
+	contentsIntro: (count, parts) =>
+		`全部 ${count} 個主題按閱讀順序排列，共分為 ${parts} 個部分。每個主題涵蓋一個指標或概念：定義、為何重要、如何計算、一個例項解析、資料來源與注意事項、常見誤區，以及參考來源。`,
+	topicsCountSubtitle: (n) => `${n} 個主題`,
+	topicsMetaDescription: (bookTitle) => `《${bookTitle}》的全部主題，按字母順序排列。`,
+	topicsIntroPrefix: (count) => `全部 ${count} 個主題按字母順序排列。如需閱讀順序，請檢視`,
+	contentsLinkText: '目錄',
+	jumpToLetter: '跳轉到字母',
+	searchMetaDescription: (bookTitle) => `搜尋《${bookTitle}》中的所有主題。`,
+	searchIntro: (count) =>
+		`按標題、部分、摘要和小節標題搜尋全部 ${count} 個主題。一切都在你的瀏覽器中執行 —— 你輸入的內容不會離開此頁面。`,
+	searchInputLabel: '搜尋主題',
+	searchPlaceholder: 'DAU、留存率、PROM 完成率……',
+	searchHintEmptyHtml: '開始輸入以搜尋。試試 <em>DAU</em>、<em>留存率</em> 或 <em>PROM</em>。',
+	noResultsPrefix: '沒有主題匹配 ',
+	noResultsMiddle: '。請嘗試更寬泛的詞語，或瀏覽',
+	resultsCountSingular: '個主題',
+	resultsCountPlural: '個主題',
+	topicPosition: (index, total) => `第 ${index} 個主題，共 ${total} 個`,
+	onThisPage: '本頁內容',
+	paginationLabel: '全書',
+	paginationPrevious: '上一篇',
+	paginationNext: '下一篇'
+};
+
 const TRANSLATIONS = {
 	'cy-001': cy,
 	'zh-cn': zh,
@@ -1539,6 +1706,22 @@ const TRANSLATIONS = {
 	'et-001': et,
 	'th-001': th,
 	'tr-tr': tr,
+	'bn-001': bn,
+	'id-001': id,
+	'ja-001': ja,
+	'ko-001': ko,
+	'zh-001': zh,
+	'sv-001': sv,
+	'nl-001': nl,
+	'ur-001': ur,
+	'da-001': da,
+	'fi-001': fi,
+	'it-001': it,
+	'tr-001': tr,
+	'is-is': is,
+	'is-001': is,
+	'zh-tw': zhTw,
+	'sw-001': sw,
 	// Country-specific variants of a language already covered by an
 	// international -001 locale reuse that locale's translation object.
 	'de-001': de,

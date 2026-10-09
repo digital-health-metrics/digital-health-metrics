@@ -62,16 +62,19 @@ A small number of topics document a multi-dimensional evaluation framework (e.g.
 
 ## 4. Locales
 
-Thirty-eight locale directories under `locales/` — one internal authoring locale and thirty-seven published ones:
+Fifty-four locale directories under `locales/` — one internal authoring locale and fifty-three published ones:
 
 - `en-gb-oxendict` — the hand-authored canonical source. All new topics are drafted here first.
 - `en-001`, `en-gb`, `en-us` — mechanically derived from `en-gb-oxendict` by `tools/localize.py`. Never hand-edited.
 - `cy-001` (Welsh), `zh-cn` (Simplified Chinese), `es-001` (Spanish), `hi-001` (Hindi), `ar-001` (Arabic), `fr-001` (French), `pt-001` (Portuguese), `de-de` (German), `ru-001` (Russian), `bn-bd` (Bengali — Bangladesh), `ko-kr` (Korean — Korea), `ja-jp` (Japanese — Japan), `sv-se` (Swedish — Sweden), `nl-nl` (Dutch — Netherlands), `ur-pk` (Urdu — Pakistan), `id-id` (Indonesian — Indonesia), `it-it` (Italian — Italy), `uk-ua` (Ukrainian — Ukraine), `fi-fi` (Finnish — Finland), `no-no` (Norwegian — Norway), `da-dk` (Danish — Denmark), `pl-pl` (Polish — Poland), `vi-001` (Vietnamese), `et-001` (Estonian), `th-001` (Thai), and `tr-tr` (Turkish — Türkiye) — hand-translated, AI-assisted, pending review by a fluent speaker of each language.
+- `bn-001`, `id-001`, `ja-001`, `ko-001`, `zh-001`, `sv-001`, `nl-001`, `ur-001`, `da-001`, `fi-001`, `it-001`, `tr-001`, `is-001` — international `-001` locales, byte-for-byte copies (apart from the generated `sitemap.xml`) of `bn-bd`, `id-id`, `ja-jp`, `ko-kr`, `zh-cn`, `sv-se`, `nl-nl`, `ur-pk`, `da-dk`, `fi-fi`, `it-it`, `tr-tr`, `is-is`. Edit the country locale, then recopy.
+- `is-is` (Icelandic — Iceland), `zh-tw` (Traditional Chinese — Taiwan, derived from `zh-cn` with Taiwan vocabulary) and `sw-001` (Swahili) — hand-translated, AI-assisted, pending review.
+- Every locale directory carries a generated `sitemap.xml` of its site routes: `python3 tools/build_locale_sitemaps.py` writes them; `tools/verify_locales.py` fails if one is missing or stale.
 - `de-001` — the international German locale, a byte-for-byte copy of `de-de` (German's source locale). Edit `de-de`, then recopy `de-001` (`rm -rf locales/de-001 && cp -RP locales/de-de locales/de-001`). Its two-letter alias `/de/` works like every other `-001` locale's.
 - Welsh (`cy-001`, `cy-gb`) terminology follows the Welsh Government's TermCymru term bank; the book's recurring terms and the chosen renderings are in `tools/cy-glossary.tsv`.
 - `ar-eg`, `hi-in`, `es-es`, `pt-pt`, `ru-ru`, `fr-fr`, `cy-gb` — country-specific variants of a language already published as an international `-001` locale. These intentionally reuse that locale's translated text byte-for-byte rather than being retranslated: for this book's formal, technical register, regional differences within a language aren't expected to change the wording. If that assumption ever proves wrong for a specific topic, diverge that locale's file directly rather than trying to keep it mechanically in sync with its `-001` sibling.
 
-`en-gb-oxendict` is an internal authoring locale: it is never published by the website (see `digital-health-metrics.github.io/src/lib/locales.js` and `scripts/sync-content.mjs`, both of which enumerate the thirty-seven public locales explicitly rather than discovering them from `locales/`). Full detail, including the slug and locale-picker rules, lives in `spec/locales-for-global-sharing-with-svelte/`.
+`en-gb-oxendict` is an internal authoring locale: it is never published by the website (see `digital-health-metrics.github.io/src/lib/locales.js` and `scripts/sync-content.mjs`, both of which enumerate the fifty-three public locales explicitly rather than discovering them from `locales/`). Full detail, including the slug and locale-picker rules, lives in `spec/locales-for-global-sharing-with-svelte/`.
 
 ### Locale directory names
 

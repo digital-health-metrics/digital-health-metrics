@@ -56,7 +56,23 @@ const PUBLIC_LOCALES = [
 	'vi-001',
 	'et-001',
 	'th-001',
-	'tr-tr'
+	'tr-tr',
+	'bn-001',
+	'id-001',
+	'ja-001',
+	'ko-001',
+	'zh-001',
+	'sv-001',
+	'nl-001',
+	'ur-001',
+	'da-001',
+	'fi-001',
+	'it-001',
+	'tr-001',
+	'is-is',
+	'is-001',
+	'zh-tw',
+	'sw-001'
 ];
 
 import { cp, mkdir, rm, readdir, readFile, writeFile } from 'node:fs/promises';

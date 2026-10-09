@@ -37,6 +37,8 @@ ENGLISH = DERIVED | {CANONICAL}
 VARIANTS = {
     "ar-eg": "ar-001", "hi-in": "hi-001", "es-es": "es-001", "pt-pt": "pt-001",
     "ru-ru": "ru-001", "fr-fr": "fr-001", "cy-gb": "cy-001", "de-001": "de-de",
+    "sv-001": "sv-se", "nl-001": "nl-nl", "ur-001": "ur-pk", "da-001": "da-dk", "fi-001": "fi-fi",
+    "it-001": "it-it", "tr-001": "tr-tr", "is-001": "is-is",
 }
 # Titles that are only an acronym or a proper name: the slug may equal English.
 SLUG_MAY_EQUAL_ENGLISH = {"iso-ts-82304-2", "re-aim-framework"}
@@ -49,6 +51,8 @@ KNOWN_FALSE_FIGURE_WARNINGS = {
     ("ar-001", "user-retention-rate"), ("ar-eg", "digital-referral-turnaround-time"),
     ("ar-eg", "time-to-intervention-rate"), ("ar-eg", "user-retention-rate"),
     ("zh-cn", "marketing-efficiency-ratio"), ("zh-cn", "roi-and-voi"),
+    ("zh-001", "marketing-efficiency-ratio"), ("zh-001", "roi-and-voi"),
+    ("zh-tw", "marketing-efficiency-ratio"), ("zh-tw", "roi-and-voi"),
 }
 # Directories (not locales) allowed at the top of a locale: en-us keeps a
 # non-book "communications" folder.
@@ -177,8 +181,10 @@ def main(strict=False, quiet=False):
                 warn(loc, f"{topic}: {lost}/{total} of the English figures are missing (worked example rewritten?)")
     for variant, base in VARIANTS.items():
         if variant in locales and base in locales:
-            if os.system(f"diff -rq '{LOCALES}/{base}' '{LOCALES}/{variant}' >/dev/null 2>&1") != 0:
+            if os.system(f"diff -rq -x sitemap.xml '{LOCALES}/{base}' '{LOCALES}/{variant}' >/dev/null 2>&1") != 0:
                 err(variant, f"is not identical to {base}")
+    if os.system(f"python3 '{TOP}/tools/build_locale_sitemaps.py' --check") != 0:
+        err("-", "a locale sitemap.xml is missing or stale: run python3 tools/build_locale_sitemaps.py")
     if not quiet or errors or (strict and warnings):
         for line in errors:
             print("ERROR  ", line)

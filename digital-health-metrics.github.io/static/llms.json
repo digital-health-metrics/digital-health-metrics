@@ -115,7 +115,7 @@
     },
     {
       "code": "ko-kr",
-      "label": "한국어",
+      "label": "한국어 - 대한민국",
       "url": "https://digital-health-metrics.github.io/ko-kr/",
       "direction": "ltr"
     },
@@ -133,7 +133,7 @@
     },
     {
       "code": "ja-jp",
-      "label": "日本語",
+      "label": "日本語 - 日本",
       "url": "https://digital-health-metrics.github.io/ja-jp/",
       "direction": "ltr"
     },
@@ -151,13 +151,13 @@
     },
     {
       "code": "sv-se",
-      "label": "Svenska",
+      "label": "Svenska - Sverige",
       "url": "https://digital-health-metrics.github.io/sv-se/",
       "direction": "ltr"
     },
     {
       "code": "nl-nl",
-      "label": "Nederlands",
+      "label": "Nederlands - Nederland",
       "url": "https://digital-health-metrics.github.io/nl-nl/",
       "direction": "ltr"
     },
@@ -169,13 +169,13 @@
     },
     {
       "code": "id-id",
-      "label": "Bahasa Indonesia",
+      "label": "Bahasa Indonesia - Indonesia",
       "url": "https://digital-health-metrics.github.io/id-id/",
       "direction": "ltr"
     },
     {
       "code": "it-it",
-      "label": "Italiano",
+      "label": "Italiano - Italia",
       "url": "https://digital-health-metrics.github.io/it-it/",
       "direction": "ltr"
     },
@@ -187,7 +187,7 @@
     },
     {
       "code": "fi-fi",
-      "label": "Suomi",
+      "label": "Suomi - Suomi",
       "url": "https://digital-health-metrics.github.io/fi-fi/",
       "direction": "ltr"
     },
@@ -199,7 +199,7 @@
     },
     {
       "code": "da-dk",
-      "label": "Dansk",
+      "label": "Dansk - Danmark",
       "url": "https://digital-health-metrics.github.io/da-dk/",
       "direction": "ltr"
     },
@@ -229,8 +229,104 @@
     },
     {
       "code": "tr-tr",
-      "label": "Türkçe",
+      "label": "Türkçe - Türkiye",
       "url": "https://digital-health-metrics.github.io/tr-tr/",
+      "direction": "ltr"
+    },
+    {
+      "code": "bn-001",
+      "label": "বাংলা",
+      "url": "https://digital-health-metrics.github.io/bn-001/",
+      "direction": "ltr"
+    },
+    {
+      "code": "id-001",
+      "label": "Bahasa Indonesia",
+      "url": "https://digital-health-metrics.github.io/id-001/",
+      "direction": "ltr"
+    },
+    {
+      "code": "ja-001",
+      "label": "日本語",
+      "url": "https://digital-health-metrics.github.io/ja-001/",
+      "direction": "ltr"
+    },
+    {
+      "code": "ko-001",
+      "label": "한국어",
+      "url": "https://digital-health-metrics.github.io/ko-001/",
+      "direction": "ltr"
+    },
+    {
+      "code": "zh-001",
+      "label": "中文",
+      "url": "https://digital-health-metrics.github.io/zh-001/",
+      "direction": "ltr"
+    },
+    {
+      "code": "sv-001",
+      "label": "Svenska",
+      "url": "https://digital-health-metrics.github.io/sv-001/",
+      "direction": "ltr"
+    },
+    {
+      "code": "nl-001",
+      "label": "Nederlands",
+      "url": "https://digital-health-metrics.github.io/nl-001/",
+      "direction": "ltr"
+    },
+    {
+      "code": "ur-001",
+      "label": "اردو",
+      "url": "https://digital-health-metrics.github.io/ur-001/",
+      "direction": "rtl"
+    },
+    {
+      "code": "da-001",
+      "label": "Dansk",
+      "url": "https://digital-health-metrics.github.io/da-001/",
+      "direction": "ltr"
+    },
+    {
+      "code": "fi-001",
+      "label": "Suomi",
+      "url": "https://digital-health-metrics.github.io/fi-001/",
+      "direction": "ltr"
+    },
+    {
+      "code": "it-001",
+      "label": "Italiano",
+      "url": "https://digital-health-metrics.github.io/it-001/",
+      "direction": "ltr"
+    },
+    {
+      "code": "tr-001",
+      "label": "Türkçe",
+      "url": "https://digital-health-metrics.github.io/tr-001/",
+      "direction": "ltr"
+    },
+    {
+      "code": "is-is",
+      "label": "Íslenska - Ísland",
+      "url": "https://digital-health-metrics.github.io/is-is/",
+      "direction": "ltr"
+    },
+    {
+      "code": "is-001",
+      "label": "Íslenska",
+      "url": "https://digital-health-metrics.github.io/is-001/",
+      "direction": "ltr"
+    },
+    {
+      "code": "zh-tw",
+      "label": "中文 - 台灣",
+      "url": "https://digital-health-metrics.github.io/zh-tw/",
+      "direction": "ltr"
+    },
+    {
+      "code": "sw-001",
+      "label": "Kiswahili",
+      "url": "https://digital-health-metrics.github.io/sw-001/",
       "direction": "ltr"
     }
   ],

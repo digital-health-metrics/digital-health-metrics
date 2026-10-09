@@ -2,7 +2,7 @@
 
 > A reference book of digital health metric definitions: what each metric means, how to calculate it, a worked example, data sources and caveats, and common pitfalls, organised for people building, running, and evaluating digital health products and services.
 
-Every topic is one metric or concept: definition, why it matters, how it is calculated, a worked example, data sources and caveats, pitfalls, and sources. The book has 31 topics in 37 locales; the links below are the en-gb edition. The same topic in another locale is at `/<locale>/topics/<slug>/` with that locale's own slug (see llms.json for the locale list). Machine translations are AI-assisted and pending review by a fluent speaker; en-gb is the reference text.
+Every topic is one metric or concept: definition, why it matters, how it is calculated, a worked example, data sources and caveats, pitfalls, and sources. The book has 31 topics in 53 locales; the links below are the en-gb edition. The same topic in another locale is at `/<locale>/topics/<slug>/` with that locale's own slug (see llms.json for the locale list). Machine translations are AI-assisted and pending review by a fluent speaker; en-gb is the reference text.
 
 ## Patient engagement and access
 

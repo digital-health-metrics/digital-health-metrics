@@ -6,7 +6,7 @@ specification is the source of truth.
 ## What this repo is
 
 A reference book of digital health metric definitions (one Markdown file per topic), translated into
-37 published locales, plus the SvelteKit site that publishes it to GitHub Pages.
+53 published locales, plus the SvelteKit site that publishes it to GitHub Pages.
 
 ## Source of truth
 
