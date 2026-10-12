@@ -22,7 +22,7 @@
 		<p class="book-hero-summary">{data.summary}</p>
 		<p class="book-hero-translations">
 			{HERO[page.params.locale]?.translations ?? HERO['en-001'].translations}{#each data.translations as locale, i (locale.code)}{i ? ', ' : ''}<a
-					href={resolve(`/${locale.code}/`)}>{locale.label}</a
+					href="/{locale.code}/">{locale.label}</a
 				>{/each}
 		</p>
 	</header>
