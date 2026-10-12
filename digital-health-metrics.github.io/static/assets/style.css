@@ -1099,3 +1099,13 @@ pre {
 		vertical-align: baseline;
 	}
 }
+
+/* Picker bar buttons: visible hover and open state on every theme. */
+button[class*="-picker-button"] {
+  transition: background-color 150ms, color 150ms, border-color 150ms;
+}
+button[class*="-picker-button"]:hover:not(:disabled),
+button[class*="-picker-button"][aria-expanded="true"] {
+  background-color: color-mix(in srgb, currentColor 16%, transparent) !important;
+  border-color: currentColor !important;
+}
