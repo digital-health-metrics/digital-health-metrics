@@ -1,6 +1,7 @@
 import { render } from '#lib/markdown.js';
 import { book, localizeHtml, readmeSource } from '#lib/server/book.js';
 import { routableLocales } from '#lib/server/content.js';
+import { localeLabel } from '#lib/locales.js';
 
 // Every other route under [locale]/ (contents, topics, topics/[slug],
 // search) declares the same entries() pattern over routableLocales().
@@ -50,8 +51,15 @@ export function load({ params }) {
 		}
 	);
 
+	// The world (-001) translations, English first, then by code.
+	const translations = routableLocales()
+		.filter((code) => code.endsWith('-001'))
+		.sort((a, b) => (a === 'en-001' ? -1 : b === 'en-001' ? 1 : a.localeCompare(b)))
+		.map((code) => ({ code, label: localeLabel(code) }));
+
 	return {
 		title,
+		translations,
 		summary,
 		html,
 		startHere
