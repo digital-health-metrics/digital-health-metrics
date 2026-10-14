@@ -216,15 +216,33 @@
       "direction": "ltr"
     },
     {
+      "code": "vi-vn",
+      "label": "Tiếng Việt - Việt Nam",
+      "url": "https://digital-health-metrics.github.io/vi-vn/",
+      "direction": "ltr"
+    },
+    {
       "code": "et-001",
       "label": "Eesti",
       "url": "https://digital-health-metrics.github.io/et-001/",
       "direction": "ltr"
     },
     {
+      "code": "et-et",
+      "label": "Eesti - Eesti",
+      "url": "https://digital-health-metrics.github.io/et-et/",
+      "direction": "ltr"
+    },
+    {
       "code": "th-001",
       "label": "ไทย",
       "url": "https://digital-health-metrics.github.io/th-001/",
+      "direction": "ltr"
+    },
+    {
+      "code": "th-th",
+      "label": "ไทย - ประเทศไทย",
+      "url": "https://digital-health-metrics.github.io/th-th/",
       "direction": "ltr"
     },
     {

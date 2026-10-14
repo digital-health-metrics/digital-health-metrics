@@ -69,6 +69,10 @@ export const HERO = {
   "tagline": "Digitervishoiu mõõdikute definitsioonid, näited ja lõksud.",
   "translations": "Tõlked: "
  },
+ "et-et": {
+  "tagline": "Digitervishoiu mõõdikute definitsioonid, näited ja lõksud.",
+  "translations": "Tõlked: "
+ },
  "fi-001": {
   "tagline": "Digitaalisen terveyden mittareiden määritelmät, esimerkit ja sudenkuopat.",
   "translations": "Käännökset: "
@@ -181,6 +185,10 @@ export const HERO = {
   "tagline": "นิยาม ตัวอย่าง และข้อผิดพลาดที่พบบ่อยของตัวชี้วัดสุขภาพดิจิทัล",
   "translations": "การแปล: "
  },
+ "th-th": {
+  "tagline": "นิยาม ตัวอย่าง และข้อผิดพลาดที่พบบ่อยของตัวชี้วัดสุขภาพดิจิทัล",
+  "translations": "การแปล: "
+ },
  "tr-001": {
   "tagline": "Dijital sağlık metriklerinin tanımları, örnekleri ve tuzakları.",
   "translations": "Çeviriler: "
@@ -202,6 +210,10 @@ export const HERO = {
   "translations": "تراجم: "
  },
  "vi-001": {
+  "tagline": "Định nghĩa, ví dụ và cạm bẫy của các chỉ số y tế số.",
+  "translations": "Bản dịch: "
+ },
+ "vi-vn": {
   "tagline": "Định nghĩa, ví dụ và cạm bẫy của các chỉ số y tế số.",
   "translations": "Bản dịch: "
  },
@@ -238,6 +250,7 @@ export const ENDONYMS = {
  "es-001": "Español",
  "es-es": "Español (España)",
  "et-001": "Eesti",
+ "et-et": "Eesti (Eesti)",
  "fi-001": "Suomi",
  "fi-fi": "Suomi (Suomi)",
  "fr-001": "Français",
@@ -266,12 +279,14 @@ export const ENDONYMS = {
  "sv-se": "Svenska (Sverige)",
  "sw-001": "Kiswahili",
  "th-001": "ไทย",
+ "th-th": "ไทย (ประเทศไทย)",
  "tr-001": "Türkçe",
  "tr-tr": "Türkçe (Türkiye)",
  "uk-ua": "Українська (Україна)",
  "ur-001": "اردو",
  "ur-pk": "اردو (پاکستان)",
  "vi-001": "Tiếng Việt",
+ "vi-vn": "Tiếng Việt (Việt Nam)",
  "zh-001": "中文",
  "zh-cn": "简体中文",
  "zh-tw": "繁體中文"

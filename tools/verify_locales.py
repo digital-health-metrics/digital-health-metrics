@@ -38,7 +38,7 @@ VARIANTS = {
     "ar-eg": "ar-001", "hi-in": "hi-001", "es-es": "es-001", "pt-pt": "pt-001",
     "ru-ru": "ru-001", "fr-fr": "fr-001", "cy-gb": "cy-001", "de-001": "de-de",
     "sv-001": "sv-se", "nl-001": "nl-nl", "ur-001": "ur-pk", "da-001": "da-dk", "fi-001": "fi-fi",
-    "it-001": "it-it", "tr-001": "tr-tr", "is-001": "is-is",
+    "it-001": "it-it", "et-et": "et-001", "th-th": "th-001", "vi-vn": "vi-001", "tr-001": "tr-tr", "is-001": "is-is",
 }
 # Titles that are only an acronym or a proper name: the slug may equal English.
 SLUG_MAY_EQUAL_ENGLISH = {"iso-ts-82304-2", "re-aim-framework"}

@@ -26,7 +26,7 @@ def url(*segs):
 def render(loc):
     d = os.path.join(LOCALES, loc)
     subs = [x for x in os.listdir(d) if os.path.isdir(os.path.join(d, x)) and not x.startswith(".")]
-    tdir = "topics" if "topics" in subs else [x for x in subs if os.path.exists(os.path.join(d, x, os.listdir(os.path.join(d, x))[0], "index.md"))][0]
+    tdir = "topics" if "topics" in subs else [x for x in sorted(subs) if any(os.path.exists(os.path.join(d, x, c, "index.md")) for c in os.listdir(os.path.join(d, x)))][0]
     slugs = sorted(s for s in os.listdir(os.path.join(d, tdir)) if os.path.isdir(os.path.join(d, tdir, s)))
     locs = [url(loc), url(loc, "contents"), url(loc, "topics")] + [url(loc, "topics", s) for s in slugs]
     body = "\n".join(f"  <url><loc>{u}</loc></url>" for u in locs)
