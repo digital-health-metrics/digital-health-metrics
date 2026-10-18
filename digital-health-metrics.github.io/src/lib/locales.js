@@ -66,7 +66,8 @@ export const LOCALE_LABELS = {
 	'is-is': 'Íslenska - Ísland',
 	'is-001': 'Íslenska',
 	'zh-tw': '中文 - 台灣',
-	'sw-001': 'Kiswahili'
+	'sw-001': 'Kiswahili',
+	'sw-tz': 'Kiswahili - Tanzania'
 };
 
 export const DEFAULT_LOCALE = 'en-gb';

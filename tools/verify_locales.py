@@ -131,6 +131,8 @@ def main(strict=False, quiet=False):
         found = {}
         for d in sorted(os.listdir(f"{base}/{seg}")):
             tdir = f"{base}/{seg}/{d}"
+            if d == ".locale-peer-id":
+                continue
             if not os.path.isdir(tdir):
                 err(loc, f"stray file in {seg}/: {d}")
                 continue

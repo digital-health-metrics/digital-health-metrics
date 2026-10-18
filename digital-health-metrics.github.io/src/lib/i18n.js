@@ -1725,6 +1725,7 @@ const TRANSLATIONS = {
 	'is-001': is,
 	'zh-tw': zhTw,
 	'sw-001': sw,
+	'sw-tz': sw,
 	// Country-specific variants of a language already covered by an
 	// international -001 locale reuse that locale's translation object.
 	'de-001': de,

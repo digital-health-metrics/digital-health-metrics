@@ -75,6 +75,7 @@ const PUBLIC_LOCALES = [
 	'is-is',
 	'is-001',
 	'zh-tw',
+	'sw-tz',
 	'sw-001'
 ];
 

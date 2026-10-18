@@ -346,6 +346,12 @@
       "label": "Kiswahili",
       "url": "https://digital-health-metrics.github.io/sw-001/",
       "direction": "ltr"
+    },
+    {
+      "code": "sw-tz",
+      "label": "Kiswahili - Tanzania",
+      "url": "https://digital-health-metrics.github.io/sw-tz/",
+      "direction": "ltr"
     }
   ],
   "parts": [
