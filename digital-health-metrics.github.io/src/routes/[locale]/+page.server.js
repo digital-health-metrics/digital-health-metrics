@@ -51,10 +51,10 @@ export function load({ params }) {
 		}
 	);
 
-	// The world (-001) translations, English first, then by code.
+	// The world (-001) translations, ordered by locale code.
 	const translations = routableLocales()
 		.filter((code) => code.endsWith('-001'))
-		.sort((a, b) => (a === 'en-001' ? -1 : b === 'en-001' ? 1 : a.localeCompare(b)))
+		.sort((a, b) => a.localeCompare(b))
 		.map((code) => ({ code, label: localeLabel(code) }));
 
 	return {
