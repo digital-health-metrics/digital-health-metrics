@@ -39,6 +39,11 @@
 	<header class="book-hero">
 		<h1>{data.title}</h1>
 		<p class="book-hero-summary">{data.summary}</p>
+		<p class="book-hero-translations">
+			Translations: {#each data.locales as locale, i (locale.code)}{i ? ', ' : ''}<a
+					href={resolve(`${locale.code}/`)}>{locale.label}</a
+				>{/each}.
+		</p>
 	</header>
 
 	<section class="locale-picker" aria-labelledby="choose-locale">
