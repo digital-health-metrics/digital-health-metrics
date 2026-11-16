@@ -1,0 +1,29 @@
+Welcome to Digital Health Metrics Discussions
+
+Digital Health Metrics now has GitHub Discussions, a place to ask questions, suggest ideas, and share what you have done with it.
+
+Digital Health Metrics is a reference book of digital health metric definitions, examples, and reasoning, written for teams building, evaluating, and commissioning digital health products. It is written for teams building, evaluating, and commissioning digital health products.
+
+## What this means for you
+
+- You can ask questions and get answers from other readers.
+- You can suggest topics, fixes, and improvements before anyone writes them.
+- You can share how you use the book.
+
+## Where to go for what
+
+- Questions about using the book: Q&A
+- Suggestions for new or changed topics: Ideas
+- Quick community votes: Polls
+- Things you have built or tried with the book: Show and tell
+- Everything else: General
+- Errors, broken links, or typos: Issues (https://github.com/digital-health-metrics/digital-health-metrics/issues)
+
+## Links
+
+- Read the book: https://digital-health-metrics.github.io
+- Source repository: https://github.com/digital-health-metrics/digital-health-metrics
+
+## Next step
+
+Say hello in the General category and tell us what brought you to Digital Health Metrics. Reply here or react with an emoji if you have a question about how Discussions will be used.

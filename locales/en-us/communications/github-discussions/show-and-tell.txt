@@ -1,0 +1,29 @@
+Show and tell: share what you have done with Digital Health Metrics
+
+This is the place to share what you have made, tried, or learned with Digital Health Metrics. Examples include a team practice you adopted, a worked example from your own data, a talk or workshop that used the book, or a tool built around it.
+
+## How to share
+
+Copy this template into a new discussion in Show and tell:
+
+**Title:** the thing and what it does.
+
+**What it is:** one sentence.
+
+**Why you made it:** two or three sentences on the problem or curiosity behind it.
+
+**Show it:** a screenshot, a short excerpt, or a link.
+
+**How to try it:** a few steps, if others can reproduce it.
+
+**One thing that was hard or surprising:** stories invite replies.
+
+**What you want:** feedback, collaborators, or other people's examples.
+
+## Ground rules
+
+- Describe what exists. Do not claim results you cannot show.
+- Credit work you built on.
+- Reply to feedback kindly.
+
+The book is at https://digital-health-metrics.github.io. Share your first example below.

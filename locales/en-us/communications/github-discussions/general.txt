@@ -1,0 +1,17 @@
+Say hello and tell us how you use Digital Health Metrics
+
+Welcome to the Digital Health Metrics Discussions. This is the place for introductions, opinions, and open conversation about the book.
+
+I am a maintainer of the project. I wrote Digital Health Metrics because I wanted a reference book of digital health metric definitions, examples, and reasoning, written for teams building, evaluating, and commissioning digital health products to be easy to find and use. I would like to hear who is reading it and why.
+
+**One question to start:** Which digital health metric do you find hardest to define or explain to colleagues?
+
+A sentence or two is plenty. Replies to other people are welcome too.
+
+## Where other topics belong
+
+- Questions with answers: Q&A
+- Suggestions for new or changed topics: Ideas
+- Errors or broken links: Issues (https://github.com/digital-health-metrics/digital-health-metrics/issues)
+
+Thank you for reading. I will reply to the first comments.

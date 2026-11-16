@@ -1,0 +1,17 @@
+What should Digital Health Metrics focus on next?
+
+This poll is advisory. It helps maintainers learn what readers value most. It does not commit the project to any of the options, and no closing date has been set.
+
+Pick the one option you would most like to see.
+
+**Poll question:** What should Digital Health Metrics focus on next?
+
+**Options:**
+
+1. More worked examples
+2. More checklists and templates
+3. More AI prompts and skills
+4. Better explanations of existing topics
+5. Something else (explain in the comments)
+
+Votes show what you want. Comments show why, so please add a sentence about your choice. If your idea needs more room, post it in Ideas.

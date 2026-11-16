@@ -1,0 +1,23 @@
+How to ask a question about Digital Health Metrics
+
+This is the Q&A category for Digital Health Metrics. Questions here can be marked with an accepted answer, so later readers can find the solution quickly.
+
+## Before you ask
+
+- Search existing discussions and the book at https://digital-health-metrics.github.io.
+- Use Issues (https://github.com/digital-health-metrics/digital-health-metrics/issues) instead for errors, broken links, or typos.
+
+## What to include
+
+- **Goal:** what you are trying to do, in one sentence.
+- **What I tried:** the steps you took, in order.
+- **Expected and actual:** what you hoped for and what happened. Use the exact wording of any message.
+- **Context:** which topic or page of the book you are using, and your role or setting if it matters.
+- **Minimal example:** the smallest case that shows the problem, as copyable text rather than a screenshot.
+
+## Good habits
+
+- Write a specific title that names the problem, not "Help".
+- Ask one question per discussion.
+- Remove secrets and personal data.
+- Mark the reply that answered your question, and thank the people who helped.
