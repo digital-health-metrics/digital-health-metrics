@@ -72,7 +72,7 @@
 	</ArticleLayout>
 
 	<PaginationNav class="topic-pagination" label={t.paginationLabel}>
-		<PaginationList>
+		<PaginationList label={t.paginationLabel}>
 			<PaginationListItem class="pagination-previous">
 				{#if data.previous}
 					<a
