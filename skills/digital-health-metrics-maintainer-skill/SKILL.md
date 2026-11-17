@@ -5,10 +5,10 @@ description: Maintain this repository — add or edit a topic under locales/<loc
 
 # Maintaining digital-health-metrics
 
-Topics live under `locales/<code>/topics/<slug>/` (English locales), one directory per topic, across 37 locales:
+Topics live under `locales/<code>/topics/<slug>/` (English locales), one directory per topic, across 65 locales:
 `en-gb-oxendict` (hand-authored canonical source), `en-001`/`en-gb`/`en-us` (mechanically derived
-from it by `tools/localize.py` — never hand-edited), and 33 hand-translated locales (26 languages;
-country variants such as `es-es` copy their `-001` sibling). The list is in `spec/index.md` §4.
+from it by `tools/localize.py` — never hand-edited), and the other locales, hand-translated or
+(for country variants such as `es-es`) copied or adapted from a sibling. The list is in `spec/index.md` §4.
 The English locales use `topics/<slug>/` exactly; every other locale translates both the `topics`
 segment and each slug (e.g. `locales/es-es/temas/tasa-de-inasistencia-a-citas/`), so locate a
 topic in another locale by its `.locale-peer-id`, not by path.
