@@ -102,9 +102,21 @@
       "direction": "rtl"
     },
     {
+      "code": "ar-dz",
+      "label": "العربية - الجزائر",
+      "url": "https://digital-health-metrics.github.io/ar-dz/",
+      "direction": "rtl"
+    },
+    {
       "code": "bn-bd",
       "label": "বাংলা - বাংলাদেশ",
       "url": "https://digital-health-metrics.github.io/bn-bd/",
+      "direction": "ltr"
+    },
+    {
+      "code": "bn-in",
+      "label": "বাংলা - ভারত",
+      "url": "https://digital-health-metrics.github.io/bn-in/",
       "direction": "ltr"
     },
     {
@@ -162,6 +174,12 @@
       "direction": "ltr"
     },
     {
+      "code": "ru-by",
+      "label": "Русский - Беларусь",
+      "url": "https://digital-health-metrics.github.io/ru-by/",
+      "direction": "ltr"
+    },
+    {
       "code": "fr-fr",
       "label": "Français - France",
       "url": "https://digital-health-metrics.github.io/fr-fr/",
@@ -189,6 +207,12 @@
       "code": "id-id",
       "label": "Bahasa Indonesia - Indonesia",
       "url": "https://digital-health-metrics.github.io/id-id/",
+      "direction": "ltr"
+    },
+    {
+      "code": "id-my",
+      "label": "Bahasa Indonesia - Malaysia",
+      "url": "https://digital-health-metrics.github.io/id-my/",
       "direction": "ltr"
     },
     {

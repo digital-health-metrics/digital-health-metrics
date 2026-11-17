@@ -1690,12 +1690,14 @@ const TRANSLATIONS = {
 	'de-de': de,
 	'ru-001': ru,
 	'bn-bd': bn,
+	'bn-in': bn,
 	'ko-kr': ko,
 	'ja-jp': ja,
 	'sv-se': sv,
 	'nl-nl': nl,
 	'ur-pk': ur,
 	'id-id': id,
+	'id-my': id,
 	'it-it': it,
 	'uk-ua': uk,
 	'fi-fi': fi,
@@ -1730,6 +1732,7 @@ const TRANSLATIONS = {
 	// international -001 locale reuse that locale's translation object.
 	'de-001': de,
 	'ar-eg': ar,
+	'ar-dz': ar,
 	'hi-in': hi,
 	'es-es': es,
 	'pt-pt': pt,
@@ -1737,6 +1740,7 @@ const TRANSLATIONS = {
 	'fr-ca': fr,
 	'es-mx': es,
 	'ru-ru': ru,
+	'ru-by': ru,
 	'fr-fr': fr,
 	'cy-gb': cy
 };

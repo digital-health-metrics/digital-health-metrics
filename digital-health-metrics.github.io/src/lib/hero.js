@@ -9,11 +9,19 @@ export const HERO = {
   "tagline": "تعريفات مقاييس الصحة الرقمية وأمثلتها ومزالقها.",
   "translations": "الترجمات: "
  },
+ "ar-dz": {
+  "tagline": "تعريفات مقاييس الصحة الرقمية وأمثلتها ومزالقها.",
+  "translations": "الترجمات: "
+ },
  "bn-001": {
   "tagline": "ডিজিটাল স্বাস্থ্য মেট্রিকের সংজ্ঞা, উদাহরণ ও সাধারণ ভুল।",
   "translations": "অনুবাদ: "
  },
  "bn-bd": {
+  "tagline": "ডিজিটাল স্বাস্থ্য মেট্রিকের সংজ্ঞা, উদাহরণ ও সাধারণ ভুল।",
+  "translations": "অনুবাদ: "
+ },
+ "bn-in": {
   "tagline": "ডিজিটাল স্বাস্থ্য মেট্রিকের সংজ্ঞা, উদাহরণ ও সাধারণ ভুল।",
   "translations": "অনুবাদ: "
  },
@@ -113,6 +121,10 @@ export const HERO = {
   "tagline": "Definisi, contoh, dan jebakan metrik kesehatan digital.",
   "translations": "Terjemahan: "
  },
+ "id-my": {
+  "tagline": "Definisi, contoh, dan jebakan metrik kesehatan digital.",
+  "translations": "Terjemahan: "
+ },
  "is-001": {
   "tagline": "Skilgreiningar, dæmi og gildrur stafrænna heilbrigðismælikvarða.",
   "translations": "Þýðingar: "
@@ -178,6 +190,10 @@ export const HERO = {
   "translations": "Переводы: "
  },
  "ru-ru": {
+  "tagline": "Определения, примеры и подводные камни метрик цифрового здравоохранения.",
+  "translations": "Переводы: "
+ },
+ "ru-by": {
   "tagline": "Определения, примеры и подводные камни метрик цифрового здравоохранения.",
   "translations": "Переводы: "
  },
@@ -251,8 +267,10 @@ export const HERO = {
 export const ENDONYMS = {
  "ar-001": "العربية",
  "ar-eg": "العربية (مصر)",
+ "ar-dz": "العربية (الجزائر)",
  "bn-001": "বাংলা",
  "bn-bd": "বাংলা (বাংলাদেশ)",
+ "bn-in": "বাংলা (ভারত)",
  "cy-001": "Cymraeg",
  "cy-gb": "Cymraeg (Prydain Fawr)",
  "da-001": "Dansk",
@@ -277,6 +295,7 @@ export const ENDONYMS = {
  "hi-in": "हिन्दी (भारत)",
  "id-001": "Bahasa Indonesia",
  "id-id": "Bahasa Indonesia (Indonesia)",
+ "id-my": "Bahasa Indonesia (Malaysia)",
  "is-001": "Íslenska",
  "is-is": "Íslenska (Ísland)",
  "it-001": "Italiano",
@@ -294,6 +313,7 @@ export const ENDONYMS = {
  "pt-br": "Português (Brasil)",
  "ru-001": "Русский",
  "ru-ru": "Русский (Россия)",
+ "ru-by": "Русский (Беларусь)",
  "sv-001": "Svenska",
  "sv-se": "Svenska (Sverige)",
  "sw-001": "Kiswahili",

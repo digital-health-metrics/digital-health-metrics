@@ -26,7 +26,9 @@ export const LOCALE_LABELS = {
 	'de-de': 'Deutsch - Deutschland',
 	'ru-001': 'Русский',
 	'ar-eg': 'العربية - مصر',
+	'ar-dz': 'العربية - الجزائر',
 	'bn-bd': 'বাংলা - বাংলাদেশ',
+	'bn-in': 'বাংলা - ভারত',
 	'hi-in': 'हिन्दी - भारत',
 	'ko-kr': '한국어 - 대한민국',
 	'es-es': 'Español - España',
@@ -36,11 +38,13 @@ export const LOCALE_LABELS = {
 	'es-mx': 'Español - México',
 	'ja-jp': '日本語 - 日本',
 	'ru-ru': 'Русский - Россия',
+	'ru-by': 'Русский - Беларусь',
 	'fr-fr': 'Français - France',
 	'sv-se': 'Svenska - Sverige',
 	'nl-nl': 'Nederlands - Nederland',
 	'ur-pk': 'اردو - پاکستان',
 	'id-id': 'Bahasa Indonesia - Indonesia',
+	'id-my': 'Bahasa Indonesia - Malaysia',
 	'it-it': 'Italiano - Italia',
 	'uk-ua': 'Українська',
 	'fi-fi': 'Suomi - Suomi',
@@ -82,7 +86,7 @@ export const DEFAULT_LOCALE = 'en-gb';
  * padding-inline-start, etc.), so it flips correctly once `dir` is actually
  * set; nothing else needs to change per RTL locale.
  */
-export const RTL_LOCALES = new Set(['ar-001', 'ar-eg', 'ur-pk', 'ur-001']);
+export const RTL_LOCALES = new Set(['ar-001', 'ar-eg', 'ar-dz', 'ur-pk', 'ur-001']);
 
 export function localeLabel(code) {
 	return LOCALE_LABELS[code] ?? code;

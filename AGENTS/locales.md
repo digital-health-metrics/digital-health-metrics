@@ -12,6 +12,7 @@ Canonical rules: [`spec/index.md`](../spec/index.md) §4 and
 | Other `-001` and `xx-yy` codes | Hand-translated, AI-assisted, pending native review. |
 | `ar-eg`, `hi-in`, `es-es`, `pt-pt`, `ru-ru`, `fr-fr`, `cy-gb` | Byte-identical copies of their `-001` sibling, including directory names. |
 | `pt-br`, `fr-ca`, `es-mx` | Hand-adapted regional variants of `pt-001`, `fr-001`, `es-001` (own vocabulary and slugs; same peer ids). Not copies. |
+| `ar-dz`, `ru-by`, `bn-in`, `id-my` | Regional variants of `ar-001`, `ru-001`, `bn-001`, `id-001`: vocabulary adjusted by a word map (`ru-by` has no differences yet, so it is currently identical). AI-assisted, pending native review. |
 | `de-001` | Byte-identical copy of `de-de` (German has no separate `-001` source; edit `de-de`, then recopy). |
 
 ## Verifying locales
