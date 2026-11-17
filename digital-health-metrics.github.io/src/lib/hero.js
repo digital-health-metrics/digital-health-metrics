@@ -65,6 +65,10 @@ export const HERO = {
   "tagline": "Definiciones, ejemplos y errores comunes de las métricas de salud digital.",
   "translations": "Traducciones: "
  },
+ "es-mx": {
+  "tagline": "Definiciones, ejemplos y errores comunes de las métricas de salud digital.",
+  "translations": "Traducciones: "
+ },
  "et-001": {
   "tagline": "Digitervishoiu mõõdikute definitsioonid, näited ja lõksud.",
   "translations": "Tõlked: "
@@ -86,6 +90,10 @@ export const HERO = {
   "translations": "Traductions: "
  },
  "fr-fr": {
+  "tagline": "Définitions, exemples et pièges des indicateurs de santé numérique.",
+  "translations": "Traductions: "
+ },
+ "fr-ca": {
   "tagline": "Définitions, exemples et pièges des indicateurs de santé numérique.",
   "translations": "Traductions: "
  },
@@ -158,6 +166,10 @@ export const HERO = {
   "translations": "Traduções: "
  },
  "pt-pt": {
+  "tagline": "Definições, exemplos e armadilhas das métricas de saúde digital.",
+  "translations": "Traduções: "
+ },
+ "pt-br": {
   "tagline": "Definições, exemplos e armadilhas das métricas de saúde digital.",
   "translations": "Traduções: "
  },
@@ -253,12 +265,14 @@ export const ENDONYMS = {
  "en-us": "English (United States)",
  "es-001": "Español",
  "es-es": "Español (España)",
+ "es-mx": "Español (México)",
  "et-001": "Eesti",
  "et-et": "Eesti (Eesti)",
  "fi-001": "Suomi",
  "fi-fi": "Suomi (Suomi)",
  "fr-001": "Français",
  "fr-fr": "Français (France)",
+ "fr-ca": "Français (Canada)",
  "hi-001": "हिन्दी",
  "hi-in": "हिन्दी (भारत)",
  "id-001": "Bahasa Indonesia",
@@ -277,6 +291,7 @@ export const ENDONYMS = {
  "pl-pl": "Polski (Polska)",
  "pt-001": "Português",
  "pt-pt": "Português (Portugal)",
+ "pt-br": "Português (Brasil)",
  "ru-001": "Русский",
  "ru-ru": "Русский (Россия)",
  "sv-001": "Svenska",

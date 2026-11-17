@@ -101,7 +101,10 @@ def shape(text):
 
 
 def main(strict=False, quiet=False):
-    canonical_topics = sorted(os.listdir(f"{LOCALES}/{CANONICAL}/topics"))
+    canonical_topics = sorted(
+        t for t in os.listdir(f"{LOCALES}/{CANONICAL}/topics")
+        if os.path.isdir(f"{LOCALES}/{CANONICAL}/topics/{t}")
+    )
     peer = {
         read(f"{LOCALES}/{CANONICAL}/topics/{t}/.locale-peer-id").strip(): t
         for t in canonical_topics

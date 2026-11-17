@@ -31,6 +31,9 @@ export const LOCALE_LABELS = {
 	'ko-kr': '한국어 - 대한민국',
 	'es-es': 'Español - España',
 	'pt-pt': 'Português - Portugal',
+	'pt-br': 'Português - Brasil',
+	'fr-ca': 'Français - Canada',
+	'es-mx': 'Español - México',
 	'ja-jp': '日本語 - 日本',
 	'ru-ru': 'Русский - Россия',
 	'fr-fr': 'Français - France',
@@ -111,7 +114,7 @@ const LANGUAGE_ALIASES = { nb: 'no', nn: 'no' };
  *   1. exact locale: `cy_GB` / `cy-GB` -> `cy-gb`, `de-DE` -> `de-de`
  *   2. no exact locale, but the language's international (`-001`) locale:
  *      `en-AU` -> `en-001` (not the `/en/` alias), `de-AT` -> `de-001`,
- *      `pt-BR` -> `pt-001`, bare `cy` -> `cy-001`
+ *      `es-AR` -> `es-001`, bare `cy` -> `cy-001`
  *   3. otherwise any published locale of that language: `ja` -> `ja-jp`,
  *      `nb` -> `no-no`
  * Traditional Chinese (`zh-TW`, `zh-HK`, `zh-Hant`) deliberately matches

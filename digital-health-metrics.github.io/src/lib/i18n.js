@@ -1733,6 +1733,9 @@ const TRANSLATIONS = {
 	'hi-in': hi,
 	'es-es': es,
 	'pt-pt': pt,
+	'pt-br': pt,
+	'fr-ca': fr,
+	'es-mx': es,
 	'ru-ru': ru,
 	'fr-fr': fr,
 	'cy-gb': cy

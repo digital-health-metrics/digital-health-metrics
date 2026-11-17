@@ -132,6 +132,24 @@
       "direction": "ltr"
     },
     {
+      "code": "pt-br",
+      "label": "Português - Brasil",
+      "url": "https://digital-health-metrics.github.io/pt-br/",
+      "direction": "ltr"
+    },
+    {
+      "code": "fr-ca",
+      "label": "Français - Canada",
+      "url": "https://digital-health-metrics.github.io/fr-ca/",
+      "direction": "ltr"
+    },
+    {
+      "code": "es-mx",
+      "label": "Español - México",
+      "url": "https://digital-health-metrics.github.io/es-mx/",
+      "direction": "ltr"
+    },
+    {
       "code": "ja-jp",
       "label": "日本語 - 日本",
       "url": "https://digital-health-metrics.github.io/ja-jp/",
