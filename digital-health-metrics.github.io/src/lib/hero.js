@@ -33,6 +33,10 @@ export const HERO = {
   "tagline": "Diffiniadau metrigau iechyd digidol, enghreifftiau a maglau cyffredin.",
   "translations": "Cyfieithiadau: "
  },
+ "cy-ar": {
+  "tagline": "Diffiniadau metrigau iechyd digidol, enghreifftiau a maglau cyffredin.",
+  "translations": "Cyfieithiadau: "
+ },
  "da-001": {
   "tagline": "Definitioner, eksempler og faldgruber for digitale sundhedsmetrikker.",
   "translations": "Oversættelser: "
@@ -46,6 +50,10 @@ export const HERO = {
   "translations": "Übersetzungen: "
  },
  "de-de": {
+  "tagline": "Definitionen, Beispiele und Fallstricke digitaler Gesundheitskennzahlen.",
+  "translations": "Übersetzungen: "
+ },
+ "de-at": {
   "tagline": "Definitionen, Beispiele und Fallstricke digitaler Gesundheitskennzahlen.",
   "translations": "Übersetzungen: "
  },
@@ -110,6 +118,10 @@ export const HERO = {
   "translations": "अनुवाद: "
  },
  "hi-in": {
+  "tagline": "डिजिटल स्वास्थ्य मेट्रिक्स की परिभाषाएँ, उदाहरण और आम गलतियाँ।",
+  "translations": "अनुवाद: "
+ },
+ "hi-np": {
   "tagline": "डिजिटल स्वास्थ्य मेट्रिक्स की परिभाषाएँ, उदाहरण और आम गलतियाँ।",
   "translations": "अनुवाद: "
  },
@@ -257,6 +269,10 @@ export const HERO = {
   "tagline": "数字健康指标的定义、示例与常见误区。",
   "translations": "翻译： "
  },
+ "zh-th": {
+  "tagline": "数字健康指标的定义、示例与常见误区。",
+  "translations": "翻译： "
+ },
  "zh-tw": {
   "tagline": "數位健康指標的定義、範例與常見誤區。",
   "translations": "翻譯： "
@@ -273,10 +289,12 @@ export const ENDONYMS = {
  "bn-in": "বাংলা (ভারত)",
  "cy-001": "Cymraeg",
  "cy-gb": "Cymraeg (Prydain Fawr)",
+ "cy-ar": "Cymraeg (Ariannin)",
  "da-001": "Dansk",
  "da-dk": "Dansk (Danmark)",
  "de-001": "Deutsch",
  "de-de": "Deutsch (Deutschland)",
+ "de-at": "Deutsch (Österreich)",
  "en-001": "English",
  "en-gb": "English (Great Britain)",
  "en-gb-oxendict": "English (Great Britain, Oxford)",
@@ -293,6 +311,7 @@ export const ENDONYMS = {
  "fr-ca": "Français (Canada)",
  "hi-001": "हिन्दी",
  "hi-in": "हिन्दी (भारत)",
+ "hi-np": "हिन्दी (नेपाल)",
  "id-001": "Bahasa Indonesia",
  "id-id": "Bahasa Indonesia (Indonesia)",
  "id-my": "Bahasa Indonesia (Malaysia)",
@@ -329,5 +348,6 @@ export const ENDONYMS = {
  "vi-vn": "Tiếng Việt (Việt Nam)",
  "zh-001": "中文",
  "zh-cn": "简体中文",
+ "zh-th": "简体中文 (泰国)",
  "zh-tw": "繁體中文"
 };

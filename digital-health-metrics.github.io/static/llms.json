@@ -42,9 +42,21 @@
       "direction": "ltr"
     },
     {
+      "code": "cy-ar",
+      "label": "Cymraeg - Ariannin",
+      "url": "https://digital-health-metrics.github.io/cy-ar/",
+      "direction": "ltr"
+    },
+    {
       "code": "zh-cn",
       "label": "中文 - 中国大陆",
       "url": "https://digital-health-metrics.github.io/zh-cn/",
+      "direction": "ltr"
+    },
+    {
+      "code": "zh-th",
+      "label": "中文 - 泰国",
+      "url": "https://digital-health-metrics.github.io/zh-th/",
       "direction": "ltr"
     },
     {
@@ -90,6 +102,12 @@
       "direction": "ltr"
     },
     {
+      "code": "de-at",
+      "label": "Deutsch - Österreich",
+      "url": "https://digital-health-metrics.github.io/de-at/",
+      "direction": "ltr"
+    },
+    {
       "code": "ru-001",
       "label": "Русский",
       "url": "https://digital-health-metrics.github.io/ru-001/",
@@ -123,6 +141,12 @@
       "code": "hi-in",
       "label": "हिन्दी - भारत",
       "url": "https://digital-health-metrics.github.io/hi-in/",
+      "direction": "ltr"
+    },
+    {
+      "code": "hi-np",
+      "label": "हिन्दी - नेपाल",
+      "url": "https://digital-health-metrics.github.io/hi-np/",
       "direction": "ltr"
     },
     {
