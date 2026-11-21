@@ -1745,7 +1745,14 @@ const TRANSLATIONS = {
 	'ru-ru': ru,
 	'ru-by': ru,
 	'fr-fr': fr,
-	'cy-gb': cy
+	'cy-gb': cy,
+	'nb-001': no,
+	'nb-no': no,
+	'pl-001': pl,
+	'uk-001': uk,
+	'fr-be': fr,
+	'fr-lu': fr,
+	'nl-be': nl
 };
 
 /**
