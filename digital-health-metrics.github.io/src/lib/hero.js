@@ -276,6 +276,258 @@ export const HERO = {
  "zh-tw": {
   "tagline": "數位健康指標的定義、範例與常見誤區。",
   "translations": "翻譯： "
+ },
+ "kn-001": {
+  "tagline": "ಡಿಜಿಟಲ್ ಆರೋಗ್ಯ ಮಾಪನ ವ್ಯಾಖ್ಯಾನಗಳು, ಉದಾಹರಣೆಗಳು ಮತ್ತು ಎಡವಟ್ಟುಗಳು.",
+  "translations": "ಅನುವಾದಗಳು: "
+ },
+ "kw-001": {
+  "tagline": "Styryansow musurow yeghes dijital, ensamplow, ha trapow.",
+  "translations": "Treylyansow: "
+ },
+ "lb-001": {
+  "tagline": "Definitioune, Beispiller a Fallen vun de Kennzuele vun der digitaler Gesondheet.",
+  "translations": "Iwwersetzungen: "
+ },
+ "lo-001": {
+  "tagline": "ນິຍາມ, ຕົວຢ່າງ ແລະ ຈຸດອ່ອນຂອງຕົວຊີ້ວັດສຸຂະພາບດິຈິຕອນ.",
+  "translations": "ການແປ: "
+ },
+ "lt-001": {
+  "tagline": "Skaitmeninės sveikatos rodiklių apibrėžtys, pavyzdžiai ir dažniausios klaidos.",
+  "translations": "Vertimai: "
+ },
+ "lv-001": {
+  "tagline": "Digitālās veselības rādītāju definīcijas, piemēri un biežākās kļūdas.",
+  "translations": "Tulkojumi: "
+ },
+ "mr-001": {
+  "tagline": "डिजिटल आरोग्य मेट्रिक व्याख्या, उदाहरणे आणि सामान्य चुका.",
+  "translations": "भाषांतरे: "
+ },
+ "ms-001": {
+  "tagline": "Takrifan metrik kesihatan digital, contoh dan perangkap.",
+  "translations": "Terjemahan: "
+ },
+ "mt-001": {
+  "tagline": "Definizzjonijiet, eżempji u żbalji komuni ta' metriki tas-saħħa diġitali.",
+  "translations": "Traduzzjonijiet: "
+ },
+ "pcm-001": {
+  "tagline": "Definition, example, and pitfalls of digital health metric.",
+  "translations": "Translations: "
+ },
+ "ro-001": {
+  "tagline": "Definiții, exemple și capcane ale metricilor de sănătate digitală.",
+  "translations": "Traduceri: "
+ },
+ "sco-001": {
+  "tagline": "Digital health metric definitions, examples, an pitfaas.",
+  "translations": "Owersets: "
+ },
+ "sk-001": {
+  "tagline": "Definície metrík digitálneho zdravia, príklady a nástrahy.",
+  "translations": "Preklady: "
+ },
+ "sl-001": {
+  "tagline": "Opredelitve kazalnikov digitalnega zdravja, primeri in pasti.",
+  "translations": "Prevodi: "
+ },
+ "ta-001": {
+  "tagline": "டிஜிட்டல் சுகாதார அளவீட்டு வரையறைகள், எடுத்துக்காட்டுகள், பொதுவான தவறுகள்.",
+  "translations": "மொழிபெயர்ப்புகள்: "
+ },
+ "te-001": {
+  "tagline": "డిజిటల్ హెల్త్ మెట్రిక్ నిర్వచనాలు, ఉదాహరణలు, మరియు సాధారణ తప్పులు.",
+  "translations": "అనువాదాలు: "
+ },
+ "tl-001": {
+  "tagline": "Mga depinisyon ng sukatan sa digital health, mga halimbawa, at mga patibong.",
+  "translations": "Mga salin: "
+ },
+ "wuu-001": {
+  "tagline": "数字健康指标个定义、实例搭常见误区。",
+  "translations": "翻译："
+ },
+ "yue-001": {
+  "tagline": "數碼健康指標嘅定義、示例同陷阱。",
+  "translations": "翻譯："
+ },
+ "bh-001": {
+  "tagline": "डिजिटल स्वास्थ्य मीट्रिक के परिभाषा, उदाहरण, आ आम गलती।",
+  "translations": "अनुवाद: "
+ },
+ "bg-001": {
+  "tagline": "Дефиниции на показатели за цифровото здраве, примери и клопки.",
+  "translations": "Преводи: "
+ },
+ "cs-001": {
+  "tagline": "Definice metrik digitálního zdraví, příklady a úskalí.",
+  "translations": "Překlady: "
+ },
+ "el-001": {
+  "tagline": "Ορισμοί, παραδείγματα και παγίδες των δεικτών ψηφιακής υγείας.",
+  "translations": "Μεταφράσεις: "
+ },
+ "eu-001": {
+  "tagline": "Osasun digitaleko metriken definizioak, adibideak eta ohiko hutsuneak.",
+  "translations": "Itzulpenak: "
+ },
+ "fa-001": {
+  "tagline": "تعریف سنجه‌های سلامت دیجیتال، مثال‌ها و اشتباهات رایج.",
+  "translations": "ترجمه‌ها: "
+ },
+ "ga-001": {
+  "tagline": "Sainmhínithe, samplaí agus gaistí na méadrachtaí sláinte digití.",
+  "translations": "Aistriúcháin: "
+ },
+ "gd-001": {
+  "tagline": "Mìneachaidhean, eisimpleirean agus cunnartan nam metrigean slàinte didseatach.",
+  "translations": "Eadar-theangachaidhean: "
+ },
+ "gu-001": {
+  "tagline": "ડિજિટલ હેલ્થ મેટ્રિકની વ્યાખ્યાઓ, ઉદાહરણો અને સામાન્ય ભૂલો.",
+  "translations": "અનુવાદો: "
+ },
+ "ha-001": {
+  "tagline": "Ma'anonin ma'aunin lafiyar dijital, misalai, da kura-kurai.",
+  "translations": "Fassarori: "
+ },
+ "he-001": {
+  "tagline": "הגדרות של מדדי בריאות דיגיטלית, דוגמאות ומלכודות.",
+  "translations": "תרגומים: "
+ },
+ "hr-001": {
+  "tagline": "Definicije, primjeri i zamke metrika digitalnog zdravlja.",
+  "translations": "Prijevodi: "
+ },
+ "hu-001": {
+  "tagline": "Digitális egészségügyi mutatók meghatározásai, példái és buktatói.",
+  "translations": "Fordítások: "
+ },
+ "jv-001": {
+  "tagline": "Definisi metrik kesehatan digital, conto, lan kesalahan umum.",
+  "translations": "Terjemahan: "
+ },
+ "km-001": {
+  "tagline": "និយមន័យ ឧទាហរណ៍ និងចំណុចត្រូវប្រុងប្រយ័ត្នអំពីរង្វាស់សុខភាពឌីជីថល។",
+  "translations": "ការបកប្រែ៖ "
+ },
+ "pa-001": {
+  "tagline": "ਡਿਜੀਟਲ ਸਿਹਤ ਮੈਟ੍ਰਿਕ ਪਰਿਭਾਸ਼ਾਵਾਂ, ਉਦਾਹਰਨਾਂ ਅਤੇ ਆਮ ਗਲਤੀਆਂ।",
+  "translations": "ਅਨੁਵਾਦ: "
+ },
+ "bg-bg": {
+  "tagline": "Дефиниции на показатели за цифровото здраве, примери и клопки.",
+  "translations": "Преводи: "
+ },
+ "cs-cz": {
+  "tagline": "Definice metrik digitálního zdraví, příklady a úskalí.",
+  "translations": "Překlady: "
+ },
+ "el-gr": {
+  "tagline": "Ορισμοί, παραδείγματα και παγίδες των δεικτών ψηφιακής υγείας.",
+  "translations": "Μεταφράσεις: "
+ },
+ "el-cy": {
+  "tagline": "Ορισμοί, παραδείγματα και παγίδες των δεικτών ψηφιακής υγείας.",
+  "translations": "Μεταφράσεις: "
+ },
+ "eu-es": {
+  "tagline": "Osasun digitaleko metriken definizioak, adibideak eta ohiko hutsuneak.",
+  "translations": "Itzulpenak: "
+ },
+ "ga-ie": {
+  "tagline": "Sainmhínithe, samplaí agus gaistí na méadrachtaí sláinte digití.",
+  "translations": "Aistriúcháin: "
+ },
+ "gd-gb": {
+  "tagline": "Mìneachaidhean, eisimpleirean agus cunnartan nam metrigean slàinte didseatach.",
+  "translations": "Eadar-theangachaidhean: "
+ },
+ "hr-hr": {
+  "tagline": "Definicije, primjeri i zamke metrika digitalnog zdravlja.",
+  "translations": "Prijevodi: "
+ },
+ "hu-hu": {
+  "tagline": "Digitális egészségügyi mutatók meghatározásai, példái és buktatói.",
+  "translations": "Fordítások: "
+ },
+ "km-kh": {
+  "tagline": "និយមន័យ ឧទាហរណ៍ និងចំណុចត្រូវប្រុងប្រយ័ត្នអំពីរង្វាស់សុខភាពឌីជីថល។",
+  "translations": "ការបកប្រែ៖ "
+ },
+ "kw-gb": {
+  "tagline": "Styryansow musurow yeghes dijital, ensamplow, ha trapow.",
+  "translations": "Treylyansow: "
+ },
+ "lb-lu": {
+  "tagline": "Definitioune, Beispiller a Fallen vun de Kennzuele vun der digitaler Gesondheet.",
+  "translations": "Iwwersetzungen: "
+ },
+ "lo-la": {
+  "tagline": "ນິຍາມ, ຕົວຢ່າງ ແລະ ຈຸດອ່ອນຂອງຕົວຊີ້ວັດສຸຂະພາບດິຈິຕອນ.",
+  "translations": "ການແປ: "
+ },
+ "lt-lt": {
+  "tagline": "Skaitmeninės sveikatos rodiklių apibrėžtys, pavyzdžiai ir dažniausios klaidos.",
+  "translations": "Vertimai: "
+ },
+ "lv-lv": {
+  "tagline": "Digitālās veselības rādītāju definīcijas, piemēri un biežākās kļūdas.",
+  "translations": "Tulkojumi: "
+ },
+ "mt-mt": {
+  "tagline": "Definizzjonijiet, eżempji u żbalji komuni ta' metriki tas-saħħa diġitali.",
+  "translations": "Traduzzjonijiet: "
+ },
+ "ro-ro": {
+  "tagline": "Definiții, exemple și capcane ale metricilor de sănătate digitală.",
+  "translations": "Traduceri: "
+ },
+ "sco-gb": {
+  "tagline": "Digital health metric definitions, examples, an pitfaas.",
+  "translations": "Owersets: "
+ },
+ "sk-sk": {
+  "tagline": "Definície metrík digitálneho zdravia, príklady a nástrahy.",
+  "translations": "Preklady: "
+ },
+ "sl-si": {
+  "tagline": "Opredelitve kazalnikov digitalnega zdravja, primeri in pasti.",
+  "translations": "Prevodi: "
+ },
+ "nb-001": {
+  "tagline": "Definisjoner, eksempler og fallgruver for digitale helsemål.",
+  "translations": "Oversettelser: "
+ },
+ "nb-no": {
+  "tagline": "Definisjoner, eksempler og fallgruver for digitale helsemål.",
+  "translations": "Oversettelser: "
+ },
+ "pl-001": {
+  "tagline": "Definicje, przykłady i pułapki wskaźników zdrowia cyfrowego.",
+  "translations": "Tłumaczenia: "
+ },
+ "uk-001": {
+  "tagline": "Визначення, приклади та підводні камені метрик цифрової охорони здоров'я.",
+  "translations": "Переклади: "
+ },
+ "fr-be": {
+  "tagline": "Définitions, exemples et pièges des indicateurs de santé numérique.",
+  "translations": "Traductions: "
+ },
+ "fr-lu": {
+  "tagline": "Définitions, exemples et pièges des indicateurs de santé numérique.",
+  "translations": "Traductions: "
+ },
+ "nl-be": {
+  "tagline": "Definities, voorbeelden en valkuilen van digitale gezondheidsmetrieken.",
+  "translations": "Vertalingen: "
+ },
+ "et-ee": {
+  "tagline": "Digitervishoiu mõõdikute definitsioonid, näited ja lõksud.",
+  "translations": "Tõlked: "
  }
 };
 
