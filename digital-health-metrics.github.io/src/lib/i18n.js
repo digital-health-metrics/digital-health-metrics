@@ -1752,7 +1752,8 @@ const TRANSLATIONS = {
 	'uk-001': uk,
 	'fr-be': fr,
 	'fr-lu': fr,
-	'nl-be': nl
+	'nl-be': nl,
+	'et-ee': et
 };
 
 /**

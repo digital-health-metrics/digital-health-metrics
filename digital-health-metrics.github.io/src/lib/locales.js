@@ -115,7 +115,33 @@ export const LOCALE_LABELS = {
 	'uk-001': 'Українська',
 	'fr-be': 'Français - Belgique',
 	'fr-lu': 'Français - Luxembourg',
-	'nl-be': 'Nederlands - België'
+	'nl-be': 'Nederlands - België',
+	'bg-001': 'Български',
+	'bg-bg': 'Български - България',
+	'cs-001': 'Čeština',
+	'cs-cz': 'Čeština - Česko',
+	'el-001': 'Ελληνικά',
+	'el-gr': 'Ελληνικά - Ελλάδα',
+	'el-cy': 'Ελληνικά - Κύπρος',
+	'eu-001': 'Euskara',
+	'eu-es': 'Euskara - Espainia',
+	'et-ee': 'Eesti - Eesti',
+	'fa-001': 'فارسی',
+	'ga-001': 'Gaeilge',
+	'ga-ie': 'Gaeilge - Éire',
+	'gd-001': 'Gàidhlig',
+	'gd-gb': 'Gàidhlig - Rìoghachd Aonaichte',
+	'gu-001': 'ગુજરાતી',
+	'ha-001': 'Hausa',
+	'he-001': 'עברית',
+	'hr-001': 'Hrvatski',
+	'hr-hr': 'Hrvatski - Hrvatska',
+	'hu-001': 'Magyar',
+	'hu-hu': 'Magyar - Magyarország',
+	'jv-001': 'Basa Jawa',
+	'km-001': 'ភាសាខ្មែរ',
+	'km-kh': 'ភាសាខ្មែរ - កម្ពុជា',
+	'pa-001': 'ਪੰਜਾਬੀ'
 };
 
 export const DEFAULT_LOCALE = 'en-gb';
@@ -127,7 +153,7 @@ export const DEFAULT_LOCALE = 'en-gb';
  * padding-inline-start, etc.), so it flips correctly once `dir` is actually
  * set; nothing else needs to change per RTL locale.
  */
-export const RTL_LOCALES = new Set(['ar-001', 'ar-eg', 'ar-dz', 'ur-pk', 'ur-001']);
+export const RTL_LOCALES = new Set(['ar-001', 'ar-eg', 'ar-dz', 'ur-pk', 'ur-001', 'fa-001', 'he-001']);
 
 export function localeLabel(code) {
 	return LOCALE_LABELS[code] ?? code;
